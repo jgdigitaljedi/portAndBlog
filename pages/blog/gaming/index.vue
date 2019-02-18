@@ -5,23 +5,19 @@
       <div
         class="bubble-wrapper"
         :key="post.id"
-        v-for="post in posts"
+        v-for="(post, index) in posts"
         :class="index % 2 === 0 ? 'right' : 'left'"
       >
-        <!-- <nuxt-link
+        <!-- :to="{ name: 'slug', params: { slug: post.slug }}" -->
+        <nuxt-link
           :class="index % 2 === 0 ? 'from-right' : 'from-left'"
-          :to="'/' + blogPost.full_slug"
+          :to="'/blog/gaming/' + post.slug"
           class="nes-balloon"
-        >-->
-        <router-link
-          :class="index % 2 === 0 ? 'from-right' : 'from-left'"
-          :to="{ name: 'slug', params: { slug: post.slug }}"
         >
           <h4>{{post.title}}</h4>
           <small>{{ post.created_at }}</small>
-          <p>{{ post.content.intro }}</p>
-        </router-link>
-        <!-- </nuxt-link> -->
+          <p>{{ post.intro }}</p>
+        </nuxt-link>
       </div>
     </div>
   </section>

@@ -18,15 +18,6 @@
           <small>{{ post.created_at }}</small>
           <p>{{ post.intro }}</p>
         </nuxt-link>
-        <!-- <nuxt-link
-          :class="index % 2 === 0 ? 'from-right' : 'from-left'"
-          :to="'/' + blogPost.full_slug"
-          class="nes-balloon"
-        >
-          <h4>{{post.title}}</h4>
-          <small>{{ post.created_at }}</small>
-          <p>{{ post.content.intro }}</p>
-        </nuxt-link>-->
       </div>
     </div>
   </section>
