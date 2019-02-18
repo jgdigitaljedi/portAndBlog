@@ -1,0 +1,71 @@
+$breakpoint-small: 480px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 960px;
+$breakpoint-xlarge: 1220px;
+$breakpoint-mini-max: ($breakpoint-small - 1);
+$breakpoint-small-max: ($breakpoint-medium - 1);
+$breakpoint-medium-max: ($breakpoint-large - 1);
+$breakpoint-large-max: ($breakpoint-xlarge - 1);
+@import './theme';
+$brand-color: $primary;
+
+html {
+  height: 100%;
+  overflow: auto;
+}
+
+body {
+  background-color: $black;
+  color: $white;
+  font-family: $game-font;
+  font-size: 18px;
+  height: 100%;
+  line-height: 1;
+  margin: 0;
+  overflow: auto;
+  padding: 0;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .sf,
+  .title,
+  .v-expansion-panel__header > div,
+  .v-toolbar__title {
+    font-family: $game-font;
+  }
+}
+
+.nes-container {
+  &::after {
+    z-index: 1;
+  }
+
+  &.is-dark {
+    background-color: $black;
+  }
+}
+
+.util__container {
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 85%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.util__flex {
+  display: flex;
+}
+
+.util__flex-col {
+  flex: 0 0 auto;
+}
+
+.util__flex-eq {
+  flex: 1;
+}
