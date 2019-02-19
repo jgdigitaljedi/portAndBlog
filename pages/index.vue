@@ -3,6 +3,9 @@
     <div id="stars"></div>
     <div id="stars2"></div>
     <div id="stars3"></div>
+    <div class="social-container">
+      <social :isVertical="true"></social>
+    </div>
     <div class="home__image-title-container">
       <img src="~/assets/images/me_8bit_scanlines.jpg">
       <h1>Joey Gauthier</h1>
@@ -19,39 +22,44 @@
 </template>
 
 <script>
+import Social from '~/components/Social';
+
 export default {
   name: 'Home',
+  components: { Social },
   data() {
     return {
-      story: {
-        content: {}
-      }
-    }
+      timer: null
+    };
   },
   computed: {
     player() {
-      return this.$refs.contra
+      return this.$refs.contra;
     }
   },
   mounted() {
-    const sound = this.player
-    sound.pause()
-    sound.currentTime = 0
+    const sound = this.player;
+    sound.pause();
+    sound.currentTime = 0;
+    sound.volumne = 0.5;
     // evidently CHrome won't let a sound play without a click so this won't work in Chrome unless the user clicks something first
-    setTimeout(() => {
-      const audio = sound.cloneNode(true).play()
+    this.timer = setTimeout(() => {
+      const audio = sound.cloneNode(true).play();
       if (audio !== undefined) {
         audio
           .then(_ => {
-            console.log('playing', _)
+            console.log(`hope your audio wasn't up loud!`, _);
           })
           .catch(err => {
-            console.log('audio error', err)
-          })
+            console.log('audio error but expected in CHrome if user has not clicked yet', err);
+          });
       }
-    }, 4000)
+    }, 4000);
+  },
+  beforeDestroy() {
+    clearTimeout(this.timer);
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -99,11 +107,18 @@ $shadows-big: multiple-box-shadow(100);
 
 .home {
   background-color: $black;
-  min-height: calc(100vh - 5em);
-  height: calc(100vh - 5em);
+  min-height: calc(100vh - 6rem - 8px);
+  // height: calc(100vh - 5em);
   height: 100%;
   padding: 3em 2em;
   overflow: hidden;
+  width: 100%;
+  .social-container {
+    position: absolute;
+    left: 0;
+    top: 7em;
+    z-index: 10;
+  }
   .home__image-title-container {
     width: 100%;
     display: flex;
@@ -112,8 +127,7 @@ $shadows-big: multiple-box-shadow(100);
     align-items: center;
     flex-direction: column;
     z-index: 1000;
-    animation: 4s ease-out 0s 1 slideInFromRight,
-      hideShow 0.1s linear 4s forwards;
+    animation: 4s ease-out 0s 1 slideInFromRight, hideShow 0.1s linear 4s forwards;
     // animation: hideShow 0.1s linear 4s forwards;
     img {
       max-height: 400px;

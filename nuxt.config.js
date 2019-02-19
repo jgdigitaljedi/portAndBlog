@@ -54,15 +54,12 @@ module.exports = {
       { hid: 'og:type', name: 'og:type', content: 'website' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Lato:400,900|Raleway:400,800'
-      },
-      {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Press+Start+2P'
-      }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      // {
+      //   rel: 'stylesheet',
+      //   href:
+      //     'https://fonts.googleapis.com/css?family=Lato:400,900|Raleway:400,800|family=Press+Start+2P'
+      // },
       // {
       //   rel: 'stylesheet',
       //   href: 'https://unpkg.com/nes.css@1.0.0/css/nes.min.css'
@@ -100,7 +97,8 @@ module.exports = {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    '@nuxtjs/markdownit'
+    '@nuxtjs/markdownit',
+    'nuxt-webfontloader'
     // [ // setup GA online and put ID here when done; not worried about it ATM
     //   '@nuxtjs/google-analytics',
     //   {
@@ -111,6 +109,11 @@ module.exports = {
   markdownit: {
     injected: true,
     use: ['markdown-it-highlightjs']
+  },
+  webfontloader: {
+    google: {
+      families: ['Lato:400,900', 'Raleway:400,800', 'Press+Start+2P']
+    }
   },
   /*
   ** Axios module configuration

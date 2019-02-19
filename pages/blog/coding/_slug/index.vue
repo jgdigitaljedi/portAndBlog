@@ -1,12 +1,7 @@
 <template>
   <div class="post">
-    <div class="blog-title__container">
-      <h2>{{post.title}}</h2>
-    </div>
-    <div class="blog-image__container">
-      <img :src="post.image" class="blog-image" v-if="post.image">
-    </div>
-    <div v-html="postContent"></div>
+    <blogContent :post="post" :postContent="postContent"></blogContent>
+    <!-- <blogComments :post="post"></blogComments> -->
     <!-- <disqus ref="disqus" v-bind:shortname="disqusShortname" :identifier="disqusId"></disqus> -->
   </div>
 </template>
@@ -21,7 +16,7 @@ export default {
   head() {
     let post = this.post;
     return {
-      title: 'Joey Gauthier',
+      title: "Joey Gauthier's Coding Blog",
       meta: [
         {
           hid: post.meta.id,
@@ -70,32 +65,8 @@ export default {
 @import '~/assets/style/theme.scss';
 .post {
   padding: 2em;
-  .blog-image__container,
-  .blog-title__container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2em;
-    .blog-image {
-      display: block;
-      max-height: 400px;
-      max-width: 600px;
-      width: auto;
-      height: auto;
-    }
-  }
-  pre {
-    background-color: $white;
-    padding: 2em;
-  }
-  .hljs-built_in,
-  .hljs-string,
-  .hljs-section,
-  .hljs-selector-class,
-  .hljs-template-variable,
-  .hljs-deletion,
-  .hljs-function {
-    color: $warning;
-  }
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 </style>

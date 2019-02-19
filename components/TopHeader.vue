@@ -54,31 +54,31 @@ export default {
         { title: 'About', to: '/about' },
         { title: 'VG', to: '/videogames' }
       ]
-    }
+    };
   },
   created() {
-    this.handleRouteChange(this.$route.path)
+    this.handleRouteChange(this.$route.path);
   },
   methods: {
     handleRouteChange(path) {
-      this.currentSelectedRoute = path
+      this.currentSelectedRoute = path;
       if (path.indexOf('/blog') >= 0) {
-        this.currentSelectedRoute = '/blog'
+        this.currentSelectedRoute = '/blog';
       } else {
-        this.currentSelectedRoute = path
+        this.currentSelectedRoute = path;
       }
     }
   },
   watch: {
     '$route.path': {
       handler(path) {
-        this.handleRouteChange(path)
+        this.handleRouteChange(path);
       },
       deep: true,
       immediate: true
     }
   }
-}
+};
 </script>
 
 <style lang="scss">
@@ -87,7 +87,7 @@ export default {
   .nav {
     // display: flex;
     // width: 100%;
-    height: 5em;
+    height: 6rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -97,7 +97,7 @@ export default {
       justify-content: center;
     }
     .mobile-hamburger {
-      z-index: 7;
+      z-index: 4;
     }
   }
   .nav .nav__items,

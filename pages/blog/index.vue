@@ -2,13 +2,13 @@
   <section class="blog-list">
     <div class="disclaimer">
       <h2>Choose your adventure!</h2>
-      <span>--> Don't worry, the blogs are in a more readable font! &#60;--</span>
+      <span class="hidden-sm-and-down">--> The blogs are in a more readable font! &#60;--</span>
     </div>
-    <div class="posts-container" :class="{'flexColumn': $vuetify.breakpoint.sm}">
+    <div class="posts-container" :class="{'flexColumn': $vuetify.breakpoint.smAndDown}">
       <nuxt-link
         class="blog-section-wrapper nes-container is-dark"
         to="/blog/gaming"
-        :class="{'mobileWidth': $vuetify.breakpoint.sm}"
+        :class="{'mobileWidth': $vuetify.breakpoint.smAndDown}"
       >
         <div class="blog-section-wrapper__link">
           <h2>Gaming</h2>
@@ -20,7 +20,7 @@
       <nuxt-link
         class="blog-section-wrapper nes-container is-dark"
         to="/blog/coding"
-        :class="{'mobileWidth': $vuetify.breakpoint.sm}"
+        :class="{'mobileWidth': $vuetify.breakpoint.smAndDown}"
       >
         <div class="blog-section-wrapper__link">
           <h2>Coding</h2>
@@ -34,7 +34,7 @@
 </template>
 
 <script>
-export default {}
+export default {};
 </script>
 
 <style lang="scss" scoped>
@@ -57,6 +57,9 @@ export default {}
     &.flexColumn {
       flex-direction: column;
       align-items: space-around;
+      .blog-section-wrapper {
+        margin-bottom: 1em;
+      }
     }
     .blog-section-wrapper {
       width: 48%;
