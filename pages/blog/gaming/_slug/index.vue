@@ -1,17 +1,14 @@
 <template>
   <div class="post">
     <blogContent :post="post" :postContent="postContent"></blogContent>
-    <!-- <disqus ref="disqus" v-bind:shortname="disqusShortname" :identifier="disqusId"></disqus> -->
+    <v-divider style="width: 100%; max-width: 1400px; margin-top: 2rem;" dark></v-divider>
+    <blogComments :post="post" which="gaming" class="comments"></blogComments>
   </div>
 </template>
 
 <script>
-// import Disqus from 'vue-disqus/VueDisqus.vue';
 export default {
   layout: 'slug',
-  components: {
-    // Disqus
-  },
   head() {
     let post = this.post;
     return {
@@ -42,21 +39,7 @@ export default {
       let post = this.$store.state.post;
       return require(`~/content/posts/gaming/${post.id}.md`);
     }
-    // disqusShortname () {
-    //   return 'your_disqus_short_name'
-    // },
-    // disqusId () { // env used to avoid re-use from dev to production
-    //   return `${process.env.NODE_ENV}-${this.disqusShortname}-${this.post.id}`
-    // }
   }
-  // watch: {
-  //   '$route.params.slug' (curr, old) {
-  //     // disqus does not properly reload just based off the
-  //     // disqusId computed property - we need to manually change it
-  //     // when we know it should update
-  //     this.$refs.disqus.init()
-  //   }
-  // }
 };
 </script>
 
@@ -66,8 +49,12 @@ export default {
   padding: 2em;
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
-  min-height: calc(100vh - 6em);
+  flex-direction: column;
   background-color: $info;
+  .comments {
+    width: 100%;
+  }
 }
 </style>

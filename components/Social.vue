@@ -1,5 +1,5 @@
 <template>
-  <section class="social" :class="{'column': isVertical}">
+  <section class="social" :class="{'column': isMounted && !$vuetify.breakpoint.smAndDown}">
     <a class="social-link" href="https://twitter.com/jgdigitaljedi" target="__blank">
       <i class="nes-icon twitter is-medium"></i>
     </a>
@@ -15,7 +15,14 @@
 <script>
 export default {
   name: 'Social',
-  props: ['isVertical']
+  data() {
+    return {
+      isMounted: false
+    };
+  },
+  mounted() {
+    this.isMounted = true;
+  }
 };
 </script>
 

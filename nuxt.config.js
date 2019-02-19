@@ -98,7 +98,8 @@ module.exports = {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/markdownit',
-    'nuxt-webfontloader'
+    'nuxt-webfontloader',
+    '@nuxtjs/dotenv'
     // [ // setup GA online and put ID here when done; not worried about it ATM
     //   '@nuxtjs/google-analytics',
     //   {

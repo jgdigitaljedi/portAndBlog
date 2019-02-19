@@ -1,6 +1,11 @@
 <template>
   <div class="nav-wrapper">
     <div class="nav nes-container is-dark">
+      <div class="nav__brand">
+        <nuxt-link to="/">
+          <img class="nav__brand--image" src="~/assets/images/mario_block.png">
+        </nuxt-link>
+      </div>
       <i @click.stop="drawer = !drawer" class="nes-logo hidden-md-and-up mobile-hamburger"></i>
       <div class="nav__items hidden-sm-and-down">
         <nuxt-link v-for="link in links" :key="link.title" :to="link.to" class="nav-link">
@@ -91,10 +96,20 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+    .nav__brand {
+      flex: 1;
+      align-items: center;
+      .nav__brand--image {
+        height: 5rem;
+        width: 5rem;
+        margin-top: 4px;
+      }
+    }
     .nav__items {
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: center;
+      height: 100%;
     }
     .mobile-hamburger {
       z-index: 4;
@@ -127,7 +142,7 @@ export default {
       .nav-link__tile {
         transition: all 0.3s;
         .nav-link__tile--text {
-          font-size: 1.3em;
+          font-size: 1.1em;
           font-family: $game-font;
           margin-left: 1.2em;
           &::before {

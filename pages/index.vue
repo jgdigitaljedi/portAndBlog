@@ -3,12 +3,12 @@
     <div id="stars"></div>
     <div id="stars2"></div>
     <div id="stars3"></div>
-    <div class="social-container">
-      <social :isVertical="true"></social>
+    <div class="social-container" :class="{'mobile': isMounted && $vuetify.breakpoint.smAndDown}">
+      <social></social>
     </div>
     <div class="home__image-title-container">
       <img src="~/assets/images/me_8bit_scanlines.jpg">
-      <h1>Joey Gauthier</h1>
+      <h1 :class="{'mobile': $vuetify.breakpoint.smAndDown}">Joey Gauthier</h1>
     </div>
     <div class="home__about--wrapper">
       <div class="home__about nes-container is-dark is-centered">
@@ -29,7 +29,8 @@ export default {
   components: { Social },
   data() {
     return {
-      timer: null
+      timer: null,
+      isMounted: false
     };
   },
   computed: {
@@ -38,6 +39,7 @@ export default {
     }
   },
   mounted() {
+    this.isMounted = true;
     const sound = this.player;
     sound.pause();
     sound.currentTime = 0;
@@ -117,7 +119,13 @@ $shadows-big: multiple-box-shadow(100);
     position: absolute;
     left: 0;
     top: 7em;
-    z-index: 10;
+    z-index: 3;
+    &.mobile {
+      top: 6rem;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
   }
   .home__image-title-container {
     width: 100%;
@@ -137,6 +145,10 @@ $shadows-big: multiple-box-shadow(100);
     h1 {
       font-size: 2em;
       color: $light;
+      &.mobile {
+        width: 100%;
+        text-align: center;
+      }
     }
   }
   .home__about--wrapper {

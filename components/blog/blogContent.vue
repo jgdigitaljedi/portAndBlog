@@ -2,6 +2,7 @@
   <div class="blog-slug">
     <div class="blog-title__container">
       <h2>{{post.title}}</h2>
+      <small>posted {{post.created_at}}</small>
     </div>
     <div class="blog-image__container">
       <img :src="post.image" class="blog-image" v-if="post.image">
@@ -37,6 +38,10 @@ export default {
       width: auto;
       height: auto;
     }
+  }
+  .blog-title__container {
+    flex-direction: column;
+    align-items: center;
   }
   .markdown-content section {
     pre,
