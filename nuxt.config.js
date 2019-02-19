@@ -1,5 +1,5 @@
-const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
-const pkg = require('./package')
+const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin');
+const pkg = require('./package');
 
 module.exports = {
   mode: 'universal',
@@ -57,8 +57,7 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css?family=Lato:400,900|Raleway:400,800'
+        href: 'https://fonts.googleapis.com/css?family=Lato:400,900|Raleway:400,800'
       },
       {
         rel: 'stylesheet',
@@ -88,13 +87,6 @@ module.exports = {
     { src: '~/node_modules/nes.css/scss/nes', lang: 'sass' },
     { src: '~/node_modules/highlight.js/styles/hopscotch.css', lang: 'css' }
   ],
-
-  /**
-   * middleware
-   * */
-  // router: {
-  //   middleware: 'languageDetection'
-  // },
 
   /*
   ** Plugins to load before mounting the App
@@ -150,12 +142,12 @@ module.exports = {
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
           exclude: /(node_modules)/
-        })
+        });
       }
       config.module.rules.push({
         test: /\.mp3$/,
         loader: 'file-loader'
-      })
+      });
     }
   }
-}
+};

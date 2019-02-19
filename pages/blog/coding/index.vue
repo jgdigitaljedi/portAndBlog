@@ -27,7 +27,7 @@
 export default {
   head() {
     return {
-      title: 'First Last',
+      // title: 'First Last',
       meta: [
         { hid: 'home', name: 'meta name', content: 'meta content seo goodness' }
       ]
