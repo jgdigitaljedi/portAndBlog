@@ -63,11 +63,12 @@ export default {};
     }
     .blog-section-wrapper {
       width: 48%;
-      min-width: 400px;
+      // min-width: 400px;
       max-width: 550px;
       height: 600px;
       &.mobileWidth {
         width: 95%;
+        height: auto;
       }
       .blog-section-wrapper__link {
         display: flex;
@@ -80,6 +81,7 @@ export default {};
           img {
             height: auto;
             width: auto;
+            max-width: 100%;
           }
         }
       }

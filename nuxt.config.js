@@ -104,12 +104,11 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/markdownit',
     'nuxt-webfontloader',
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    '@nuxtjs/sitemap'
     // [ // setup GA online and put ID here when done; not worried about it ATM
     //   '@nuxtjs/google-analytics',
     //   {
@@ -125,12 +124,6 @@ module.exports = {
     google: {
       families: ['Lato:400,900', 'Raleway:400,800', 'Press+Start+2P']
     }
-  },
-  /*
-  ** Axios module configuration
-  */
-  axios: {
-    // See https://github.com/nuxt-community/axios-module#options
   },
 
   /*

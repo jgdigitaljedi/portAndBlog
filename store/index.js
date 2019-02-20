@@ -26,7 +26,7 @@ export const actions = {
   },
   getPosts({ commit }) {
     commit('updatePosts', {
-      posts: { coding: coding(), gaming: gaming() }
+      posts: { coding: coding().reverse(), gaming: gaming().reverse() }
     });
   }
 };

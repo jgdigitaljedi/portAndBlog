@@ -55,8 +55,8 @@ export default {
       links: [
         { title: 'Home', to: '/' },
         { title: 'Blog', to: '/blog' },
-        { title: 'Work', to: '/work' },
         { title: 'About', to: '/about' },
+        { title: 'Work', to: '/work' },
         { title: 'VG', to: '/videogames' }
       ]
     };
