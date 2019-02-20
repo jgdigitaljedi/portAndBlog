@@ -54,7 +54,7 @@ module.exports = {
       { hid: 'og:type', name: 'og:type', content: 'website' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicons/favicon.ico' }
       // {
       //   rel: 'stylesheet',
       //   href:
@@ -67,14 +67,24 @@ module.exports = {
     ]
   },
 
+  manifest: {
+    name: `Joey Gauthier's Portfolio & Blog`,
+    short_name: `JG's Port & Blog`,
+    background_color: '#1f5673'
+  },
+
+  icon: {
+    iconSrc: 'static/favicons/ms-icon-310x310.png'
+  },
+
   /*
   ** Customize the progress-bar color
   */
   loading: { color: '#f0a202' },
 
-  generate: {
-    routes: ['/blog/coding/test-coding-blog', '/blog/gaming/test-gaming-blog']
-  },
+  // generate: {
+  //   routes: ['/blog/coding/test-coding-blog', '/blog/gaming/test-gaming-blog']
+  // },
 
   /*
   ** Global CSS

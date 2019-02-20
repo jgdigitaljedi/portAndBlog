@@ -5,7 +5,12 @@
       <small>posted {{post.created_at}}</small>
     </div>
     <div class="blog-image__container">
-      <img :src="post.image" class="blog-image" v-if="post.image">
+      <img
+        :src="post.image"
+        class="blog-image"
+        v-if="post.image"
+        :class="{'mobile': $vuetify.breakpoint.smAndDown}"
+      >
     </div>
     <div class="markdown-content" v-html="postContent"></div>
   </div>
@@ -33,10 +38,16 @@ export default {
     margin-bottom: 2em;
     .blog-image {
       display: block;
-      max-height: 400px;
-      max-width: 600px;
-      width: auto;
+      // max-height: 400px;
+      // max-width: 600px;
+      // max-width: 100%;
+      width: 100%;
       height: auto;
+      max-height: 500px;
+      object-fit: scale-down;
+      &.mobile {
+        max-height: 380px;
+      }
     }
   }
   .blog-title__container {

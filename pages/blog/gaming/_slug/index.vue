@@ -12,7 +12,7 @@ export default {
   head() {
     let post = this.post;
     return {
-      title: 'Joey Gauthier',
+      title: "Joey Gauthier's Gaming Blog",
       meta: [
         {
           hid: post.meta.id,
