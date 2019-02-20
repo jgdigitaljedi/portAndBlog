@@ -69,7 +69,7 @@ module.exports = {
 
   manifest: {
     name: `Joey Gauthier's Portfolio & Blog`,
-    short_name: `JG's Port & Blog`,
+    short_name: `Joey G P&B`,
     background_color: '#1f5673'
   },
 
