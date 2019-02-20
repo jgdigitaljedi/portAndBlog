@@ -2,6 +2,8 @@
 
 > Joey Gauthier&#39;s Portfolio
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/cfe5692f-e688-4f3e-a96d-9ea631808fe9/deploy-status)](https://app.netlify.com/sites/joeyg/deploys)
+
 ## Build Setup
 
 ```bash
