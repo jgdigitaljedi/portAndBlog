@@ -57,8 +57,9 @@ export default {
   .markdown-content section {
     pre,
     code {
-      background-color: $white;
+      // background-color: $white;
       font-family: $code-font;
+      padding: 1em;
     }
     blockquote,
     h1,
@@ -75,15 +76,15 @@ export default {
     table {
       font-family: $primary-font !important;
     }
-    .hljs-built_in,
-    .hljs-string,
-    .hljs-section,
-    .hljs-selector-class,
-    .hljs-template-variable,
-    .hljs-deletion,
-    .hljs-function {
-      color: $warning;
-    }
+    // .hljs-built_in,
+    // .hljs-string,
+    // .hljs-section,
+    // .hljs-selector-class,
+    // .hljs-template-variable,
+    // .hljs-deletion,
+    // .hljs-function {
+    //   color: $warning;
+    // }
   }
 }
 </style>

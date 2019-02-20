@@ -74,7 +74,7 @@ module.exports = {
   },
 
   icon: {
-    iconSrc: 'static/favicons/ms-icon-310x310.png'
+    iconSrc: 'static/mario_block_full.png'
   },
 
   /*

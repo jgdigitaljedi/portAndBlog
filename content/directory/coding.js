@@ -1,28 +1,14 @@
 export default () => [
   {
     id: 1,
-    slug: 'test-coding-blog',
-    title: 'Coding Blog Test',
-    created_at: '02/18/2019',
-    intro: `This is a test of the whole glogging setup. We'll see if it works!`,
-    image: '/images/me_8bit_scanlines.jpg',
+    slug: 'the-start-of-building-this-site',
+    title: 'The Start of My Adventure Building This Site',
+    created_at: '02/20/2019',
+    intro: `A brief explanation and overview of my motivation and approach to building this portfolio and blog site while I am still very early in the process.`,
     meta: {
       id: 1,
-      keywords: 'coding, blog, test, developer, nuxt',
-      content: 'Coding Blog Test'
-    }
-  },
-  {
-    id: 2,
-    slug: 'hello-foo-bar',
-    title: 'Hello Foo Bar',
-    created_at: '02/19/2019',
-    intro: `Hello Moto! But not really. Testing things and such!`,
-    image: '/images/me_8bit_scanlines.jpg',
-    meta: {
-      id: 2,
-      keywords: 'foo, bar, test',
-      content: 'Hello Foo Bar'
+      keywords: 'Joey Gauthier, blog, portfolio, Nuxt, Netlify, Vue, markdown',
+      content: 'The Start of My Adventure Building This Site'
     }
   }
 ];
