@@ -39,27 +39,27 @@ export default {
     }
   },
   mounted() {
-    this.isMounted = true;
-    const sound = this.player;
-    sound.pause();
-    sound.currentTime = 0;
-    sound.volumne = 0.5;
-    // evidently CHrome won't let a sound play without a click so this won't work in Chrome unless the user clicks something first
-    this.timer = setTimeout(() => {
-      const audio = sound.cloneNode(true).play();
-      if (audio !== undefined) {
-        audio
-          .then(_ => {
-            console.log(`hope your audio wasn't up loud!`, _);
-          })
-          .catch(err => {
-            console.log('audio error but expected in CHrome if user has not clicked yet', err);
-          });
-      }
-    }, 4000);
+    // this.isMounted = true;
+    // const sound = this.player;
+    // sound.pause();
+    // sound.currentTime = 0;
+    // sound.volumne = 0.5;
+    // // evidently CHrome won't let a sound play without a click so this won't work in Chrome unless the user clicks something first
+    // this.timer = setTimeout(() => {
+    //   const audio = sound.cloneNode(true).play();
+    //   if (audio !== undefined) {
+    //     audio
+    //       .then(_ => {
+    //         console.log(`hope your audio wasn't up loud!`, _);
+    //       })
+    //       .catch(err => {
+    //         console.log('audio error but expected in CHrome if user has not clicked yet', err);
+    //       });
+    //   }
+    // }, 4000);
   },
   beforeDestroy() {
-    clearTimeout(this.timer);
+    // clearTimeout(this.timer);
   }
 };
 </script>
