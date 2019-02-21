@@ -18,7 +18,13 @@ export default {
   head() {
     return {
       title: `Joey Gauthier's Coding Blog`,
-      meta: [{ hid: 'home', name: 'meta name', content: 'meta content seo goodness' }]
+      meta: [
+        {
+          hid: 'home',
+          name: 'description',
+          content: "Joey Gauthier's blog about coding, mainly JavaScript."
+        }
+      ]
     };
   },
   fetch({ store }) {

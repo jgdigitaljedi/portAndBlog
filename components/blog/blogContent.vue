@@ -55,9 +55,21 @@ export default {
     align-items: center;
   }
   .markdown-content section {
+    a {
+      color: $light;
+      &:hover {
+        color: $warning;
+      }
+      &:active {
+        color: $danger;
+      }
+      &:visited {
+        color: $success;
+      }
+    }
     pre,
     code {
-      // background-color: $white;
+      background-color: #002e3a;
       font-family: $code-font;
       padding: 1em;
     }
@@ -76,15 +88,6 @@ export default {
     table {
       font-family: $primary-font !important;
     }
-    // .hljs-built_in,
-    // .hljs-string,
-    // .hljs-section,
-    // .hljs-selector-class,
-    // .hljs-template-variable,
-    // .hljs-deletion,
-    // .hljs-function {
-    //   color: $warning;
-    // }
   }
 }
 </style>
