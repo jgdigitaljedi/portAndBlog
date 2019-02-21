@@ -92,7 +92,8 @@ module.exports = {
   css: [
     '~/assets/style/app.styl',
     { src: '~/node_modules/nes.css/scss/nes', lang: 'sass' },
-    { src: '~/node_modules/highlight.js/styles/solarized-dark', lang: 'css' }
+    { src: '~/node_modules/highlight.js/styles/solarized-dark', lang: 'css' },
+    '~/assets/style/fonts.css'
   ],
 
   /*

@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'mario_font';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../../static/fonts/super_plumber_brothers-webfont.woff2') format('woff2'),
+       url('../../static/fonts/super_plumber_brothers-webfont.woff') format('woff');
+}
