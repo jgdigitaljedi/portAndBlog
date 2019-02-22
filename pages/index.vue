@@ -3,7 +3,11 @@
     <div id="stars"></div>
     <div id="stars2"></div>
     <div id="stars3"></div>
-    <div class="social-container" :class="{'mobile': isMounted && $vuetify.breakpoint.smAndDown}">
+    <div
+      class="social-container"
+      v-if="isMounted"
+      :class="{'mobile': isMounted && $vuetify.breakpoint.smAndDown}"
+    >
       <social></social>
     </div>
     <div class="home__image-title-container">
@@ -15,9 +19,6 @@
         <p>I'm a software engineer, retro game collector, guitarist, and all around geek. Welcome to my site!</p>
       </div>
     </div>
-    <audio ref="contra">
-      <source src="~/assets/sounds/contra_explode.mp3">
-    </audio>
   </section>
 </template>
 
@@ -33,33 +34,8 @@ export default {
       isMounted: false
     };
   },
-  computed: {
-    player() {
-      return this.$refs.contra;
-    }
-  },
   mounted() {
-    // this.isMounted = true;
-    // const sound = this.player;
-    // sound.pause();
-    // sound.currentTime = 0;
-    // sound.volumne = 0.5;
-    // // evidently CHrome won't let a sound play without a click so this won't work in Chrome unless the user clicks something first
-    // this.timer = setTimeout(() => {
-    //   const audio = sound.cloneNode(true).play();
-    //   if (audio !== undefined) {
-    //     audio
-    //       .then(_ => {
-    //         console.log(`hope your audio wasn't up loud!`, _);
-    //       })
-    //       .catch(err => {
-    //         console.log('audio error but expected in CHrome if user has not clicked yet', err);
-    //       });
-    //   }
-    // }, 4000);
-  },
-  beforeDestroy() {
-    // clearTimeout(this.timer);
+    this.isMounted = true;
   }
 };
 </script>

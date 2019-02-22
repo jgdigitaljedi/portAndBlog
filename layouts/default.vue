@@ -4,18 +4,24 @@
     <main id="main" role="main">
       <nuxt/>
     </main>
+    <audio ref="contra">
+      <source src="~/assets/sounds/contra_explode.mp3">
+    </audio>
     <!-- <bottom-footer/> -->
   </v-app>
 </template>
 
 <script>
-import TopHeader from '~/components/TopHeader.vue'
-// import BottomFooter from '~/components/BottomFooter.vue';
+import TopHeader from '~/components/TopHeader.vue';
 
 export default {
   components: {
     TopHeader
-    // BottomFooter
+  },
+  computed: {
+    player() {
+      return this.$refs.contra;
+    }
   },
   mounted() {
     const allowedKeys = {
@@ -25,51 +31,48 @@ export default {
       40: 'down',
       65: 'a',
       66: 'b'
-    }
-    const that = this
+    };
+    const that = this;
     // the 'official' Konami Code sequence
-    const konamiCode = [
-      'up',
-      'up',
-      'down',
-      'down',
-      'left',
-      'right',
-      'left',
-      'right',
-      'b',
-      'a'
-    ]
+    const konamiCode = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b', 'a'];
     // a variable to remember the 'position' the user has reached so far.
-    let konamiCodePosition = 0
+    let konamiCodePosition = 0;
     if (process.browser) {
       window.addEventListener('keydown', function(e) {
         // get the value of the key code from the key map
-        const key = allowedKeys[e.keyCode]
+        const key = allowedKeys[e.keyCode];
         // get the value of the required key from the konami code
-        const requiredKey = konamiCode[konamiCodePosition]
+        const requiredKey = konamiCode[konamiCodePosition];
         // compare the key with the required key
         if (key == requiredKey) {
           // move to the next key in the konami code sequence
-          konamiCodePosition++
+          konamiCodePosition++;
           // if the last key is reached, activate cheats
           if (konamiCodePosition == konamiCode.length) {
-            that.codeEntered()
-            konamiCodePosition = 0
+            that.codeEntered();
+            konamiCodePosition = 0;
           }
         } else {
-          konamiCodePosition = 0
+          konamiCodePosition = 0;
         }
-      })
+      });
     }
   },
   methods: {
     codeEntered() {
       // @TODO: write konami code easter egg
-      console.log('CODE ENTERED! Do something cool here')
+      console.log(
+        "KONAMI CODE ENTERED! Right now you just get a sound. Eventually it'll do something cooler!"
+      );
+      const sound = this.player;
+      sound.pause();
+      sound.currentTime = 0;
+      sound.volume = 0.5;
+      sound.cloneNode(true).play();
+      // sound.play();
     }
   }
-}
+};
 </script>
 
 <style lang="scss">

@@ -60,6 +60,21 @@
           </nuxt-link>
         </div>
       </div>
+      <img
+        src="~/assets/images/mario_hill.png"
+        class="mario__hill hidden-sm-and-down"
+        :class="{'medium': $vuetify.breakpoint.md}"
+      >
+      <img
+        src="~/assets/images/small-mario.gif"
+        class="mario__mario hidden-sm-and-down"
+        :class="{'medium': $vuetify.breakpoint.md}"
+      >
+      <img
+        src="~/assets/images/mario_bushes.png"
+        class="mario__bushes hidden-sm-and-down"
+        :class="{'medium': $vuetify.breakpoint.md}"
+      >
       <div class="mario__ground"></div>
     </div>
   </div>
@@ -71,7 +86,12 @@ export default {
     return {
       title: `Joey G | Blog`,
       meta: [
-        { hid: 'blog select', name: 'description', content: 'Joey Gauthier - blog select page' }
+        { hid: 'blog-desc', name: 'description', content: 'Joey Gauthier - blog select page' },
+        {
+          hid: 'blog-keywords',
+          name: 'keywords',
+          content: 'Joey Gauthier, Paul Gauthier, blog, coding, gaming'
+        }
       ]
     };
   },
@@ -111,6 +131,7 @@ $mario-bush-accent: #0c110c;
   background-color: $mario-sky;
   display: flex;
   justify-content: center;
+  overflow-x: hidden;
   .mario__wrapper {
     width: 100%;
     max-width: 1200px;
@@ -119,30 +140,60 @@ $mario-bush-accent: #0c110c;
     flex-direction: column;
     .mario__top-text {
       width: 100%;
-      padding: 0.5em;
+      padding: 0.5rem;
       display: flex;
       justify-content: space-around;
       .top-text-column {
         font-family: $game-font;
-        font-size: 1.2em;
+        font-size: 1.5rem;
         display: flex;
         flex-direction: column;
         .mario-coin {
-          height: 1.2em;
+          height: 1.5rem;
           width: auto;
-          margin: -8px 0.5em 0;
+          margin: -8px 0.5rem 0;
         }
+      }
+    }
+    .mario__hill {
+      width: 28rem;
+      height: 12rem;
+      position: absolute;
+      bottom: 5rem;
+      left: 4rem;
+      &.medium {
+        left: 2rem;
+      }
+    }
+    .mario__mario {
+      width: 4rem;
+      height: 4rem;
+      position: absolute;
+      bottom: 5rem;
+      left: 32rem;
+      &.medium {
+        left: 30rem;
+      }
+    }
+    .mario__bushes {
+      width: 25rem;
+      height: 7rem;
+      position: absolute;
+      bottom: 5rem;
+      right: 20rem;
+      &.medium {
+        right: 8rem;
       }
     }
     .mario__ground {
       position: absolute;
       bottom: 0;
       left: 0;
-      min-height: 5em;
+      min-height: 5rem;
       width: 100%;
       background-image: url('/images/mario_ground_block.png');
       background-repeat: repeat;
-      background-size: 5em 5em;
+      background-size: 5rem 5rem;
     }
     .mario__blog-select {
       width: 100%;
@@ -177,10 +228,10 @@ $mario-bush-accent: #0c110c;
     .mario__box-logo {
       width: 75%;
       background-color: $mario-ground;
-      border-top: 2px solid $mario-letters;
-      border-left: 2px solid $mario-letters;
-      border-right: 2px solid $mario-bush-accent;
-      border-bottom: 2px solid $mario-bush-accent;
+      border-top: 3px solid $mario-letters;
+      border-left: 3px solid $mario-letters;
+      border-right: 3px solid $mario-bush-accent;
+      border-bottom: 3px solid $mario-bush-accent;
       display: flex;
       align-items: center;
       flex-direction: column;
@@ -223,17 +274,19 @@ $mario-bush-accent: #0c110c;
         }
       }
       &.medium {
-        padding: 2rem;
+        padding: 1rem;
         .mario__box-logo--text-container .mario__box-logo--top-text {
-          font-size: 5rem;
+          font-size: 6rem;
           margin-bottom: -1rem;
         }
         .mario__box-logo--text-container .mario__box-logo--bottom-text {
-          font-size: 10rem;
+          font-size: 12rem;
         }
       }
       &.small {
         padding: 1rem;
+        margin-top: 8rem;
+        margin-bottom: 4rem;
         .mario__box-logo--text-container .mario__box-logo--top-text {
           font-size: 4rem;
           margin-bottom: -1rem;
@@ -244,6 +297,8 @@ $mario-bush-accent: #0c110c;
       }
       &.xsmall {
         padding: 0.5rem;
+        margin-top: 6rem;
+        margin-bottom: 6rem;
         .mario__box-logo--text-container .mario__box-logo--top-text {
           font-size: 2rem;
           margin-bottom: 0;
