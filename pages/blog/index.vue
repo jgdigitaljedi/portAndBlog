@@ -1,7 +1,7 @@
 <template>
   <div class="mario">
     <div class="mario__wrapper">
-      <div class="mario__top-text">
+      <div class="mario__top-text hidden-sm-and-down">
         <div class="mario__top-text--score top-text-column">
           <div class="top-text-column__row">MARIO</div>
           <div class="top-text-column__row">000000</div>
@@ -20,7 +20,10 @@
           <div class="top-text-column__row">TIME</div>
         </div>
       </div>
-      <div class="mario__box-logo">
+      <div
+        class="mario__box-logo"
+        :class="{'medium': $vuetify.breakpoint.md, 'small': $vuetify.breakpoint.sm, 'xsmall': $vuetify.breakpoint.xs}"
+      >
         <div class="mario__box-logo--rivets top">
           <div>.</div>
           <div>.</div>
@@ -34,13 +37,27 @@
           <div>.</div>
         </div>
       </div>
-      <div class="mario__copyright">@2019 Joey Gauthier</div>
+      <div class="mario__copyright hidden-sm-and-down">&copy; 2019 Joey Gauthier</div>
       <div class="mario__blog-select">
-        <div>
-          <nuxt-link to="/blog/gaming" class="mario__blog-select--link">1 GAMING BLOG</nuxt-link>
+        <div @mouseover="active = 'gaming'" class="mario__blog-select--wrapper">
+          <nuxt-link to="/blog/gaming" class="mario__blog-select--link">
+            <img
+              src="/images/mario_shroom.png"
+              class="mario__blog-select--active"
+              v-if="active === 'gaming'"
+            >
+            &nbsp; 1 GAMING BLOG
+          </nuxt-link>
         </div>
-        <div>
-          <nuxt-link to="/blog/coding" class="mario__blog-select--link">2 CODING BLOG</nuxt-link>
+        <div @mouseover="active = 'coding'" class="mario__blog-select--wrapper">
+          <nuxt-link to="/blog/coding" class="mario__blog-select--link">
+            <img
+              src="/images/mario_shroom.png"
+              class="mario__blog-select--active"
+              v-if="active === 'coding'"
+            >
+            &nbsp; 2 CODING BLOG
+          </nuxt-link>
         </div>
       </div>
       <div class="mario__ground"></div>
@@ -49,17 +66,43 @@
 </template>
 
 <script>
-export default {};
+export default {
+  head() {
+    return {
+      title: `Joey Gauthier | Blog`,
+      meta: [
+        { hid: 'blog select', name: 'description', content: 'Joey Gauthier - blog select page' }
+      ]
+    };
+  },
+  data() {
+    return {
+      active: 'gaming'
+    };
+  }
+};
 </script>
 
 <style lang="scss" scoped>
 @import '~/assets/style/theme.scss';
-$mario-sky: #6f7cf9;
-$mario-ground: #c23600;
-$mario-letters: #fcb2ab;
-$mario-hill: #00db00;
-$mario-bush: #4bff00;
+$mario-sky: #6185f8;
+$mario-ground: #b72504;
+$mario-letters: #eeaf36;
+$mario-hill: #138200;
+$mario-bush: #73f218;
 $mario-bush-accent: #0c110c;
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 .mario {
   height: 100%;
@@ -105,10 +148,23 @@ $mario-bush-accent: #0c110c;
       width: 100%;
       text-align: center;
       margin-top: 3rem;
-      .mario__blog-select--link {
-        color: $white;
-        font-family: $game-font;
-        font-size: 1.5rem;
+      .mario__blog-select--wrapper {
+        &:hover {
+          .mario__blog-select--active {
+            animation: blink normal 1s infinite;
+          }
+        }
+        .mario__blog-select--link {
+          color: $white;
+          font-family: $game-font;
+          font-size: 1.5rem;
+          text-decoration: none;
+          .mario__blog-select--active {
+            width: 2rem;
+            height: 2rem;
+            position: absolute;
+          }
+        }
       }
     }
     .mario__copyright {
@@ -138,14 +194,10 @@ $mario-bush-accent: #0c110c;
         &.top {
           margin-top: -1.75rem;
           margin-bottom: -1rem;
-          // margin-top: -4rem;
-          // margin-bottom: -4rem;
         }
         &.bottom {
           margin-bottom: 1rem;
           margin-top: -5rem;
-          // margin-bottom: -2rem;
-          // margin-top: -7rem;
         }
         div {
           font-size: 5rem;
@@ -168,6 +220,36 @@ $mario-bush-accent: #0c110c;
             font-size: 14rem;
             text-shadow: 10px 10px $mario-bush-accent;
           }
+        }
+      }
+      &.medium {
+        padding: 2rem;
+        .mario__box-logo--text-container .mario__box-logo--top-text {
+          font-size: 5rem;
+          margin-bottom: -1rem;
+        }
+        .mario__box-logo--text-container .mario__box-logo--bottom-text {
+          font-size: 10rem;
+        }
+      }
+      &.small {
+        padding: 1rem;
+        .mario__box-logo--text-container .mario__box-logo--top-text {
+          font-size: 4rem;
+          margin-bottom: -1rem;
+        }
+        .mario__box-logo--text-container .mario__box-logo--bottom-text {
+          font-size: 8rem;
+        }
+      }
+      &.xsmall {
+        padding: 0.5rem;
+        .mario__box-logo--text-container .mario__box-logo--top-text {
+          font-size: 2rem;
+          margin-bottom: 0;
+        }
+        .mario__box-logo--text-container .mario__box-logo--bottom-text {
+          font-size: 4rem;
         }
       }
     }
