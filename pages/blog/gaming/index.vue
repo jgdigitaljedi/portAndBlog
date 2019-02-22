@@ -17,8 +17,8 @@
 export default {
   head() {
     return {
-      title: `Joey Gauthier's Gaming Blog`,
-      meta: [{ hid: 'home', name: 'meta name', content: 'meta content seo goodness' }]
+      title: `Joey G | Gaming Blog`,
+      meta: [{ hid: 'gaming blog', name: 'description', content: "Joey Gauthier's gaming blog" }]
     };
   },
   fetch({ store }) {

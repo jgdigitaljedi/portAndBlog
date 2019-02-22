@@ -69,7 +69,7 @@
 export default {
   head() {
     return {
-      title: `Joey Gauthier | Blog`,
+      title: `Joey G | Blog`,
       meta: [
         { hid: 'blog select', name: 'description', content: 'Joey Gauthier - blog select page' }
       ]

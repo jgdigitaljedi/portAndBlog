@@ -17,10 +17,10 @@
 export default {
   head() {
     return {
-      title: `Joey Gauthier's Coding Blog`,
+      title: `Joey G | Coding Blog`,
       meta: [
         {
-          hid: 'home',
+          hid: 'coding blog',
           name: 'description',
           content: "Joey Gauthier's blog about coding, mainly JavaScript."
         }
