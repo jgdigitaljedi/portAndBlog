@@ -1,7 +1,7 @@
 <template>
   <div class="mario">
     <div class="mario__wrapper">
-      <div class="mario__top-text hidden-sm-and-down">
+      <div class="mario__top-text hidden-sm-and-down" v-if="isMounted">
         <div class="mario__top-text--score top-text-column">
           <div class="top-text-column__row">MARIO</div>
           <div class="top-text-column__row">000000</div>
@@ -22,7 +22,8 @@
       </div>
       <div
         class="mario__box-logo"
-        :class="{'medium': $vuetify.breakpoint.md, 'small': $vuetify.breakpoint.sm, 'xsmall': $vuetify.breakpoint.xs}"
+        :class="{'medium': (isMounted && $vuetify.breakpoint.md), 'small': (isMounted && $vuetify.breakpoint.sm), 'xsmall': (isMounted && $vuetify.breakpoint.xs)}"
+        v-if="isMounted"
       >
         <div class="mario__box-logo--rivets top">
           <div>.</div>
@@ -37,8 +38,8 @@
           <div>.</div>
         </div>
       </div>
-      <div class="mario__copyright hidden-sm-and-down">&copy; 2019 Joey Gauthier</div>
-      <div class="mario__blog-select">
+      <div class="mario__copyright hidden-sm-and-down" v-if="isMounted">&copy; 2019 Joey Gauthier</div>
+      <div class="mario__blog-select" v-if="isMounted">
         <div @mouseover="active = 'gaming'" class="mario__blog-select--wrapper">
           <nuxt-link to="/blog/gaming" class="mario__blog-select--link">
             <img
@@ -63,17 +64,20 @@
       <img
         src="~/assets/images/mario_hill.png"
         class="mario__hill hidden-sm-and-down"
-        :class="{'medium': $vuetify.breakpoint.md}"
+        :class="{'medium': (isMounted && $vuetify.breakpoint.md)}"
+        v-if="isMounted"
       >
       <img
         src="~/assets/images/small-mario.gif"
         class="mario__mario hidden-sm-and-down"
-        :class="{'medium': $vuetify.breakpoint.md}"
+        :class="{'medium': (isMounted && $vuetify.breakpoint.md)}"
+        v-if="isMounted"
       >
       <img
         src="~/assets/images/mario_bushes.png"
         class="mario__bushes hidden-sm-and-down"
-        :class="{'medium': $vuetify.breakpoint.md}"
+        :class="{'medium': (isMounted && $vuetify.breakpoint.md)}"
+        v-if="isMounted"
       >
       <div class="mario__ground"></div>
     </div>
@@ -97,8 +101,12 @@ export default {
   },
   data() {
     return {
-      active: 'gaming'
+      active: 'gaming',
+      isMounted: false
     };
+  },
+  mounted() {
+    this.isMounted = true;
   }
 };
 </script>
