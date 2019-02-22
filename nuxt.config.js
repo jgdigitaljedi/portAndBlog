@@ -1,5 +1,6 @@
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin');
 const pkg = require('./package');
+const imageminWebp = require('imagemin-webp');
 
 module.exports = {
   mode: 'universal',
@@ -67,24 +68,26 @@ module.exports = {
     ]
   },
 
+  /** PWA manifest */
   manifest: {
     name: `Joey Gauthier's Portfolio & Blog`,
     short_name: `Joey G P&B`,
     background_color: '#1f5673'
   },
 
+  /** Icon path for multiple icon generation */
   icon: {
     iconSrc: 'static/mario_block_full.png'
   },
 
+  /** Generate routes for blog posts so they load on refresh and have direct routes */
+  generate: {
+    routes: ['/blog/coding/the-start-of-building-this-site', '/blog/gaming/test-gaming-blog']
+  },
   /*
   ** Customize the progress-bar color
   */
   loading: { color: '#f0a202' },
-
-  // generate: {
-  //   routes: ['/blog/coding/test-coding-blog', '/blog/gaming/test-gaming-blog']
-  // },
 
   /*
   ** Global CSS
@@ -109,14 +112,19 @@ module.exports = {
     '@nuxtjs/markdownit',
     'nuxt-webfontloader',
     '@nuxtjs/dotenv',
-    '@nuxtjs/sitemap'
-    // 'nuxt-imagemin'
-    // [ // setup GA online and put ID here when done; not worried about it ATM
-    //   '@nuxtjs/google-analytics',
-    //   {
-    //     id: 'UA-12301-2'
-    //   }
-    // ]
+    '@nuxtjs/sitemap',
+    [
+      'nuxt-imagemin',
+      {
+        plugins: [imageminWebp({ quality: 50 })]
+      }
+    ],
+    [
+      '@nuxtjs/google-analytics',
+      {
+        id: process.env.PORT_GA_KEY
+      }
+    ]
   ],
   markdownit: {
     injected: true,

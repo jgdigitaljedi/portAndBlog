@@ -20,6 +20,7 @@
     "@nuxtjs/pwa": "^2.6.0",
     "cross-env": "^5.2.0",
     "highlight.js": "^9.14.2",
+    "imagemin-webp": "^5.0.0",
     "markdown-it-highlightjs": "^3.0.0",
     "marked": "^0.6.0",
     "nes.css": "^2.0.0",

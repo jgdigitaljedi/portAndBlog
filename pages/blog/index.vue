@@ -68,7 +68,7 @@
         v-if="isMounted"
       >
       <img
-        src="~/assets/images/small-mario.gif"
+        src="~/assets/images/small-mario.png"
         class="mario__mario hidden-sm-and-down"
         :class="{'medium': (isMounted && $vuetify.breakpoint.md)}"
         v-if="isMounted"
@@ -207,6 +207,7 @@ $mario-bush-accent: #0c110c;
       width: 100%;
       text-align: center;
       margin-top: 3rem;
+      z-index: 4;
       .mario__blog-select--wrapper {
         &:hover {
           .mario__blog-select--active {
@@ -232,6 +233,7 @@ $mario-bush-accent: #0c110c;
       font-family: $game-font;
       font-size: 1.5rem;
       color: $mario-letters;
+      z-index: 3;
     }
     .mario__box-logo {
       width: 75%;
@@ -244,6 +246,7 @@ $mario-bush-accent: #0c110c;
       align-items: center;
       flex-direction: column;
       justify-content: flex-start;
+      z-index: 3;
       .mario__box-logo--rivets {
         display: flex;
         justify-content: space-between;

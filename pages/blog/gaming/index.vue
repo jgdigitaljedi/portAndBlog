@@ -1,6 +1,10 @@
 <template>
   <section class="util__container blog-list">
     <div class="posts-container">
+      <div class="under-construction">
+        Bear with me; this site is currently being rebuilt and I am currently looking for design inspiration for this page!
+        The final design will likely be much different. This is currently just in a 'functional' state.
+      </div>
       <div
         class="bubble-wrapper"
         :key="post.id"
@@ -39,6 +43,15 @@ export default {
   flex-direction: column;
   align-items: center;
   margin-top: 2em;
+  .under-construction {
+    font-family: $primary-font;
+    font-size: 1.5em;
+    color: $light;
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
   .bubble-wrapper {
     display: flex;
     width: 80%;

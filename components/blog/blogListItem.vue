@@ -29,7 +29,7 @@ export default {
       color: $danger;
     }
     &:visited {
-      color: $light;
+      color: $success;
       text-decoration: none;
     }
   }

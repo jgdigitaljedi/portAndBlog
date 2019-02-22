@@ -54,10 +54,10 @@ export default {
       drawer: false,
       links: [
         { title: 'Home', to: '/' },
-        { title: 'Blog', to: '/blog' },
-        { title: 'About', to: '/about' },
-        { title: 'Work', to: '/work' },
-        { title: 'VG', to: '/videogames' }
+        { title: 'Blog', to: '/blog' }
+        // { title: 'About', to: '/about' },
+        // { title: 'Work', to: '/work' },
+        // { title: 'VG', to: '/videogames' }
       ]
     };
   },
