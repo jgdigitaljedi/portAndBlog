@@ -110,6 +110,7 @@ module.exports = {
     'nuxt-webfontloader',
     '@nuxtjs/dotenv',
     '@nuxtjs/sitemap'
+    // 'nuxt-imagemin'
     // [ // setup GA online and put ID here when done; not worried about it ATM
     //   '@nuxtjs/google-analytics',
     //   {
