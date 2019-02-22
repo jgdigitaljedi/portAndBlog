@@ -1,8 +1,9 @@
-# portfolio-and-blog
+[![Netlify Status](https://api.netlify.com/api/v1/badges/cfe5692f-e688-4f3e-a96d-9ea631808fe9/deploy-status)](https://app.netlify.com/sites/joeyg/deploys)
+
+
+# My Portfolio & Blog
 
 > Joey Gauthier&#39;s Portfolio
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/cfe5692f-e688-4f3e-a96d-9ea631808fe9/deploy-status)](https://app.netlify.com/sites/joeyg/deploys)
 
 ## Build Setup
 
@@ -31,8 +32,6 @@ Right now a lot of this is garbage code because there is some trial and error ha
 
 ## TODO
 - make it look nicer
-- iron out architectural issues
-- test build with 'npm run generate'
-- get up on netlify with webhooks
-- see about working in a way to add images to the blog (maybe use a template)
 - konami code easter egg trigger works, now think of something fun for it to do
+- style blogs (they are SUPER basic ATM)
+- make remaining views
