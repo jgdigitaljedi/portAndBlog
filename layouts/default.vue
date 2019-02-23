@@ -1,22 +1,24 @@
 <template>
   <v-app dark class="app-wrapper">
-    <top-header/>
+    <!-- <top-header/> -->
+    <NavBar></NavBar>
     <main id="main" role="main">
       <nuxt/>
     </main>
     <audio ref="contra">
       <source src="~/assets/sounds/contra_explode.mp3">
     </audio>
-    <!-- <bottom-footer/> -->
   </v-app>
 </template>
 
 <script>
-import TopHeader from '~/components/TopHeader.vue';
+// import TopHeader from '~/components/TopHeader.vue';
+import NavBar from '~/components/NavBar.vue';
 
 export default {
   components: {
-    TopHeader
+    // TopHeader,
+    NavBar
   },
   computed: {
     player() {
@@ -79,6 +81,6 @@ export default {
 @import '~/assets/style/global.scss';
 @import '~/assets/style/theme.scss';
 .app-wrapper {
-  background-color: $primary !important;
+  // background-color: $primary !important;
 }
 </style>

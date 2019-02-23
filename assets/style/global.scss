@@ -69,3 +69,11 @@ body {
 .util__flex-eq {
   flex: 1;
 }
+
+.theme--dark.v-toolbar {
+  background-color: #000;
+}
+
+.mobile-nav.v-navigation-drawer.theme--dark {
+  background-color: rgba(0, 0, 0, 0.8);
+}

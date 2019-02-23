@@ -85,7 +85,7 @@ $shadows-big: multiple-box-shadow(100);
 
 .home {
   background-color: $black;
-  min-height: calc(100vh - 6rem - 8px);
+  min-height: calc(100vh - 6rem);
   // height: calc(100vh - 5em);
   height: 100%;
   padding: 3em 2em;

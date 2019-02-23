@@ -1,6 +1,10 @@
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin');
 const pkg = require('./package');
-const imageminWebp = require('imagemin-webp');
+import Coding from './content/directory/coding';
+import Gaming from './content/directory/gaming';
+
+const codingArr = Coding().map(item => `/blog/coding/${item.slug}`);
+const gamingArr = Gaming().map(item => `/blog/gaming/${item.slug}`);
 
 module.exports = {
   mode: 'universal',
@@ -54,18 +58,7 @@ module.exports = {
       { hid: 'og:site_name', name: 'og:site_name', content: 'JoeyG.me' },
       { hid: 'og:type', name: 'og:type', content: 'website' }
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicons/favicon.ico' }
-      // {
-      //   rel: 'stylesheet',
-      //   href:
-      //     'https://fonts.googleapis.com/css?family=Lato:400,900|Raleway:400,800|family=Press+Start+2P'
-      // },
-      // {
-      //   rel: 'stylesheet',
-      //   href: 'https://unpkg.com/nes.css@1.0.0/css/nes.min.css'
-      // }
-    ]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicons/favicon.ico' }]
   },
 
   /** PWA manifest */
@@ -82,8 +75,9 @@ module.exports = {
 
   /** Generate routes for blog posts so they load on refresh and have direct routes */
   generate: {
-    routes: ['/blog/coding/the-start-of-building-this-site', '/blog/gaming/test-gaming-blog']
+    routes: [...codingArr, ...gamingArr]
   },
+
   /*
   ** Customize the progress-bar color
   */
@@ -112,11 +106,13 @@ module.exports = {
     '@nuxtjs/markdownit',
     'nuxt-webfontloader',
     '@nuxtjs/dotenv',
-    '@nuxtjs/sitemap',
     [
       'nuxt-imagemin',
       {
-        plugins: [imageminWebp({ quality: 50 })]
+        optipng: { optimizationLevel: 3 },
+        gifsicle: { optimizationLevel: 2 },
+        jpegtran: { progressive: false },
+        svgo: {}
       }
     ],
     [
@@ -124,17 +120,44 @@ module.exports = {
       {
         id: process.env.PORT_GA_KEY
       }
-    ]
+    ],
+    [
+      'nuxt-netlify-http2-server-push',
+      {
+        // Specify relative path to the dist directory and its content type
+        resources: [
+          { path: '**/*.js', as: 'script' },
+          { path: 'images/**.jpg', as: 'image' },
+          { path: 'images/**.png', as: 'image' },
+          { path: 'images/**.svg', as: 'image' },
+          { path: 'images/**.gif', as: 'image' },
+          { path: '**.png', as: 'image' },
+          { path: '**.jpg', as: 'image' },
+          { path: '**.svg', as: 'image' },
+          { path: '**.gif', as: 'image' },
+          { path: 'fonts/*.woff2', as: 'font', type: 'font/woff2', crossorigin: 'anonymous' }
+        ]
+      }
+    ],
+    '@nuxtjs/sitemap'
   ],
+
+  /** Markdownit config for processing blogs */
   markdownit: {
     injected: true,
     use: ['markdown-it-highlightjs']
   },
+
+  /** Web font loader to asynchronously load web fonts */
   webfontloader: {
     google: {
       families: ['Lato:400,900', 'Raleway:400,800', 'Press+Start+2P']
     }
   },
+
+  // sitemap: {
+
+  // },
 
   /*
   ** Build configuration
