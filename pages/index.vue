@@ -132,10 +132,12 @@ $shadows-big: multiple-box-shadow(100);
     display: flex;
     justify-content: center;
     .home__about.nes-container.is-dark.is-centered {
-      font-family: $game-font;
       max-width: 400px;
       opacity: 0;
       animation: hideShow 0.1s linear 4s forwards;
+      p {
+        font-family: $game-font;
+      }
       &:before {
         background-color: $black;
       }

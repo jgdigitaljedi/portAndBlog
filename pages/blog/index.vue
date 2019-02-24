@@ -152,10 +152,12 @@ $mario-bush-accent: #0c110c;
       display: flex;
       justify-content: space-around;
       .top-text-column {
-        font-family: $game-font;
         font-size: 1.5rem;
         display: flex;
         flex-direction: column;
+        div {
+          font-family: $game-font;
+        }
         .mario-coin {
           height: 1.5rem;
           width: auto;

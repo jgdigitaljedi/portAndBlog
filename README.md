@@ -1,6 +1,5 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/cfe5692f-e688-4f3e-a96d-9ea631808fe9/deploy-status)](https://app.netlify.com/sites/joeyg/deploys)
 
-
 # My Portfolio & Blog
 
 > Joey Gauthier&#39;s Portfolio
@@ -30,8 +29,19 @@ I'm in experimental territory, at least for my experience. I've never used Nuxt 
 
 Right now a lot of this is garbage code because there is some trial and error happening. I'm just playing around until I iron out some things.
 
-## TODO
+## CURRENT FOCUS TODO
+
+- style up blog sections
+- add search to blog sections
+- get pinned functionality in blog sections
+- style blog posts
+- get sitemap generation to behave as expected
+- add breadcrumbs to blog sections
+
+## OVERALL TODO
+
 - make it look nicer
 - konami code easter egg trigger works, now think of something fun for it to do
-- style blogs (they are SUPER basic ATM)
 - make remaining views
+- add more Google Analytics functionality
+- add accessibility

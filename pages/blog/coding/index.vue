@@ -1,23 +1,25 @@
 <template>
-  <section class="util__container blog-list">
-    <div class="posts-container">
-      <div class="under-construction">
-        Bear with me; this site is currently being rebuilt and I am currently looking for design inspiration for this page!
-        The final design will likely be much different. This is currently just in a 'functional' state.
-      </div>
-      <div
-        class="bubble-wrapper"
-        :key="post.id"
-        v-for="(post, index) in posts"
-        :class="index % 2 === 0 ? 'right' : 'left'"
-      >
-        <blogListItem :post="post" :index="index" which="coding"></blogListItem>
-      </div>
-    </div>
+  <section class="blog-list">
+    <v-tabs dark v-model="activeTab" color="secondary" slider-color="accent" :fixed-tabs="true">
+      <v-tab key="all" ripple class="blog-list__tab">ALL</v-tab>
+      <v-tab key="pinned" ripple class="blog-list__tab">Pinned</v-tab>
+      <v-tab-item key="allItem">
+        <v-container fluid grid-list v-if="activeTab === 0 && isMounted">
+          <BlogListContainer :posts="posts"></BlogListContainer>
+        </v-container>
+      </v-tab-item>
+      <v-tab-item key="pinnedItem">
+        <v-container fluid grid-list v-if="activeTab === 1 && isMounted">
+          <BlogListContainer :posts="pinnedPosts"></BlogListContainer>
+        </v-container>
+      </v-tab-item>
+    </v-tabs>
   </section>
 </template>
 
 <script>
+import BlogListContainer from '~/components/blog/blogListContainer';
+
 export default {
   head() {
     return {
@@ -40,39 +42,35 @@ export default {
   fetch({ store }) {
     store.dispatch('getPosts');
   },
+  components: {
+    BlogListContainer
+  },
+  data() {
+    return {
+      activeTab: 0,
+      isMounted: false,
+      pinnedPosts: []
+    };
+  },
   computed: {
     posts() {
       return this.$store.state.posts.coding;
     }
+  },
+  created() {
+    this.pinnedPosts = this.posts.filter(post => post.pinned);
+  },
+  mounted() {
+    this.isMounted = true;
   }
 };
 </script>
 
 <style lang="scss" scoped>
 @import '~/assets/style/theme.scss';
-.posts-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 2em;
-  .under-construction {
-    font-family: $primary-font;
-    font-size: 1.5em;
-    color: $light;
-    text-align: center;
-    font-style: italic;
-    font-weight: bold;
-    margin-bottom: 2rem;
-  }
-  .bubble-wrapper {
-    display: flex;
-    width: 80%;
-    &.right {
-      justify-content: flex-end;
-    }
-    &.left {
-      justify-content: flex-start;
-    }
+.blog-list {
+  .blog-list__tab {
+    font-family: $game-font;
   }
 }
 </style>

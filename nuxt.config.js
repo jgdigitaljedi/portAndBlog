@@ -22,9 +22,9 @@ module.exports = {
         hid: 'keywords',
         name: 'keywords',
         content:
-          'Joey Gauthier, Paul Gauthier, JGDigitalJedi, front end portfolio, Austin developers'
+          'Joey Gauthier, Paul Gauthier, JGDigitalJedi, front end portfolio, Austin developers, JavaScript, Vue, Angular, Nintendo, Sega, Playstation, Xbox'
       },
-      { hid: 'image', name: 'image', content: '' },
+      { hid: 'image', name: 'image', content: '/images/me_8bit_scanlines.jpg' },
       { hid: 'twitter:card', name: 'twitter:card', content: 'summary' },
       {
         hid: 'twitter:title',
@@ -42,7 +42,7 @@ module.exports = {
         name: 'twitter:creator',
         content: '@JGDigitalJedi'
       },
-      { hid: 'twitter:image', name: 'twitter:image', content: '' },
+      { hid: 'twitter:image', name: 'twitter:image', content: '/images/me_8bit_scanlines.jpg' },
       {
         hid: 'og:title',
         name: 'og:title',
@@ -53,7 +53,7 @@ module.exports = {
         name: 'og:description',
         content: pkg.description
       },
-      { hid: 'og:image', name: 'og:image', content: '' },
+      { hid: 'og:image', name: 'og:image', content: '/images/me_8bit_scanlines.jpg' },
       { hid: 'og:url', name: 'og:url', content: 'https://joeyg.me' },
       { hid: 'og:site_name', name: 'og:site_name', content: 'JoeyG.me' },
       { hid: 'og:type', name: 'og:type', content: 'website' }
@@ -106,6 +106,7 @@ module.exports = {
     '@nuxtjs/markdownit',
     'nuxt-webfontloader',
     '@nuxtjs/dotenv',
+    'nuxt-purgecss',
     [
       'nuxt-imagemin',
       {
@@ -142,6 +143,14 @@ module.exports = {
     '@nuxtjs/sitemap'
   ],
 
+  /** Sitemap generation */
+  sitemap: {
+    path: '/sitemap.xml',
+    generate: true,
+    hostname: 'https://joeyg.me',
+    routes: [...codingArr, ...gamingArr]
+  },
+
   /** Markdownit config for processing blogs */
   markdownit: {
     injected: true,
@@ -154,10 +163,6 @@ module.exports = {
       families: ['Lato:400,900', 'Raleway:400,800', 'Press+Start+2P']
     }
   },
-
-  // sitemap: {
-
-  // },
 
   /*
   ** Build configuration

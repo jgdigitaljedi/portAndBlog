@@ -4,6 +4,7 @@ export default () => [
     slug: 'the-start-of-building-this-site',
     title: 'The Start of My Adventure Building This Site',
     created_at: '02/20/2019',
+    pinned: false,
     intro: `A brief explanation and overview of my motivation and approach to building this portfolio and blog site while I am still very early in the process.`,
     meta: {
       id: 1,
@@ -17,6 +18,7 @@ export default () => [
     title: 'Design Inspiration for This Site',
     created_at: '02/23/2019',
     image: '/images/game_collection.jpg',
+    pinned: true,
     intro:
       'My thought process behind designing this seemingly random site that would make a designer cringe.',
     meta: {

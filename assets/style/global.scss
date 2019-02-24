@@ -38,6 +38,12 @@ body {
     font-family: $game-font;
   }
 }
+p,
+span,
+div,
+small {
+  font-family: $primary-font;
+}
 
 .nes-container {
   &::after {
