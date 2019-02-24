@@ -1,24 +1,11 @@
 <template>
   <section class="blog-list">
-    <v-tabs dark v-model="activeTab" color="secondary" slider-color="accent" :fixed-tabs="true">
-      <v-tab key="all" ripple class="blog-list__tab">ALL</v-tab>
-      <v-tab key="pinned" ripple class="blog-list__tab">Pinned</v-tab>
-      <v-tab-item key="allItem">
-        <v-container fluid grid-list v-if="activeTab === 0 && isMounted">
-          <BlogListContainer :posts="posts"></BlogListContainer>
-        </v-container>
-      </v-tab-item>
-      <v-tab-item key="pinnedItem">
-        <v-container fluid grid-list v-if="activeTab === 1 && isMounted">
-          <BlogListContainer :posts="pinnedPosts"></BlogListContainer>
-        </v-container>
-      </v-tab-item>
-    </v-tabs>
+    <BlogListTabs :posts="posts" which="coding"></BlogListTabs>
   </section>
 </template>
 
 <script>
-import BlogListContainer from '~/components/blog/blogListContainer';
+import BlogListTabs from '~/components/blog/blogListTabs';
 
 export default {
   head() {
@@ -43,25 +30,12 @@ export default {
     store.dispatch('getPosts');
   },
   components: {
-    BlogListContainer
-  },
-  data() {
-    return {
-      activeTab: 0,
-      isMounted: false,
-      pinnedPosts: []
-    };
+    BlogListTabs
   },
   computed: {
     posts() {
       return this.$store.state.posts.coding;
     }
-  },
-  created() {
-    this.pinnedPosts = this.posts.filter(post => post.pinned);
-  },
-  mounted() {
-    this.isMounted = true;
   }
 };
 </script>

@@ -4,7 +4,7 @@
       ref="disqus"
       :shortname="disqusShortname"
       :identifier="disqusId"
-      :url="'https://joeyg.netlify.com' + $route.fullPath"
+      :url="`https://joeyg.me/blog/${which}/${post.slug}`"
     ></vue-disqus>
   </section>
 </template>
@@ -23,7 +23,7 @@ export default {
     }
   },
   mounted() {
-    this.$refs.disqus.init();
+    // this.$refs.disqus.init();
   },
   watch: {
     '$route.params.slug'(curr, old) {

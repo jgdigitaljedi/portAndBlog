@@ -20,7 +20,7 @@
         v-for="post in filteredPosts"
         :class="{'med': $vuetify.breakpoint.md, 'sml': $vuetify.breakpoint.sm, 'larg': $vuetify.breakpoint.lgAndUp, 'xsm': $vuetify.breakpoint.xs}"
       >
-        <blogListItem :post="post" which="coding"></blogListItem>
+        <blogListItem :post="post" :which="which"></blogListItem>
       </v-flex>
     </v-layout>
   </section>
@@ -32,7 +32,7 @@ import * as _uniq from 'lodash/uniq';
 
 export default {
   name: 'blogListContainer',
-  props: ['posts'],
+  props: ['posts', 'which'],
   data() {
     return {
       postTerms: null,
@@ -41,6 +41,7 @@ export default {
     };
   },
   created() {
+    console.log('container', this.which);
     this.filteredPosts = this.posts;
     this.postTerms = _uniq(
       _flattenDeep(

@@ -1,32 +1,32 @@
 <template>
-  <section class="util__container blog-list">
-    <div class="posts-container">
-      <div class="under-construction">
-        Bear with me; this site is currently being rebuilt and I am currently looking for design inspiration for this page!
-        The final design will likely be much different. This is currently just in a 'functional' state.
-      </div>
-      <div
-        class="bubble-wrapper"
-        :key="post.id"
-        v-for="(post, index) in posts"
-        :class="index % 2 === 0 ? 'right' : 'left'"
-      >
-        <blogListItem :post="post" :index="index" which="gaming"></blogListItem>
-      </div>
-    </div>
+  <section class="blog-list">
+    <BlogListTabs :posts="posts" which="gaming"></BlogListTabs>
   </section>
 </template>
 
 <script>
+import BlogListTabs from '~/components/blog/blogListTabs';
+
 export default {
   head() {
     return {
       title: `Joey G | Gaming Blog`,
-      meta: [{ hid: 'gaming blog', name: 'description', content: "Joey Gauthier's gaming blog" }]
+      meta: [
+        { hid: 'gaming-blog-desc', name: 'description', content: "Joey Gauthier's gaming blog" },
+        {
+          hid: 'gaming-blog-key',
+          name: 'keywords',
+          content:
+            'Joey Gauthier, Paul Gauthier, nintendo, gaming, retro games, game collecting, sega, playstation, xbox, mario'
+        }
+      ]
     };
   },
   fetch({ store }) {
     store.dispatch('getPosts');
+  },
+  components: {
+    BlogListTabs
   },
   computed: {
     posts() {
@@ -35,32 +35,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss" scoped>
-@import '~/assets/style/theme.scss';
-.posts-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 2em;
-  .under-construction {
-    font-family: $primary-font;
-    font-size: 1.5em;
-    color: $light;
-    text-align: center;
-    font-style: italic;
-    font-weight: bold;
-    margin-bottom: 2rem;
-  }
-  .bubble-wrapper {
-    display: flex;
-    width: 80%;
-    &.right {
-      justify-content: flex-end;
-    }
-    &.left {
-      justify-content: flex-start;
-    }
-  }
-}
-</style>

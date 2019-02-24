@@ -1,9 +1,5 @@
 <template>
-  <v-card
-    dark
-    class="item-container nes-container is-dark"
-    :class="index % 2 === 0 ? 'from-right' : 'from-left'"
-  >
+  <v-card dark class="item-container nes-container is-dark">
     <nuxt-link :to="`/blog/${which}/${post.slug}`" class="outer-link">
       <v-card-title>
         <div :to="`/blog/${which}/${post.slug}`" class="link-content">
@@ -25,7 +21,7 @@
 
 <script>
 export default {
-  props: ['post', 'index', 'which']
+  props: ['post', 'which']
 };
 </script>
 

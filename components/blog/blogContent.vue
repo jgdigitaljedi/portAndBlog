@@ -1,6 +1,6 @@
 <template>
   <div class="blog-slug">
-    <div class="blog-title__container">
+    <div class="blog-title__container nes-container is-dark">
       <h2>{{post.title}}</h2>
       <small>posted {{post.created_at}}</small>
     </div>
@@ -12,7 +12,7 @@
         :class="{'mobile': $vuetify.breakpoint.smAndDown}"
       >
     </div>
-    <div class="markdown-content" v-html="postContent"></div>
+    <v-card class="markdown-content" v-html="postContent"></v-card>
   </div>
 </template>
 
@@ -28,6 +28,7 @@ export default {
 
 <style lang="scss">
 @import '~/assets/style/theme.scss';
+@import '~/assets/style/shadows.scss';
 .blog-slug {
   max-width: 1400px;
   .blog-image__container,
@@ -38,13 +39,11 @@ export default {
     margin-bottom: 2em;
     .blog-image {
       display: block;
-      // max-height: 400px;
-      // max-width: 600px;
-      // max-width: 100%;
       width: 100%;
       height: auto;
       max-height: 500px;
       object-fit: scale-down;
+      @include drop_shadow(2);
       &.mobile {
         max-height: 380px;
       }
@@ -53,8 +52,15 @@ export default {
   .blog-title__container {
     flex-direction: column;
     align-items: center;
+    small {
+      font-style: italic;
+      color: $light;
+    }
   }
-  .markdown-content section {
+  .markdown-content {
+    padding: 1rem;
+  }
+  section {
     a {
       color: $light;
       &:hover {

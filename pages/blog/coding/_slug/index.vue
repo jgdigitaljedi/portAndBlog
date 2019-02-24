@@ -52,6 +52,8 @@ export default {
   align-items: center;
   width: 100%;
   flex-direction: column;
+  background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(31, 86, 115, 0.7)),
+    url('/images/cubes_lines2.png') repeat;
   .comments {
     width: 100%;
   }
