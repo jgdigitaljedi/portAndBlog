@@ -12,6 +12,17 @@
         prepend-icon="icon-search"
         class="blog-list__search--input"
       ></v-autocomplete>
+      <v-select
+        label="Sort By"
+        outline
+        solo
+        :items="sortItems"
+        item-text="label"
+        return-object
+        class="blog-list__search--sort"
+        v-model="sortSelected"
+        @change="sortPosts"
+      ></v-select>
     </div>
     <v-layout row wrap class="layout-wrapper">
       <v-flex
@@ -29,6 +40,8 @@
 <script>
 import * as _flattenDeep from 'lodash/flattenDeep';
 import * as _uniq from 'lodash/uniq';
+import * as _cloneDeep from 'lodash/cloneDeep';
+import SortsService from '~/services/sorts';
 
 export default {
   name: 'blogListContainer',
@@ -36,16 +49,25 @@ export default {
   data() {
     return {
       postTerms: null,
+      sortSelected: null,
       searchTerm: '',
-      filteredPosts: []
+      filteredPosts: [],
+      cPosts: [],
+      sortItems: [
+        { label: 'Post Date - desc', key: 'dateDesc' },
+        { label: 'Post Date - asc', key: 'dateAsc' },
+        { label: 'Title - desc', key: 'titleDesc' },
+        { label: 'Title - asc', key: 'titleAsc' }
+      ]
     };
   },
   created() {
-    console.log('container', this.which);
-    this.filteredPosts = this.posts;
+    this.sortSelected = this.sortItems[0];
+    this.cPosts = _cloneDeep(this.posts);
+    this.filteredPosts = _cloneDeep(this.posts);
     this.postTerms = _uniq(
       _flattenDeep(
-        this.posts.map(post => {
+        this.cPosts.map(post => {
           const tArr = post.title.split(' ');
           const kArr = post.meta.keywords.split(', ');
           post.searchTerms = [...tArr.map(t => t.toLowerCase()), ...kArr.map(k => k.toLowerCase())];
@@ -57,9 +79,35 @@ export default {
   methods: {
     searchPosts() {
       if (this.searchTerm && this.searchTerm !== '') {
-        this.filteredPosts = this.posts.filter(p => p.searchTerms.indexOf(this.searchTerm) >= 0);
+        this.filteredPosts = this.cPosts.filter(p => p.searchTerms.indexOf(this.searchTerm) >= 0);
       } else {
-        this.filteredPosts = this.posts;
+        this.filteredPosts = _cloneDeep(this.cPosts);
+      }
+      this.sortPosts();
+    },
+    sortPosts() {
+      switch (this.sortSelected.key) {
+        case 'dateDesc':
+          this.filteredPosts = SortsService.sortByDate(
+            _cloneDeep(this.filteredPosts),
+            'created_at'
+          ).reverse();
+          break;
+        case 'dateAsc':
+          this.filteredPosts = SortsService.sortByDate(
+            _cloneDeep(this.filteredPosts),
+            'created_at'
+          );
+          break;
+        case 'titleDesc':
+          this.filteredPosts = SortsService.sortAlpha(
+            _cloneDeep(this.filteredPosts),
+            'title'
+          ).reverse();
+          break;
+        case 'titleAsc':
+          this.filteredPosts = SortsService.sortAlpha(_cloneDeep(this.filteredPosts), 'title');
+          break;
       }
     }
   }
@@ -71,8 +119,10 @@ export default {
   .blog-list__search {
     width: 100%;
     display: flex;
-    justify-content: center;
-    .blog-list__search--input {
+    justify-content: space-around;
+    .blog-list__search--input,
+    .blog-list__search--sort {
+      width: 50%;
       max-width: 500px;
     }
   }

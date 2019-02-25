@@ -1,6 +1,7 @@
 <template>
   <v-card dark class="item-container nes-container is-dark">
     <nuxt-link :to="`/blog/${which}/${post.slug}`" class="outer-link">
+      <v-icon v-if="post.pinned" class="pin">icon-pushpin</v-icon>
       <v-card-title>
         <div :to="`/blog/${which}/${post.slug}`" class="link-content">
           <h4>{{post.title}}</h4>
@@ -35,6 +36,12 @@ export default {
   border: 2px solid $white;
   padding: 1rem;
   .outer-link {
+    .pin {
+      position: absolute;
+      right: 0.5rem;
+      top: 0.5rem;
+      color: $yellow;
+    }
     &:hover {
       .v-card__title .link-content h4 {
         text-decoration: underline;

@@ -106,7 +106,7 @@ module.exports = {
     '@nuxtjs/markdownit',
     'nuxt-webfontloader',
     '@nuxtjs/dotenv',
-    'nuxt-purgecss',
+    // 'nuxt-purgecss',
     [
       'nuxt-imagemin',
       {
