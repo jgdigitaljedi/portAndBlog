@@ -5,12 +5,17 @@
       <small>posted {{post.created_at}}</small>
     </div>
     <div class="blog-image__container">
-      <img
-        :src="post.image"
-        class="blog-image"
-        v-if="post.image"
-        :class="{'mobile': $vuetify.breakpoint.smAndDown}"
+      <v-carousel
+        v-if="post.image && post.image.length"
+        dark
+        cycle
+        :hide-delimiters="true"
+        active-class="blog-image__carousel"
       >
+        <v-carousel-item v-for="(item, index) in post.image" :key="index">
+          <img :src="item" class="blog-image">
+        </v-carousel-item>
+      </v-carousel>
     </div>
     <v-card class="markdown-content" v-html="postContent"></v-card>
   </div>
@@ -30,14 +35,18 @@ export default {
 @import '~/assets/style/theme.scss';
 @import '~/assets/style/shadows.scss';
 .blog-slug {
-  max-width: 1400px;
+  max-width: 1440px;
+  .blog-image__carousel {
+    box-shadow: none;
+  }
   .blog-image__container,
   .blog-title__container {
     width: 100%;
     display: flex;
     justify-content: center;
     margin-bottom: 2em;
-    .blog-image {
+    .blog-image,
+    .v-item--active {
       display: block;
       width: 100%;
       height: auto;

@@ -12,7 +12,10 @@ Vue.use(Vuetify, {
     delete: 'icon-bin',
     list: 'icon-menu',
     add: 'icon-plus',
-    dropdown: 'icon-circle-down'
+    dropdown: 'icon-circle-down',
+    sort: 'icon-sort-amount-desc',
+    prev: 'icon-arrow-left',
+    next: 'icon-arrow-right'
   },
   theme: {
     primary: '#1f5673',

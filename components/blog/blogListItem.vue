@@ -1,6 +1,11 @@
 <template>
-  <v-card dark class="item-container nes-container is-dark">
-    <nuxt-link :to="`/blog/${which}/${post.slug}`" class="outer-link">
+  <v-card
+    dark
+    class="item-container nes-container is-dark"
+    nuxt-link
+    :to="`/blog/${which}/${post.slug}`"
+  >
+    <div :to="`/blog/${which}/${post.slug}`" class="outer-link">
       <v-icon v-if="post.pinned" class="pin">icon-pushpin</v-icon>
       <v-card-title>
         <div :to="`/blog/${which}/${post.slug}`" class="link-content">
@@ -12,11 +17,15 @@
           <small>{{ post.created_at }}</small>
           <p>{{ post.intro }}</p>
         </v-card-text>
-        <v-responsive class="blog-list-inner__thumb hidden-sm-and-down" v-if="post.image">
-          <img class="blog-list-inner__thumb--image" :src="post.image">
+        <v-responsive
+          class="blog-list-inner__thumb hidden-sm-and-down"
+          v-if="post.image && post.image.length"
+        >
+          <img class="blog-list-inner__thumb--image" :src="post.image[0]">
         </v-responsive>
       </div>
-    </nuxt-link>
+    </div>
+    <v-btn class="nes-btn continue-button">Continue Reading -></v-btn>
   </v-card>
 </template>
 
@@ -35,30 +44,37 @@ export default {
   margin: auto 1rem;
   border: 2px solid $white;
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .continue-button {
+    min-width: 15rem;
+    max-width: 20rem;
+  }
+  &:hover {
+    .v-card__title .link-content h4 {
+      text-decoration: underline;
+      color: $warning;
+    }
+  }
+  &:visited {
+    .v-card__title .link-content h4 {
+      color: $success;
+      text-decoration: none;
+    }
+  }
+  &:active {
+    .v-card__title .link-content h4 {
+      color: $danger;
+      text-decoration: underline;
+    }
+  }
   .outer-link {
     .pin {
       position: absolute;
       right: 0.5rem;
       top: 0.5rem;
       color: $yellow;
-    }
-    &:hover {
-      .v-card__title .link-content h4 {
-        text-decoration: underline;
-        color: $warning;
-      }
-    }
-    &:visited {
-      .v-card__title .link-content h4 {
-        color: $success;
-        text-decoration: none;
-      }
-    }
-    &:active {
-      .v-card__title .link-content h4 {
-        color: $danger;
-        text-decoration: underline;
-      }
     }
     .link-content h4 {
       color: $info;
@@ -68,7 +84,7 @@ export default {
   .blog-list-inner {
     display: flex;
     justify-content: space-between;
-    padding: 1rem;
+    padding: 1rem 0 1rem 1rem;
     $font-family: $primary-font;
     &.switch-direction {
       flex-direction: column;
@@ -83,9 +99,15 @@ export default {
         font-style: italic;
       }
     }
-    .blog-list-inner__thumb--image {
-      max-width: 10rem;
-      height: auto;
+    .blog-list-inner__thumb {
+      height: 100%;
+      max-width: 12rem;
+      max-height: 12rem;
+      .blog-list-inner__thumb--image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
   }
 }

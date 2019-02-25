@@ -17,7 +17,7 @@ export default () => [
     slug: 'design-inspiration-for-this-site',
     title: 'Design Inspiration for This Site',
     created_at: '02/23/2019',
-    image: '/images/game_collection.jpg',
+    image: ['/images/game_collection.jpg', '/images/me_8bit_scanlines.jpg'],
     pinned: true,
     intro:
       'My thought process behind designing this seemingly random site that would make a designer cringe.',

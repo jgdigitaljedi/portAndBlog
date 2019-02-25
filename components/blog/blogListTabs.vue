@@ -32,7 +32,6 @@ export default {
     };
   },
   created() {
-    console.log('tabs', this.which);
     this.pinnedPosts = this.posts.filter(post => post.pinned);
   },
   mounted() {

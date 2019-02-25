@@ -22,6 +22,7 @@
         class="blog-list__search--sort"
         v-model="sortSelected"
         @change="sortPosts"
+        prepend-icon="icon-sort-amount-desc"
       ></v-select>
     </div>
     <v-layout row wrap class="layout-wrapper">
