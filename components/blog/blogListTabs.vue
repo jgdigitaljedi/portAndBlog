@@ -1,7 +1,7 @@
 <template>
   <v-tabs dark v-model="activeTab" color="secondary" slider-color="accent" :fixed-tabs="true">
     <v-tab key="all" ripple class="blog-list__tab">ALL</v-tab>
-    <v-tab key="pinned" ripple class="blog-list__tab">Pinned</v-tab>
+    <v-tab key="pinned" ripple class="blog-list__tab">PINNED</v-tab>
     <v-tab-item key="allItem">
       <v-container fluid grid-list v-if="activeTab === 0 && isMounted">
         <BlogListContainer :posts="posts" :which="which"></BlogListContainer>

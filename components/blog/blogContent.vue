@@ -1,9 +1,5 @@
 <template>
   <div class="blog-slug">
-    <div class="blog-title__container nes-container is-dark">
-      <h2>{{post.title}}</h2>
-      <small>posted {{post.created_at}}</small>
-    </div>
     <div class="blog-image__container">
       <v-carousel
         v-if="post.image && post.image.length"
@@ -39,8 +35,7 @@ export default {
   .blog-image__carousel {
     box-shadow: none;
   }
-  .blog-image__container,
-  .blog-title__container {
+  .blog-image__container {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -56,14 +51,6 @@ export default {
       &.mobile {
         max-height: 380px;
       }
-    }
-  }
-  .blog-title__container {
-    flex-direction: column;
-    align-items: center;
-    small {
-      font-style: italic;
-      color: $light;
     }
   }
   .markdown-content {

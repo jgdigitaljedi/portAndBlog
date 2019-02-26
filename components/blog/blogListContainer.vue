@@ -1,6 +1,6 @@
 <template>
-  <section class="blog-list">
-    <div class="blog-list__search">
+  <section class="blog-list" :class="which">
+    <div class="blog-list__search" :class="{'small': $vuetify.breakpoint.smAndDown && isMounted}">
       <v-autocomplete
         v-model="searchTerm"
         hint="Search Blog Titles & Keywords"
@@ -30,7 +30,7 @@
         class="bubble-wrapper"
         :key="post.id"
         v-for="post in filteredPosts"
-        :class="{'med': $vuetify.breakpoint.md, 'sml': $vuetify.breakpoint.sm, 'larg': $vuetify.breakpoint.lgAndUp, 'xsm': $vuetify.breakpoint.xs}"
+        :class="{'med': $vuetify.breakpoint.md, 'sml': $vuetify.breakpoint.sm && isMounted, 'larg': $vuetify.breakpoint.lgAndUp && isMounted, 'xsm': $vuetify.breakpoint.xs && isMounted}"
       >
         <blogListItem :post="post" :which="which"></blogListItem>
       </v-flex>
@@ -59,7 +59,8 @@ export default {
         { label: 'Post Date - asc', key: 'dateAsc' },
         { label: 'Title - desc', key: 'titleDesc' },
         { label: 'Title - asc', key: 'titleAsc' }
-      ]
+      ],
+      isMounted: false
     };
   },
   created() {
@@ -76,6 +77,9 @@ export default {
         })
       )
     );
+  },
+  mounted() {
+    this.isMounted = true;
   },
   methods: {
     searchPosts() {
@@ -125,6 +129,15 @@ export default {
     .blog-list__search--sort {
       width: 50%;
       max-width: 500px;
+      margin: 0 2rem;
+    }
+    &.small {
+      flex-direction: column;
+      align-items: center;
+      .blog-list__search--input,
+      .blog-list__search--sort {
+        width: 100%;
+      }
     }
   }
   .layout-wrapper {
