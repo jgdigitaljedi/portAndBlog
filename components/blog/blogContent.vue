@@ -68,6 +68,16 @@ export default {
   }
   .markdown-content {
     padding: 1rem;
+    .image-container {
+      width: 100%;
+      text-align: center;
+      margin: 1rem auto;
+      img {
+        height: 100%;
+        max-height: 350px;
+        width: auto;
+      }
+    }
   }
   section {
     a {
@@ -96,6 +106,15 @@ export default {
     h5,
     h6 {
       font-family: $secondary-font !important;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      text-align: center;
+      margin: 2rem auto;
     }
     div,
     p,

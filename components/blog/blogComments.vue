@@ -41,5 +41,6 @@ export default {
   width: 100%;
   max-width: 1400px;
   margin-top: 3em;
+  padding-bottom: 2rem;
 }
 </style>

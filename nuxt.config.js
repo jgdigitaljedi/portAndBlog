@@ -102,6 +102,7 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    // '@nuxtjs/onesignal',
     '@nuxtjs/pwa',
     '@nuxtjs/markdownit',
     'nuxt-webfontloader',
