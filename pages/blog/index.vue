@@ -260,11 +260,12 @@ $mario-bush-accent: #0c110c;
           margin-bottom: -1rem;
         }
         &.bottom {
-          margin-bottom: 1rem;
+          margin-bottom: 0.75rem;
           margin-top: -5rem;
         }
         div {
-          font-size: 5rem;
+          font-size: 3rem;
+          font-family: mario_font;
           color: $mario-letters;
           text-shadow: 3px 3px $mario-bush-accent;
           padding: 1rem 0.5rem;
@@ -290,10 +291,20 @@ $mario-bush-accent: #0c110c;
         padding: 1rem;
         .mario__box-logo--text-container .mario__box-logo--top-text {
           font-size: 6rem;
+          text-shadow: 7px 7px $mario-bush-accent;
           margin-bottom: -1rem;
         }
         .mario__box-logo--text-container .mario__box-logo--bottom-text {
           font-size: 12rem;
+          text-shadow: 10px 10px $mario-bush-accent;
+        }
+        .mario__box-logo--rivets.top {
+          margin: -2.75rem -1rem -1rem -1rem;
+          width: calc(100% + 2rem);
+        }
+        .mario__box-logo--rivets.bottom {
+          margin: -4rem -1rem -0.5rem -1rem;
+          width: calc(100% + 2rem);
         }
       }
       &.small {
@@ -303,9 +314,19 @@ $mario-bush-accent: #0c110c;
         .mario__box-logo--text-container .mario__box-logo--top-text {
           font-size: 4rem;
           margin-bottom: -1rem;
+          text-shadow: 5px 5px $mario-bush-accent;
         }
         .mario__box-logo--text-container .mario__box-logo--bottom-text {
           font-size: 8rem;
+          text-shadow: 7px 7px $mario-bush-accent;
+        }
+        .mario__box-logo--rivets.top {
+          margin: -2.75rem -1rem -1rem -1rem;
+          width: calc(100% + 2rem);
+        }
+        .mario__box-logo--rivets.bottom {
+          margin: -4rem -1rem -0.5rem -1rem;
+          width: calc(100% + 2rem);
         }
       }
       &.xsmall {
@@ -313,11 +334,22 @@ $mario-bush-accent: #0c110c;
         margin-top: 6rem;
         margin-bottom: 6rem;
         .mario__box-logo--text-container .mario__box-logo--top-text {
-          font-size: 2rem;
+          font-size: 3rem;
           margin-bottom: 0;
+          text-shadow: 3px 3px $mario-bush-accent;
         }
         .mario__box-logo--text-container .mario__box-logo--bottom-text {
           font-size: 4rem;
+          text-shadow: 4px 4px $mario-bush-accent;
+          line-height: 4rem;
+        }
+        .mario__box-logo--rivets.top {
+          margin: -2.5rem 0 0 0;
+          width: calc(100% + 1.5rem);
+        }
+        .mario__box-logo--rivets.bottom {
+          margin: -2rem 0 0 0;
+          width: calc(100% + 1.5rem);
         }
       }
     }
