@@ -1,6 +1,6 @@
 <template>
   <div class="post-wrapper">
-    <blogHeader :post="post" which="coding"></blogHeader>
+    <blogHeader :post="post" which="coding" class="post-header"></blogHeader>
     <div
       class="post"
       :class="{'medium': $vuetify.breakpoint.md && isMounted, 'small': $vuetify.breakpoint.smAndDown && isMounted}"
@@ -66,6 +66,7 @@ export default {
   align-items: center;
   width: 100%;
   flex-direction: column;
+  background-color: $black;
   background: -webkit-linear-gradient(to top, rgba(0, 0, 0, 1), rgba(31, 86, 115, 0.7)),
     url('/images/cubes_lines2.png') repeat;
   background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(31, 86, 115, 0.7)),

@@ -14,10 +14,8 @@
     "test": "jest"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/google-analytics": "^2.1.0",
     "@nuxtjs/markdownit": "^1.2.3",
-    "@nuxtjs/onesignal": "^3.0.0-beta.8",
     "@nuxtjs/pwa": "^2.6.0",
     "@nuxtjs/sitemap": "^0.2.0",
     "cross-env": "^5.2.0",
@@ -29,7 +27,6 @@
     "nuxt": "^2.4.0",
     "nuxt-imagemin": "^1.0.0",
     "nuxt-netlify-http2-server-push": "^0.1.2",
-    "nuxt-purgecss": "^0.2.1",
     "vue-disqus": "^3.0.5",
     "vue-markdown": "^2.2.4",
     "vuetify": "^1.5.0",
@@ -42,6 +39,7 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^8.2.1",
     "babel-jest": "^23.6.0",
+    "consola": "^2.5.6",
     "eslint": "^5.0.1",
     "eslint-config-prettier": "^3.1.0",
     "eslint-config-standard": ">=12.0.0",

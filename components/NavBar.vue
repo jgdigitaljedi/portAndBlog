@@ -103,7 +103,7 @@ export default {
   .nav {
     width: 100%;
     height: 6rem;
-    border: 2px solid #4d00b9;
+    border: 2px solid $pacman-purple;
     background-color: #000;
     .v-toolbar__content {
       height: 6rem !important;
