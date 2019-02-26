@@ -34,6 +34,9 @@ Right now things look a little on the rough side because this is still in active
 - style up blog sections
 - style blog posts
 - add breadcrumbs to blog sections/add subnav like I did in homeControl repo
+- add https://github.com/nuxt-community/feed-module and setup to generate feeds; then add feeds to feedburner, etc
+- figure out postcss/autoprefixer
+- figure out why pwa gradient background doesn't work (only in downloaded app)
 
 ## OVERALL TODO
 
