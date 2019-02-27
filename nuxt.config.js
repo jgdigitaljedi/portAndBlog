@@ -161,7 +161,7 @@ module.exports = {
   /** Web font loader to asynchronously load web fonts */
   webfontloader: {
     google: {
-      families: ['Lato:400,900', 'Raleway:400,800', 'Press+Start+2P']
+      families: ['Lato:400,900', 'Press+Start+2P']
     }
   },
 

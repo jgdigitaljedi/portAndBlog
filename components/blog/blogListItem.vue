@@ -12,7 +12,10 @@
           <h4>{{post.title}}</h4>
         </div>
       </v-card-title>
-      <div class="blog-list-inner" :class="{'switch-direction': $vuetify.breakpoint.mdAndDown}">
+      <div
+        class="blog-list-inner"
+        :class="{'switch-direction': $vuetify.breakpoint.mdAndDown && isMounted}"
+      >
         <v-card-text class="blog-list-inner__text">
           <small>{{ post.created_at }}</small>
           <p>{{ post.intro }}</p>
@@ -20,6 +23,7 @@
         <v-responsive
           class="blog-list-inner__thumb hidden-sm-and-down"
           v-if="post.image && post.image.length"
+          :class="{'broken': $vuetify.breakpoint.mdAndDown && isMounted}"
         >
           <img class="blog-list-inner__thumb--image" :src="post.image[0]">
         </v-responsive>
@@ -31,7 +35,15 @@
 
 <script>
 export default {
-  props: ['post', 'which']
+  props: ['post', 'which'],
+  data() {
+    return {
+      isMounted: false
+    };
+  },
+  mounted() {
+    this.isMounted = true;
+  }
 };
 </script>
 
@@ -70,6 +82,9 @@ export default {
     }
   }
   .outer-link {
+    .v-card__title {
+      padding: 1rem 1rem 0 1rem;
+    }
     .pin {
       position: absolute;
       right: 0.5rem;
@@ -84,7 +99,7 @@ export default {
   .blog-list-inner {
     display: flex;
     justify-content: space-between;
-    padding: 1rem 0 1rem 1rem;
+    padding: 0;
     $font-family: $primary-font;
     &.switch-direction {
       flex-direction: column;
@@ -101,8 +116,15 @@ export default {
     }
     .blog-list-inner__thumb {
       height: 100%;
-      max-width: 12rem;
+      // max-width: 12rem;
+      // max-height: 12rem;
+      width: 30%;
       max-height: 12rem;
+      &.broken {
+        margin: 0 1rem 1rem 1rem;
+        width: 100%;
+        max-width: calc(100% - 2rem);
+      }
       .blog-list-inner__thumb--image {
         width: 100%;
         height: 100%;

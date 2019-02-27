@@ -15,7 +15,7 @@
       <h1 :class="{'mobile': $vuetify.breakpoint.smAndDown}">Joey Gauthier</h1>
     </div>
     <div class="home__about--wrapper">
-      <div class="home__about nes-container is-dark is-centered">
+      <div class="home__about">
         <p>I'm a software engineer, retro game collector, guitarist, and all around geek. Welcome to my site!</p>
       </div>
     </div>
@@ -79,14 +79,22 @@ export default {
   }
 }
 
+@keyframes hideAbout {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+
 $shadows-small: multiple-box-shadow(700);
 $shadows-medium: multiple-box-shadow(200);
 $shadows-big: multiple-box-shadow(100);
 
 .home {
   background-color: $black;
-  min-height: calc(100vh - 6rem);
-  // height: calc(100vh - 5em);
+  min-height: calc(100vh - 7rem);
   height: 100%;
   padding: 3em 2em;
   overflow: hidden;
@@ -94,7 +102,7 @@ $shadows-big: multiple-box-shadow(100);
   .social-container {
     position: absolute;
     left: 0;
-    top: 7em;
+    top: 7.1em;
     z-index: 3;
     &.mobile {
       top: 6rem;
@@ -131,10 +139,13 @@ $shadows-big: multiple-box-shadow(100);
     width: 100%;
     display: flex;
     justify-content: center;
-    .home__about.nes-container.is-dark.is-centered {
+    .home__about {
       max-width: 400px;
       opacity: 0;
-      animation: hideShow 0.1s linear 4s forwards;
+      animation: hideAbout 0.1s linear 4s forwards;
+      background-color: #222;
+      text-align: center;
+      padding: 1.5rem 2rem;
       p {
         font-family: $game-font;
       }

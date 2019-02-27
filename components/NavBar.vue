@@ -7,7 +7,12 @@
         </nuxt-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <i @click.stop="drawer = !drawer" class="nes-logo hidden-md-and-up mobile-hamburger"></i>
+      <!-- <i @click.stop="drawer = !drawer" class="nes-logo hidden-md-and-up mobile-hamburger"></i> -->
+      <img
+        src="/images/pacman_cherries.png"
+        @click.stop="drawer = !drawer"
+        class="pacman-cherries hidden-md-and-up"
+      >
       <v-toolbar-items class="nav__items hidden-sm-and-down">
         <div v-for="(link, index) in links" :key="link.title" class="nav-items__link-wrapper">
           <nuxt-link :to="link.to" class="nav-link">
@@ -99,12 +104,23 @@ export default {
 .nav-wrapper {
   background-color: transparent;
   width: 100%;
-  height: 6rem;
+  height: 7rem;
+  border: 2px solid $pacman-purple;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
   .nav {
-    width: 100%;
+    width: calc(100% - 1rem);
     height: 6rem;
     border: 2px solid $pacman-purple;
+    border-radius: 4px;
     background-color: #000;
+    .pacman-cherries {
+      max-height: 5rem;
+      width: auto;
+      z-index: 4;
+    }
     .v-toolbar__content {
       height: 6rem !important;
     }
@@ -219,14 +235,14 @@ export default {
   }
   .mobile-nav {
     padding: 1em;
-    border-right: 2px solid #4d00b9;
+    border-right: 2px solid $pacman-purple;
     .mobile-nav__title {
       display: flex;
       width: 100%;
       align-items: center;
       flex-direction: column;
       padding: 1rem;
-      border: 2px solid #4d00b9;
+      border: 2px solid $pacman-purple;
       background-color: black;
       img {
         width: 7rem;

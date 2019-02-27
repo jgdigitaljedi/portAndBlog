@@ -135,7 +135,8 @@ $mario-bush-accent: #0c110c;
 .mario {
   height: 100%;
   width: 100%;
-  min-height: calc(100vh - 6rem - 8px);
+  // min-height: calc(100vh - 6rem - 8px);
+  min-height: calc(100vh - 7rem);
   background-color: $mario-sky;
   display: flex;
   justify-content: center;

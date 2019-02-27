@@ -87,14 +87,13 @@ export default {
       font-family: $code-font;
       padding: 1em;
     }
-    blockquote,
     h1,
     h2,
     h3,
     h4,
     h5,
     h6 {
-      font-family: $secondary-font !important;
+      font-family: $game-font !important;
     }
     h1,
     h2,
