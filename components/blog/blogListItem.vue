@@ -1,10 +1,5 @@
 <template>
-  <v-card
-    dark
-    class="item-container nes-container is-dark"
-    nuxt-link
-    :to="`/blog/${which}/${post.slug}`"
-  >
+  <v-card dark class="item-container" nuxt-link :to="`/blog/${which}/${post.slug}`">
     <div :to="`/blog/${which}/${post.slug}`" class="outer-link">
       <v-icon v-if="post.pinned" class="pin">icon-pushpin</v-icon>
       <v-card-title>
@@ -47,21 +42,25 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import '~/assets/style/theme.scss';
 .item-container {
   width: 100%;
   height: 100%;
-  color: $black;
+  // color: $black;
   margin: auto 1rem;
-  border: 2px solid $white;
+  // border: 2px solid $white;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  .continue-button {
+  button.continue-button.nes-btn {
     min-width: 15rem;
     max-width: 20rem;
+    div.v-btn__content {
+      font-family: $game-font;
+      font-size: 0.85rem;
+    }
   }
   &:hover {
     .v-card__title .link-content h4 {
@@ -92,7 +91,7 @@ export default {
       color: $yellow;
     }
     .link-content h4 {
-      color: $info;
+      color: $yellow;
       text-decoration: none;
     }
   }

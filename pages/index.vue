@@ -84,7 +84,7 @@ export default {
     opacity: 0;
   }
   to {
-    opacity: 0.8;
+    opacity: 0.85;
   }
 }
 
