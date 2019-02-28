@@ -6,6 +6,8 @@ import BlogListItem from '~/components/blog/blogListItem.vue';
 import BlogListContainer from '~/components/blog/blogListContainer.vue';
 import BlogListTabs from '~/components/blog/blogListTabs.vue';
 import BlogHeader from '~/components/blog/blogHeader.vue';
+import BlogListSidebar from '~/components/blog/blogListSidebar.vue';
+import BlogListMaster from '~/components/blog/blogListMaster.vue';
 
 Vue.use(VueDisqus);
 Vue.component('blogContent', BlogContent);
@@ -14,3 +16,5 @@ Vue.component('blogListItem', BlogListItem);
 Vue.component('blogListContainer', BlogListContainer);
 Vue.component('blogListTabs', BlogListTabs);
 Vue.component('blogHeader', BlogHeader);
+Vue.component('blogListSidebar', BlogListSidebar);
+Vue.component('blogListMaster', BlogListMaster);

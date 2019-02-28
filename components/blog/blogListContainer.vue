@@ -1,36 +1,11 @@
 <template>
   <section class="blog-list" :class="which">
-    <div class="blog-list__search" :class="{'small': $vuetify.breakpoint.smAndDown && isMounted}">
-      <v-autocomplete
-        v-model="searchTerm"
-        hint="Search Blog Titles & Keywords"
-        :items="postTerms"
-        label="Search"
-        dark
-        @input="searchPosts"
-        :clearable="true"
-        prepend-icon="icon-search"
-        class="blog-list__search--input"
-      ></v-autocomplete>
-      <v-select
-        label="Sort By"
-        outline
-        solo
-        :items="sortItems"
-        item-text="label"
-        return-object
-        class="blog-list__search--sort"
-        v-model="sortSelected"
-        @change="sortPosts"
-        prepend-icon="icon-sort-amount-desc"
-      ></v-select>
-    </div>
     <v-layout row wrap class="layout-wrapper">
       <v-flex
         class="bubble-wrapper"
         :key="post.id"
-        v-for="post in filteredPosts"
-        :class="{'med': $vuetify.breakpoint.md, 'sml': $vuetify.breakpoint.sm && isMounted, 'larg': $vuetify.breakpoint.lgAndUp && isMounted, 'xsm': $vuetify.breakpoint.xs && isMounted}"
+        v-for="post in posts"
+        :class="{'med': $vuetify.breakpoint.md, 'sml': $vuetify.breakpoint.smAndDown && isMounted, 'larg': $vuetify.breakpoint.lgAndUp && isMounted}"
       >
         <blogListItem :post="post" :which="which"></blogListItem>
       </v-flex>
@@ -39,82 +14,16 @@
 </template>
 
 <script>
-import * as _flattenDeep from 'lodash/flattenDeep';
-import * as _uniq from 'lodash/uniq';
-import * as _cloneDeep from 'lodash/cloneDeep';
-import SortsService from '~/services/sorts';
-
 export default {
   name: 'blogListContainer',
   props: ['posts', 'which'],
   data() {
     return {
-      postTerms: null,
-      sortSelected: null,
-      searchTerm: '',
-      filteredPosts: [],
-      cPosts: [],
-      sortItems: [
-        { label: 'Post Date - desc', key: 'dateDesc' },
-        { label: 'Post Date - asc', key: 'dateAsc' },
-        { label: 'Title - desc', key: 'titleDesc' },
-        { label: 'Title - asc', key: 'titleAsc' }
-      ],
       isMounted: false
     };
   },
-  created() {
-    this.sortSelected = this.sortItems[0];
-    this.cPosts = _cloneDeep(this.posts);
-    this.filteredPosts = _cloneDeep(this.posts);
-    this.postTerms = _uniq(
-      _flattenDeep(
-        this.cPosts.map(post => {
-          const tArr = post.title.split(' ');
-          const kArr = post.meta.keywords.split(', ');
-          post.searchTerms = [...tArr.map(t => t.toLowerCase()), ...kArr.map(k => k.toLowerCase())];
-          return post.searchTerms;
-        })
-      )
-    );
-  },
   mounted() {
     this.isMounted = true;
-  },
-  methods: {
-    searchPosts() {
-      if (this.searchTerm && this.searchTerm !== '') {
-        this.filteredPosts = this.cPosts.filter(p => p.searchTerms.indexOf(this.searchTerm) >= 0);
-      } else {
-        this.filteredPosts = _cloneDeep(this.cPosts);
-      }
-      this.sortPosts();
-    },
-    sortPosts() {
-      switch (this.sortSelected.key) {
-        case 'dateDesc':
-          this.filteredPosts = SortsService.sortByDate(
-            _cloneDeep(this.filteredPosts),
-            'created_at'
-          ).reverse();
-          break;
-        case 'dateAsc':
-          this.filteredPosts = SortsService.sortByDate(
-            _cloneDeep(this.filteredPosts),
-            'created_at'
-          );
-          break;
-        case 'titleDesc':
-          this.filteredPosts = SortsService.sortAlpha(
-            _cloneDeep(this.filteredPosts),
-            'title'
-          ).reverse();
-          break;
-        case 'titleAsc':
-          this.filteredPosts = SortsService.sortAlpha(_cloneDeep(this.filteredPosts), 'title');
-          break;
-      }
-    }
   }
 };
 </script>
@@ -145,15 +54,12 @@ export default {
     .bubble-wrapper {
       margin: 1rem 1rem 0 0;
       &.larg {
-        width: calc(25% - 1rem);
-      }
-      &.med {
-        width: calc(33% - 1rem);
-      }
-      &.sml {
         width: calc(50% - 1rem);
       }
-      &.xsm {
+      &.med {
+        width: calc(50% - 1rem);
+      }
+      &.sml {
         width: 100%;
       }
     }

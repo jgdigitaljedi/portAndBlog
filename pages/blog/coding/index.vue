@@ -6,12 +6,13 @@
         :class="{'md': isMounted && $vuetify.breakpoint.md, 'sm': isMounted && $vuetify.breakpoint.sm, 'xs': isMounted && $vuetify.breakpoint.xs}"
       >Joey's Coding Blog</div>
     </div>
-    <BlogListTabs :posts="posts" which="coding"></BlogListTabs>
+    <!-- <BlogListTabs :posts="posts" which="coding"></BlogListTabs> -->
+    <blogListMaster :posts="posts" which="coding"></blogListMaster>
   </section>
 </template>
 
 <script>
-import BlogListTabs from '~/components/blog/blogListTabs';
+// import BlogListTabs from '~/components/blog/blogListTabs';
 
 export default {
   head() {
@@ -36,7 +37,7 @@ export default {
     store.dispatch('getPosts');
   },
   components: {
-    BlogListTabs
+    // BlogListTabs
   },
   data() {
     return {
