@@ -1,6 +1,13 @@
 <template>
   <v-card dark class="item-container" nuxt-link :to="`/blog/${which}/${post.slug}`">
-    <div :to="`/blog/${which}/${post.slug}`" class="outer-link">
+    <div class="blog-list-inner__thumb hidden-sm-and-down" v-if="post.image && post.image.length">
+      <img class="blog-list-inner__thumb--image" :src="post.image[0]">
+    </div>
+    <div
+      :to="`/blog/${which}/${post.slug}`"
+      class="outer-link"
+      :class="{'no-image': !post.image || $vuetify.breakpoint.smAndDown}"
+    >
       <v-icon v-if="post.pinned" class="pin">icon-pushpin</v-icon>
       <v-card-title>
         <div :to="`/blog/${which}/${post.slug}`" class="link-content">
@@ -15,16 +22,9 @@
           <small>{{ post.created_at }}</small>
           <p>{{ post.intro }}</p>
         </v-card-text>
-        <v-responsive
-          class="blog-list-inner__thumb hidden-sm-and-down"
-          v-if="post.image && post.image.length"
-          :class="{'broken': $vuetify.breakpoint.mdAndDown && isMounted}"
-        >
-          <img class="blog-list-inner__thumb--image" :src="post.image[0]">
-        </v-responsive>
       </div>
+      <v-btn class="nes-btn continue-button">Continue Reading -></v-btn>
     </div>
-    <v-btn class="nes-btn continue-button">Continue Reading -></v-btn>
   </v-card>
 </template>
 
@@ -47,16 +47,31 @@ export default {
 .item-container {
   width: 100%;
   height: 100%;
-  // color: $black;
   margin: auto 1rem;
-  // border: 2px solid $white;
-  padding: 1rem;
+  border-top-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  padding: 0;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  max-height: 26rem;
+  .blog-list-inner__thumb {
+    border-top-left-radius: 2rem;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    max-height: 26rem;
+    .blog-list-inner__thumb--image {
+      border-top-left-radius: 2rem;
+      flex: 1;
+      width: 100%;
+      height: auto;
+      max-height: 26rem;
+      object-fit: cover;
+    }
+  }
   button.continue-button.nes-btn {
     min-width: 15rem;
     max-width: 20rem;
+    margin-left: 1rem;
     div.v-btn__content {
       font-family: $game-font;
       font-size: 0.85rem;
@@ -81,18 +96,25 @@ export default {
     }
   }
   .outer-link {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    &.no-image {
+      width: 100%;
+    }
     .v-card__title {
       padding: 1rem 1rem 0 1rem;
     }
     .pin {
       position: absolute;
-      right: 0.5rem;
-      top: 0.5rem;
+      right: 0.2rem;
+      top: 0.2rem;
       color: $yellow;
     }
     .link-content h4 {
       color: $yellow;
       text-decoration: none;
+      margin-right: 1rem;
     }
   }
   .blog-list-inner {
@@ -100,6 +122,7 @@ export default {
     justify-content: space-between;
     padding: 0;
     $font-family: $primary-font;
+    flex: 1;
     &.switch-direction {
       flex-direction: column;
     }
@@ -111,23 +134,6 @@ export default {
         color: $light;
         font-family: $primary-font;
         font-style: italic;
-      }
-    }
-    .blog-list-inner__thumb {
-      height: 100%;
-      // max-width: 12rem;
-      // max-height: 12rem;
-      width: 30%;
-      max-height: 12rem;
-      &.broken {
-        margin: 0 1rem 1rem 1rem;
-        width: 100%;
-        max-width: calc(100% - 2rem);
-      }
-      .blog-list-inner__thumb--image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
       }
     }
   }

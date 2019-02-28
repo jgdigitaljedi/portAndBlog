@@ -15,7 +15,8 @@ Vue.use(Vuetify, {
     dropdown: 'icon-circle-down',
     sort: 'icon-sort-amount-desc',
     prev: 'icon-arrow-left',
-    next: 'icon-arrow-right'
+    next: 'icon-arrow-right',
+    filter: 'icon-filter'
   },
   theme: {
     primary: '#1f5673',

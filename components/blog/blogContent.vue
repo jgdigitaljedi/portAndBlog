@@ -1,7 +1,7 @@
 <template>
   <div class="blog-slug">
     <div class="blog-image__container">
-      <v-carousel
+      <!-- <v-carousel
         v-if="post.image && post.image.length"
         dark
         cycle
@@ -11,7 +11,7 @@
         <v-carousel-item v-for="(item, index) in post.image" :key="index">
           <img :src="item" class="blog-image">
         </v-carousel-item>
-      </v-carousel>
+      </v-carousel>-->
     </div>
     <v-card class="markdown-content" v-html="postContent"></v-card>
   </div>

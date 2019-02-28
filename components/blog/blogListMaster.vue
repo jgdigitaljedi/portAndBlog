@@ -1,9 +1,15 @@
 <template>
   <section class="blog-list-master" :class="{'smaller': $vuetify.breakpoint.mdAndDown}">
     <blogListContainer :posts="filteredPosts" :which="which" class="blog-list"></blogListContainer>
-    <v-card color="black" class="blog-list-master__sidebar">
+    <v-card
+      color="black"
+      class="blog-list-master__sidebar"
+      :class="{'md': $vuetify.breakpoint.mdAndDown}"
+    >
       <v-card-title>
-        <h4>Filters</h4>
+        <h4 class="blog-list-master__sidebar--title">
+          <v-icon>icon-filter</v-icon>&nbsp;Filters
+        </h4>
       </v-card-title>
       <div color="black" class="blog-list-master__sidebar--filters">
         <v-autocomplete
@@ -36,8 +42,9 @@
           v-model="onlyPinned"
           label="Pinned"
           @change="filterPinned"
-          class="posts-filter"
+          class="blog-list__search--pin posts-filter"
           :class="{'small': $vuetify.breakpoint.smAndDown}"
+          append-icon="icon-pushpin"
         ></v-switch>
         <v-select
           v-model="selectedMonth"
@@ -171,7 +178,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+@import '~/assets/style/theme.scss';
 .blog-list-master {
   display: flex;
   justify-content: space-between;
@@ -197,7 +205,15 @@ export default {
     flex-direction: column;
     min-width: 25rem;
     margin: 1rem 1rem 0 1rem;
-    // min-height: 30rem;
+    min-height: calc(100vh - 7rem - 9rem);
+    height: 100%;
+    &.md {
+      min-height: auto;
+    }
+    .blog-list-master__sidebar--title,
+    .blog-list-master__sidebar--title .v-icon {
+      color: $light;
+    }
     .blog-list-master__sidebar--filters {
       padding: 2rem;
       .blog-list-master__siderbar--filters__search {
@@ -205,6 +221,9 @@ export default {
       }
       .blog-list-master__siderbar--filters__month {
         margin-top: 1rem;
+      }
+      .blog-list__search--pin .v-label.theme--dark {
+        margin-bottom: 0;
       }
       .posts-filter.small {
         width: 100%;

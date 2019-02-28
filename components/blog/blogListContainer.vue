@@ -30,6 +30,7 @@ export default {
 
 <style lang="scss" scoped>
 .blog-list {
+  padding-left: 1rem;
   .blog-list__search {
     width: 100%;
     display: flex;

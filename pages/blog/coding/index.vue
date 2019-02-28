@@ -2,11 +2,12 @@
   <section class="blog-list">
     <div class="blog-category">
       <div
+        v-if="isMounted"
         class="blog-category__title"
         :class="{'md': isMounted && $vuetify.breakpoint.md, 'sm': isMounted && $vuetify.breakpoint.sm, 'xs': isMounted && $vuetify.breakpoint.xs}"
       >Joey's Coding Blog</div>
     </div>
-    <blogListMaster :posts="posts" which="coding"></blogListMaster>
+    <blogListMaster v-if="isMounted" :posts="posts" which="coding"></blogListMaster>
   </section>
 </template>
 
@@ -69,17 +70,17 @@ export default {
       font-family: $game-font;
       display: flex;
       align-items: center;
-      min-height: 7rem;
+      height: 7rem;
       &.md {
         font-size: 3.5rem;
-        min-height: 5.5rem;
+        height: 5.5rem;
       }
       &.sm {
         font-size: 2.5rem;
-        min-height: 4.5rem;
+        height: 4.5rem;
       }
       &.xs {
-        min-height: 3.5rem;
+        height: 3.5rem;
         font-size: 1.5rem;
       }
     }

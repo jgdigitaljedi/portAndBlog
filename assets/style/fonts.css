@@ -81,3 +81,6 @@
 .icon-sort-amount-desc:before {
   content: '\ea4d';
 }
+.icon-filter:before {
+  content: "\ea5b";
+}
