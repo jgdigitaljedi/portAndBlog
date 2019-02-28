@@ -58,6 +58,13 @@
           :class="{'small': $vuetify.breakpoint.smAndDown}"
         ></v-select>
       </div>
+      <v-divider dark></v-divider>
+      <div
+        class="blog-list-master__sidebar--links"
+        :class="{'broken': $vuetify.breakpoint.mdAndDown}"
+      >
+        <v-btn class="nes-btn is-primary" to="/blog">&#60;- Back to blog selection</v-btn>
+      </div>
     </v-card>
   </section>
 </template>
@@ -228,6 +235,25 @@ export default {
       .posts-filter.small {
         width: 100%;
         margin: 0;
+      }
+    }
+    .blog-list-master__sidebar--links {
+      display: flex;
+      flex-direction: column;
+      // margin-top: 1rem;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      .nes-btn {
+        // margin-top: 2rem;
+        .v-btn__content {
+          font-family: $game-font;
+          font-size: 0.75rem;
+        }
+      }
+      &.broken {
+        flex-direction: row;
+        margin-top: 0;
       }
     }
   }
