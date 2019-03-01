@@ -215,7 +215,7 @@ export default {
     display: flex;
     flex-direction: column;
     margin: 1rem 1rem 0 1rem;
-    min-height: calc(100vh - 7rem - 9rem);
+    min-height: calc(100vh - 9rem - 9rem);
     height: 100%;
     min-width: 20rem;
     .blog-list-master__sidebar--title-container {
@@ -223,9 +223,11 @@ export default {
     }
     &.md {
       min-height: auto;
-      .blog-list-master__sidebar--filters {
-        // width: 100%;
-      }
+      margin-bottom: 1rem;
+      border-top-left-radius: 2rem;
+      border-top-right-radius: 2rem;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
     }
     .blog-list-master__sidebar--title,
     .blog-list-master__sidebar--title .v-icon {
