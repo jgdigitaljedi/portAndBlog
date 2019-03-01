@@ -27,5 +27,7 @@ export default {
   grid-auto-rows: minmax(13rem, auto);
   grid-auto-flow: dense;
   padding: 1rem 0 0 1rem;
+  justify-items: center;
+  width: 100%;
 }
 </style>

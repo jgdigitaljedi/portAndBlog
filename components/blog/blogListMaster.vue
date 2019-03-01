@@ -214,19 +214,15 @@ export default {
     border: 2px solid $light;
     display: flex;
     flex-direction: column;
-    // max-width: 20rem;
     margin: 1rem 1rem 0 1rem;
     min-height: calc(100vh - 7rem - 9rem);
     height: 100%;
     min-width: 20rem;
-    // border-top-left-radius: 2rem;
-    // border-bottom-right-radius: 2rem;
     .blog-list-master__sidebar--title-container {
       padding: 1rem 1rem 1rem 2rem;
     }
     &.md {
       min-height: auto;
-      // width: 100%;
       .blog-list-master__sidebar--filters {
         // width: 100%;
       }
