@@ -1,10 +1,7 @@
 <template>
   <section class="blog-list-master" :class="{'smaller': $vuetify.breakpoint.mdAndDown}">
     <blogListContainer :posts="filteredPosts" :which="which" class="blog-list"></blogListContainer>
-    <div
-      class="blog-list-master__sidebar"
-      :class="{'md': $vuetify.breakpoint.mdAndDown && isMounted}"
-    >
+    <div class="blog-list-master__sidebar" :class="{'md': $vuetify.breakpoint.mdAndDown}">
       <div class="blog-list-master__sidebar--title-container">
         <h4 class="blog-list-master__sidebar--title">
           <v-icon>icon-filter</v-icon>&nbsp;Filters
@@ -213,10 +210,11 @@ export default {
     }
   }
   .blog-list-master__sidebar {
-    border: 2px solid $pacman-purple;
+    border-radius: 2rem;
+    border: 2px solid $light;
     display: flex;
     flex-direction: column;
-    max-width: 20rem;
+    // max-width: 20rem;
     margin: 1rem 1rem 0 1rem;
     min-height: calc(100vh - 7rem - 9rem);
     height: 100%;
@@ -228,7 +226,10 @@ export default {
     }
     &.md {
       min-height: auto;
-      width: 100%;
+      // width: 100%;
+      .blog-list-master__sidebar--filters {
+        // width: 100%;
+      }
     }
     .blog-list-master__sidebar--title,
     .blog-list-master__sidebar--title .v-icon {

@@ -81,7 +81,7 @@ export default {
       object-fit: cover;
     }
     .blog-link-wrapper {
-      background-color: rgba(77, 0, 185, 0.5);
+      background-color: rgba(77, 0, 185, 0.35);
       color: $white;
       width: 100%;
       flex: 1;
@@ -91,7 +91,7 @@ export default {
         color: $white;
         height: 100%;
         font-family: $game-font;
-        font-size: 1rem;
+        font-size: 0.9rem;
         display: flex;
         align-items: center;
         justify-content: center;
