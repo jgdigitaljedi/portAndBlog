@@ -1,17 +1,16 @@
 <template>
   <section class="blog-list-master" :class="{'smaller': $vuetify.breakpoint.mdAndDown}">
     <blogListContainer :posts="filteredPosts" :which="which" class="blog-list"></blogListContainer>
-    <v-card
-      color="black"
+    <div
       class="blog-list-master__sidebar"
-      :class="{'md': $vuetify.breakpoint.mdAndDown}"
+      :class="{'md': $vuetify.breakpoint.mdAndDown && isMounted}"
     >
-      <v-card-title>
+      <div class="blog-list-master__sidebar--title-container">
         <h4 class="blog-list-master__sidebar--title">
           <v-icon>icon-filter</v-icon>&nbsp;Filters
         </h4>
-      </v-card-title>
-      <div color="black" class="blog-list-master__sidebar--filters">
+      </div>
+      <div class="blog-list-master__sidebar--filters">
         <v-autocomplete
           v-model="searchTerm"
           hint="Search Blog Titles & Keywords"
@@ -27,8 +26,6 @@
         ></v-autocomplete>
         <v-select
           label="Sort By"
-          outline
-          solo
           :items="sortItems"
           item-text="label"
           return-object
@@ -38,14 +35,6 @@
           prepend-icon="icon-sort-amount-desc"
           :class="{'small': $vuetify.breakpoint.smAndDown}"
         ></v-select>
-        <v-switch
-          v-model="onlyPinned"
-          label="Pinned"
-          @change="filterPinned"
-          class="blog-list__search--pin posts-filter"
-          :class="{'small': $vuetify.breakpoint.smAndDown}"
-          append-icon="icon-pushpin"
-        ></v-switch>
         <v-select
           v-model="selectedMonth"
           :items="months"
@@ -56,16 +45,27 @@
           return-object
           class="blog-list-master__siderbar--filters__month posts-filter"
           :class="{'small': $vuetify.breakpoint.smAndDown}"
+          prepend-icon="icon-filter"
         ></v-select>
+        <div class="switch-container">
+          <v-switch
+            v-model="onlyPinned"
+            label="Pinned"
+            @change="filterPinned"
+            class="blog-list__search--pin posts-filter"
+            :class="{'small': $vuetify.breakpoint.smAndDown}"
+            append-icon="icon-pushpin"
+          ></v-switch>
+        </div>
       </div>
       <v-divider dark></v-divider>
       <div
         class="blog-list-master__sidebar--links"
         :class="{'broken': $vuetify.breakpoint.mdAndDown}"
       >
-        <v-btn class="nes-btn is-primary" to="/blog">&#60;- Back to blog selection</v-btn>
+        <v-btn class="nes-btn is-primary" to="/blog">&#60;- blog selection</v-btn>
       </div>
-    </v-card>
+    </div>
   </section>
 </template>
 
@@ -190,6 +190,8 @@ export default {
 .blog-list-master {
   display: flex;
   justify-content: space-between;
+  background-color: #000;
+  min-height: calc(100vh - 14rem);
   &.smaller {
     flex-direction: column-reverse;
     .blog-list {
@@ -201,6 +203,9 @@ export default {
       flex-wrap: wrap;
       height: auto;
       min-height: auto;
+      .switch-container {
+        width: 50%;
+      }
       .posts-filter {
         width: calc(50% - 2rem);
         margin: 0.5rem 1rem;
@@ -208,29 +213,34 @@ export default {
     }
   }
   .blog-list-master__sidebar {
+    border: 2px solid $pacman-purple;
     display: flex;
     flex-direction: column;
-    min-width: 25rem;
+    max-width: 20rem;
     margin: 1rem 1rem 0 1rem;
     min-height: calc(100vh - 7rem - 9rem);
     height: 100%;
+    min-width: 20rem;
+    // border-top-left-radius: 2rem;
+    // border-bottom-right-radius: 2rem;
+    .blog-list-master__sidebar--title-container {
+      padding: 1rem 1rem 1rem 2rem;
+    }
     &.md {
       min-height: auto;
+      width: 100%;
     }
     .blog-list-master__sidebar--title,
     .blog-list-master__sidebar--title .v-icon {
       color: $light;
     }
     .blog-list-master__sidebar--filters {
-      padding: 2rem;
-      .blog-list-master__siderbar--filters__search {
-        margin-bottom: 3rem;
-      }
-      .blog-list-master__siderbar--filters__month {
-        margin-top: 1rem;
-      }
-      .blog-list__search--pin .v-label.theme--dark {
-        margin-bottom: 0;
+      padding: 2rem 2rem 0;
+      .switch-container {
+        padding-top: 0.5rem;
+        .blog-list__search--pin .v-label.theme--dark {
+          margin-bottom: 0;
+        }
       }
       .posts-filter.small {
         width: 100%;
@@ -240,12 +250,10 @@ export default {
     .blog-list-master__sidebar--links {
       display: flex;
       flex-direction: column;
-      // margin-top: 1rem;
       align-items: center;
       justify-content: center;
       flex: 1;
       .nes-btn {
-        // margin-top: 2rem;
         .v-btn__content {
           font-family: $game-font;
           font-size: 0.75rem;

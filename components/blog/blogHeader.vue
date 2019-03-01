@@ -72,6 +72,10 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    h4,
+    h2 {
+      text-align: center;
+    }
   }
 }
 </style>
