@@ -1,5 +1,8 @@
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin');
 const pkg = require('./package');
+const removeMd = require('remove-markdown');
+const fs = require('fs');
+const path = require('path');
 import Coding from './content/directory/coding';
 import Gaming from './content/directory/gaming';
 
@@ -107,6 +110,7 @@ module.exports = {
     '@nuxtjs/markdownit',
     'nuxt-webfontloader',
     '@nuxtjs/dotenv',
+    '@nuxtjs/feed',
     // 'nuxt-purgecss',
     [
       'nuxt-imagemin',
@@ -163,6 +167,68 @@ module.exports = {
     google: {
       families: ['Lato:400,900', 'Press+Start+2P']
     }
+  },
+
+  /** RSS, ATOM, and JSON feed config */
+  feed: async () => {
+    const gCopy = Gaming();
+    const cCopy = Coding();
+    return [
+      {
+        path: '/RSSfeed_gaming.xml',
+        async create(feed) {
+          feed.options = {
+            title: `Gaming Blog of the Digital Jedi`,
+            link: `https://joeyg.me/RSSfeed_gaming.xml`,
+            description: `The documented gaming journey of an old school gamer and newbie retro game collector learning the ways of the Jedi`
+          };
+
+          gCopy.forEach(post => {
+            const postMd = fs.readFileSync(
+              path.resolve(__dirname, `content/posts/gaming/${post.id}.md`),
+              'utf8'
+            );
+            const content = removeMd(postMd);
+            feed.addItem({
+              title: post.title,
+              id: post.id,
+              link: `https://joeyg.me/blog/gaming/${post.slug}`,
+              description: post.intro,
+              content
+            });
+          });
+        },
+        cacheTime: 1000 * 60 * 15,
+        type: 'rss2'
+      },
+      {
+        path: '/RSSfeed_coding.xml',
+        async create(feed) {
+          feed.options = {
+            title: `Coding Blog of the Digital Jedi`,
+            link: `https://joeyg.me/RSSfeed_coding.xml`,
+            description: `Personal programming ramblings of a JavaScript Jedi covering topics ranging from application architecture to his hatred for CSS`
+          };
+
+          cCopy.forEach(post => {
+            const postMd = fs.readFileSync(
+              path.resolve(__dirname, `content/posts/coding/${post.id}.md`),
+              'utf8'
+            );
+            const content = removeMd(postMd);
+            feed.addItem({
+              title: post.title,
+              id: post.id,
+              link: `https://joeyg.me/blog/coding/${post.slug}`,
+              description: post.intro,
+              content
+            });
+          });
+        },
+        cacheTime: 1000 * 60 * 15,
+        type: 'rss2'
+      }
+    ];
   },
 
   /*
