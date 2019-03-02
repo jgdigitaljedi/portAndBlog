@@ -9,12 +9,12 @@
       </div>
       <div class="blog-list-master__sidebar--filters">
         <v-autocomplete
-          v-model="searchTerm"
+          v-model="currentFilters.searchTerm"
           hint="Search Blog Titles & Keywords"
           :items="postTerms"
           label="Search"
           dark
-          @input="searchPosts"
+          @input="applyFilters"
           :clearable="true"
           prepend-icon="icon-search"
           flat
@@ -27,16 +27,16 @@
           item-text="label"
           return-object
           class="blog-list__search--sort posts-filter"
-          v-model="sortSelected"
-          @change="sortPosts"
+          v-model="currentFilters.sortSelected"
+          @change="applyFilters"
           prepend-icon="icon-sort-amount-desc"
           :class="{'small': $vuetify.breakpoint.smAndDown}"
         ></v-select>
         <v-select
-          v-model="selectedMonth"
+          v-model="currentFilters.month"
           :items="months"
           label="Filter by Month & Year"
-          @change="filterByMonth"
+          @change="applyFilters"
           clearable
           item-text="display"
           return-object
@@ -46,9 +46,9 @@
         ></v-select>
         <div class="switch-container">
           <v-switch
-            v-model="onlyPinned"
+            v-model="currentFilters.pinned"
             label="Pinned"
-            @change="filterPinned"
+            @change="applyFilters"
             class="blog-list__search--pin posts-filter"
             :class="{'small': $vuetify.breakpoint.smAndDown}"
             append-icon="icon-pushpin"
@@ -80,23 +80,25 @@ export default {
     return {
       isMounted: false,
       postTerms: null,
-      sortSelected: null,
-      searchTerm: '',
       filteredPosts: [],
       months: [],
       cPosts: [],
-      onlyPinned: false,
-      selectedMonth: null,
       sortItems: [
         { label: 'Post Date - desc', key: 'dateDesc' },
         { label: 'Post Date - asc', key: 'dateAsc' },
         { label: 'Title - desc', key: 'titleDesc' },
         { label: 'Title - asc', key: 'titleAsc' }
-      ]
+      ],
+      currentFilters: {
+        searchTerm: null,
+        sort: null,
+        pinned: false,
+        month: null
+      }
     };
   },
   created() {
-    this.sortSelected = this.sortItems[0];
+    this.currentFilters.sortSelected = this.sortItems[0];
     this.cPosts = _cloneDeep(this.posts);
     this.filteredPosts = _cloneDeep(this.posts);
     this.postTerms = _uniq(
@@ -122,16 +124,23 @@ export default {
     this.isMounted = true;
   },
   methods: {
-    searchPosts() {
-      if (this.searchTerm && this.searchTerm !== '') {
-        this.filteredPosts = this.cPosts.filter(p => p.searchTerms.indexOf(this.searchTerm) >= 0);
-      } else {
-        this.filteredPosts = _cloneDeep(this.cPosts);
-      }
+    applyFilters() {
+      this.filteredPosts = this.cPosts;
+      this.filterByMonth();
+      this.filterPinned();
+      this.searchPosts();
       this.sortPosts();
     },
+    searchPosts() {
+      if (this.currentFilters.searchTerm && this.currentFilters.searchTerm !== '') {
+        const fpCopy = _cloneDeep(this.filteredPosts);
+        this.filteredPosts = fpCopy.filter(
+          p => p.searchTerms.indexOf(this.currentFilters.searchTerm) >= 0
+        );
+      }
+    },
     sortPosts() {
-      switch (this.sortSelected.key) {
+      switch (this.currentFilters.sortSelected.key) {
         case 'dateDesc':
           this.filteredPosts = SortsService.sortByDate(
             _cloneDeep(this.filteredPosts),
@@ -154,28 +163,22 @@ export default {
           this.filteredPosts = SortsService.sortAlpha(_cloneDeep(this.filteredPosts), 'title');
           break;
       }
-      if (this.onlyPinned) {
-        this.filteredPosts = _cloneDeep(this.filteredPosts).filter(p => p.pinned);
-      }
     },
     filterPinned() {
-      if (this.onlyPinned) {
+      if (this.currentFilters.pinned) {
         this.filteredPosts = _cloneDeep(this.filteredPosts).filter(p => p.pinned);
-      } else {
-        this.searchPosts();
       }
     },
     filterByMonth() {
-      if (this.selectedMonth) {
+      if (this.currentFilters.month) {
         const pCopy = _cloneDeep(this.filteredPosts);
         this.filteredPosts = pCopy.filter(p => {
           const pMonth = format(p.created_at, 'MMM');
           const pYear = format(p.created_at, 'YYYY');
-          return pMonth === this.selectedMonth.month && pYear === this.selectedMonth.year;
+          return (
+            pMonth === this.currentFilters.month.month && pYear === this.currentFilters.month.year
+          );
         });
-      } else {
-        this.filteredPosts = this.cPosts;
-        this.searchPosts();
       }
     }
   }
