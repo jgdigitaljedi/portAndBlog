@@ -12,6 +12,7 @@
     <div class="blog-header__title-social">
       <h2 v-if="$vuetify.breakpoint.mdAndUp && isMounted">{{post.title}}</h2>
       <h4 v-if="$vuetify.breakpoint.smAndDown && isMounted">{{post.title}}</h4>
+      <small class="blog-header__title-social--tag hidden-sm-and-down" v-if="post.tag_line">{{post.tag_line}}</small>
     </div>
   </section>
 </template>
@@ -75,6 +76,10 @@ export default {
     h4,
     h2 {
       text-align: center;
+    }
+    .blog-header__title-social--tag {
+      color: $light;
+      font-style: italic;
     }
   }
 }

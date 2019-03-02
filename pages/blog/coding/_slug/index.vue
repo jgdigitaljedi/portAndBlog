@@ -26,12 +26,12 @@ export default {
       title: post.title,
       meta: [
         {
-          hid: post.meta.id,
+          hid: post.id,
           name: 'description',
-          content: post.meta.content
+          content: post.title
         },
         {
-          hid: post.meta.id + 1,
+          hid: `${post.id}k`,
           name: 'keywords',
           content: post.meta.keywords
         }
