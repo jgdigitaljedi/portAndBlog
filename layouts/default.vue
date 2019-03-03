@@ -1,6 +1,5 @@
 <template>
   <v-app dark class="app-wrapper">
-    <!-- <top-header/> -->
     <NavBar></NavBar>
     <main id="main" role="main">
       <nuxt/>
@@ -12,12 +11,10 @@
 </template>
 
 <script>
-// import TopHeader from '~/components/TopHeader.vue';
 import NavBar from '~/components/NavBar.vue';
 
 export default {
   components: {
-    // TopHeader,
     NavBar
   },
   computed: {
@@ -71,6 +68,9 @@ export default {
       sound.currentTime = 0;
       sound.volume = 0.5;
       sound.cloneNode(true).play();
+      if (this.$ga) {
+        this.$ga.event('input', 'keyPress', 'konamiCode', true);
+      }
       // sound.play();
     }
   }

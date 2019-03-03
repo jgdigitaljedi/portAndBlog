@@ -137,6 +137,9 @@ export default {
         this.filteredPosts = fpCopy.filter(
           p => p.searchTerms.indexOf(this.currentFilters.searchTerm) >= 0
         );
+        if (this.$ga) {
+          this.$ga.event('filter', 'blogListFilters', 'search', this.currentFilters.searchTerm);
+        }
       }
     },
     sortPosts() {
@@ -152,21 +155,33 @@ export default {
             _cloneDeep(this.filteredPosts),
             'created_at'
           );
+          if (this.$ga) {
+            this.$ga.event('filter', 'blogListFilters', 'sort', 'dateAsc');
+          }
           break;
         case 'titleDesc':
           this.filteredPosts = SortsService.sortAlpha(
             _cloneDeep(this.filteredPosts),
             'title'
           ).reverse();
+          if (this.$ga) {
+            this.$ga.event('filter', 'blogListFilters', 'sort', 'titleDesc');
+          }
           break;
         case 'titleAsc':
           this.filteredPosts = SortsService.sortAlpha(_cloneDeep(this.filteredPosts), 'title');
+          if (this.$ga) {
+            this.$ga.event('filter', 'blogListFilters', 'sort', 'titleAsc');
+          }
           break;
       }
     },
     filterPinned() {
       if (this.currentFilters.pinned) {
         this.filteredPosts = _cloneDeep(this.filteredPosts).filter(p => p.pinned);
+        if (this.$ga) {
+          this.$ga.event('filter', 'blogListFilters', 'pinned', this.currentFilters.pinned);
+        }
       }
     },
     filterByMonth() {
@@ -179,6 +194,9 @@ export default {
             pMonth === this.currentFilters.month.month && pYear === this.currentFilters.month.year
           );
         });
+        if (this.$ga) {
+          this.$ga.event('filter', 'blogListFilters', 'month', this.currentFilters.month);
+        }
       }
     }
   }

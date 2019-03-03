@@ -31,12 +31,10 @@ Right now things look a little on the rough side because this is still in active
 
 ## CURRENT FOCUS TODO
 
-- style up blog section landing pages; maybe a Final Fantasy VII menu style for gaming blog?
 - style blog posts; my repeasting background and gradient is terrible, but is a placeholder until I think of something
 - add breadcrumbs to blog sections/add subnav like I did in homeControl repo
-- add https://github.com/nuxt-community/feed-module and setup to generate feeds; then add feeds to feedburner, etc
 - figure out postcss/autoprefixer
-- figure out why pwa gradient background doesn't work (only in downloaded app)
+-
 
 ## OVERALL TODO
 
