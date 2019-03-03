@@ -13,18 +13,18 @@
 </template>
 
 <script>
-  export default {
-    name: 'blogPostSlug',
-    props: ['post', 'which', 'postContent'],
-    data() {
-      return {
-        isMounted: false
-      };
-    },
-    mounted() {
-      this.isMounted = true;
-    }
-  };
+export default {
+  name: 'blogPostSlug',
+  props: ['post', 'which', 'postContent'],
+  data() {
+    return {
+      isMounted: false
+    };
+  },
+  mounted() {
+    this.isMounted = true;
+  }
+};
 </script>
 
 <style lang="scss" scoped>

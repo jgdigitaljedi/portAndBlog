@@ -10,7 +10,7 @@ $breakpoint-large-max: ($breakpoint-xlarge - 1);
 $brand-color: $primary;
 
 html {
-  height: 100%;
+  // height: 100%;
   overflow: auto;
   cursor: url('/images/cursor.png'), auto !important;
 }
