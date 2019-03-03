@@ -27,7 +27,6 @@
     "lodash": "^4.17.11",
     "markdown-it-highlightjs": "^3.0.0",
     "marked": "^0.6.0",
-    "nes.css": "^2.0.0",
     "nuxt": "^2.4.0",
     "nuxt-imagemin": "^1.0.0",
     "nuxt-netlify-http2-server-push": "^0.1.2",

@@ -12,6 +12,7 @@ $brand-color: $primary;
 html {
   height: 100%;
   overflow: auto;
+  cursor: url('/images/cursor.png'), auto !important;
 }
 
 body {
@@ -24,6 +25,7 @@ body {
   margin: 0;
   overflow: auto;
   padding: 0;
+  cursor: url('/images/cursor.png'), auto !important;
 
   h1,
   h2,
@@ -37,22 +39,23 @@ body {
   .v-toolbar__title {
     font-family: $game-font;
   }
+
+  a,
+  button,
+  select,
+  input,
+  .v-input--selection-controls__ripple,
+  .nuxt-link,
+  .nav-link__tile--text,
+  label.v-label {
+    cursor: url('/images/cursor-click.png'), auto !important;
+  }
 }
 p,
 span,
 div,
 small {
   font-family: $primary-font;
-}
-
-.nes-container {
-  &::after {
-    z-index: 1;
-  }
-
-  &.is-dark {
-    background-color: $black;
-  }
 }
 
 .util__container {

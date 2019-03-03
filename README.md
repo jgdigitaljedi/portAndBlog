@@ -34,7 +34,6 @@ Right now things look a little on the rough side because this is still in active
 - style blog posts; my repeasting background and gradient is terrible, but is a placeholder until I think of something
 - add breadcrumbs to blog sections/add subnav like I did in homeControl repo
 - figure out postcss/autoprefixer
--
 
 ## OVERALL TODO
 

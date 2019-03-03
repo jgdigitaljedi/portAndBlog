@@ -1,16 +1,17 @@
 <template>
   <section class="social" :class="{'column': isMounted && !$vuetify.breakpoint.smAndDown}">
     <a class="social-link" href="https://twitter.com/jgdigitaljedi" target="__blank">
-      <i class="nes-icon twitter is-medium"></i>
+      <img class="social-link__image" src="/images/social/twitter_8bit.png">
     </a>
     <a class="social-link" href="https://www.linkedin.com/in/paulgauthier81/" target="__blank">
-      <i class="nes-icon linkedin is-medium"></i>
+      <img class="social-link__image" src="/images/social/linkedin_8bit.png">
     </a>
     <a class="social-link" href="https://github.com/jgdigitaljedi" target="__blank">
-      <i class="nes-icon github is-medium"></i>
+      <img class="social-link__image" src="/images/social/github_8bit.png">
     </a>
   </section>
 </template>
+
 
 <script>
 export default {
@@ -35,6 +36,10 @@ export default {
   }
   .social-link {
     margin: 1em;
+    .social-link__image {
+      max-width: 5rem;
+      height: auto;
+    }
   }
 }
 </style>

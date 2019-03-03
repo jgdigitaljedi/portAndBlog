@@ -60,7 +60,7 @@
         class="blog-list-master__sidebar--links"
         :class="{'broken': $vuetify.breakpoint.mdAndDown}"
       >
-        <v-btn class="nes-btn is-primary" to="/blog">&#60;- blog selection</v-btn>
+        <v-btn color="accent" class="back-btn" to="/blog">&#60;- blog selection</v-btn>
       </div>
     </div>
   </section>
@@ -273,10 +273,11 @@ export default {
       align-items: center;
       justify-content: center;
       flex: 1;
-      .nes-btn {
+      .back-btn {
         .v-btn__content {
           font-family: $game-font;
           font-size: 0.75rem;
+          color: #000;
         }
       }
       &.broken {

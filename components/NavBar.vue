@@ -7,7 +7,6 @@
         </nuxt-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <!-- <i @click.stop="drawer = !drawer" class="nes-logo hidden-md-and-up mobile-hamburger"></i> -->
       <img
         src="/images/pacman_cherries.png"
         @click.stop="drawer = !drawer"
@@ -18,13 +17,13 @@
           <nuxt-link :to="link.to" class="nav-link">
             <img :src="link.icon">
             <label class="nav-link__tile">
-              <input
-                type="radio"
-                name="home"
-                class="nes-radio"
-                :checked="currentSelectedRoute === link.to"
-              >
-              <span class="nav-link__tile--text">{{link.title}}</span>
+              <div class="nav-link__tile--text-wrapper">
+                <div class="nav-link__tile--selected" v-if="currentSelectedRoute === link.to"></div>
+                <div
+                  class="nav-link__tile--text"
+                  :class="{'current': currentSelectedRoute === link.to}"
+                >{{link.title}}</div>
+              </div>
             </label>
           </nuxt-link>
           <div class="nav__power-pellet" v-if="index < links.length - 1">
@@ -43,13 +42,13 @@
           <img :src="link.icon">
           <nuxt-link :to="link.to" class="nav-link">
             <label class="nav-link__tile">
-              <input
-                type="radio"
-                name="mobile"
-                class="nes-radio"
-                :checked="currentSelectedRoute === link.to"
-              >
-              <span class="nav-link__tile--text">{{link.title}}</span>
+              <div class="nav-link__tile--text-wrapper">
+                <div class="nav-link__tile--selected" v-if="currentSelectedRoute === link.to"></div>
+                <div
+                  class="nav-link__tile--text"
+                  :class="{'current': currentSelectedRoute === link.to}"
+                >{{link.title}}</div>
+              </div>
             </label>
           </nuxt-link>
         </v-list-tile>
@@ -101,6 +100,19 @@ export default {
 
 <style lang="scss">
 @import '~/assets/style/theme.scss';
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .nav-wrapper {
   background-color: transparent;
   width: 100%;
@@ -157,7 +169,7 @@ export default {
           font-family: $game-font;
           margin-right: 1rem;
           &:visited {
-            color: $warning;
+            color: $yellow;
           }
           &:active {
             color: $danger;
@@ -168,15 +180,32 @@ export default {
           }
           .nav-link__tile {
             margin-bottom: -0.75rem;
-          }
-          .nav-link__tile--text:before {
-            color: $danger;
-            // top: 2px;
-            z-index: 10;
-          }
-          .nav-link__tile--text {
-            font-family: $game-font;
-            margin-left: -2rem;
+            .nav-link__tile--text-wrapper {
+              display: flex;
+              position: relative;
+              .nav-link__tile--selected {
+                width: 0;
+                height: 0;
+                border-top: 0.65rem solid transparent;
+                border-bottom: 0.65rem solid transparent;
+                border-left: 0.75rem solid $light;
+                margin-right: 2rem;
+                position: absolute;
+                left: -1rem;
+                top: 0.2rem;
+              }
+              .nav-link__tile--text {
+                font-family: $game-font;
+                &.current {
+                  color: $light;
+                }
+              }
+              &:hover {
+                .nav-link__tile--selected {
+                  animation: blink normal 1s infinite;
+                }
+              }
+            }
           }
         }
       }
@@ -186,9 +215,17 @@ export default {
     }
   }
   .mobile-nav {
+    .v-list.theme--dark {
+      background: transparent;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      justify-content: center;
+    }
     .mobile-nav__link-wrapper {
       display: flex;
       align-items: center;
+      margin-bottom: 1rem;
       img {
         width: 1.5rem;
         height: 1.5rem;
@@ -206,7 +243,7 @@ export default {
       &:visited {
         .nav-link__tile .nav-link__tile--icon,
         .nav-link__tile .nav-link__tile--text {
-          color: $warning;
+          color: $yellow;
         }
       }
       &:active {
@@ -220,14 +257,32 @@ export default {
       }
       .nav-link__tile {
         transition: all 0.3s;
-        .nav-link__tile--text {
-          font-size: 1.3em;
-          font-family: $game-font;
-          margin-left: 1.2em;
-          &::before {
-            color: $danger;
-            // top: 2px;
-            z-index: 10;
+        .nav-link__tile--text-wrapper {
+          display: flex;
+          position: relative;
+          .nav-link__tile--selected {
+            width: 0;
+            height: 0;
+            border-top: 0.65rem solid transparent;
+            border-bottom: 0.65rem solid transparent;
+            border-left: 0.75rem solid $light;
+            margin-right: 2rem;
+            position: absolute;
+            left: 1rem;
+            top: 0.3rem;
+          }
+          .nav-link__tile--text {
+            font-size: 1.5rem;
+            font-family: $game-font;
+            margin-left: 2rem;
+            &.current {
+              color: $light;
+            }
+          }
+          &:hover {
+            .nav-link__tile--selected {
+              animation: blink normal 1s infinite;
+            }
           }
         }
       }

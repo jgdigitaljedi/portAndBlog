@@ -10,7 +10,7 @@
     >
       <social></social>
     </div>
-    <div class="home__image-title-container">
+    <div class="home__image-title-container" :class="{'add-margin': $vuetify.breakpoint.smAndDown}">
       <img src="~/assets/images/me_8bit_scanlines.jpg">
       <h1 :class="{'mobile': $vuetify.breakpoint.smAndDown}">Joey Gauthier</h1>
     </div>
@@ -120,7 +120,9 @@ $shadows-big: multiple-box-shadow(100);
     flex-direction: column;
     z-index: 1000;
     animation: 4s ease-out 0s 1 slideInFromRight, hideShow 0.1s linear 4s forwards;
-    // animation: hideShow 0.1s linear 4s forwards;
+    &.add-margin {
+      margin-top: 1.5rem;
+    }
     img {
       max-height: 400px;
       width: auto;

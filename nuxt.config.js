@@ -91,7 +91,6 @@ module.exports = {
   */
   css: [
     '~/assets/style/app.styl',
-    { src: '~/node_modules/nes.css/scss/nes', lang: 'sass' },
     { src: '~/node_modules/highlight.js/styles/solarized-dark', lang: 'css' },
     '~/assets/style/fonts.css'
   ],
@@ -137,10 +136,16 @@ module.exports = {
           { path: 'images/**.png', as: 'image' },
           { path: 'images/**.svg', as: 'image' },
           { path: 'images/**.gif', as: 'image' },
+          { path: 'images/**/**.jpg', as: 'image' },
+          { path: 'images/**/**.png', as: 'image' },
+          { path: 'images/**/**.svg', as: 'image' },
+          { path: 'images/**/**.gif', as: 'image' },
           { path: '**.png', as: 'image' },
           { path: '**.jpg', as: 'image' },
           { path: '**.svg', as: 'image' },
           { path: '**.gif', as: 'image' },
+          { path: 'favicons.**.png', as: 'image' },
+          { path: 'favicons.**.ico', as: 'image' },
           { path: 'fonts/*.woff2', as: 'font', type: 'font/woff2', crossorigin: 'anonymous' }
         ]
       }
