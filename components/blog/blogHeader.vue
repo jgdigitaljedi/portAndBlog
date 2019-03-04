@@ -60,9 +60,9 @@ export default {
   }
   &.coding {
     background: -webkit-linear-gradient(45deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)),
-      url('/images/programming.jpg') repeat;
+      url('/images/blog/coding/programming.jpg') repeat;
     background: linear-gradient(45deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)),
-      url('/images/programming.jpg') repeat;
+      url('/images/blog/coding/programming.jpg') repeat;
     background-position: center;
   }
   .blog-header__written-by {

@@ -268,6 +268,13 @@ module.exports = {
           exclude: /(node_modules)/
         });
       }
+      const vueLoader = config.module.rules.find(rule => rule.loader === 'vue-loader');
+      // vueLoader.options.transformToRequire['img'] = ['src', 'data-src'];
+      vueLoader.options.transformToRequire = {
+        video: 'src',
+        source: 'src',
+        img: ['src', 'data-src']
+      };
       config.module.rules.push({
         test: /\.mp3$/,
         loader: 'file-loader'

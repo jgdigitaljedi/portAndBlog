@@ -72,9 +72,9 @@ export default {
         rgba(0, 0, 0, 0.7),
         rgba(0, 0, 0, 1)
       ),
-      url('/images/early_2019_collection.jpg') repeat;
+      url('/images/blog/gaming/early_2019_collection.jpg') repeat;
     background: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)),
-      url('/images/early_2019_collection.jpg') repeat;
+      url('/images/blog/gaming/early_2019_collection.jpg') repeat;
     background-position: center;
     display: flex;
     justify-content: space-between;
