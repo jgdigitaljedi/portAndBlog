@@ -11,7 +11,7 @@
         </div>
       </div>
       <div class="blog-list-inner__thumb hidden-sm-and-down" v-if="post.image && post.image.length">
-        <img class="blog-list-inner__thumb--image" :src="post.image[0]">
+        <img class="blog-list-inner__thumb--image" :src="post.image">
       </div>
       <div class="intro-and-date">
         <small>{{ post.created_at }}</small>
@@ -23,6 +23,7 @@
     </div>
   </div>
 </template>
+
 
 <script>
 export default {

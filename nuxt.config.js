@@ -16,7 +16,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: "Joey Gauthier's Portfolio",
+    title: 'Joey G | Portfolio & Blog',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -32,7 +32,7 @@ module.exports = {
       {
         hid: 'twitter:title',
         name: 'twitter:title',
-        content: "Joey Gauthier's Portfolio"
+        content: 'Joey G | Portfolio & Blog'
       },
       {
         hid: 'twitter:description',
@@ -49,7 +49,7 @@ module.exports = {
       {
         hid: 'og:title',
         name: 'og:title',
-        content: "Joey Gauthier's Portfolio"
+        content: 'Joey G | Portfolio & Blog'
       },
       {
         hid: 'og:description',
@@ -66,7 +66,7 @@ module.exports = {
 
   /** PWA manifest */
   manifest: {
-    name: `Joey Gauthier's Portfolio & Blog`,
+    name: `Joey G's Portfolio & Blog`,
     short_name: `Joey G P&B`,
     background_color: '#1f5673'
   },

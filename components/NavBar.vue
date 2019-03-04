@@ -3,12 +3,12 @@
     <v-toolbar dark class="nav">
       <v-toolbar-title color="#000" class="nav__brand">
         <nuxt-link to="/">
-          <img class="nav__brand--image" src="~/assets/images/JG.png">
+          <img class="nav__brand--image" src="~/assets/images/navbar/JG.png">
         </nuxt-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <img
-        src="/images/pacman_cherries.png"
+        src="~/assets/images/navbar/pacman_cherries.png"
         @click.stop="drawer = !drawer"
         class="pacman-cherries hidden-md-and-up"
       >
@@ -27,15 +27,15 @@
             </label>
           </nuxt-link>
           <div class="nav__power-pellet" v-if="index < links.length - 1">
-            <img src="~/assets/images/power-pellet.png">
-            <img src="~/assets/images/power-pellet.png">
+            <img src="~/assets/images/navbar/power-pellet.png">
+            <img src="~/assets/images/navbar/power-pellet.png">
           </div>
         </div>
       </v-toolbar-items>
     </v-toolbar>
     <v-navigation-drawer v-model="drawer" absolute temporary class="mobile-nav">
       <div class="mobile-nav__title">
-        <img class="nav__brand--image" src="~/assets/images/JG.png">
+        <img class="nav__brand--image" src="~/assets/images/navbar/JG.png">
       </div>
       <v-list>
         <v-list-tile v-for="link in links" :key="link.title" class="mobile-nav__link-wrapper">
@@ -65,8 +65,8 @@ export default {
       currentSelectedRoute: 'home',
       drawer: false,
       links: [
-        { title: 'Home', to: '/', icon: require('~/assets/images/pacman.png') },
-        { title: 'Blog', to: '/blog', icon: require('~/assets/images/ghost_red.png') }
+        { title: 'Home', to: '/', icon: require('~/assets/images/navbar/pacman.png') },
+        { title: 'Blog', to: '/blog', icon: require('~/assets/images/navbar/ghost_red.png') }
         // { title: 'About', to: '/about' },
         // { title: 'Work', to: '/work' },
         // { title: 'VG', to: '/videogames' }

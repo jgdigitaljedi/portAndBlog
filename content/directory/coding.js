@@ -17,7 +17,7 @@ export default () => [
     title: 'Design Inspiration for This Site',
     tag_line: `You try to make a pretty site using pixelated assets and 8-bit colors!`,
     created_at: '02/23/2019',
-    image: ['/images/game_collection.jpg', '/images/me_8bit_scanlines.jpg'],
+    image: '/images/blog/gaming/game_collection.jpg',
     pinned: true,
     intro:
       'My thought process behind designing this seemingly random site that would make a designer cringe.',

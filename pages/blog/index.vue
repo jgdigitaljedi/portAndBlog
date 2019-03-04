@@ -9,7 +9,7 @@
         <div class="mario__top-text--coins top-text-column">
           <div class="top-text-column__row">&nbsp;</div>
           <div class="top-text-column__row">
-            <img src="~/assets/images/mario_coin.png" class="mario-coin">X00
+            <img src="~/assets/images/mario/mario_coin.png" class="mario-coin">X00
           </div>
         </div>
         <div class="mario__top-text--world top-text-column">
@@ -43,7 +43,7 @@
         <div @mouseover="active = 'gaming'" class="mario__blog-select--wrapper">
           <nuxt-link to="/blog/gaming" class="mario__blog-select--link">
             <img
-              src="/images/mario_shroom.png"
+              src="~/assets/images/mario/mario_shroom.png"
               class="mario__blog-select--active"
               v-if="active === 'gaming'"
             >
@@ -53,7 +53,7 @@
         <div @mouseover="active = 'coding'" class="mario__blog-select--wrapper">
           <nuxt-link to="/blog/coding" class="mario__blog-select--link">
             <img
-              src="/images/mario_shroom.png"
+              src="~/assets/images/mario/mario_shroom.png"
               class="mario__blog-select--active"
               v-if="active === 'coding'"
             >
@@ -62,19 +62,19 @@
         </div>
       </div>
       <img
-        src="~/assets/images/mario_hill.png"
+        src="~/assets/images/mario/mario_hill.png"
         class="mario__hill hidden-sm-and-down"
         :class="{'medium': (isMounted && $vuetify.breakpoint.md)}"
         v-if="isMounted"
       >
       <img
-        src="~/assets/images/small-mario.png"
+        src="~/assets/images/mario/small-mario.png"
         class="mario__mario hidden-sm-and-down"
         :class="{'medium': (isMounted && $vuetify.breakpoint.md)}"
         v-if="isMounted"
       >
       <img
-        src="~/assets/images/mario_bushes.png"
+        src="~/assets/images/mario/mario_bushes.png"
         class="mario__bushes hidden-sm-and-down"
         :class="{'medium': (isMounted && $vuetify.breakpoint.md)}"
         v-if="isMounted"
@@ -202,7 +202,7 @@ $mario-bush-accent: #0c110c;
       left: 0;
       min-height: 5rem;
       width: 100%;
-      background-image: url('/images/mario_ground_block.png');
+      background-image: url('../../assets/images/mario/mario_ground_block.png');
       background-repeat: repeat;
       background-size: 5rem 5rem;
     }

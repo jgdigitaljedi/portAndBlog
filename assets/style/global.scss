@@ -12,7 +12,7 @@ $brand-color: $primary;
 html {
   // height: 100%;
   overflow: auto;
-  cursor: url('/images/cursor.png'), auto !important;
+  cursor: url('/images/cursors/cursor.png'), auto !important;
 }
 
 body {
@@ -25,7 +25,7 @@ body {
   margin: 0;
   overflow: auto;
   padding: 0;
-  cursor: url('/images/cursor.png'), auto !important;
+  cursor: url('/images/cursors/cursor.png'), auto !important;
 
   h1,
   h2,
@@ -48,7 +48,7 @@ body {
   .nuxt-link,
   .nav-link__tile--text,
   label.v-label {
-    cursor: url('/images/cursor-click.png'), auto !important;
+    cursor: url('/images/cursors/cursor-click.png'), auto !important;
   }
 }
 p,

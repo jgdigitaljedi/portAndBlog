@@ -11,7 +11,7 @@
       <social></social>
     </div>
     <div class="home__image-title-container" :class="{'add-margin': $vuetify.breakpoint.smAndDown}">
-      <img src="~/assets/images/me_8bit_scanlines.jpg">
+      <img src="~/assets/images/me/me_8bit_scanlines.jpg">
       <h1 :class="{'mobile': $vuetify.breakpoint.smAndDown}">Joey Gauthier</h1>
     </div>
     <div class="home__about--wrapper">
