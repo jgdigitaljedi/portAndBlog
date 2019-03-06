@@ -94,15 +94,9 @@ export default {
     h5,
     h6 {
       font-family: $game-font !important;
-    }
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
       text-align: center;
       margin: 2rem auto;
+      color: $light;
     }
     div,
     p,

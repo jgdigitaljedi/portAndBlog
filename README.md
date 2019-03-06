@@ -31,7 +31,7 @@ Right now things look a little on the rough side because this is still in active
 
 ## CURRENT FOCUS TODO
 
-- use CDN for blog pictures so static/images doesn't get super huge over time
+- maybe use CDN for blog pictures so static/images doesn't get super huge over time; Netlify already uses CDN but still might be beneficial
 - style blog posts; my repeating background and gradient is terrible, but is a placeholder until I think of something
 - add breadcrumbs or something to blog so you can nav back to blog list or index more easily
 - figure out postcss/autoprefixer

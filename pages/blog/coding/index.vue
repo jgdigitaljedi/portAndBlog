@@ -70,9 +70,9 @@ export default {
         rgba(0, 0, 0, 0.7),
         rgba(0, 0, 0, 1)
       ),
-      url('/images/programming.jpg') repeat;
+      url('/images/blog/coding/programming.jpg') repeat;
     background: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)),
-      url('/images/programming.jpg') repeat;
+      url('/images/blog/coding/programming.jpg') repeat;
     background-position: center;
     display: flex;
     justify-content: space-between;

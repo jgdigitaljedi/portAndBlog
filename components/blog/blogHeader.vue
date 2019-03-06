@@ -20,10 +20,7 @@
       </div>
       <div class="blog-header__title-nav--nav">
         <nuxt-link class="nav-button" :to="`/blog/${which}`">
-          <div>{{which.toUpperCase()}} BLOG INDEX</div>
-        </nuxt-link>
-        <nuxt-link class="nav-button" :to="'/blog'">
-          <div>MASTER BLOG INDEX</div>
+          <div>&#60;- {{which.toUpperCase()}} BLOG LIST</div>
         </nuxt-link>
       </div>
     </div>
@@ -92,6 +89,7 @@ export default {
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      flex: 1;
       h4,
       h2 {
         text-align: center;
@@ -102,15 +100,26 @@ export default {
       }
     }
     .blog-header__title-nav--nav {
-      bottom: 0;
-      right: 0;
-      position: absolute;
       display: flex;
+      justify-content: center;
       .nav-button {
-        border: 2px solid $pacman-purple;
+        background-color: $pacman-purple;
         padding: 0.5rem;
-        color: $pacman-purple;
-        font-familt: $game-font;
+        color: $light;
+        text-decoration: none;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        transition: all 0.4s ease-in-out;
+        div {
+          font-family: $game-font;
+          font-size: 0.75rem;
+        }
+        &:hover {
+          background-color: $light;
+          div {
+            color: $pacman-purple;
+          }
+        }
       }
     }
   }
