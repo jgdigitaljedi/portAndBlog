@@ -46,6 +46,7 @@ export default {
 @import '~/assets/style/theme.scss';
 .blog-header {
   // padding: 2rem 1rem;
+  border-bottom: 2px solid $pacman-purple;
   display: flex;
   justify-content: space-around;
   &.gaming {

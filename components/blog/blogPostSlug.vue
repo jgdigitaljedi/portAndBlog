@@ -43,10 +43,11 @@ export default {
       url('../../assets/images/patterns/cubes_lines2.png') repeat;
   }
   &.gaming {
-    background: -webkit-linear-gradient(to top, rgba(0, 0, 0, 1), rgba(166, 19, 14, 0.7)),
-      url('../../assets/images/patterns/gaming-pattern2.png') repeat;
-    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(166, 19, 14, 0.7)),
-      url('../../assets/images/patterns/gaming-pattern2.png') repeat;
+    // background: -webkit-linear-gradient(to top, rgba(0, 0, 0, 1), rgba(166, 19, 14, 0.7)),
+    //   url('../../assets/images/patterns/gaming-pattern2.png') repeat;
+    // background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(166, 19, 14, 0.7)),
+    //   url('../../assets/images/patterns/gaming-pattern2.png') repeat;
+    background-color: #000;
   }
   background-color: $black;
   &.medium {
