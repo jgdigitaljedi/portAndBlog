@@ -99,7 +99,8 @@ module.exports = {
   css: [
     '~/assets/style/app.styl',
     { src: '~/node_modules/highlight.js/styles/solarized-dark', lang: 'css' },
-    '~/assets/style/fonts.css'
+    '~/assets/style/fonts.css',
+    '~/assets/main.css'
   ],
 
   /*
@@ -147,6 +148,10 @@ module.exports = {
           { path: 'images/**/**.png', as: 'image' },
           { path: 'images/**/**.svg', as: 'image' },
           { path: 'images/**/**.gif', as: 'image' },
+          { path: 'images/**/**/**.jpg', as: 'image' },
+          { path: 'images/**/**/**.png', as: 'image' },
+          { path: 'images/**/**/**.svg', as: 'image' },
+          { path: 'images/**/**/**.gif', as: 'image' },
           { path: '**.png', as: 'image' },
           { path: '**.jpg', as: 'image' },
           { path: '**.svg', as: 'image' },
