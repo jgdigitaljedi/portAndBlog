@@ -13,10 +13,11 @@ html {
   // height: 100%;
   overflow: auto;
   cursor: url('/images/cursors/cursor.png'), auto !important;
+  background: #000;
 }
 
 body {
-  background-color: $black;
+  background: $black;
   color: $white;
   font-family: $game-font;
   font-size: 18px;

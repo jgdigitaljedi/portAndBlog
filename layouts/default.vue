@@ -1,7 +1,7 @@
 <template>
   <v-app dark class="app-wrapper">
     <NavBar></NavBar>
-    <main id="main" role="main">
+    <main id="main" role="main" class="main">
       <nuxt/>
     </main>
     <audio ref="contra">
@@ -81,6 +81,9 @@ export default {
 @import '~/assets/style/global.scss';
 @import '~/assets/style/theme.scss';
 .app-wrapper {
+  .main {
+    background-color: #000;
+  }
   // background-color: $primary !important;
 }
 </style>

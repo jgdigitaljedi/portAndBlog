@@ -311,7 +311,9 @@ module.exports = {
               /(spacer).*/,
               /(application).*/,
               /(app-wrapper).*/,
-              /(hljs).*/
+              /(hljs).*/,
+              /(page-enter).*/,
+              /(page-leave).*/
             ],
             extractors: [
               {
