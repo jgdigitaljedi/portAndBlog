@@ -16,6 +16,7 @@
           dark
           @input="applyFilters"
           :clearable="true"
+          clear-icon="icon-cross"
           prepend-icon="icon-search"
           flat
           class="blog-list-master__siderbar--filters__search posts-filter"
@@ -38,6 +39,7 @@
           label="Filter by Month & Year"
           @change="applyFilters"
           clearable
+          clear-icon="icon-cross"
           item-text="display"
           return-object
           class="blog-list-master__siderbar--filters__month posts-filter"
@@ -61,6 +63,20 @@
         :class="{'broken': $vuetify.breakpoint.mdAndDown}"
       >
         <v-btn color="accent" class="back-btn" to="/blog">&#60;- blog selection</v-btn>
+        <v-btn color="warning" class="back-btn" @click.stop="feedDialog = true">
+          <v-icon>icon-rss2</v-icon>
+          &nbsp; {{which}} Feed URL
+        </v-btn>
+        <v-dialog v-model="feedDialog" width="380">
+          <v-card style="background-color: #000; color: #fff; padding: 1rem;">
+            <v-card-title class="headline" primary-title>Add To Your Favorite Feed Reader!</v-card-title>
+            <v-card-text>Simply copy the following URL into your feed reader of choice to keep up with the latest posts!
+              <br>
+              <br>
+              <span style="color: #2cfcfb;">https://joeyg.me/{{feedUrl}}</span>
+            </v-card-text>
+          </v-card>
+        </v-dialog>
       </div>
     </div>
   </section>
@@ -79,7 +95,9 @@ export default {
   data() {
     return {
       isMounted: false,
+      feedDialog: false,
       postTerms: null,
+      feedUrl: '',
       filteredPosts: [],
       months: [],
       cPosts: [],
@@ -98,6 +116,8 @@ export default {
     };
   },
   created() {
+    this.feedUrl =
+      this.which.toLowerCase() === 'gaming' ? 'RSSfeed_gaming.xml' : 'RSSfeed_coding.xml';
     this.currentFilters.sortSelected = this.sortItems[0];
     this.cPosts = _cloneDeep(this.posts);
     this.filteredPosts = _cloneDeep(this.posts);
