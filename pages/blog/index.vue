@@ -90,11 +90,36 @@ export default {
     return {
       title: `Joey G | Blog`,
       meta: [
-        { hid: 'blog-desc', name: 'description', content: 'Joey Gauthier - blog select page' },
+        { hid: 'description', name: 'description', content: 'Joey Gauthier - blog select page' },
         {
-          hid: 'blog-keywords',
+          hid: 'keywords',
           name: 'keywords',
           content: 'Joey Gauthier, Paul Gauthier, blog, coding, gaming'
+        },
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: `Joey G | Blog`
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: 'Joey Gauthier - blog select page'
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content: `Joey G | Blog`
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content: 'Joey Gauthier - blog select page'
+        },
+        {
+          hid: 'og:image',
+          name: 'og:image',
+          content: '/images/me_8bit_scanlines.jpg'
         }
       ]
     };

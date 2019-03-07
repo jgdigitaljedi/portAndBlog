@@ -22,18 +22,43 @@
 export default {
   head() {
     return {
-      title: `Joey G | Coding Blog`,
+      title: `Coding Blog of the Digital Jedi`,
       meta: [
         {
-          hid: 'coding-blog-desc',
+          hid: 'description',
           name: 'description',
           content: "Joey Gauthier's blog about coding, mainly JavaScript."
         },
         {
-          hid: 'coding-blog-key',
+          hid: 'keywords',
           name: 'keywords',
           content:
             'Joey Gauthier, Paul Gauthier, coding, blog, javascript, typescript, Angular, Vue, Nuxt'
+        },
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: `Coding Blog of the Digital Jedi`
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: "Joey Gauthier's blog about coding, mainly JavaScript."
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content: `Coding Blog of the Digital Jedi`
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content: "Joey Gauthier's blog about coding, mainly JavaScript."
+        },
+        {
+          hid: 'og:image',
+          name: 'og:image',
+          content: '/images/blog/coding/programming.jpg'
         }
       ]
     };

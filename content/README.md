@@ -6,4 +6,22 @@
 
 ## Notes
 - I now have this setup where the routes are automatically generated and even added to the sitemap so no extra work is needed there.
-- "image" property now needs to be in array format so it will work in the carousel.
+- Write the post in Grammarly since you seem to be the typo king, then paste into a .md file and add html and markdown tags.
+
+## Adding an image
+
+User this as the wrapper:
+```html
+<div class="image-container">
+  <img src="/images/blog/gaming_or_coding/image_name.jpg">
+</div>
+```
+
+and with a link:
+```html
+<a href="https://wherever.stuff" target="__blank">
+  <div class="image-container">
+    <img src="/images/blog/gaming_or_coding/image_name.jpg">
+  </div>
+</a>
+```

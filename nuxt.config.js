@@ -23,7 +23,8 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description },
+      { hid: 'description', name: 'description', content: `Joey G | Portfolio & Blog` },
+      { hid: 'author', name: 'author', content: `Joey Gauthier` },
       {
         hid: 'keywords',
         name: 'keywords',
@@ -57,7 +58,7 @@ module.exports = {
       {
         hid: 'og:description',
         name: 'og:description',
-        content: pkg.description
+        content: `Joey Gauthier | Portfolio & Blog`
       },
       { hid: 'og:image', name: 'og:image', content: '/images/me_8bit_scanlines.jpg' },
       { hid: 'og:url', name: 'og:url', content: 'https://joeyg.me' },
@@ -69,9 +70,9 @@ module.exports = {
 
   /** PWA manifest */
   manifest: {
-    name: `Joey G's Portfolio & Blog`,
-    short_name: `Joey G P&B`,
-    background_color: '#1f5673'
+    name: `Joey G | Portfolio & Blog`,
+    short_name: `Joey G | P&B`,
+    background_color: '#000'
   },
 
   /** Icon path for multiple icon generation */
@@ -86,7 +87,7 @@ module.exports = {
 
   /** forcing scroll to top on route change */
   router: {
-    scrollBehavior: function(to, from, savedPosition) {
+    scrollBehavior: function (to, from, savedPosition) {
       return { x: 0, y: 0 };
     }
   },
@@ -94,7 +95,7 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#f0a202' },
+  loading: { color: '#4d00b9' },
 
   /*
   ** Global CSS

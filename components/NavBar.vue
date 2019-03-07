@@ -12,7 +12,7 @@
         @click.stop="drawer = !drawer"
         class="pacman-cherries hidden-md-and-up"
       >
-      <v-toolbar-items class="nav__items hidden-sm-and-down">
+      <v-toolbar-items class="nav__items hidden-sm-and-down" v-if="isMounted">
         <div v-for="(link, index) in links" :key="link.title" class="nav-items__link-wrapper">
           <nuxt-link :to="link.to" class="nav-link">
             <img :src="link.icon">
@@ -64,6 +64,7 @@ export default {
     return {
       currentSelectedRoute: 'home',
       drawer: false,
+      isMounted: false,
       links: [
         { title: 'Home', to: '/', icon: require('~/assets/images/navbar/pacman.png') },
         { title: 'Blog', to: '/blog', icon: require('~/assets/images/navbar/ghost_red.png') }
@@ -75,6 +76,9 @@ export default {
   },
   created() {
     this.handleRouteChange(this.$route.path);
+  },
+  mounted() {
+    this.isMounted = true;
   },
   methods: {
     handleRouteChange(path) {

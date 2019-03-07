@@ -28,14 +28,46 @@
 export default {
   head() {
     return {
-      title: `Joey G | Gaming Blog`,
+      title: `Gaming Blog of the Digital Jedi`,
       meta: [
-        { hid: 'gaming-blog-desc', name: 'description', content: "Joey Gauthier's gaming blog" },
         {
-          hid: 'gaming-blog-key',
+          hid: 'description',
+          name: 'description',
+          content:
+            'A blog about my journey in retro game collecting and general video games tips and opnions.'
+        },
+        {
+          hid: 'keywords',
           name: 'keywords',
           content:
-            'Joey Gauthier, Paul Gauthier, nintendo, gaming, retro games, game collecting, sega, playstation, xbox, mario'
+            'Joey Gauthier, Paul Gauthier, nintendo, gaming, retro games, game collecting, sega, playstation, xbox, mario, gaming blog, collecting'
+        },
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: `Gaming Blog of the Digital Jedi`
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content:
+            'A blog about my journey in retro game collecting and general video games tips and opnions.'
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content: `Gaming Blog of the Digital Jedi`
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content:
+            'A blog about my journey in retro game collecting and general video games tips and opnions.'
+        },
+        {
+          hid: 'og:image',
+          name: 'og:image',
+          content: '/images/blog/gaming/early_2019_collection.jpg'
         }
       ]
     };
