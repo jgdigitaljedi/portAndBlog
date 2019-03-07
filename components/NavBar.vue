@@ -127,7 +127,8 @@ export default {
     height: 6rem;
     border: 2px solid $pacman-purple;
     border-radius: 4px;
-    background-color: #000;
+    background-color: #000 !important;
+    background: #000;
     .pacman-cherries {
       max-height: 5rem;
       width: auto;

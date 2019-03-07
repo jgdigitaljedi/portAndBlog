@@ -65,21 +65,21 @@
         src="~/assets/images/mario/mario_hill.png"
         class="mario__hill hidden-sm-and-down"
         :class="{'medium': (isMounted && $vuetify.breakpoint.md)}"
-        v-if="isMounted"
+        v-if="isMounted && windowHeight && windowHeight > 600"
       >
       <img
         src="~/assets/images/mario/small-mario.png"
         class="mario__mario hidden-sm-and-down"
         :class="{'medium': (isMounted && $vuetify.breakpoint.md)}"
-        v-if="isMounted"
+        v-if="isMounted && windowHeight && windowHeight > 600"
       >
       <img
         src="~/assets/images/mario/mario_bushes.png"
         class="mario__bushes hidden-sm-and-down"
         :class="{'medium': (isMounted && $vuetify.breakpoint.md)}"
-        v-if="isMounted"
+        v-if="isMounted && windowHeight && windowHeight > 600"
       >
-      <div class="mario__ground"></div>
+      <div class="mario__ground" v-if="windowHeight && windowHeight > 600"></div>
     </div>
   </div>
 </template>
@@ -102,8 +102,14 @@ export default {
   data() {
     return {
       active: 'gaming',
-      isMounted: false
+      isMounted: false,
+      windowHeight: null
     };
+  },
+  created() {
+    if (process.client) {
+      this.windowHeight = window.innerHeight;
+    }
   },
   mounted() {
     this.isMounted = true;

@@ -209,7 +209,7 @@ export default {
   display: flex;
   justify-content: space-between;
   background-color: #000;
-  min-height: calc(100vh - 14rem);
+  min-height: calc(100vh - 17rem);
   &.smaller {
     flex-direction: column-reverse;
     .blog-list {
@@ -285,6 +285,9 @@ export default {
         margin-top: 0;
       }
     }
+  }
+  .v-icon.icon.icon-pushpin.theme--dark {
+    color: $yellow;
   }
 }
 </style>

@@ -14,7 +14,10 @@
         <img class="blog-list-inner__thumb--image" :src="post.image">
       </div>
       <div class="intro-and-date">
-        <small>{{ post.created_at }}</small>
+        <div>
+          <small>{{ post.created_at }}</small>
+          <v-icon v-if="post.pinned" class="pinned-icon">icon-pushpin</v-icon>
+        </div>
         <p>{{ post.intro }}</p>
       </div>
       <div class="blog-link-wrapper">
@@ -65,6 +68,9 @@ export default {
     }
     .intro-and-date {
       padding: 1rem;
+      .pinned-icon {
+        color: $yellow;
+      }
       small {
         color: $light;
         font-style: italic;
