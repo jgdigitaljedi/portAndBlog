@@ -1,8 +1,11 @@
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin');
+import PurgeCssPlugin from 'purgecss-webpack-plugin';
 const pkg = require('./package');
 const removeMd = require('remove-markdown');
 const fs = require('fs');
 const path = require('path');
+const glob = require('glob-all');
+const autoprefixer = require('autoprefixer');
 import Coding from './content/directory/coding';
 import Gaming from './content/directory/gaming';
 
@@ -118,7 +121,6 @@ module.exports = {
     'nuxt-webfontloader',
     '@nuxtjs/dotenv',
     '@nuxtjs/feed',
-    // 'nuxt-purgecss',
     [
       'nuxt-imagemin',
       {
@@ -144,21 +146,17 @@ module.exports = {
           { path: 'images/**.png', as: 'image' },
           { path: 'images/**.svg', as: 'image' },
           { path: 'images/**.gif', as: 'image' },
-          { path: 'images/**/**.jpg', as: 'image' },
-          { path: 'images/**/**.png', as: 'image' },
-          { path: 'images/**/**.svg', as: 'image' },
-          { path: 'images/**/**.gif', as: 'image' },
-          { path: 'images/**/**/**.jpg', as: 'image' },
-          { path: 'images/**/**/**.png', as: 'image' },
-          { path: 'images/**/**/**.svg', as: 'image' },
-          { path: 'images/**/**/**.gif', as: 'image' },
+          { path: '_nuxt/img/**.jpg', as: 'image' },
+          { path: '_nuxt/img/**.png', as: 'image' },
+          { path: '_nuxt/img/**.svg', as: 'image' },
+          { path: '_nuxt/img/**.gif', as: 'image' },
+          { path: 'images/cursors/**.png', as: 'image' },
           { path: '**.png', as: 'image' },
           { path: '**.jpg', as: 'image' },
           { path: '**.svg', as: 'image' },
           { path: '**.gif', as: 'image' },
-          { path: 'favicons.**.png', as: 'image' },
-          { path: 'favicons.**.ico', as: 'image' },
-          { path: 'fonts/*.woff2', as: 'font', type: 'font/woff2', crossorigin: 'anonymous' }
+          { path: 'fonts/*.woff2', as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
+          { path: '_nuxt/fonts/*.woff2', as: 'font', type: 'font/woff2', crossorigin: 'anonymous' }
         ]
       }
     ],
@@ -259,6 +257,22 @@ module.exports = {
         import: ['~assets/style/variables.styl']
       }
     },
+    /** NEW DANGEROUS STUFF PART 1 */
+    extractCSS: true,
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          styles: {
+            name: 'styles',
+            test: /\.(css|vue)$/,
+            chunks: 'all',
+            enforce: true
+          }
+        }
+      }
+    },
+    postcss: [autoprefixer],
+    /** END NEW DANGEROUS STUFF PART 1 */
 
     /*
     ** You can extend webpack config here
@@ -272,7 +286,47 @@ module.exports = {
           loader: 'eslint-loader',
           exclude: /(node_modules)/
         });
+        /** ALL NEW STUFF THAT CAN POTENTIALLY BREAK THE BUILD PART 2 */
+      } else {
+        config.plugins.push(
+          new PurgeCssPlugin({
+            paths: glob.sync([
+              path.join(__dirname, 'components/**/*.vue'),
+              path.join(__dirname, 'layouts/**/*.vue'),
+              path.join(__dirname, 'pages/**/*.vue'),
+              path.join(__dirname, 'pages/**/**/*.vue'),
+              path.join(__dirname, 'pages/**/**/**/*.vue'),
+              path.join(__dirname, 'plugins/**/*.vue'),
+              path.join(__dirname, '../node_modules/vuetify/dist/**.min.js'),
+              path.join(__dirname, '../node_modules/vuetify/dist/**.min.css')
+            ]),
+            styleExtensions: ['.css'],
+            whitelist: ['body', 'html', 'nuxt-progress'],
+            whitelistPatterns: [
+              /cookie-consent/,
+              /(v_).*/,
+              /(v-).*/,
+              /(util__).*/,
+              /(theme--dark).*/,
+              /(spacer).*/,
+              /(application).*/,
+              /(app-wrapper).*/,
+              /(hljs).*/
+            ],
+            extractors: [
+              {
+                extractor: class {
+                  static extract(content) {
+                    return content.match(/[A-z0-9-:\\/]+/g);
+                  }
+                },
+                extensions: ['vue', 'js']
+              }
+            ]
+          })
+        );
       }
+      /** END OF DANGEROUS NEW STUFF PART 2 */
       const vueLoader = config.module.rules.find(rule => rule.loader === 'vue-loader');
 
       // bit if I want lazy load tags to work
