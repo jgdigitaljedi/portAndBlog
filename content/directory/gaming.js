@@ -25,5 +25,18 @@ export default () => [
       keywords:
         'gaming, nes, retro games, genesis, dreamcast, retro game collecting, vintage video games, upscaler, switcher, SCART, component cable, RGB'
     }
+  },
+  {
+    id: 7,
+    slug: 'how-i-add-to-my-collection',
+    title: `How I Add to My Collection`,
+    tag_line: `Getting good deals can take some work!`,
+    created_at: '03/07/2019',
+    intro: `Finding good deals on retro gaming items can be tricky! This is a high-level look at how I approach things.`,
+    image: '/images/blog/gaming/flea-market.jpg',
+    meta: {
+      keywords:
+        'gaming, nes, retro games, retro collecting, Game Stop, Goodwill, Game Over Video Games, retro game stores, garage sales, flea markets, pricecharting'
+    }
   }
 ];
