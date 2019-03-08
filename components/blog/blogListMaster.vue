@@ -60,7 +60,7 @@
       <v-divider dark></v-divider>
       <div
         class="blog-list-master__sidebar--links"
-        :class="{'broken': $vuetify.breakpoint.mdAndDown}"
+        :class="{'broken': $vuetify.breakpoint.md || $vuetify.breakpoint.sm, 'broken-xs': $vuetify.breakpoint.xs}"
       >
         <v-btn color="accent" class="back-btn" to="/blog">&#60;- blog selection</v-btn>
         <v-btn color="warning" class="back-btn" @click.stop="feedDialog = true">
@@ -302,6 +302,10 @@ export default {
       }
       &.broken {
         flex-direction: row;
+        margin-top: 0;
+      }
+      &.broken-xs {
+        flex-direction: column;
         margin-top: 0;
       }
     }
