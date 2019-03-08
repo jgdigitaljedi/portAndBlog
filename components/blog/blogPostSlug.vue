@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import ScrollToTop from '~/components/scrollToTop.vue';
+import ScrollToTop from '~/components/ScrollToTop.vue';
 export default {
   name: 'blogPostSlug',
   components: { ScrollToTop },
