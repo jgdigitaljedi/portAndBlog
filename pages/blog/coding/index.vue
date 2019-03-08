@@ -131,11 +131,15 @@ export default {
         &.xs {
           width: 100%;
           text-align: center;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          height: 100%;
           div {
-            font-size: 2rem;
+            font-size: 1.75rem;
             text-align: center;
             &.jedi {
-              font-size: 1.5rem;
+              font-size: 1.25rem;
             }
           }
         }

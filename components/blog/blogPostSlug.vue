@@ -9,12 +9,15 @@
       <v-divider style="width: 100%; max-width: 1400px; margin-top: 2rem;" dark></v-divider>
       <blogComments :post="post" :which="which" class="comments"></blogComments>
     </div>
+    <ScrollToTop class="scroll-btn"></ScrollToTop>
   </div>
 </template>
 
 <script>
+import ScrollToTop from '~/components/scrollToTop.vue';
 export default {
   name: 'blogPostSlug',
+  components: { ScrollToTop },
   props: ['post', 'which', 'postContent'],
   data() {
     return {
@@ -59,5 +62,12 @@ export default {
   .comments {
     width: 100%;
   }
+  // .scroll-btn {
+  //   position: fixed;
+  //   right: 0;
+  //   bottom: 0;
+  //   transition: all 0.3s ease-in-out;
+  //   z-index: 20;
+  // }
 }
 </style>
