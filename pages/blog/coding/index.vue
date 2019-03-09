@@ -101,9 +101,6 @@ export default {
     background-position: center;
     display: flex;
     justify-content: space-between;
-    // border-bottom: 4px solid $pacman-purple;
-    // justify-content: center;
-    // align-items: center;
     height: 9rem;
     .blog-category__summary {
       height: 9rem;
@@ -121,9 +118,6 @@ export default {
         div {
           font-family: $game-font;
           font-size: 2.5rem;
-          // -webkit-text-fill-color: $pacman-purple; /* Will override color (regardless of order) */
-          // -webkit-text-stroke-width: 1px;
-          // -webkit-text-stroke-color: $light;
           &.jedi {
             font-size: 2rem;
           }
@@ -131,11 +125,15 @@ export default {
         &.xs {
           width: 100%;
           text-align: center;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          height: 100%;
           div {
-            font-size: 2rem;
+            font-size: 1.75rem;
             text-align: center;
             &.jedi {
-              font-size: 1.5rem;
+              font-size: 1.25rem;
             }
           }
         }

@@ -16,6 +16,7 @@
           dark
           @input="applyFilters"
           :clearable="true"
+          clear-icon="icon-cross"
           prepend-icon="icon-search"
           flat
           class="blog-list-master__siderbar--filters__search posts-filter"
@@ -38,6 +39,7 @@
           label="Filter by Month & Year"
           @change="applyFilters"
           clearable
+          clear-icon="icon-cross"
           item-text="display"
           return-object
           class="blog-list-master__siderbar--filters__month posts-filter"
@@ -58,9 +60,25 @@
       <v-divider dark></v-divider>
       <div
         class="blog-list-master__sidebar--links"
-        :class="{'broken': $vuetify.breakpoint.mdAndDown}"
+        :class="{'broken': $vuetify.breakpoint.md || $vuetify.breakpoint.sm, 'broken-xs': $vuetify.breakpoint.xs}"
       >
         <v-btn color="accent" class="back-btn" to="/blog">&#60;- blog selection</v-btn>
+        <v-btn color="success" class="back-btn" @click.stop="setupMailchimp">
+          <v-icon>icon-envelop</v-icon>&nbsp; Subscribe
+        </v-btn>
+        <v-btn color="warning" class="back-btn" @click.stop="feedDialog = true">
+          <v-icon>icon-rss2</v-icon>&nbsp; RSS Feed
+        </v-btn>
+        <v-dialog v-model="feedDialog" width="380">
+          <v-card style="background-color: #000; color: #fff; padding: 1rem;">
+            <v-card-title class="headline" primary-title>Add To Your Favorite Feed Reader!</v-card-title>
+            <v-card-text>Simply copy the following URL into your feed reader of choice to keep up with the latest posts!
+              <br>
+              <br>
+              <span style="color: #2cfcfb;">https://joeyg.me/{{feedUrl}}</span>
+            </v-card-text>
+          </v-card>
+        </v-dialog>
       </div>
     </div>
   </section>
@@ -79,7 +97,9 @@ export default {
   data() {
     return {
       isMounted: false,
+      feedDialog: false,
       postTerms: null,
+      feedUrl: '',
       filteredPosts: [],
       months: [],
       cPosts: [],
@@ -98,6 +118,9 @@ export default {
     };
   },
   created() {
+    this.eatCookies();
+    this.feedUrl =
+      this.which.toLowerCase() === 'gaming' ? 'RSSfeed_gaming.xml' : 'RSSfeed_coding.xml';
     this.currentFilters.sortSelected = this.sortItems[0];
     this.cPosts = _cloneDeep(this.posts);
     this.filteredPosts = _cloneDeep(this.posts);
@@ -120,10 +143,17 @@ export default {
       return { month: pSplit[0], year: pSplit[1], display: p };
     });
   },
-  mouted() {
+  mounted() {
     this.isMounted = true;
   },
   methods: {
+    eatCookies() {
+      this.$cookies.remove('MCPopupClosed');
+      this.$cookies.remove('MCPopupSubscribed');
+      this.$cookies.remove('MC_PLUMS_LOGIN');
+      this.$cookies.remove('MC_USER_INFO');
+      this.$cookies.remove('MC_USER_PROFILE');
+    },
     applyFilters() {
       this.filteredPosts = this.cPosts;
       this.filterByMonth();
@@ -198,6 +228,45 @@ export default {
           this.$ga.event('filter', 'blogListFilters', 'month', this.currentFilters.month);
         }
       }
+    },
+    setupMailchimp() {
+      this.eatCookies();
+      let mailchimpConfig;
+      if (this.which === 'coding') {
+        mailchimpConfig = {
+          baseUrl: 'mc.us20.list-manage.com',
+          uuid: '50f41d5582712ae09bb478566',
+          lid: 'a621d48011'
+        };
+      } else {
+        mailchimpConfig = {
+          baseUrl: 'mc.us20.list-manage.com',
+          uuid: '50f41d5582712ae09bb478566',
+          lid: '8dee0d0775'
+        };
+      }
+      const chimpPopupLoader = document.createElement('script');
+      chimpPopupLoader.src =
+        'https://s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js';
+      chimpPopupLoader.setAttribute('data-dojo-config', 'usePlainJson: true, isDebug: false');
+      const chimpPopup = document.createElement('script');
+      chimpPopup.appendChild(
+        document.createTextNode(
+          'require(["mojo/signup-forms/Loader"], function (L) { L.start({"baseUrl": "' +
+            mailchimpConfig.baseUrl +
+            '", "uuid": "' +
+            mailchimpConfig.uuid +
+            '", "lid": "' +
+            mailchimpConfig.lid +
+            '"})});'
+        )
+      );
+
+      chimpPopupLoader.onload = function() {
+        document.body.appendChild(chimpPopup);
+      };
+      const popup = document.body.appendChild(chimpPopupLoader);
+      // eval(popup);
     }
   }
 };
@@ -282,6 +351,10 @@ export default {
       }
       &.broken {
         flex-direction: row;
+        margin-top: 0;
+      }
+      &.broken-xs {
+        flex-direction: column;
         margin-top: 0;
       }
     }

@@ -5,6 +5,7 @@ export default () => [
     title: 'How I Got Into Video Game Collecting',
     tag_line: `The story of a guy that got to witness the evolution of video games from NES to current day.`,
     created_at: '02/25/2019',
+    pinned: false,
     intro:
       'The story of how I came to know video games as a kid, strayed from them as a teenager, and ultimately became a passionate collector and player as an adult.',
     image: '/images/blog/gaming/early_collection.jpg',
@@ -19,6 +20,7 @@ export default () => [
     title: `Connecting All of Those Consoles`,
     tag_line: `Don't just collect em, play em too!`,
     created_at: '03/02/2019',
+    pinned: false,
     intro: `An overview of how I keep all of my consoles connected to my 4K TV for the best picture possible on a budget.`,
     image: '/images/blog/gaming/cable_mess.jpg',
     meta: {
@@ -32,6 +34,7 @@ export default () => [
     title: `How I Add to My Collection`,
     tag_line: `Getting good deals can take some work!`,
     created_at: '03/07/2019',
+    pinned: true,
     intro: `Finding good deals on retro gaming items can be tricky! This is a high-level look at how I approach things.`,
     image: '/images/blog/gaming/flea-market.jpg',
     meta: {

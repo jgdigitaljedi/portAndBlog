@@ -86,3 +86,6 @@ sw.*
 # because Apple sucks
 .DS_Store
 assets/.DS_Store
+
+# this gets generated so no need to track
+static/sitemap.xml

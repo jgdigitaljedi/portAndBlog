@@ -32,6 +32,7 @@ Right now things look a little on the rough side because this is still in active
 ## CURRENT FOCUS TODO
 
 - build about section
+- see if I can add a scroll to top button that appears once you scroll down in a blog post. Nuxt doesn't have normal window access so it might be a no-no.
 - style blog posts; my repeating background and gradient is terrible, but is a placeholder until I think of something
 
 ## OVERALL TODO

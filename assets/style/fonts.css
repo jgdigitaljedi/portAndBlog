@@ -36,6 +36,12 @@
 .icon-pacman:before {
   content: '\e916';
 }
+.icon-bullhorn:before {
+  content: '\e91a';
+}
+.icon-envelop:before {
+  content: '\e945';
+}
 .icon-pushpin:before {
   content: '\e946';
 }
@@ -82,5 +88,26 @@
   content: '\ea4d';
 }
 .icon-filter:before {
-  content: "\ea5b";
+  content: '\ea5b';
+}
+.icon-spotify:before {
+  content: '\ea94';
+}
+.icon-twitter:before {
+  content: '\ea96';
+}
+.icon-rss2:before {
+  content: '\ea9c';
+}
+.icon-github:before {
+  content: '\eab0';
+}
+.icon-linkedin2:before {
+  content: '\eaca';
+}
+.icon-lastfm:before {
+  content: '\eacb';
+}
+.icon-lastfm2:before {
+  content: '\eacc';
 }
