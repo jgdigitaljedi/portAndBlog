@@ -63,9 +63,11 @@
         :class="{'broken': $vuetify.breakpoint.md || $vuetify.breakpoint.sm, 'broken-xs': $vuetify.breakpoint.xs}"
       >
         <v-btn color="accent" class="back-btn" to="/blog">&#60;- blog selection</v-btn>
+        <v-btn color="success" class="back-btn" @click.stop="setupMailchimp">
+          <v-icon>icon-envelop</v-icon>&nbsp; Subscribe
+        </v-btn>
         <v-btn color="warning" class="back-btn" @click.stop="feedDialog = true">
-          <v-icon>icon-rss2</v-icon>
-          &nbsp; {{which}} Feed URL
+          <v-icon>icon-rss2</v-icon>&nbsp; RSS Feed
         </v-btn>
         <v-dialog v-model="feedDialog" width="380">
           <v-card style="background-color: #000; color: #fff; padding: 1rem;">
@@ -116,6 +118,7 @@ export default {
     };
   },
   created() {
+    this.$cookies.remove('MCPopupClosed');
     this.feedUrl =
       this.which.toLowerCase() === 'gaming' ? 'RSSfeed_gaming.xml' : 'RSSfeed_coding.xml';
     this.currentFilters.sortSelected = this.sortItems[0];
@@ -140,7 +143,7 @@ export default {
       return { month: pSplit[0], year: pSplit[1], display: p };
     });
   },
-  mouted() {
+  mounted() {
     this.isMounted = true;
   },
   methods: {
@@ -218,6 +221,45 @@ export default {
           this.$ga.event('filter', 'blogListFilters', 'month', this.currentFilters.month);
         }
       }
+    },
+    setupMailchimp() {
+      this.$cookies.remove('MCPopupClosed');
+      let mailchimpConfig;
+      if (this.which === 'coding') {
+        mailchimpConfig = {
+          baseUrl: 'mc.us20.list-manage.com',
+          uuid: '50f41d5582712ae09bb478566',
+          lid: 'a621d48011'
+        };
+      } else {
+        mailchimpConfig = {
+          baseUrl: 'mc.us20.list-manage.com',
+          uuid: '50f41d5582712ae09bb478566',
+          lid: '8dee0d0775'
+        };
+      }
+      const chimpPopupLoader = document.createElement('script');
+      chimpPopupLoader.src =
+        'https://s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js';
+      chimpPopupLoader.setAttribute('data-dojo-config', 'usePlainJson: true, isDebug: false');
+      const chimpPopup = document.createElement('script');
+      chimpPopup.appendChild(
+        document.createTextNode(
+          'require(["mojo/signup-forms/Loader"], function (L) { L.start({"baseUrl": "' +
+            mailchimpConfig.baseUrl +
+            '", "uuid": "' +
+            mailchimpConfig.uuid +
+            '", "lid": "' +
+            mailchimpConfig.lid +
+            '"})});'
+        )
+      );
+
+      chimpPopupLoader.onload = function() {
+        document.body.appendChild(chimpPopup);
+      };
+      const popup = document.body.appendChild(chimpPopupLoader);
+      // eval(popup);
     }
   }
 };

@@ -1,11 +1,11 @@
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin');
 import PurgeCssPlugin from 'purgecss-webpack-plugin';
 const pkg = require('./package');
-const removeMd = require('remove-markdown');
 const fs = require('fs');
 const path = require('path');
 const glob = require('glob-all');
 const autoprefixer = require('autoprefixer');
+const marked = require('marked');
 import Coding from './content/directory/coding';
 import Gaming from './content/directory/gaming';
 
@@ -87,7 +87,7 @@ module.exports = {
 
   /** forcing scroll to top on route change */
   router: {
-    scrollBehavior: function (to, from, savedPosition) {
+    scrollBehavior: function(to, from, savedPosition) {
       return { x: 0, y: 0 };
     }
   },
@@ -122,6 +122,7 @@ module.exports = {
     'nuxt-webfontloader',
     '@nuxtjs/dotenv',
     '@nuxtjs/feed',
+    'cookie-universal-nuxt',
     [
       'nuxt-imagemin',
       {
@@ -195,7 +196,7 @@ module.exports = {
         async create(feed) {
           feed.options = {
             title: `Gaming Blog of the Digital Jedi`,
-            link: `https://joeyg.me/RSSfeed_gaming.xml`,
+            link: `https://joeyg.me/blog/gaming`,
             description: `The documented gaming journey of an old school gamer and newbie retro game collector learning the ways of the Jedi`
           };
 
@@ -204,13 +205,25 @@ module.exports = {
               path.resolve(__dirname, `content/posts/gaming/${post.id}.md`),
               'utf8'
             );
-            const content = removeMd(postMd);
+            const content = marked(postMd, {
+              breaks: true,
+              gfm: true,
+              smartypants: true
+            });
             feed.addItem({
               title: post.title,
               id: post.id,
+              date: new Date(post.created_at),
               link: `https://joeyg.me/blog/gaming/${post.slug}`,
               description: post.intro,
               content
+            });
+            feed.addCategory('Video Games');
+
+            feed.addContributor({
+              name: 'Joey Gauthier',
+              email: 'joey@joeg.me',
+              link: 'https://joeyg.me'
             });
           });
         },
@@ -222,7 +235,7 @@ module.exports = {
         async create(feed) {
           feed.options = {
             title: `Coding Blog of the Digital Jedi`,
-            link: `https://joeyg.me/RSSfeed_coding.xml`,
+            link: `https://joeyg.me/blog/coding`,
             description: `Personal programming ramblings of a JavaScript Jedi covering topics ranging from application architecture to his hatred for CSS`
           };
 
@@ -231,13 +244,25 @@ module.exports = {
               path.resolve(__dirname, `content/posts/coding/${post.id}.md`),
               'utf8'
             );
-            const content = removeMd(postMd);
+            const content = marked(postMd, {
+              breaks: true,
+              gfm: true,
+              smartypants: true
+            });
             feed.addItem({
               title: post.title,
               id: post.id,
+              date: new Date(post.created_at),
               link: `https://joeyg.me/blog/coding/${post.slug}`,
               description: post.intro,
               content
+            });
+            feed.addCategory('Programming');
+
+            feed.addContributor({
+              name: 'Joey Gauthier',
+              email: 'joey@joeg.me',
+              link: 'https://joeyg.me'
             });
           });
         },
@@ -332,7 +357,7 @@ module.exports = {
       /** END OF DANGEROUS NEW STUFF PART 2 */
       const vueLoader = config.module.rules.find(rule => rule.loader === 'vue-loader');
 
-      // bit if I want lazy load tags to work
+      // bit if I want lazy load tags to work; experiment I may come back to
       // vueLoader.options.transformToRequire = {
       //   video: 'src',
       //   source: 'src',
