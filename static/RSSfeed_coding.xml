@@ -2,86 +2,73 @@
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>Coding Blog of the Digital Jedi</title>
-        <link>https://joeyg.me/RSSfeed_coding.xml</link>
+        <link>https://joeyg.me/blog/coding</link>
         <description>Personal programming ramblings of a JavaScript Jedi covering topics ranging from application architecture to his hatred for CSS</description>
-        <lastBuildDate>Thu, 07 Mar 2019 20:15:33 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 09 Mar 2019 15:00:02 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>https://github.com/nuxt-community/feed-module</generator>
+        <category>Programming</category>
+        <category>Programming</category>
         <item>
             <title><![CDATA[The Start of My Adventure Building This Site]]></title>
             <link>https://joeyg.me/blog/coding/the-start-of-building-this-site</link>
             <guid>https://joeyg.me/blog/coding/the-start-of-building-this-site</guid>
+            <pubDate>Wed, 20 Feb 2019 06:00:00 GMT</pubDate>
             <description><![CDATA[A brief explanation and overview of my motivation and approach to building this portfolio and blog site while I am still very early in the process.]]></description>
-            <content:encoded><![CDATA[I had been wanting to redo my portfolio site for quite a while now. I even had debates with co-workers and people on Twitter as to whether or not it was necessary to have a portfolio these days. I can certainly see the point if you are a freelance developer, but I wasn't convinced that there was a point outside of that situation.
-
-On the other hand, I am a self-proclaimed tinkerer and I always have to be trying out something new. I had been messing with VueJS for quite a while on a personal project, but I was really curious about Nuxt. The speed of a static site coupled with the SEO friendliness and simplicity were very appealing to me, but I just never had a good reason to dive too deeply into it. I had also heard a lot about Netlify and was in love with the idea of just pushing code to my master branch and having the site build automagically.
-
-That brings me to this site. It struck me, "Why don't I just rebuild my portfolio, add a blog, use Nuxt, and have it hosted by Netlify?" That was all the motivation I needed to start tinkering again. I created a new repo, started reading docs, and furiously began building my new site.
-
-My initial thought was to build this in such a way that the time to launch would be very short. I thought that using some out-of-the-box solutions would make this project something I could throw together very quickly and easily. I may have been correct, but I'm also a control freak! My first repo used Storyblok as a headless CMS. I followed a tutorial to get things going and it seemed very promising. This would allow me to write blogs from Storyblok's editor from anywhere. After completing the tutorial which used Storyblok to also layout a few of the views as well, I decided I would just start creating the views using VueJS and only use Storyblok for the blog sections. I went to town and created something I was happy with as a basic start. I signed up for Netlify and tried to deploy, but my build errored out. I jumped back into Visual Studio Code and ran the generate npm script and recreated the problem. I began to realize that the way I had wired things up meant that Storyblok needed to run the views. That wasn't what I wanted. After spending a little time trying to work around this, I had the idea to just roll my own solution.
-
-It didn't take much searching to find inspiration for this type of solution. I based my own solution off of an example I found and catered it to my specific needs. Basically, I can write a md file and place it into "content/posts/" and the corresponding folder (in my case 'gaming' or 'coding' since I have developed a blog for each topic). I then add the entry as an object to the corresponding js file that merely exports the array for that blog section.
-
-export default () => [
+            <content:encoded><![CDATA[<p>I had been wanting to redo my portfolio site for quite a while now. I even had debates with co-workers and people on <a href="https://twitter.com/JGDigitalJedi/status/1093866037454479360">Twitter</a> as to whether or not it was necessary to have a portfolio these days. I can certainly see the point if you are a freelance developer, but I wasn’t convinced that there was a point outside of that situation.</p>
+<p>On the other hand, I am a self-proclaimed tinkerer and I always have to be trying out something new. I had been messing with <a href="https://vuejs.org/">VueJS</a> for quite a while on a personal project, but I was really curious about <a href="https://nuxtjs.org/">Nuxt</a>. The speed of a static site coupled with the SEO friendliness and simplicity were very appealing to me, but I just never had a good reason to dive too deeply into it. I had also heard a lot about <a href="https://www.netlify.com/">Netlify</a> and was in love with the idea of just pushing code to my master branch and having the site build automagically.</p>
+<p>That brings me to this site. It struck me, “Why don’t I just rebuild my portfolio, add a blog, use Nuxt, and have it hosted by Netlify?” That was all the motivation I needed to start tinkering again. I created a new repo, started reading docs, and furiously began building my new site.</p>
+<p>My initial thought was to build this in such a way that the time to launch would be very short. I thought that using some out-of-the-box solutions would make this project something I could throw together very quickly and easily. I may have been correct, but I’m also a control freak! My first repo used <a href="https://www.storyblok.com/">Storyblok</a> as a headless CMS. I followed a tutorial to get things going and it seemed very promising. This would allow me to write blogs from Storyblok’s editor from anywhere. After completing the tutorial which used Storyblok to also layout a few of the views as well, I decided I would just start creating the views using VueJS and only use Storyblok for the blog sections. I went to town and created something I was happy with as a basic start. I signed up for Netlify and tried to deploy, but my build errored out. I jumped back into Visual Studio Code and ran the generate npm script and recreated the problem. I began to realize that the way I had wired things up meant that Storyblok needed to run the views. That wasn’t what I wanted. After spending a little time trying to work around this, I had the idea to just roll my own solution.</p>
+<p>It didn’t take much searching to find inspiration for this type of solution. I based my own solution off of an example I found and catered it to my specific needs. Basically, I can write a md file and place it into “content/posts/“ and the corresponding folder (in my case ‘gaming’ or ‘coding’ since I have developed a blog for each topic). I then add the entry as an object to the corresponding js file that merely exports the array for that blog section.</p>
+<pre><code class="language-javascript">export default () =&gt; [
   {
     id: 1,
-    slug: 'test-coding-blog',
-    title: 'Coding Blog Test',
-    created_at: '02/18/2019',
-    intro: This is a test of the whole glogging setup. We'll see if it works!,
-    image: '/images/me8bitscanlines.jpg',
+    slug: &#39;test-coding-blog&#39;,
+    title: &#39;Coding Blog Test&#39;,
+    created_at: &#39;02/18/2019&#39;,
+    intro: `This is a test of the whole glogging setup. We&#39;ll see if it works!`,
+    image: &#39;/images/me_8bit_scanlines.jpg&#39;,
     meta: {
       id: 1,
-      keywords: 'coding, blog, test, developer, nuxt',
-      content: 'Coding Blog Test'
+      keywords: &#39;coding, blog, test, developer, nuxt&#39;,
+      content: &#39;Coding Blog Test&#39;
     }
   },
   {
     id: 2,
-    slug: 'hello-foo-bar',
-    title: 'Hello Foo Bar',
-    created_at: '02/19/2019',
-    intro: Hello Moto! But not really. Testing things and such!,
-    image: '/images/me8bitscanlines.jpg',
+    slug: &#39;hello-foo-bar&#39;,
+    title: &#39;Hello Foo Bar&#39;,
+    created_at: &#39;02/19/2019&#39;,
+    intro: `Hello Moto! But not really. Testing things and such!`,
+    image: &#39;/images/me_8bit_scanlines.jpg&#39;,
     meta: {
       id: 2,
-      keywords: 'foo, bar, test',
-      content: 'Hello Foo Bar'
+      keywords: &#39;foo, bar, test&#39;,
+      content: &#39;Hello Foo Bar&#39;
     }
   }
-];
-
-This approach makes it easy for me to create content in a markdown file then send the necessary meta data and SEO information along with it. To me this couldn't be much simpler. Couple that approach that Netlify has a webhook to my master branch that auto rebuilds the site for me and this just made sense to me.
-
-I know I'm not the first person to take this kind of approach. I am a big fan of it though. The end result is a simple portfolio page with a blog for which creating content is easy and speedy. I get SEO friendly site and don't have to mess with deployment, server upkeep, SSL certs, etc.
-
-The biggest obstacle I'm facing now is design inspiration. I chose to go with a retro/8-bit game look because it directly ties in with the fact that I'm a very passionate retro game collector and enthusiast. I've never liked trying to design a layout and basic design language/them for a site or app. Admittedly that is where my main weak points are in front end development. In my current position things are mocked up by a UX designer and then a visual designer first alowing me to focus on the solution creation and implementation and just make sure it turns out looking pixel perfect to their vision. I much prefer that kind of work. Maybe I'm just rusty since I've been that kind of spoiled for a while now?
-
-At the time of writing this post, my site is 3 days old in a very experimental state. Most of the views aren't yet created and the few that are exist mainly as skeletons of what I want them to be. I have big plans, I just have to have a clearer design vision before they can come to existence. Until I feel like the site is at a 'good enough' state to serve as my portfolio, I'm keeping the Netlify generated URL and leaving my ancient portfolio site at my domain. In fact, my creating this post is merely a product of me testing this setup to make sure I feel happy with what I've created thus far. Just know that this site is the wild west at the moment!
-
-If you are interested in seeing the code, feel free to check it out here.
+];</code></pre>
+<p>This approach makes it easy for me to create content in a markdown file then send the necessary meta data and SEO information along with it. To me this couldn’t be much simpler. Couple that approach that Netlify has a webhook to my master branch that auto rebuilds the site for me and this just made sense to me.</p>
+<p>I know I’m not the first person to take this kind of approach. I am a big fan of it though. The end result is a simple portfolio page with a blog for which creating content is easy and speedy. I get SEO friendly site and don’t have to mess with deployment, server upkeep, SSL certs, etc.</p>
+<p>The biggest obstacle I’m facing now is design inspiration. I chose to go with a retro/8-bit game look because it directly ties in with the fact that I’m a very passionate retro game collector and enthusiast. I’ve never liked trying to design a layout and basic design language/them for a site or app. Admittedly that is where my main weak points are in front end development. In my current position things are mocked up by a UX designer and then a visual designer first alowing me to focus on the solution creation and implementation and just make sure it turns out looking pixel perfect to their vision. I much prefer that kind of work. Maybe I’m just rusty since I’ve been that kind of spoiled for a while now?</p>
+<p>At the time of writing this post, my site is 3 days old in a very experimental state. Most of the views aren’t yet created and the few that are exist mainly as skeletons of what I want them to be. I have big plans, I just have to have a clearer design vision before they can come to existence. Until I feel like the site is at a ‘good enough’ state to serve as my portfolio, I’m keeping the Netlify generated URL and leaving my ancient portfolio site at <a href="https://joeyg.me">my domain</a>. In fact, my creating this post is merely a product of me testing this setup to make sure I feel happy with what I’ve created thus far. Just know that this site is the wild west at the moment!</p>
+<p>If you are interested in seeing the code, feel free to check it out <a href="https://github.com/jgdigitaljedi/portAndBlog">here</a>.</p>
 ]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Design Inspiration for This Site]]></title>
             <link>https://joeyg.me/blog/coding/design-inspiration-for-this-site</link>
             <guid>https://joeyg.me/blog/coding/design-inspiration-for-this-site</guid>
+            <pubDate>Sat, 23 Feb 2019 06:00:00 GMT</pubDate>
             <description><![CDATA[My thought process behind designing this seemingly random site that would make a designer cringe.]]></description>
-            <content:encoded><![CDATA["5 fonts, a million colors, no golden ratio, not color theory, weak branding...is this guy insane?" Maybe. If you know me well then you understand what's going on here. Otherwise, you'll understand in just a minute.
-
-I'm a front end/UI engineer/developer (you use whatever words you want). I also do some back end work in Node, but the front end is my main focus most of the time. For years I've had to think about layout, design, colors, etc and try to keep current trends in UI and design in my mind while developing web apps.
-
-I currently work for a company with a UX designer and a graphics artist so I get high-resolution mock-ups and assets for which to base my UI. This allows me to focus on creating the sometimes incredibly complex functionality required. Still, I have to solve the puzzle that is recreating my visual aides and strive to create the most pixel-perfect and modern layout for my elements of complex functionality. There's also an expectation of providing feedback or resistance to unreasonable or poor design.
-
-Prior to working in my current position I was accustomed to having to be more design-oriented as my employers didn't see the incredible value in having dedicated resources for UX and graphic design. I was a contributor to making decisions regarding design language, colors, fonts, layouts, etc. There was a lot more effort made by me to keep up with current trends in those areas. Part of me enjoyed that aspect of my job while the other part of me felt like it sometimes greatly slowed the development process and got in the way of doing what I enjoyed the most which is creating awesome things using JavaScript.
-
-"Ok, so what does that have to do with this site?" Well, first of all, I thought it might be nice to have a project where I don't have to think about modern design, color theory, etc. Removing those elements of the development process means I don't have to spend hours searching other sites looking for inspiration for layouts, colors, fonts, nav bars, etc. Now I am free to be whimsical and maybe even a little childish. Each view is allowed to basically have its own theme. I've spent years worrying a lot about the design elements so I thought it might this site might be a nice opportunity to develop something with that part of the process somewhat removed or simplified.
-
-Furthermore, I a passionate video game collector and enthusiast. I got my first console, the NES, when I was 6 years old and I haven't stopped being a video games fanatic. My entire life I've had at least a couple of consoles laying around with a handful of games. There was a long period where I would regularly sell older games and consoles to have money to go towards getting the latest and greatest. About 2 years ago I decided to put an end to that cycle and start calling myself a collector. Since then my love for all things video game related has grown and my collecting has become a very large focus. Currently, I have 26 consoles and over 400 games; over 300 of which are physical copies in original or custom cases. It's a large part of who I am now.
-
-If you're familiar with some older video game classics and you start looking around, things might start to make more sense. The nav bar is Pacman themed. The nav branding is my initials in the Sega font. The home screen is like so many 8-bit title screens with a rough image transitioning in from the right and a space shooter type background. The blog landing page is inspired by the Super Mario Bros. title screen. Most of the colors that aren't part of an image were taken directly from the NES 8-bit color palette. Each element and view of this site is directly influenced by a retro gaming classic.
-
-I wanted this site to not only represent who I am but to be fun and light and not-too-serious. I spend all day every day making views that are sleek and modern. That gets so old after a while. That's what led to my decision to make this site's design something that would make many hardcore designer types sick to their stomach. You know what? I don't care if anyone reacts that way. I made this site for me and I'm having fun doing it!
+            <content:encoded><![CDATA[<p>“5 fonts, a million colors, no golden ratio, not color theory, weak branding…is this guy insane?” Maybe. If you know me well then you understand what’s going on here. Otherwise, you’ll understand in just a minute.</p>
+<p>I’m a front end/UI engineer/developer (you use whatever words you want). I also do some back end work in Node, but the front end is my main focus most of the time. For years I’ve had to think about layout, design, colors, etc and try to keep current trends in UI and design in my mind while developing web apps.</p>
+<p>I currently work for a company with a UX designer and a graphics artist so I get high-resolution mock-ups and assets for which to base my UI. This allows me to focus on creating the sometimes incredibly complex functionality required. Still, I have to solve the puzzle that is recreating my visual aides and strive to create the most pixel-perfect and modern layout for my elements of complex functionality. There’s also an expectation of providing feedback or resistance to unreasonable or poor design.</p>
+<p>Prior to working in my current position I was accustomed to having to be more design-oriented as my employers didn’t see the incredible value in having dedicated resources for UX and graphic design. I was a contributor to making decisions regarding design language, colors, fonts, layouts, etc. There was a lot more effort made by me to keep up with current trends in those areas. Part of me enjoyed that aspect of my job while the other part of me felt like it sometimes greatly slowed the development process and got in the way of doing what I enjoyed the most which is creating awesome things using JavaScript.</p>
+<p>“Ok, so what does that have to do with this site?” Well, first of all, I thought it might be nice to have a project where I don’t have to think about modern design, color theory, etc. Removing those elements of the development process means I don’t have to spend hours searching other sites looking for inspiration for layouts, colors, fonts, nav bars, etc. Now I am free to be whimsical and maybe even a little childish. Each view is allowed to basically have its own theme. I’ve spent years worrying a lot about the design elements so I thought it might this site might be a nice opportunity to develop something with that part of the process somewhat removed or simplified.</p>
+<p>Furthermore, I a passionate video game collector and enthusiast. I got my first console, the NES, when I was 6 years old and I haven’t stopped being a video games fanatic. My entire life I’ve had at least a couple of consoles laying around with a handful of games. There was a long period where I would regularly sell older games and consoles to have money to go towards getting the latest and greatest. About 2 years ago I decided to put an end to that cycle and start calling myself a collector. Since then my love for all things video game related has grown and my collecting has become a very large focus. Currently, I have 26 consoles and over 400 games; over 300 of which are physical copies in original or custom cases. It’s a large part of who I am now.</p>
+<p>If you’re familiar with some older video game classics and you start looking around, things might start to make more sense. The nav bar is Pacman themed. The nav branding is my initials in the Sega font. The home screen is like so many 8-bit title screens with a rough image transitioning in from the right and a space shooter type background. The blog landing page is inspired by the Super Mario Bros. title screen. Most of the colors that aren’t part of an image were taken directly from the NES 8-bit color palette. Each element and view of this site is directly influenced by a retro gaming classic.</p>
+<p>I wanted this site to not only represent who I am but to be fun and light and not-too-serious. I spend all day every day making views that are sleek and modern. That gets so old after a while. That’s what led to my decision to make this site’s design something that would make many hardcore designer types sick to their stomach. You know what? I don’t care if anyone reacts that way. I made this site for me and I’m having fun doing it!</p>
 ]]></content:encoded>
         </item>
     </channel>
