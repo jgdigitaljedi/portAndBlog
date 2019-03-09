@@ -200,6 +200,14 @@ module.exports = {
             description: `The documented gaming journey of an old school gamer and newbie retro game collector learning the ways of the Jedi`
           };
 
+          feed.addCategory('Video Games');
+
+          feed.addContributor({
+            name: 'Joey Gauthier',
+            email: 'joey@joeg.me',
+            link: 'https://joeyg.me'
+          });
+
           gCopy.forEach(post => {
             const postMd = fs.readFileSync(
               path.resolve(__dirname, `content/posts/gaming/${post.id}.md`),
@@ -218,13 +226,6 @@ module.exports = {
               description: post.intro,
               content
             });
-            feed.addCategory('Video Games');
-
-            feed.addContributor({
-              name: 'Joey Gauthier',
-              email: 'joey@joeg.me',
-              link: 'https://joeyg.me'
-            });
           });
         },
         cacheTime: 1000 * 60 * 15,
@@ -238,6 +239,14 @@ module.exports = {
             link: `https://joeyg.me/blog/coding`,
             description: `Personal programming ramblings of a JavaScript Jedi covering topics ranging from application architecture to his hatred for CSS`
           };
+
+          feed.addCategory('Programming');
+
+          feed.addContributor({
+            name: 'Joey Gauthier',
+            email: 'joey@joeg.me',
+            link: 'https://joeyg.me'
+          });
 
           cCopy.forEach(post => {
             const postMd = fs.readFileSync(
@@ -256,13 +265,6 @@ module.exports = {
               link: `https://joeyg.me/blog/coding/${post.slug}`,
               description: post.intro,
               content
-            });
-            feed.addCategory('Programming');
-
-            feed.addContributor({
-              name: 'Joey Gauthier',
-              email: 'joey@joeg.me',
-              link: 'https://joeyg.me'
             });
           });
         },

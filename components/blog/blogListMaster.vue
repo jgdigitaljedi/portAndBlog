@@ -118,7 +118,7 @@ export default {
     };
   },
   created() {
-    this.$cookies.remove('MCPopupClosed');
+    this.eatCookies();
     this.feedUrl =
       this.which.toLowerCase() === 'gaming' ? 'RSSfeed_gaming.xml' : 'RSSfeed_coding.xml';
     this.currentFilters.sortSelected = this.sortItems[0];
@@ -147,6 +147,13 @@ export default {
     this.isMounted = true;
   },
   methods: {
+    eatCookies() {
+      this.$cookies.remove('MCPopupClosed');
+      this.$cookies.remove('MCPopupSubscribed');
+      this.$cookies.remove('MC_PLUMS_LOGIN');
+      this.$cookies.remove('MC_USER_INFO');
+      this.$cookies.remove('MC_USER_PROFILE');
+    },
     applyFilters() {
       this.filteredPosts = this.cPosts;
       this.filterByMonth();
@@ -223,7 +230,7 @@ export default {
       }
     },
     setupMailchimp() {
-      this.$cookies.remove('MCPopupClosed');
+      this.eatCookies();
       let mailchimpConfig;
       if (this.which === 'coding') {
         mailchimpConfig = {
