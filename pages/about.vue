@@ -1,8 +1,11 @@
 <template>
-  <section class="about">About page</section>
+  <section class="about">
+    <div class="about__dossier"></div>
+  </section>
 </template>
 
 <script>
+// style after N64 GoldenEye dossier/settings/mission screen with folders and tabs on right
 export default {
   head() {
     return {
@@ -16,7 +19,8 @@ export default {
         {
           hid: 'keywords',
           name: 'keywords',
-          content: 'Joey Gauthier, Paul Gauthier, web developer, software engineer'
+          content:
+            'Joey Gauthier, Paul Gauthier, web developer, software engineer, digitaljedi, digital jedi, jgdigitaljedi'
         },
         {
           hid: 'twitter:title',
@@ -53,8 +57,26 @@ export default {
 </script>
 
 <style lang="scss">
+@import '~/assets/style/theme.scss';
 .about {
   min-height: calc(100vh - 7rem);
-  background-color: #000;
+  // background-color: $ge-background;
+  background: -webkit-linear-gradient(to left, rgba(17, 23, 0, 0.7), rgba(17, 23, 0, 0.7)),
+    url('../assets/images/patterns/background_paper.png') repeat;
+  background: linear-gradient(to left, rgba(17, 23, 0, 0.7), rgba(17, 23, 0, 0.7)),
+    url('../assets/images/patterns/background_paper.png') repeat;
+  display: flex;
+  justify-content: center;
+  padding-top: 3rem;
+  .about__dossier {
+    max-width: 1200px;
+    min-width: 300px;
+    width: 95%;
+    min-height: 400px;
+    background: -webkit-linear-gradient(to left, rgba(209, 210, 165, 0.7), rgba(209, 210, 165, 0.7)),
+      url('../assets/images/patterns/dossier_paper.png') repeat;
+    background: linear-gradient(to left, rgba(209, 210, 165, 0.7), rgba(209, 210, 165, 0.7)),
+      url('../assets/images/patterns/dossier_paper.png') repeat;
+  }
 }
 </style>

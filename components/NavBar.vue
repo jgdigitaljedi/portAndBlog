@@ -69,7 +69,6 @@ export default {
         { title: 'Home', to: '/', icon: require('~/assets/images/navbar/pacman.png') },
         { title: 'Blog', to: '/blog', icon: require('~/assets/images/navbar/ghost_red.png') },
         { title: 'About', to: '/about', icon: require('~/assets/images/navbar/ghost_blue.png') }
-        // { title: 'Work', to: '/work' },
         // { title: 'VG', to: '/videogames' }
       ]
     };
