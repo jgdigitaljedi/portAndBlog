@@ -1,6 +1,16 @@
 <template>
   <section class="about" v-if="isMounted">
-    <div class="about__dossier"></div>
+    <div class="about__dossier">
+      <section class="about__dossier--general dossier" v-if="selectedTab === 1">
+        <div class="img-and-paperclip">
+          <img src="~/assets/images/me/me_dossier.jpg">
+        </div>
+      </section>
+      <section class="about__dossier--tech dossier" v-if="selectedTab === 2">TECH</section>
+      <section class="about__dossier--work dossier" v-if="selectedTab === 3">WORK</section>
+      <section class="about__dossier--contact dossier" v-if="selectedTab === 4">CONTACT</section>
+      <section class="about__dossier--random dossier" v-if="selectedTab === 5">RANDOM</section>
+    </div>
     <div class="about__tabs">
       <div class="about__tabs--list">
         <input
@@ -146,6 +156,20 @@ export default {
       url('../assets/images/patterns/tabs_paper.png') repeat;
     background: linear-gradient(to left, rgba(209, 210, 165, 0.7), rgba(209, 210, 165, 0.7)),
       url('../assets/images/patterns/tabs_paper.png') repeat;
+    .dossier {
+      color: lighten($black, 15%);
+    }
+    .about__dossier--general {
+      position: relative;
+      .img-and-paperclip {
+        left: 2rem;
+        top: -1.5rem;
+        position: absolute;
+        img {
+          max-height: 400px;
+        }
+      }
+    }
   }
   .about__tabs {
     font-family: traveling_typewriter !important;
@@ -171,7 +195,7 @@ export default {
         transform: rotate(90deg);
         text-align: center;
         display: block;
-        color: lighten($black, 10%);
+        color: lighten($black, 15%);
         height: 3rem;
         width: 9rem;
         margin: 6.5rem 0 6.5rem -3rem;
