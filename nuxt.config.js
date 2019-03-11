@@ -87,7 +87,7 @@ module.exports = {
 
   /** forcing scroll to top on route change */
   router: {
-    scrollBehavior: function(to, from, savedPosition) {
+    scrollBehavior: function (to, from, savedPosition) {
       return { x: 0, y: 0 };
     }
   },
@@ -158,7 +158,9 @@ module.exports = {
           { path: '**.svg', as: 'image' },
           { path: '**.gif', as: 'image' },
           { path: 'fonts/*.woff2', as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
-          { path: '_nuxt/fonts/*.woff2', as: 'font', type: 'font/woff2', crossorigin: 'anonymous' }
+          { path: 'fonts/*.woff', as: 'font', type: 'font/woff', crossorigin: 'anonymous' },
+          { path: '_nuxt/fonts/*.woff2', as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
+          { path: '_nuxt/fonts/*.woff', as: 'font', type: 'font/woff', crossorigin: 'anonymous' }
         ]
       }
     ],

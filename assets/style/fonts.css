@@ -7,6 +7,15 @@
 }
 
 @font-face {
+  font-family: 'traveling_typewriter';
+  src: url('../../static/fonts/travelingtypewriter-webfont.woff2') format('woff2'),
+       url('../../static/fonts/travelingtypewriter-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
   font-family: 'icomoon';
   src: url('../../static/fonts/icomoon.eot?1kwzux');
   src: url('../../static/fonts/icomoon.eot?1kwzux#iefix') format('embedded-opentype'),
