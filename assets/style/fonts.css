@@ -7,12 +7,11 @@
 }
 
 @font-face {
-  font-family: 'traveling_typewriter';
-  src: url('../../static/fonts/travelingtypewriter-webfont.woff2') format('woff2'),
-       url('../../static/fonts/travelingtypewriter-webfont.woff') format('woff');
+  font-family: 'my_underwoodregular';
   font-weight: normal;
   font-style: normal;
-
+  src: url('../../static/fonts/myunderwood-webfont.woff2') format('woff2'),
+    url('../../static/fonts/myunderwood-webfont.woff') format('woff');
 }
 
 @font-face {
