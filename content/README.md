@@ -13,7 +13,7 @@
 User this as the wrapper:
 ```html
 <div class="image-container">
-  <img src="/images/blog/gaming_or_coding/image_name.jpg">
+  <img rc="/images/blog/gaming_or_coding/image_name.jpg" onclick="openImage('/images/blog/gaming_or_coding/image_name.jpg')">
 </div>
 ```
 
