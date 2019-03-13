@@ -1,7 +1,6 @@
 <template>
   <div class="blog-slug">
-    <div class="blog-image__container">
-    </div>
+    <div class="blog-image__container"></div>
     <v-card class="markdown-content" v-html="postContent"></v-card>
     <v-dialog v-model="imageDialog" content-class="image-dialog">
       <div class="image-dialog__container">
@@ -29,9 +28,9 @@ export default {
   },
   mounted() {
     if (process.browser && window) {
-      window.openImage = (src) => {
+      window.openImage = src => {
         this.openImage(src);
-      }
+      };
     }
   },
   methods: {
@@ -124,7 +123,9 @@ export default {
   }
 }
 .image-dialog {
+  min-width: 95vw;
   width: auto;
+  height: auto;
   .image-dialog__container {
     background-color: #000;
     display: flex;
