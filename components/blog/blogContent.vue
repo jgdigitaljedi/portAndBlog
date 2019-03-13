@@ -2,7 +2,7 @@
   <div class="blog-slug">
     <div class="blog-image__container"></div>
     <v-card class="markdown-content" v-html="postContent"></v-card>
-    <v-dialog v-model="imageDialog" content-class="image-dialog">
+    <v-dialog v-model="imageDialog" content-class="image-dialog" style="min-width: 95vw;">
       <div class="image-dialog__container">
         <v-btn flat @click="imageDialog = false" class="dismiss">
           <v-icon class="dismiss-icon">icon-cross</v-icon>
@@ -122,7 +122,7 @@ export default {
     }
   }
 }
-.image-dialog {
+.v-dialog.image-dialog {
   min-width: 95vw;
   width: auto;
   height: auto;
