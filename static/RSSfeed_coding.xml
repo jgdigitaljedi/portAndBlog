@@ -4,10 +4,9 @@
         <title>Coding Blog of the Digital Jedi</title>
         <link>https://joeyg.me/blog/coding</link>
         <description>Personal programming ramblings of a JavaScript Jedi covering topics ranging from application architecture to his hatred for CSS</description>
-        <lastBuildDate>Sat, 09 Mar 2019 15:00:02 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 13 Mar 2019 12:42:10 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>https://github.com/nuxt-community/feed-module</generator>
-        <category>Programming</category>
         <category>Programming</category>
         <item>
             <title><![CDATA[The Start of My Adventure Building This Site]]></title>
