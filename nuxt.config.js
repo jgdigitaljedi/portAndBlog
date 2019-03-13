@@ -23,15 +23,24 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: `Joey G | Portfolio & Blog` },
+      {
+        hid: 'description',
+        name: 'description',
+        content: `The portfolio, gaming blog, and coding blog of Joey Gauthier`
+      },
       { hid: 'author', name: 'author', content: `Joey Gauthier` },
       {
         hid: 'keywords',
         name: 'keywords',
         content:
-          'Joey Gauthier, Paul Gauthier, JGDigitalJedi, front end portfolio, Austin developers, JavaScript, Vue, Angular, Nintendo, Sega, Playstation, Xbox'
+          'Joey Gauthier, Paul Gauthier, JGDigitalJedi, front end portfolio, Austin developers, JavaScript, Vue, Angular, Nintendo, Sega, Playstation, Xbox, retro collecting, retro gaming'
       },
-      { hid: 'image', name: 'image', content: '/images/me_8bit_scanlines.jpg' },
+      {
+        hid: 'image',
+        name: 'image',
+        content:
+          'https://res.cloudinary.com/https-joeyg-me/image/upload/v1552518203/me_8bit_scanlines.jpg'
+      },
       { hid: 'twitter:card', name: 'twitter:card', content: 'summary' },
       {
         hid: 'twitter:title',
@@ -41,7 +50,7 @@ module.exports = {
       {
         hid: 'twitter:description',
         name: 'twitter:description',
-        content: pkg.description
+        content: `The portfolio, gaming blog, and coding blog of Joey Gauthier`
       },
       { hid: 'twitter:site', name: 'twitter:site', content: '@JGDigitalJedi' },
       {
@@ -49,7 +58,12 @@ module.exports = {
         name: 'twitter:creator',
         content: '@JGDigitalJedi'
       },
-      { hid: 'twitter:image', name: 'twitter:image', content: '/images/me_8bit_scanlines.jpg' },
+      {
+        hid: 'twitter:image',
+        name: 'twitter:image',
+        content:
+          'https://res.cloudinary.com/https-joeyg-me/image/upload/v1552518203/me_8bit_scanlines.jpg'
+      },
       {
         hid: 'og:title',
         name: 'og:title',
@@ -58,9 +72,14 @@ module.exports = {
       {
         hid: 'og:description',
         name: 'og:description',
-        content: `Joey Gauthier | Portfolio & Blog`
+        content: `The portfolio, gaming blog, and coding blog of Joey Gauthier`
       },
-      { hid: 'og:image', name: 'og:image', content: '/images/me_8bit_scanlines.jpg' },
+      {
+        hid: 'og:image',
+        name: 'og:image',
+        content:
+          'https://res.cloudinary.com/https-joeyg-me/image/upload/v1552518203/me_8bit_scanlines.jpg'
+      },
       { hid: 'og:url', name: 'og:url', content: 'https://joeyg.me' },
       { hid: 'og:site_name', name: 'og:site_name', content: 'JoeyG.me' },
       { hid: 'og:type', name: 'og:type', content: 'website' }
@@ -87,7 +106,7 @@ module.exports = {
 
   /** forcing scroll to top on route change */
   router: {
-    scrollBehavior: function (to, from, savedPosition) {
+    scrollBehavior: function(to, from, savedPosition) {
       return { x: 0, y: 0 };
     }
   },
@@ -164,6 +183,10 @@ module.exports = {
     ],
     '@nuxtjs/sitemap'
   ],
+
+  workbox: {
+    runtimeCaching: [{ urlPattern: 'https://res.cloudinary.com/https-joeyg-me/*' }]
+  },
 
   /** Sitemap generation */
   sitemap: {

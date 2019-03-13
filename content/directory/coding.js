@@ -17,7 +17,9 @@ export default () => [
     title: 'Design Inspiration for This Site',
     tag_line: `You try to make a pretty site using pixelated assets and 8-bit colors!`,
     created_at: '02/23/2019',
-    image: '/images/blog/gaming/game_collection.jpg',
+    image:
+      'https://res.cloudinary.com/https-joeyg-me/image/upload/v1552515487/gaming/march_2019_collection.jpg',
+    alt: `photo of Joey Gauthier's game collection circa March 2019`,
     pinned: true,
     intro:
       'My thought process behind designing this seemingly random site that would make a designer cringe.',

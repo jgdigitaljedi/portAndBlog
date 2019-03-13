@@ -3,7 +3,7 @@
     <v-toolbar dark class="nav">
       <v-toolbar-title color="#000" class="nav__brand">
         <nuxt-link to="/">
-          <img class="nav__brand--image" src="~/assets/images/navbar/JG.png">
+          <img class="nav__brand--image" src="~/assets/images/navbar/JG.png" alt="JG for Joey Gauthier in the Sega font">
         </nuxt-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
@@ -11,6 +11,7 @@
         src="~/assets/images/navbar/pacman_cherries.png"
         @click.stop="drawer = !drawer"
         class="pacman-cherries hidden-md-and-up"
+        alt="cherries from the Pacman game"
       >
       <v-toolbar-items class="nav__items hidden-sm-and-down" v-if="isMounted">
         <div v-for="(link, index) in links" :key="link.title" class="nav-items__link-wrapper">
@@ -27,19 +28,19 @@
             </label>
           </nuxt-link>
           <div class="nav__power-pellet" v-if="index < links.length - 1">
-            <img src="~/assets/images/navbar/power-pellet.png">
-            <img src="~/assets/images/navbar/power-pellet.png">
+            <img src="~/assets/images/navbar/power-pellet.png" alt="Pacman power pellet">
+            <img src="~/assets/images/navbar/power-pellet.png" alt="Pacman power pellet">
           </div>
         </div>
       </v-toolbar-items>
     </v-toolbar>
     <v-navigation-drawer v-model="drawer" absolute temporary class="mobile-nav">
       <div class="mobile-nav__title">
-        <img class="nav__brand--image" src="~/assets/images/navbar/JG.png">
+        <img class="nav__brand--image" src="~/assets/images/navbar/JG.png" alt="JG for Joey Gauthier in the Sega font">
       </div>
       <v-list>
         <v-list-tile v-for="link in links" :key="link.title" class="mobile-nav__link-wrapper">
-          <img :src="link.icon">
+          <img :src="link.icon" alt="">
           <nuxt-link :to="link.to" class="nav-link">
             <label class="nav-link__tile">
               <div class="nav-link__tile--text-wrapper">
