@@ -6,7 +6,7 @@
           <div class="img-and-paperclip">
             <img src="~/assets/images/me/me_dossier_paperclip.png">
           </div>
-          <div class="jg-logo hidden-sm-and-down">
+          <div class="jg-logo hidden-xs">
             <img src="~/assets/images/me/JG_embossed.png">
           </div>
         </div>
@@ -15,15 +15,68 @@
           <div>EYES ONLY</div>
         </div>
         <div class="about__dossier--general__info">
-          <ol class="info-list">
+          <ol class="info-list" :class="{'small': $vuetify.breakpoint.xs}">
             <li>NAME: Joey Gauthier</li>
             <li>OCCUPATION: Software Engineer</li>
             <li>LOCATION: Texas</li>
-            <li>HOBBIES: retro game collecting, guitar, disc golf</li>
+            <li>HOBBIES: retro game collecting, guitar, drums, disc golf</li>
           </ol>
         </div>
       </section>
-      <section class="about__dossier--tech dossier" v-if="selectedTab === 2">TECH</section>
+      <section class="about__dossier--tech dossier" v-if="selectedTab === 2">
+        <div class="fixed-transparent-text hidden-md-and-down">
+          <div>CLASSIFIED</div>
+        </div>
+        <div class="about__dossier--tech__proficiencies">
+          <div class="tech-section right">
+            <div class="tech-section__image">
+              <img src="~/assets/images/about/license_to_kill.png">
+            </div>
+            <div class="tech-section__list">
+              <h3 class="language-head">License to Kill with:</h3>
+              <ul>
+                <li>JavaScript</li>
+                <li>TypeScript</li>
+                <li>HTML</li>
+                <li>CSS (SCSS, LESS)</li>
+                <li>NodeJS</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tech-section left">
+            <div class="tech-section__list">
+              <h3>Weapons of Choice:</h3>
+              <ul>
+                <li>Visual Studio Code</li>
+                <li>Postman</li>
+                <li>Ubuntu</li>
+                <li>Chrome</li>
+                <li>MongoDB</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tech-section right">
+            <div class="tech-section__list">
+              <h3>Fav. Weapon Upgrades:</h3>
+              <ul>
+                <li>Angular</li>
+                <li>Vue</li>
+                <li>Express</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tech-section left">
+            <div class="tech-section__list">
+              <h3>Novice Level/In Training:</h3>
+              <ul>
+                <li>React</li>
+                <li>Python</li>
+                <li>Clojure</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
       <section class="about__dossier--work dossier" v-if="selectedTab === 3">WORK</section>
       <section class="about__dossier--contact dossier" v-if="selectedTab === 4">CONTACT</section>
       <section class="about__dossier--random dossier" v-if="selectedTab === 5">RANDOM</section>
@@ -152,6 +205,15 @@ export default {
   display: flex;
   justify-content: center;
   padding: 4rem 0;
+  .fixed-transparent-text {
+    font-size: 7rem;
+    color: rgba(191, 63, 65, 0.3);
+    position: absolute;
+    transform: rotate(-37deg);
+    // top: 22rem;
+    // right: 16rem;
+    z-index: -1;
+  }
   .about__dossier {
     @include box_shadow(5);
     z-index: 10;
@@ -166,6 +228,87 @@ export default {
       url('../assets/images/patterns/tabs_paper.png') repeat;
     .dossier {
       color: lighten($black, 15%);
+      position: relative;
+      ol > li,
+      ul > li,
+      h3 {
+        font-family: my_underwoodregular;
+      }
+    }
+    .about__dossier--tech {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      .fixed-transparent-text {
+        top: 25rem;
+        left: 13rem;
+      }
+      .about__dossier--tech__proficiencies {
+        display: flex;
+        flex-direction: column;
+        margin-top: 3rem;
+        .tech-section {
+          margin: 1rem 0;
+          display: flex;
+          justify-content: space-between;
+          .tech-section__image {
+            position: relative;
+            width: auto;
+            img {
+              max-height: 12rem;
+              width: auto;
+              // display: block;
+              // content: '';
+            }
+            &:before {
+              z-index: -1;
+              position: absolute;
+              content: '';
+              bottom: 15px;
+              left: 10px;
+              width: 50%;
+              top: 80%;
+              max-width: 300px;
+              background: #777;
+              -webkit-box-shadow: 0 15px 10px #777;
+              -moz-box-shadow: 0 15px 10px #777;
+              box-shadow: 0 15px 10px #777;
+              -webkit-transform: rotate(-5deg);
+              -moz-transform: rotate(-5deg);
+              -o-transform: rotate(-5deg);
+              -ms-transform: rotate(-5deg);
+              transform: rotate(-5deg);
+            }
+            &:after {
+              z-index: -1;
+              position: absolute;
+              content: '';
+              bottom: 15px;
+              right: 3rem;
+              left: auto;
+              width: 50%;
+              top: 80%;
+              // max-width: 300px;
+              background: #777;
+              -webkit-box-shadow: 0 15px 10px #777;
+              -moz-box-shadow: 0 15px 10px #777;
+              box-shadow: 0 15px 10px #777;
+              -webkit-transform: rotate(5deg);
+              -moz-transform: rotate(5deg);
+              -o-transform: rotate(5deg);
+              -ms-transform: rotate(5deg);
+              transform: rotate(5deg);
+            }
+          }
+          &.right img {
+            margin-right: 3rem;
+          }
+          &.left img {
+            margin-left: 3rem;
+          }
+        }
+      }
     }
     .about__dossier--general {
       position: relative;
@@ -191,13 +334,8 @@ export default {
         }
       }
       .fixed-transparent-text {
-        font-size: 7rem;
-        color: rgba(191, 63, 65, 0.45);
-        position: absolute;
-        transform: rotate(-37deg);
         top: 22rem;
         right: 16rem;
-        z-index: -1;
       }
       .about__dossier--general__info {
         width: 100%;
@@ -209,12 +347,17 @@ export default {
           width: auto;
           font-family: my_underwoodregular;
           font-size: 2rem;
+          &.small {
+            font-size: 1.55rem;
+            margin: auto 0.5rem;
+          }
         }
       }
     }
   }
   .about__tabs {
     font-family: my_underwoodregular;
+    width: 2rem;
     .about__tabs--list {
       position: relative;
       input[type='radio'] {
