@@ -41,5 +41,19 @@ export default () => [
       keywords:
         'gaming, nes, retro games, retro collecting, Game Stop, Goodwill, Game Over Video Games, retro game stores, garage sales, flea markets, pricecharting'
     }
+  },
+  {
+    id: 8,
+    slug: 'how-i-store-my-games',
+    title: `How I Store My Games`,
+    tag_line: `Protect those old games while making them look good on your shelves at the same time!`,
+    created_at: '03/13/2019',
+    pinned: true,
+    intro: `You want to make sure your games are well protected. This is a look at how to achieve that while also making them look better on your shelves.`,
+    image: '/images/blog/gaming/custom_cases.jpg',
+    meta: {
+      keywords:
+        'gaming, nes, retro games, retro collecting, universal game cases, ds cases, game storage, cover project, umd cases, dvd cases, cd cases'
+    }
   }
 ];
