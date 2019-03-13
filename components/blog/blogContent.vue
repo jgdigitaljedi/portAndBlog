@@ -1,19 +1,16 @@
 <template>
   <div class="blog-slug">
     <div class="blog-image__container">
-      <!-- <v-carousel
-        v-if="post.image && post.image.length"
-        dark
-        cycle
-        :hide-delimiters="true"
-        active-class="blog-image__carousel"
-      >
-        <v-carousel-item v-for="(item, index) in post.image" :key="index">
-          <img :src="item" class="blog-image">
-        </v-carousel-item>
-      </v-carousel>-->
     </div>
     <v-card class="markdown-content" v-html="postContent"></v-card>
+    <v-dialog v-model="imageDialog" content-class="image-dialog">
+      <div class="image-dialog__container">
+        <v-btn flat @click="imageDialog = false" class="dismiss">
+          <v-icon class="dismiss-icon">icon-cross</v-icon>
+        </v-btn>
+        <v-img :src="imageSrc" class="image-dialog__image" contain max-height="90vh"></v-img>
+      </div>
+    </v-dialog>
   </div>
 </template>
 
@@ -23,6 +20,25 @@ export default {
   props: {
     post: null,
     postContent: null
+  },
+  data() {
+    return {
+      imageDialog: false,
+      imageSrc: ''
+    };
+  },
+  mounted() {
+    if (process.browser && window) {
+      window.openImage = (src) => {
+        this.openImage(src);
+      }
+    }
+  },
+  methods: {
+    openImage(src) {
+      this.imageSrc = src;
+      this.imageDialog = true;
+    }
   }
 };
 </script>
@@ -65,6 +81,7 @@ export default {
         max-width: 100%;
         width: auto;
         object-fit: contain;
+        cursor: url('/images/cursors/cursor-click.png'), auto !important;
       }
     }
   }
@@ -103,6 +120,27 @@ export default {
     span,
     table {
       font-family: $primary-font !important;
+    }
+  }
+}
+.image-dialog {
+  width: auto;
+  .image-dialog__container {
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    .dismiss {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      color: #fff;
+      font-size: 1.5rem;
+      z-index: 100;
+      cursor: url('/images/cursors/cursor-click.png'), auto !important;
+    }
+    .image-dialog__image {
+      width: auto;
     }
   }
 }
