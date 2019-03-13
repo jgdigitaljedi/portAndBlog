@@ -5,6 +5,7 @@
         src="~/assets/images/me/me_headshot.png"
         class="headshot"
         :class="{'mobile': $vuetify.breakpoint.smAndDown && isMounted}"
+        alt="professional headshot of Joey Gauthier"
       >
       <small>Joey Gauthier</small>
       <small>{{post.created_at}}</small>

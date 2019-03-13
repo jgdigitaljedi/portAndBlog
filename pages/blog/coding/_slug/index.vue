@@ -45,7 +45,9 @@ export default {
         {
           hid: 'og:image',
           name: 'og:image',
-          content: post.image ? post.image : '/images/me_8bit_scanlines.jpg'
+          content: post.image
+            ? post.image
+            : 'https://res.cloudinary.com/https-joeyg-me/image/upload/v1552518203/me_8bit_scanlines.jpg'
         }
       ]
     };

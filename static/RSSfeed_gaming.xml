@@ -4,7 +4,7 @@
         <title>Gaming Blog of the Digital Jedi</title>
         <link>https://joeyg.me/blog/gaming</link>
         <description>The documented gaming journey of an old school gamer and newbie retro game collector learning the ways of the Jedi</description>
-        <lastBuildDate>Wed, 13 Mar 2019 13:43:21 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 13 Mar 2019 23:39:17 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>https://github.com/nuxt-community/feed-module</generator>
         <category>Video Games</category>
@@ -27,7 +27,7 @@
 <p>It was probably my senior year when I decided that selling my entire collection of video games was a good idea. My parents were having a garage sale and told my sister and me that if we put things in the sale we could keep the money we made. I needed money for dates, gas was up to $.98 a gallon at the time which had me irate, and $4.75 per hour stocking shelves at the local grocery store wasn’t allowing me to spend money the way I wanted. I got rid of it all!</p>
 <h2 id="the-rebirth-of-the-gamer-within">The Rebirth of the Gamer Within</h2>
 <div class="image-container">
-  <img src="/images/blog/gaming/RGB_deblurred_N64.jpg" onclick="openImage('/images/blog/gaming/RGB_deblurred_N64.jpg')">
+  <img src="https://res.cloudinary.com/https-joeyg-me/image/upload/v1552515486/gaming/RGB_deblurred_N64.jpg" alt="Japanese teal N64 region modded and RGB modded"  onclick="openImage('https://res.cloudinary.com/https-joeyg-me/image/upload/v1552515486/gaming/RGB_deblurred_N64.jpg')">
 </div>
 
 <p>Fast forward to my stint at college and my unofficial roommate (basically a good friend that crashed on the couch for free) had a Sony PlayStation. My actual roommate had a Sega Master System. When we weren’t partying or didn’t feel like going to class, these systems got used heavily. I beat Final Fantasy VII during this period and gained an appreciation for the Master System and its library. Still, I didn’t own any video games.</p>
@@ -35,7 +35,7 @@
 <p>Years passed and video games slowly became a bigger part of my life. I would friends over to play Guitar Hero and have some drinks, I would periodically grab a handful of old games to take to GameStop and trade in for a new game or two, and I regularly found myself killing times playing video games again. It was nice. I got into video games enough that I had to have a PS3 near launch. A coworker had a PSP for sale and I jumped on it. Slowly my collection was growing, but I still didn’t view it as collecting. I was merely enjoying video games as much as I could.</p>
 <h2 id="kids-change-everything">Kids Change Everything</h2>
 <div class="image-container">
-  <img src="/images/blog/gaming/early_collection.jpg" onclick="openImage('/images/blog/gaming/early_collection.jpg')">
+  <img src="https://res.cloudinary.com/https-joeyg-me/image/upload/v1552515487/gaming/early_collection.jpg" alt="early image of Joey Gauthier's game collection" onclick="openImage('https://res.cloudinary.com/https-joeyg-me/image/upload/v1552515487/gaming/early_collection.jpg')">
 </div>
 
 <p>When I found out my wife was pregnant I knew that the habit of buying videos games regularly was about to come to an end. I did immediately have the thought “I can’t wait until the kiddo is old enough to play video games with me!” I didn’t really get a lot of new games or consoles the first few years of parenthood. I did, at one point, happen into a lucky deal with a coworker of my wife’s that had an old NES in PERFECT condition and 18 games they wanted to unload for a whopping $100. I didn’t even hesitate to grab that up!</p>
@@ -43,7 +43,7 @@
 <p>My collection kept growing as I was no longer selling off games or trading them in for new ones. I had a handful of PS2 and GameCube games that survived several moves too. Once I got my first “good paying” developer job, my amazing wife decided it was time for me to have a current-gen console and got me the PS4 Pro for Christmas the year that the Pro model was released. My love for video games was now shared with my wife and son and we regularly played games together.</p>
 <h2 id="from-gamer-to-collector">From “Gamer” to “Collector”</h2>
 <div class="image-container">
-  <img src="/images/blog/gaming/early_2019_collection.jpg" onclick="openImage('/images/blog/gaming/early_2019_collection.jpg')">
+  <img src="https://res.cloudinary.com/https-joeyg-me/image/upload/v1552515487/gaming/march_2019_collection.jpg" alt="image of Joey Gauthier's retro game collection circa March 2019" onclick="openImage('https://res.cloudinary.com/https-joeyg-me/image/upload/v1552515487/gaming/march_2019_collection.jpg')">
 </div>
 
 <p>Finally, a couple of years ago, I started to feel a deep nostalgia for the older games and consoles. I was not only interested in getting an NES and a Genesis like I had growing up, but I started to think about the consoles I completely missed out on such as the Sega Saturn, Sega Dreamcast, and more. I occasionally found myself on eBay picking up a new console or game. Then we discovered a local retro games shops called <a href="https://gameovervideogames.com/">Game Over Videogames</a>. Before we knew it, we were taking at least a couple of trips a month to GameOver to pick up something new-to-us.</p>
@@ -90,7 +90,7 @@
 <h2 id="what-do-i-do-with-all-these-hdmi-cables">What Do I Do With All These HDMI Cables?</h2>
 <a href="https://www.amazon.com/gp/product/B003L14X3A/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B003L14X3A&linkCode=as2&tag=joeyg0e-20&linkId=dd6389bfebd3cfc43677e443406e9533" target="__blank">
     <div class="image-container">
-      <img src="/images/blog/gaming/hdmi_switch.jpg">
+      <img src="https://res.cloudinary.com/https-joeyg-me/image/upload/v1552515484/gaming/hdmi_switch.jpg" alt="Monoprice 8 port HDMI switch">
     </div>
 </a>
 
@@ -99,7 +99,7 @@
 <h2 id="the-details">The Details</h2>
 <p>It goes without saying that you are going to have to power all of your consoles. Be prepared to sink some money into buying power strips. I suggest you make sure to buy the <a href="https://www.amazon.com/gp/product/B01FHNBKYO/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B01FHNBKYO&linkCode=as2&tag=joeyg0e-20&linkId=51cde99afe71832ba99e12eca6e557a2" target="__blank">ones with extra space between the outlets</a> because most old consoles have those huge wall wart power connectors and half or more of the outlets on a normal power strip will go to waste due to the fact that these wall warts will overlap 2 or 3 other outlets. Optionally, you can invest in a power conditioner which not only gives you many more outlets, but it also cleans the power signal and is better capable of handling surges. These can get pretty expensive, but if you have some more collectible/more expensive consoles then they are worth the expense. I have one and it powers the best of my collection where all of the others are plugged into regular power strips.</p>
 <div class="image-container">
-     <img src="/images/blog/gaming/cable_mess.jpg" onclick="openImage('/images/blog/gaming/cable_mess.jpg')">
+     <img src="https://res.cloudinary.com/https-joeyg-me/image/upload/v1552515483/gaming/cable_mess.jpg" alt="image of messy cables and power strips" onclick="openImage('https://res.cloudinary.com/https-joeyg-me/image/upload/v1552515483/gaming/cable_mess.jpg')">
 </div>
 
 <p>Aside from that you’ll probably want some sort of cable management solution. I just use velcro straps to bundle together large masses of cables, but admittedly I’m not the best person to tell you how to handle cable management as mine are a mess! There are other solutions out there and this is an area where you can get creative with your solution.</p>
@@ -115,7 +115,7 @@
             <content:encoded><![CDATA[<p>You thought the above was the title? No, I’m asking where to get good deals! In all seriousness, I’ll go over some of the ways I acquire new games and game paraphernalia in this post, but I’ll also admit that I’m still trying to find new ways to get deals so feel free to comment and give me some more wisdom!</p>
 <h2 id="sometimes-you-gotta-get-dirty">Sometimes You Gotta Get Dirty</h2>
 <div class="image-container">
-     <img src="/images/blog/gaming/flea-market.jpg" onclick="openImage('/images/blog/gaming/flea-market.jpg')">
+     <img src="https://res.cloudinary.com/https-joeyg-me/image/upload/v1552515483/gaming/flea-market.jpg" onclick="openImage('https://res.cloudinary.com/https-joeyg-me/image/upload/v1552515483/gaming/flea-market.jpg')" alt="image of cluttered tables at a flea market">
 </div>
 
 <p>One of the most obvious things you can do to find deals is to be going to garage sales, flea markets, and all other forms of shady places where you might find someone selling video games regularly. I’ve looked in my area and, unfortunately, there aren’t a lot of flea markets worth visiting. There is one, and it is actually quite close, but the sellers there sometimes have ridiculous ideas about what they should ask for their games. On my last visit, I grabbed 5 PS2 games at a booth for $20. Not great, but not too bad either. About 15 minutes later I grabbed Killzone 1-3 for the PS3 at another booth and asked the guy how much he wanted. He replied with $20. I sat them down and continued walking. $6.33 per game isn’t terrible, but from a shady seller at a flea market, that is a price that I will pass up.</p>
@@ -134,7 +134,7 @@
 <p>Goodwill also sells some items through the regular method in their stores. How they determine which retro gaming items go into auctions and which go onto shelves is beyond me, but you can sometimes score a deal on a game or two off the shelves. In my experience, they basically just cram games onto a shelf and price all of the games for a console the same price. Maybe the XBOX 360 games are $6 each and the PS2 games are $4 each. Unfortunately, this means there are a lot of craptastic titles that are overpriced. O the flip side, it also means that they have some games on the shelf that might be worth $10 or more and they aren’t asking enough. Here is where you get your small win. This approach makes sense for Goodwill because it saves them the time of trying to individually price all of these games which is an area where they probably have little to no knowledge. Go check out your local Goodwill and maybe you’ll find the steal of the century!</p>
 <h2 id="buying-from-a-store">Buying From a Store</h2>
 <div class="image-container">
-     <img src="/images/blog/gaming/game_stop.jpg" onclick="openImage('/images/blog/gaming/game_stop.jpg')">
+     <img src="https://res.cloudinary.com/https-joeyg-me/image/upload/v1552515484/gaming/game_stop.jpg" alt="Game Stop store front" onclick="openImage('https://res.cloudinary.com/https-joeyg-me/image/upload/v1552515484/gaming/game_stop.jpg')">
 </div>
 
 <p>Let’s go ahead and get this out of the way: Game Stop is not a bad place to buy used games! I know it is fashionable to hate on them, but you can make some good acquisitions there, and I’m not talking about buying new games. Buying new games and even slightly discounted used games for the current generation of consoles is something we all do at Game Stop (and I stress the use of “slightly discounted” here). The deals come when you start to look at their selection of games from the last couple of generations. You won’t often incredible savings, but you can usually grab a handful of games for a fair price if you look hard enough. An example of this is when I went to Game Stop one weekend and bought 5 Halo Games, including Halo 5 for the Xbox One, for a grand total of $25! That put me one game away from having all of the Halo games, and it was quick, easy, and relatively cheap. If you are looking to grab some cheap PS3, Xbox 360, Wii, or Wii U games, Game Stop can be a decent resource if you are willing to closely look through older their selection and ignore the games that are terribly priced.</p>
@@ -150,12 +150,12 @@
         </item>
         <item>
             <title><![CDATA[How I Store My Games]]></title>
-            <link>https://joeyg.me/blog/gaming/how-i-store-my-games</link>
-            <guid>https://joeyg.me/blog/gaming/how-i-store-my-games</guid>
+            <link>https://joeyg.me/blog/gaming/how-i-store-my-games-collection</link>
+            <guid>https://joeyg.me/blog/gaming/how-i-store-my-games-collection</guid>
             <pubDate>Wed, 13 Mar 2019 05:00:00 GMT</pubDate>
             <description><![CDATA[You want to make sure your games are well protected. This is a look at how to achieve that while also making them look better on your shelves.]]></description>
             <content:encoded><![CDATA[<div class="image-container">
-  <img src="/images/blog/gaming/custom_cases.jpg" onclick="openImage('/images/blog/gaming/custom_cases.jpg')">
+  <img src="https://res.cloudinary.com/https-joeyg-me/image/upload/v1552515484/gaming/custom_cases.jpg" onclick="openImage('https://res.cloudinary.com/https-joeyg-me/image/upload/v1552515484/gaming/custom_cases.jpg')" alt="retro games in custom cases">
 </div>
 
 <p>The biggest thing about retro game collecting that I don’t care for much is the fact that most older cartridge games don’t come with cases. On the rare occasion I find an old game with the original box, I choose to store the box on a shelf separately because I don’t want it to suffer any additional wear and tear. I’ve found a few ways to safely store my retro games that not only adds additional protection to the games while in storage but also makes my collection look nicer.</p>
@@ -169,7 +169,7 @@
 <h2 id="universal-game-cases-to-the-rescue">Universal Game Cases to the Rescue!</h2>
 <p>Thankfully, there exists a wonderful thing referred to as a universal game case. These cases will store your N64, Genesis, 32X, Super NES, and more. The basic idea is that they have an array of plastic bits inside the case that allow you to fit cartridges from different consoles in varying configurations. Most games will just fit in as expected with the exception of SNES games which fit once turned sideways.</p>
 <div class="image-container">
-  <img src="/images/blog/gaming/modified_for_nes.jpg" onclick="openImage('/images/blog/gaming/modified_for_nes.jpg')">
+  <img src="https://res.cloudinary.com/https-joeyg-me/image/upload/v1552515486/gaming/modified_for_nes.jpg" onclick="openImage('https://res.cloudinary.com/https-joeyg-me/image/upload/v1552515486/gaming/modified_for_nes.jpg')" alt="universal game case modified to hold a NES cartridge">
 </div>
 
 <p>These cases aren’t without their drawbacks. First, and easily my most frustrating complaint, is that NES cartridges do not fit without modification! When I took a close look at the inside of one of these cases I quickly understood why. Basically, if the plastic pieces inside were spaced out far enough to handle NES games, then games from the other consoles would just be floating inside without any kind of restraint. I did learn from a <a href="https://www.youtube.com/watch?v=xXAhZ3b5iHY" target="_blank">YouTube video</a> on how to easily modify these cases to allow NES games to fit using nothing more than pliers and wire cutters. Essentially, you just cut out most of the plastic supports inside of the case. I don’t like that I have to do this every time I acquire a new NES game, but at least there is a solution.</p>
@@ -185,7 +185,7 @@
 
 <p>Another case type that has some versatility is the replacement Nintendo DS cases. There are two slots inside of these cases: one for DS and 3DS games, and one for Game Boy Advance games. Unlike the universal game cases, games fit snugly and securely inside of these cases replicating the feel of the official cases.</p>
 <div class="image-container">
-  <img src="/images/blog/gaming/modified_for_gbc.jpg" onclick="openImage('/images/blog/gaming/modified_for_gbc.jpg')">
+  <img src="https://res.cloudinary.com/https-joeyg-me/image/upload/v1552515487/gaming/modified_for_gbc.jpg" onclick="openImage('https://res.cloudinary.com/https-joeyg-me/image/upload/v1552515487/gaming/modified_for_gbc.jpg')" alt="DS case modified for a Game Boy Color game">
 </div>
 
 <p>Not unlike the universal game cases, these can be modified to hold different game type as well. By cutting out some small, plastic pieces you can also fit your Game Boy Color and Game Boy games in these. The fit isn’t as secure as you might like, but again this is a situation where something is probably better than nothing at all. TO learn exactly how to modify these you can check out <a href="https://www.youtube.com/watch?v=0By130YB_Bc" target="_blank">YouTube</a>.</p>
@@ -205,7 +205,7 @@
 <p>On the rare occasion, I get a new game for which I cannot find a cover on The Cover Project. You can just make your own cover in a couple of simple steps though. I usually start by downloading a cover from The Cover Project that is the size of the case I will be using. This gives me a good template to start with since these covers are usually the perfect size and proportions. Then I use Google to find any box art I can. You can usually think of a cover as three separate things: a front, a spine, and a back. If you can at least find images for these 3 sections then you can usually cobble something decent together. I open my template image in GIMP or Photoshop then, one piece at a time, move the individual images to their rough position over the template. From here I scale them to fit the area of the template they are supposed to cover and fine-tune the positioning. Before I know it, I’m looking at an acceptable cover for my game case. If the images are from different sources then there is a chance the colors might not match up too well. A few tweaks to the colors of the layer images and my creation is complete. This process does take some familiarity with photo editing techniques, but maybe I’ll go over some of the basics in a future post.</p>
 <p>Printing the covers is a simple task. I load my printer with <a href="https://www.amazon.com/gp/product/B00006IDS8/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00006IDS8&linkCode=as2&tag=joeyg0e-20&linkId=f61d68335e78e8490c02acb093d310f2" target="_blank">legal paper</a> and set the size to 100%. Once the cover is printed I simply use my trusty <a href="https://www.amazon.com/gp/product/B003SLAAOO/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B003SLAAOO&linkCode=as2&tag=joeyg0e-20&linkId=09e0969c1aea4cea50e7bd4be17e1ad8" target="_blank">paper cutter</a> to remove the excess paper and slide the cover into the sleeve of the case. Done and done!</p>
 <div class="image-container">
-  <img src="/images/blog/gaming/march_2019_collection.jpg" onclick="openImage('/images/blog/gaming/march_2019_collection.jpg')">
+  <img src="https://res.cloudinary.com/https-joeyg-me/image/upload/v1552515487/gaming/march_2019_collection.jpg" onclick="openImage('https://res.cloudinary.com/https-joeyg-me/image/upload/v1552515487/gaming/march_2019_collection.jpg')" alt="image of Joey Gauthier's game collection circa March 2019">
 </div>
 
 <p>Well, there you have it. Now you know the tricks to protecting all of your old games while improving the look of your collection at the same time. It took me a while, but now I don’t have a single loose game on my shelves. I typically try to keep extra game cases on hand too. When I come home with a new game, I usually clean it, find and print the cover, place it into a case with said cover, and find a home on my game shelves for it before I even sit down. It takes a little time and money, but knowing your collection is protected and seeing the final result makes it all worth the effort!</p>

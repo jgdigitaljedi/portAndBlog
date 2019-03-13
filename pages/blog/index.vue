@@ -9,7 +9,11 @@
         <div class="mario__top-text--coins top-text-column">
           <div class="top-text-column__row">&nbsp;</div>
           <div class="top-text-column__row">
-            <img src="~/assets/images/mario/mario_coin.png" class="mario-coin">X00
+            <img
+              src="~/assets/images/mario/mario_coin.png"
+              class="mario-coin"
+              :alt="'coin from a Mario Bros game'"
+            >X00
           </div>
         </div>
         <div class="mario__top-text--world top-text-column">
@@ -46,6 +50,7 @@
               src="~/assets/images/mario/mario_shroom.png"
               class="mario__blog-select--active"
               v-if="active === 'gaming'"
+              :alt="'mushroom from a Mario Bros game'"
             >
             &nbsp; 1 GAMING BLOG
           </nuxt-link>
@@ -56,6 +61,7 @@
               src="~/assets/images/mario/mario_shroom.png"
               class="mario__blog-select--active"
               v-if="active === 'coding'"
+              :alt="'mushroom from Super Mario Bros'"
             >
             &nbsp; 2 CODING BLOG
           </nuxt-link>
@@ -66,18 +72,21 @@
         class="mario__hill hidden-sm-and-down"
         :class="{'medium': (isMounted && $vuetify.breakpoint.md)}"
         v-if="isMounted && windowHeight && windowHeight > 600"
+        :alt="'a hill from Super Mario Bros'"
       >
       <img
         src="~/assets/images/mario/small-mario.png"
         class="mario__mario hidden-sm-and-down"
         :class="{'medium': (isMounted && $vuetify.breakpoint.md)}"
         v-if="isMounted && windowHeight && windowHeight > 600"
+        :alt="'mario from Super Mario Bros'"
       >
       <img
         src="~/assets/images/mario/mario_bushes.png"
         class="mario__bushes hidden-sm-and-down"
         :class="{'medium': (isMounted && $vuetify.breakpoint.md)}"
         v-if="isMounted && windowHeight && windowHeight > 600"
+        :alt="'bushes from Super Mario Bros'"
       >
       <div class="mario__ground" v-if="windowHeight && windowHeight > 600"></div>
     </div>

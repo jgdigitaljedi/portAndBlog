@@ -1,13 +1,25 @@
 <template>
   <section class="social" :class="{'column': isMounted && !$vuetify.breakpoint.smAndDown}">
     <a class="social-link" href="https://twitter.com/jgdigitaljedi" target="__blank">
-      <img class="social-link__image" src="~/assets/images/social/twitter_8bit.png">
+      <img
+        class="social-link__image"
+        src="~/assets/images/social/twitter_8bit.png"
+        alt="Twitter logo in 8 bit style"
+      >
     </a>
     <a class="social-link" href="https://www.linkedin.com/in/paulgauthier81/" target="__blank">
-      <img class="social-link__image" src="~/assets/images/social/linkedin_8bit.png">
+      <img
+        class="social-link__image"
+        src="~/assets/images/social/linkedin_8bit.png"
+        alt="LinkedIn logo in 8 bit style"
+      >
     </a>
     <a class="social-link" href="https://github.com/jgdigitaljedi" target="__blank">
-      <img class="social-link__image" src="~/assets/images/social/github_8bit.png">
+      <img
+        class="social-link__image"
+        src="~/assets/images/social/github_8bit.png"
+        alt="GitHub logo in 8 bit style"
+      >
     </a>
   </section>
 </template>

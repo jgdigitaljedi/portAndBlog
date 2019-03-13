@@ -11,7 +11,7 @@
         </div>
       </div>
       <div class="blog-list-inner__thumb hidden-sm-and-down" v-if="post.image && post.image.length">
-        <img class="blog-list-inner__thumb--image" :src="post.image">
+        <img class="blog-list-inner__thumb--image" :src="post.image" :alt="post.alt">
       </div>
       <div class="intro-and-date">
         <div>
