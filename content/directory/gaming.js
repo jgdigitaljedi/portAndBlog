@@ -50,7 +50,7 @@ export default () => [
   },
   {
     id: 8,
-    slug: 'how-i-store-my-games-collection',
+    slug: 'how-i-store-my-games',
     title: `How I Store My Games`,
     tag_line: `Protect those old games while making them look good on your shelves at the same time!`,
     created_at: '03/13/2019',

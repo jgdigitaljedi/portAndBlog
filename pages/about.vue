@@ -4,10 +4,16 @@
       <section class="about__dossier--general dossier" v-if="selectedTab === 1">
         <div class="dossier-top">
           <div class="img-and-paperclip">
-            <img src="~/assets/images/me/me_dossier_paperclip.png">
+            <img
+              src="~/assets/images/me/me_dossier_paperclip.png"
+              alt="black and white image of Joey Gauthier with a paperclip on the top"
+            >
           </div>
           <div class="jg-logo hidden-xs">
-            <img src="~/assets/images/me/JG_embossed.png">
+            <img
+              src="~/assets/images/me/JG_embossed.png"
+              alt="JG for Joey Gauthier in the Sega font"
+            >
           </div>
         </div>
         <div class="fixed-transparent-text hidden-md-and-down">
@@ -30,7 +36,10 @@
         <div class="about__dossier--tech__proficiencies">
           <div class="tech-section right">
             <div class="tech-section__image">
-              <img src="~/assets/images/about/license_to_kill.png">
+              <img
+                src="~/assets/images/about/license_to_kill.png"
+                alt="logos for NodeJS, Javascript, HTML, CSS, TypeScript with coffee stains"
+              >
             </div>
             <div class="tech-section__list">
               <h3 class="language-head">License to Kill with:</h3>
