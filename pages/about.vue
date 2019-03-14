@@ -2,91 +2,14 @@
   <section class="about" v-if="isMounted">
     <div class="about__dossier">
       <section class="about__dossier--general dossier" v-if="selectedTab === 1">
-        <div class="dossier-top">
-          <div class="img-and-paperclip">
-            <img
-              src="~/assets/images/me/me_dossier_paperclip.png"
-              alt="black and white image of Joey Gauthier with a paperclip on the top"
-            >
-          </div>
-          <div class="jg-logo hidden-xs">
-            <img
-              src="~/assets/images/me/JG_embossed.png"
-              alt="JG for Joey Gauthier in the Sega font"
-            >
-          </div>
-        </div>
-        <div class="fixed-transparent-text hidden-md-and-down">
-          <div>FOR YOUR</div>
-          <div>EYES ONLY</div>
-        </div>
-        <div class="about__dossier--general__info">
-          <ol class="info-list" :class="{'small': $vuetify.breakpoint.xs}">
-            <li>NAME: Joey Gauthier</li>
-            <li>OCCUPATION: Software Engineer</li>
-            <li>LOCATION: Texas</li>
-            <li>HOBBIES: retro game collecting, guitar, drums, disc golf</li>
-          </ol>
-        </div>
+        <GeneralTab></GeneralTab>
       </section>
       <section class="about__dossier--tech dossier" v-if="selectedTab === 2">
-        <div class="fixed-transparent-text hidden-md-and-down">
-          <div>CLASSIFIED</div>
-        </div>
-        <div class="about__dossier--tech__proficiencies">
-          <div class="tech-section right">
-            <div class="tech-section__image">
-              <img
-                src="~/assets/images/about/license_to_kill.png"
-                alt="logos for NodeJS, Javascript, HTML, CSS, TypeScript with coffee stains"
-              >
-            </div>
-            <div class="tech-section__list">
-              <h3 class="language-head">License to Kill with:</h3>
-              <ul>
-                <li>JavaScript</li>
-                <li>TypeScript</li>
-                <li>HTML</li>
-                <li>CSS (SCSS, LESS)</li>
-                <li>NodeJS</li>
-              </ul>
-            </div>
-          </div>
-          <div class="tech-section left">
-            <div class="tech-section__list">
-              <h3>Weapons of Choice:</h3>
-              <ul>
-                <li>Visual Studio Code</li>
-                <li>Postman</li>
-                <li>Ubuntu</li>
-                <li>Chrome</li>
-                <li>MongoDB</li>
-              </ul>
-            </div>
-          </div>
-          <div class="tech-section right">
-            <div class="tech-section__list">
-              <h3>Fav. Weapon Upgrades:</h3>
-              <ul>
-                <li>Angular</li>
-                <li>Vue</li>
-                <li>Express</li>
-              </ul>
-            </div>
-          </div>
-          <div class="tech-section left">
-            <div class="tech-section__list">
-              <h3>Novice Level/In Training:</h3>
-              <ul>
-                <li>React</li>
-                <li>Python</li>
-                <li>Clojure</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        <TechTab></TechTab>
       </section>
-      <section class="about__dossier--work dossier" v-if="selectedTab === 3">WORK</section>
+      <section class="about__dossier--work dossier" v-if="selectedTab === 3">
+        <WorkTab></WorkTab>
+      </section>
       <section class="about__dossier--contact dossier" v-if="selectedTab === 4">CONTACT</section>
       <section class="about__dossier--random dossier" v-if="selectedTab === 5">RANDOM</section>
     </div>
@@ -143,8 +66,13 @@
 </template>
 
 <script>
+import GeneralTab from '~/components/about/general.vue';
+import TechTab from '~/components/about/tech.vue';
+import WorkTab from '~/components/about/work.vue';
 // style after N64 GoldenEye dossier/settings/mission screen with folders and tabs on right
 export default {
+  name: 'AboutPage',
+  components: { GeneralTab, TechTab, WorkTab },
   head() {
     return {
       title: `Joey G | About`,
@@ -242,125 +170,6 @@ export default {
       ul > li,
       h3 {
         font-family: my_underwoodregular;
-      }
-    }
-    .about__dossier--tech {
-      display: flex;
-      width: 100%;
-      justify-content: center;
-      align-items: center;
-      .fixed-transparent-text {
-        top: 25rem;
-        left: 13rem;
-      }
-      .about__dossier--tech__proficiencies {
-        display: flex;
-        flex-direction: column;
-        margin-top: 3rem;
-        .tech-section {
-          margin: 1rem 0;
-          display: flex;
-          justify-content: space-between;
-          .tech-section__image {
-            position: relative;
-            width: auto;
-            img {
-              max-height: 12rem;
-              width: auto;
-              // display: block;
-              // content: '';
-            }
-            &:before {
-              z-index: -1;
-              position: absolute;
-              content: '';
-              bottom: 15px;
-              left: 10px;
-              width: 50%;
-              top: 80%;
-              max-width: 300px;
-              background: #777;
-              -webkit-box-shadow: 0 15px 10px #777;
-              -moz-box-shadow: 0 15px 10px #777;
-              box-shadow: 0 15px 10px #777;
-              -webkit-transform: rotate(-5deg);
-              -moz-transform: rotate(-5deg);
-              -o-transform: rotate(-5deg);
-              -ms-transform: rotate(-5deg);
-              transform: rotate(-5deg);
-            }
-            &:after {
-              z-index: -1;
-              position: absolute;
-              content: '';
-              bottom: 15px;
-              right: 3rem;
-              left: auto;
-              width: 50%;
-              top: 80%;
-              // max-width: 300px;
-              background: #777;
-              -webkit-box-shadow: 0 15px 10px #777;
-              -moz-box-shadow: 0 15px 10px #777;
-              box-shadow: 0 15px 10px #777;
-              -webkit-transform: rotate(5deg);
-              -moz-transform: rotate(5deg);
-              -o-transform: rotate(5deg);
-              -ms-transform: rotate(5deg);
-              transform: rotate(5deg);
-            }
-          }
-          &.right img {
-            margin-right: 3rem;
-          }
-          &.left img {
-            margin-left: 3rem;
-          }
-        }
-      }
-    }
-    .about__dossier--general {
-      position: relative;
-      .dossier-top {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        .img-and-paperclip {
-          left: 2rem;
-          top: -3rem;
-          position: relative;
-          img {
-            max-height: 400px;
-            position: relative;
-          }
-        }
-        .jg-logo {
-          margin-right: 4rem;
-          img {
-            max-width: 250px;
-            height: auto;
-          }
-        }
-      }
-      .fixed-transparent-text {
-        top: 22rem;
-        right: 16rem;
-      }
-      .about__dossier--general__info {
-        width: 100%;
-        z-index: 10;
-        display: flex;
-        justify-content: center;
-        ol.info-list {
-          max-width: 40rem;
-          width: auto;
-          font-family: my_underwoodregular;
-          font-size: 2rem;
-          &.small {
-            font-size: 1.55rem;
-            margin: auto 0.5rem;
-          }
-        }
       }
     }
   }
