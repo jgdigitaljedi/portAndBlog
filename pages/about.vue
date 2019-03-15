@@ -61,7 +61,7 @@
           v-model="selectedTab"
           :value="5"
         >
-        <label for="tab_5" :class="{'checked': selectedTab === 5}">RANDOM</label>
+        <label for="tab_5" :class="{'checked': selectedTab === 5}">SITE</label>
       </div>
     </div>
   </section>
