@@ -25,7 +25,7 @@
         <div class="left">
           <div class="twitter social-link">
             <a href="https://twitter.com/jgdigitaljedi" target="_blank">
-              <v-icon>icon-twitter</v-icon>TWITTER
+              <v-icon>icon-twitter</v-icon>Twitter
             </a>
           </div>
           <div class="spotify social-link">
@@ -33,7 +33,7 @@
               href="https://open.spotify.com/user/jdigitaljedi?si=FJ4SnMETTjS4Xd5eTM6JWg"
               target="_blank"
             >
-              <v-icon>icon-spotify</v-icon>SPOTIFY
+              <v-icon>icon-spotify</v-icon>Spotify
             </a>
           </div>
           <div class="github social-link">
