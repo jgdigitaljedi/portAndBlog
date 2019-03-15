@@ -83,8 +83,8 @@
   justify-content: center;
   align-items: center;
   .fixed-transparent-text {
-    top: 25rem;
-    left: 13rem;
+    top: 21rem;
+    left: 7rem;
   }
   .about__dossier--tech__proficiencies {
     display: flex;
@@ -112,13 +112,13 @@
   }
 }
 .fixed-transparent-text {
-  font-size: 7rem;
+  font-size: 10rem;
   color: rgba(191, 63, 65, 0.3);
   position: absolute;
   transform: rotate(-37deg);
   // top: 22rem;
   // right: 16rem;
-  z-index: -1;
+  z-index: 1;
 }
 .dossier {
   color: lighten($black, 15%);

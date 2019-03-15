@@ -18,6 +18,7 @@
     <div class="about__dossier--general__info">
       <ol class="info-list" :class="{'small': $vuetify.breakpoint.xs}">
         <li>NAME: Joey Gauthier</li>
+        <li>ALIASES: DigitalJedi, JGDigitalJedi, Paul</li>
         <li>OCCUPATION: Software Engineer</li>
         <li>LOCATION: Texas</li>
         <li>HOBBIES: retro game collecting, guitar, drums, disc golf</li>
