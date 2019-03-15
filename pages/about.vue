@@ -132,6 +132,7 @@ export default {
 @import '~/assets/style/theme.scss';
 @import '~/assets/style/shadows.scss';
 .about {
+  cursor: url('/images/cursors/red_crosshair.png'), auto !important;
   min-height: calc(100vh - 7rem);
   overflow-y: auto;
   // background-color: $ge-background;
