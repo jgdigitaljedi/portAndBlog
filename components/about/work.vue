@@ -5,7 +5,7 @@
     </div>
     <div class="work__experience">
       <div class="work__experience--professional">
-        <h3>RECENT PROFESSIONAL EXPERIENCE</h3>
+        <h3>RECENT PROFESSIONAL EXPERIENCE (past 5 years)</h3>
         <ol>
           <li>R4 TECHNOLOGIES: 11/2016 - present</li>
           <ul>

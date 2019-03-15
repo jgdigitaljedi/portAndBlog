@@ -10,7 +10,9 @@
       <section class="about__dossier--work dossier" v-if="selectedTab === 3">
         <WorkTab></WorkTab>
       </section>
-      <section class="about__dossier--contact dossier" v-if="selectedTab === 4">CONTACT</section>
+      <section class="about__dossier--contact dossier" v-if="selectedTab === 4">
+        <ContactTab></ContactTab>
+      </section>
       <section class="about__dossier--random dossier" v-if="selectedTab === 5">RANDOM</section>
     </div>
     <div class="about__tabs">
@@ -69,10 +71,11 @@
 import GeneralTab from '~/components/about/general.vue';
 import TechTab from '~/components/about/tech.vue';
 import WorkTab from '~/components/about/work.vue';
+import ContactTab from '~/components/about/contact.vue';
 // style after N64 GoldenEye dossier/settings/mission screen with folders and tabs on right
 export default {
   name: 'AboutPage',
-  components: { GeneralTab, TechTab, WorkTab },
+  components: { GeneralTab, TechTab, WorkTab, ContactTab },
   head() {
     return {
       title: `Joey G | About`,
