@@ -44,7 +44,7 @@
       <div class="work__experience--side">
         <h3>SIDE WORK</h3>
         <small>NOTE: agent hasn't done much public facing side work due to time constraints</small>
-        <div class="work__experience--side__container">
+        <div class="work__experience--side__container" :class="{'small': $vuetify.breakpoint.xs}">
           <div class="side-work skipg">
             <h4>Skip G Memorial Site</h4>
             <a href="https://skipg.me" target="_blank">
@@ -70,7 +70,7 @@
           <div class="side-work other">
             <h4>Other Work</h4>
             <p>Agent has many repos on GitHub of work that has been done for himself, the sake of learning, satisfying curiosity, and more.</p>
-            <a href="https://github.com/jgdigitaljedi">GitHub Profile</a>
+            <a href="https://github.com/jgdigitaljedi" target="_blank">GitHub Profile</a>
           </div>
         </div>
       </div>
@@ -101,6 +101,9 @@
       h3 {
         text-decoration: underline;
       }
+      a {
+        pointer-events: auto;
+      }
     }
     .work__experience--side {
       padding-top: 1rem;
@@ -117,11 +120,20 @@
       .work__experience--side__container {
         display: flex;
         justify-content: space-around;
+        &.small {
+          flex-direction: column;
+          margin-top: 1rem;
+          .side-work {
+            max-width: 100%;
+            margin-top: 1rem;
+          }
+        }
         h4 {
           font-family: my_underwoodregular;
         }
         .side-work {
           max-width: 30%;
+          pointer-events: auto;
           p,
           a {
             font-family: my_underwoodregular;

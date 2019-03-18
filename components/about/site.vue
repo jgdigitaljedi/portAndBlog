@@ -8,12 +8,19 @@
         such a big part of my life and there is even a gaming blog as a part of this site, I felt like I could escape the feeling that
         I needed to read up on the trndiest front end design and run with this idea of theming everything with classic video assets and styles.
       </p>
+      <p>
+        If you are interested in seeing the code, you can find the repo
+        <a
+          href="https://github.com/jgdigitaljedi/portAndBlog"
+          target="_blank"
+        >HERE</a>
+      </p>
       <small>In case you aren't much of a video gamer, below you will find an overview of my inspiration for each section of this site:</small>
     </div>
     <div class="site-inspiration">
       <div class="site-inspiration__section">
         <h4>Navbar - Pac-man themed</h4>
-        <div class="site-inspiration__section--about">
+        <div class="site-inspiration__section--about" :class="{'small': $vuetify.breakpoint.xs}">
           <v-img
             src="/images/about/Pac-man.png"
             alt="image of the classic Pac-man stage 1 start screen"
@@ -31,7 +38,7 @@
       <hr>
       <div class="site-inspiration__section">
         <h4>Home - generic space shooter themed</h4>
-        <div class="site-inspiration__section--about">
+        <div class="site-inspiration__section--about" :class="{'small': $vuetify.breakpoint.xs}">
           <v-img
             src="/images/about/galaga.png"
             alt="image of the classic Galaga game"
@@ -49,7 +56,7 @@
       <hr>
       <div class="site-inspiration__section">
         <h4>Main Landing Page of Blog - Super Mario Bros themed</h4>
-        <div class="site-inspiration__section--about">
+        <div class="site-inspiration__section--about" :class="{'small': $vuetify.breakpoint.xs}">
           <v-img
             src="/images/about/superMario.jpg"
             alt="image of Super Mario Bros title screen"
@@ -68,7 +75,7 @@
       <hr>
       <div class="site-inspiration__section">
         <h4>About (the page you are on) - 007 GoldenEye (N64) themed</h4>
-        <div class="site-inspiration__section--about">
+        <div class="site-inspiration__section--about" :class="{'small': $vuetify.breakpoint.xs}">
           <v-img
             src="/images/about/goldeneye.png"
             alt="image of 007 GoldenEye options screen"
@@ -79,6 +86,17 @@
             a tabbed-folder stlye dossier from the game with similar colors, layout, and navigation. The red crosshair cursor used is
             supposed to closely resemble the crosshair used in the menus of the game as well. I thought about even adding music from
             the game but decided that might be too much!
+          </p>
+        </div>
+      </div>
+      <hr>
+      <div class="site-inspiration__section">
+        <h4>Blog Section & Blog Posts - Pac-man colors</h4>
+        <div class="site-inspiration__section--about" :class="{'small': $vuetify.breakpoint.xs}">
+          <p>
+            Since the blog section pages and blog posts have much more functionality, I decided to refrain from modeling them after classic video game
+            screens and, instead, just tried to make pages that were highly functional, intuitive, and still somehow looked like they belonged with the rest of the site.
+            The decision was made to use some of the Pac-man colors and retro-game style fonts just to tie in the layout and design choices in a small way with the rest of the site.
           </p>
         </div>
       </div>
@@ -98,6 +116,9 @@
     h3 {
       text-decoration: underline;
     }
+    a {
+      pointer-events: auto;
+    }
   }
   .site-inspiration {
     display: flex;
@@ -114,6 +135,9 @@
       }
       .site-inspiration__section--about {
         display: flex;
+        &.small {
+          flex-direction: column;
+        }
         p {
           font-family: my_underwoodregular;
         }

@@ -3,7 +3,7 @@
     <div class="fixed-transparent-text hidden-md-and-down">
       <div>CLASSIFIED</div>
     </div>
-    <div class="about__dossier--tech__proficiencies">
+    <div class="about__dossier--tech__proficiencies" :class="{'small': $vuetify.breakpoint.xs}">
       <div class="tech-section right">
         <div class="tech-section__image">
           <img
@@ -90,6 +90,9 @@
     display: flex;
     flex-direction: column;
     margin-top: 3rem;
+    &.small {
+      margin: 0 0.5rem;
+    }
     .tech-section {
       margin: 1rem 0;
       display: flex;

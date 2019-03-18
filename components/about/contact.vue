@@ -8,20 +8,20 @@
       <h3>CONTACT INFO</h3>
       <ul>
         <li>LAST KNOWN ADDRESS:
-          <div class="redacted" style="width: 25rem;"></div>
+          <div class="redacted" style="width: 25rem; max-width: 100%;"></div>
         </li>
         <li>PHONE #:
-          <div class="redacted" style="width: 11rem;"></div>
+          <div class="redacted" style="width: 11rem;  max-width: 100%;"></div>
         </li>
         <li>EMAIL: joey@joeyg.me</li>
         <li>SPOUSE:
-          <div class="redacted" style="width: 15rem;"></div>
+          <div class="redacted" style="width: 15rem;  max-width: 100%;"></div>
         </li>
       </ul>
     </div>
     <div class="contact__social">
       <h3>SOCIAL</h3>
-      <div class="social-wrapper">
+      <div class="social-wrapper" :class="{'small': $vuetify.breakpoint.xs}">
         <div class="left">
           <div class="twitter social-link">
             <a href="https://twitter.com/jgdigitaljedi" target="_blank">
@@ -82,6 +82,8 @@
   .contact__actual,
   .contact__social {
     padding: 1rem;
+    position: relative;
+    max-width: 100%;
     h3 {
       text-decoration: underline;
     }
@@ -104,10 +106,14 @@
       display: flex;
       justify-content: space-between;
       width: 100%;
+      &.small {
+        flex-direction: column;
+      }
       .social-link {
         font-family: my_underwoodregular;
         font-size: 2rem;
         margin-top: 2rem;
+        pointer-events: auto;
         &.twitter {
           a,
           .v-icon {

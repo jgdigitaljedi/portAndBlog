@@ -159,7 +159,8 @@ export default {
     z-index: -1;
   }
   .about__dossier {
-    @include box_shadow(4);
+    @include box_shadow(3);
+    pointer-events: none;
     z-index: 10;
     max-width: 1000px;
     min-width: 300px;
@@ -183,10 +184,12 @@ export default {
   .about__tabs {
     font-family: my_underwoodregular;
     width: 2rem;
+    pointer-events: auto;
     .about__tabs--list {
       position: relative;
       input[type='radio'] {
         display: none;
+        transform: rotate(90deg);
       }
       label {
         font-family: my_underwoodregular;

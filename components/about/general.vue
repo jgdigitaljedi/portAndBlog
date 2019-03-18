@@ -7,7 +7,7 @@
           alt="black and white image of Joey Gauthier with a paperclip on the top"
         >
       </div>
-      <div class="jg-logo hidden-xs">
+      <div class="jg-logo hidden-xs-only">
         <img src="~/assets/images/me/JG_embossed.png" alt="JG for Joey Gauthier in the Sega font">
       </div>
     </div>
@@ -68,6 +68,7 @@
       &.small {
         font-size: 1.55rem;
         margin: auto 0.5rem;
+        margin-left: 1rem;
       }
     }
   }
