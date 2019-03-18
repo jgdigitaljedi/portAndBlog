@@ -12,7 +12,7 @@
             <li>member of core dev UI team</li>
             <li>assisted taking multiple projects from empty repo to production ready</li>
             <li>contributed to XEM, Data Science Portal, Portal 2, EZ Portal, and other projects</li>
-            <li>used Angular, Typescript, Highcharts, D3, NodeJS, AG-Grid, Muuri, Prime-ng, & Angular Material</li>
+            <li>used Angular, Typescript, Highcharts, D3, NodeJS, AG-Grid, Prime-ng, & Angular Material</li>
             <li>
               LINKS:
               <a href="https://r4.ai/" target="_blank">R4 HOMEPAGE</a>
@@ -44,6 +44,35 @@
       <div class="work__experience--side">
         <h3>SIDE WORK</h3>
         <small>NOTE: agent hasn't done much public facing side work due to time constraints</small>
+        <div class="work__experience--side__container">
+          <div class="side-work skipg">
+            <h4>Skip G Memorial Site</h4>
+            <a href="https://skipg.me" target="_blank">
+              <v-img
+                src="/images/about/skipg.png"
+                class="side-image"
+                alt="screenshot of skipg.me landing page"
+              ></v-img>
+            </a>
+            <p>Small memorial site I built a couple of weeks after my grandfather passed away to honor him and make it easy for family to share photos of him.</p>
+          </div>
+          <div class="side-work lassos">
+            <h4>Texas Lassos Alum Connect</h4>
+            <a href="http://connect.lassoalumni.org/" target="_blank">
+              <v-img
+                src="/images/about/lassos.png"
+                class="side-image"
+                alt="screenshot of Texas Lassos Connect login screen"
+              ></v-img>
+            </a>
+            <p>A Basic, private social network built for the Texas Lassos Alum group to allow them to stay connected with eachother.</p>
+          </div>
+          <div class="side-work other">
+            <h4>Other Work</h4>
+            <p>Agent has many repos on GitHub of work that has been done for himself, the sake of learning, satisfying curiosity, and more.</p>
+            <a href="https://github.com/jgdigitaljedi">GitHub Profile</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -84,6 +113,20 @@
       }
       small {
         font-style: italic;
+      }
+      .work__experience--side__container {
+        display: flex;
+        justify-content: space-around;
+        h4 {
+          font-family: my_underwoodregular;
+        }
+        .side-work {
+          max-width: 30%;
+          p,
+          a {
+            font-family: my_underwoodregular;
+          }
+        }
       }
     }
   }

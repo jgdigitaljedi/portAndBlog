@@ -13,7 +13,9 @@
       <section class="about__dossier--contact dossier" v-if="selectedTab === 4">
         <ContactTab></ContactTab>
       </section>
-      <section class="about__dossier--random dossier" v-if="selectedTab === 5">RANDOM</section>
+      <section class="about__dossier--random dossier" v-if="selectedTab === 5">
+        <SiteTab></SiteTab>
+      </section>
     </div>
     <div class="about__tabs">
       <div class="about__tabs--list">
@@ -72,10 +74,11 @@ import GeneralTab from '~/components/about/general.vue';
 import TechTab from '~/components/about/tech.vue';
 import WorkTab from '~/components/about/work.vue';
 import ContactTab from '~/components/about/contact.vue';
+import SiteTab from '~/components/about/site.vue';
 // style after N64 GoldenEye dossier/settings/mission screen with folders and tabs on right
 export default {
   name: 'AboutPage',
-  components: { GeneralTab, TechTab, WorkTab, ContactTab },
+  components: { GeneralTab, TechTab, WorkTab, ContactTab, SiteTab },
   head() {
     return {
       title: `Joey G | About`,
@@ -145,7 +148,7 @@ export default {
     url('../assets/images/patterns/background_paper.png') repeat;
   display: flex;
   justify-content: center;
-  padding: 4rem 0;
+  padding: 4rem 0 2rem;
   .fixed-transparent-text {
     font-size: 7rem;
     color: rgba(191, 63, 65, 0.3);
@@ -156,7 +159,7 @@ export default {
     z-index: -1;
   }
   .about__dossier {
-    @include box_shadow(5);
+    @include box_shadow(4);
     z-index: 10;
     max-width: 1000px;
     min-width: 300px;
