@@ -89,3 +89,4 @@ assets/.DS_Store
 
 # this gets generated so no need to track
 static/sitemap.xml
+static/RSSfeed_*

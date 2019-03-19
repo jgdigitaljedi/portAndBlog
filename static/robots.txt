@@ -1,2 +1,3 @@
+Sitemap: https://joeyg.me/sitemap.xml
 User-agent: *
 Disallow:

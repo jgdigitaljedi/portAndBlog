@@ -1,7 +1,9 @@
 <template>
   <div class="blog-slug">
     <div class="blog-image__container"></div>
-    <v-card class="markdown-content" v-html="postContent"></v-card>
+    <v-card class="markdown-content">
+      <article v-html="postContent"></article>
+    </v-card>
     <v-dialog v-model="imageDialog" content-class="image-dialog" style="min-width: 95vw;">
       <div class="image-dialog__container">
         <v-btn flat @click="imageDialog = false" class="dismiss">
@@ -27,6 +29,7 @@ export default {
     };
   },
   mounted() {
+    console.log('process.browser', process.browser);
     if (process.browser && window) {
       window.openImage = src => {
         this.openImage(src);
