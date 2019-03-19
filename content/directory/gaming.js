@@ -67,5 +67,22 @@ export default () => [
         'gaming,nes,retro games,retro games near me,retro collecting,universal game cases,ds cases,game storage,cover project,umd cases,dvd cases,cd cases',
       description: `How to store retro games, use universal game cases, print retro game covers, & more.`
     }
+  },
+  {
+    id: 9,
+    slug: 'initial-thoughts-on-googles-stadia-cloud-based-gaming-service',
+    title: `Initial Thoughts on Google's Stadia Cloud-Based Gaming Service`,
+    tag_line: `Google's Stadia gaming service leaves me feeling conflicted. My "techie" side loves it while my "collector" side is less than impressed!`,
+    created_at: '03/19/2019',
+    pinned: false,
+    intro: `What we now know about Google's Stadia gaming service leaves me with a mix of emotions.`,
+    image:
+      'https://res.cloudinary.com/https-joeyg-me/image/upload/v1553024737/gaming/stadia_logo.png',
+    alt: `logo of Google's Stadia cloud based gaming service`,
+    meta: {
+      keywords:
+        'google,stadia,google stadia,cloud-based gaming,game streaming service,stadia controller,mobile gaming,project stream',
+      description: `What we now know about Google's Stadia gaming service leaves me with a mix of emotions.`
+    }
   }
 ];
