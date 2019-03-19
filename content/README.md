@@ -15,7 +15,7 @@ User this as the wrapper:
 
 ```html
 <div class="image-container">
-  <img rc="/images/blog/gaming_or_coding/image_name.jpg" onclick="openImage(`/images/blog/gaming_or_coding/image_name.jpg`)" alt="image description">
+  <img src="/images/blog/gaming_or_coding/image_name.jpg" onclick="openImage(`/images/blog/gaming_or_coding/image_name.jpg`)" alt="image description">
 </div>
 ```
 
