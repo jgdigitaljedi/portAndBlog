@@ -27,7 +27,12 @@ const posts = [...codingArr, ...gamingArr];
       smartypants: true
     });
     const $ = cheerio.load(md);
-    const images = $('img').attr('src');
+    const images = [];
+    $('img').each((index, img) => {
+      const src = img.attribs.src.startsWith('/') ? `https:${img.attribs.src}` : img.attribs.src;
+      images.push({src, alt: img.attribs.alt});
+    });
+    // gonna want to return link with image array in correct format for nuxt sitemap generator
     console.log('images', images);
   });
 })();
