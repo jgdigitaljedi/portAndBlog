@@ -15,7 +15,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: post.title
+          content: post.meta.description
         },
         {
           hid: `keywords`,

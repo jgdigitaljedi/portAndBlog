@@ -3,7 +3,11 @@
     <v-toolbar dark class="nav">
       <v-toolbar-title color="#000" class="nav__brand">
         <nuxt-link to="/">
-          <img class="nav__brand--image" src="~/assets/images/navbar/JG.png" alt="JG for Joey Gauthier in the Sega font">
+          <img
+            class="nav__brand--image"
+            src="~/assets/images/navbar/JG.png"
+            alt="JG for Joey Gauthier in the Sega font"
+          >
         </nuxt-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
@@ -36,11 +40,15 @@
     </v-toolbar>
     <v-navigation-drawer v-model="drawer" absolute temporary class="mobile-nav">
       <div class="mobile-nav__title">
-        <img class="nav__brand--image" src="~/assets/images/navbar/JG.png" alt="JG for Joey Gauthier in the Sega font">
+        <img
+          class="nav__brand--image"
+          src="~/assets/images/navbar/JG.png"
+          alt="JG for Joey Gauthier in the Sega font"
+        >
       </div>
       <v-list>
         <v-list-tile v-for="link in links" :key="link.title" class="mobile-nav__link-wrapper">
-          <img :src="link.icon" alt="">
+          <img :src="link.icon" alt>
           <nuxt-link :to="link.to" class="nav-link">
             <label class="nav-link__tile">
               <div class="nav-link__tile--text-wrapper">
@@ -117,6 +125,15 @@ export default {
   }
 }
 
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .nav-wrapper {
   background-color: transparent;
   width: 100%;
@@ -145,6 +162,7 @@ export default {
       .nav__brand--image {
         height: 5rem;
         width: 7rem;
+        animation: 0.5s ease-out 0s 1 fade-in;
       }
     }
     .nav__items {
@@ -152,6 +170,7 @@ export default {
       align-items: center;
       justify-content: center;
       height: 100%;
+      animation: 0.5s ease-out 0s 1 fade-in;
       .nav-items__link-wrapper {
         display: flex;
         .nav__power-pellet {
@@ -220,6 +239,7 @@ export default {
     }
   }
   .mobile-nav {
+    z-index: 50;
     .v-list.theme--dark {
       background: transparent;
       display: flex;

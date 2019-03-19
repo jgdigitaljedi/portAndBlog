@@ -81,18 +81,18 @@ export default {
   components: { GeneralTab, TechTab, WorkTab, ContactTab, SiteTab },
   head() {
     return {
-      title: `Joey G | About`,
+      title: `Joey Gauthier | About`,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: 'Joey Gauthier - A little background and info'
+          content: 'Joey Gauthier - Coding background, JavaScript projects, GitHub, and information'
         },
         {
           hid: 'keywords',
           name: 'keywords',
           content:
-            'Joey Gauthier, Paul Gauthier, web developer, software engineer, digitaljedi, digital jedi, jgdigitaljedi'
+            'Joey Gauthier,Paul Gauthier,web developer,software engineer,digitaljedi,digital jedi,jgdigitaljedi'
         },
         {
           hid: 'twitter:title',
@@ -102,7 +102,7 @@ export default {
         {
           hid: 'twitter:description',
           name: 'twitter:description',
-          content: 'Joey Gauthier - A little background and info'
+          content: 'Joey Gauthier - Coding background, JavaScript projects, GitHub, and information'
         },
         {
           hid: 'og:title',
@@ -112,7 +112,7 @@ export default {
         {
           hid: 'og:description',
           name: 'og:description',
-          content: 'Joey Gauthier - A little background and info'
+          content: 'Joey Gauthier - Coding background, JavaScript projects, GitHub, and information'
         },
         {
           hid: 'og:image',

@@ -15,7 +15,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: post.title
+          content: post.meta.description
         },
         {
           hid: `keywords`,
@@ -45,7 +45,9 @@ export default {
         {
           hid: 'og:image',
           name: 'og:image',
-          content: post.image ? post.image : '/images/me_8bit_scanlines.jpg'
+          content: post.image
+            ? post.image
+            : 'https://res.cloudinary.com/https-joeyg-me/image/upload/v1552515487/gaming/march_2019_collection.jpg'
         }
       ]
     };

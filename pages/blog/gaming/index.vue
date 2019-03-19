@@ -28,13 +28,13 @@
 export default {
   head() {
     return {
-      title: `Gaming Blog of the Digital Jedi`,
+      title: `Gaming Blog of the Digital Jedi - retro game collecting, modern games, & more`,
       meta: [
         {
           hid: 'description',
           name: 'description',
           content:
-            'A blog about my journey in retro game collecting and general video games tips and opnions.'
+            'A blog about my journey in retro game collecting and general video games tips and opinions.'
         },
         {
           hid: 'keywords',
@@ -45,29 +45,36 @@ export default {
         {
           hid: 'twitter:title',
           name: 'twitter:title',
-          content: `Gaming Blog of the Digital Jedi`
+          content: `Gaming Blog of the Digital Jedi - retro game collecting, modern games, & more`
         },
         {
           hid: 'twitter:description',
           name: 'twitter:description',
           content:
-            'A blog about my journey in retro game collecting and general video games tips and opnions.'
+            'A blog about my journey in retro game collecting and general video games tips and opinions.'
+        },
+        {
+          hid: 'twitter:image',
+          name: 'twitter:image',
+          content:
+            'https://res.cloudinary.com/https-joeyg-me/image/upload/v1552515487/gaming/march_2019_collection.jpg'
         },
         {
           hid: 'og:title',
           name: 'og:title',
-          content: `Gaming Blog of the Digital Jedi`
+          content: `Gaming Blog of the Digital Jedi - retro game collecting, modern games, & more`
         },
         {
           hid: 'og:description',
           name: 'og:description',
           content:
-            'A blog about my journey in retro game collecting and general video games tips and opnions.'
+            'A blog about my journey in retro game collecting and general video games tips and opinions.'
         },
         {
           hid: 'og:image',
           name: 'og:image',
-          content: '/images/blog/gaming/early_2019_collection.jpg'
+          content:
+            'https://res.cloudinary.com/https-joeyg-me/image/upload/v1552515487/gaming/march_2019_collection.jpg'
         }
       ]
     };

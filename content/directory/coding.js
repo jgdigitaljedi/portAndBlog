@@ -8,7 +8,8 @@ export default () => [
     pinned: false,
     intro: `A brief explanation and overview of my motivation and approach to building this portfolio and blog site while I am still very early in the process.`,
     meta: {
-      keywords: 'Joey Gauthier, blog, portfolio, Nuxt, Netlify, Vue, markdown, UI, javascript'
+      keywords: 'Joey Gauthier, blog, portfolio, Nuxt, Netlify, Vue, markdown, UI, javascript',
+      description: `How & why Joey Gauthier, the DigitalJedi, decided to build this portfolio, coding blog, and retro games blog.`
     }
   },
   {
@@ -25,7 +26,8 @@ export default () => [
       'My thought process behind designing this seemingly random site that would make a designer cringe.',
     meta: {
       keywords:
-        'Joey Gauthier, Paul Gauthier, portfolio, blog, design, retro games, pacman, mario, atari, nintendo, UI, javascript'
+        'Joey Gauthier, Paul Gauthier, portfolio, blog, design, retro games, pacman, mario, atari, nintendo, UI, javascript',
+      description: `How Joey Gauthier made UX & UI decisions for his retro game inspired blog and portfolio.`
     }
   }
 ];

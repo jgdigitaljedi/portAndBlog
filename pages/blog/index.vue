@@ -97,38 +97,44 @@
 export default {
   head() {
     return {
-      title: `Joey G | Blog`,
+      title: `Joey G | Gaming & Coding Blogs`,
       meta: [
-        { hid: 'description', name: 'description', content: 'Joey Gauthier - blog select page' },
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Joey Gauthier - gaming & coding blogs'
+        },
         {
           hid: 'keywords',
           name: 'keywords',
-          content: 'Joey Gauthier, Paul Gauthier, blog, coding, gaming'
+          content:
+            'Joey Gauthier,Paul Gauthier,blog,coding,gaming,retro games,JavaScript,Vue,Angular,Nuxt,Nintendo'
         },
         {
           hid: 'twitter:title',
           name: 'twitter:title',
-          content: `Joey G | Blog`
+          content: `Joey G | Gaming & Coding Blogs`
         },
         {
           hid: 'twitter:description',
           name: 'twitter:description',
-          content: 'Joey Gauthier - blog select page'
+          content: 'Joey Gauthier - gaming & coding blogs'
         },
         {
           hid: 'og:title',
           name: 'og:title',
-          content: `Joey G | Blog`
+          content: `Joey G | Gaming & Coding Blogs`
         },
         {
           hid: 'og:description',
           name: 'og:description',
-          content: 'Joey Gauthier - blog select page'
+          content: 'Joey Gauthier - gaming & coding blogs'
         },
         {
           hid: 'og:image',
           name: 'og:image',
-          content: '/images/me_8bit_scanlines.jpg'
+          content:
+            'https://res.cloudinary.com/https-joeyg-me/image/upload/v1552518203/me_8bit_scanlines.jpg'
         }
       ]
     };

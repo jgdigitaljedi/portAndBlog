@@ -22,12 +22,13 @@
 export default {
   head() {
     return {
-      title: `Coding Blog of the Digital Jedi`,
+      title: `Coding Blog of the Digital Jedi - Front End, JavaScript, Angular, Vue, & more.`,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: "Joey Gauthier's blog about coding, mainly JavaScript."
+          content:
+            "Joey Gauthier's blog about coding - Front End, JavaScript, Angular, Vue, & more."
         },
         {
           hid: 'keywords',
@@ -38,27 +39,24 @@ export default {
         {
           hid: 'twitter:title',
           name: 'twitter:title',
-          content: `Coding Blog of the Digital Jedi`
+          content: `Coding Blog of the Digital Jedi - Front End, JavaScript, Angular, Vue, & more.`
         },
         {
           hid: 'twitter:description',
           name: 'twitter:description',
-          content: "Joey Gauthier's blog about coding, mainly JavaScript."
+          content:
+            "Joey Gauthier's blog about coding - Front End, JavaScript, Angular, Vue, & more."
         },
         {
           hid: 'og:title',
           name: 'og:title',
-          content: `Coding Blog of the Digital Jedi`
+          content: `Coding Blog of the Digital Jedi - Front End, JavaScript, Angular, Vue, & more.`
         },
         {
           hid: 'og:description',
           name: 'og:description',
-          content: "Joey Gauthier's blog about coding, mainly JavaScript."
-        },
-        {
-          hid: 'og:image',
-          name: 'og:image',
-          content: '/images/blog/coding/programming.jpg'
+          content:
+            "Joey Gauthier's blog about coding - Front End, JavaScript, Angular, Vue, & more."
         }
       ]
     };

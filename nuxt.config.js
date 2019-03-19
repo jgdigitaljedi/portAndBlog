@@ -19,21 +19,20 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'Joey G | Portfolio & Blog',
+    title: 'Joey Gauthier | Portfolio, Video Game Blog, & Coding Blog',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
-        content: `The portfolio, gaming blog, and coding blog of Joey Gauthier`
+        content: `The portfolio, retro gaming blog, and coding blog of Joey Gauthier`
       },
       { hid: 'author', name: 'author', content: `Joey Gauthier` },
       {
         hid: 'keywords',
         name: 'keywords',
-        content:
-          'Joey Gauthier, Paul Gauthier, JGDigitalJedi, front end portfolio, Austin developers, JavaScript, Vue, Angular, Nintendo, Sega, Playstation, Xbox, retro collecting, retro gaming'
+        content: `Joey Gauthier,Paul Gauthier,JGDigitalJedi,retro games,front end portfolio,Austin developers,JavaScript,Vue,Angular,Nintendo,Sega,Playstation,Xbox,retro collecting`
       },
       {
         hid: 'image',
@@ -45,7 +44,7 @@ module.exports = {
       {
         hid: 'twitter:title',
         name: 'twitter:title',
-        content: 'Joey G | Portfolio & Blog'
+        content: 'Joey Gauthier | Portfolio, Video Game Blog, & Coding Blog'
       },
       {
         hid: 'twitter:description',
@@ -67,7 +66,7 @@ module.exports = {
       {
         hid: 'og:title',
         name: 'og:title',
-        content: 'Joey G | Portfolio & Blog'
+        content: 'Joey Gauthier | Portfolio, Video Game Blog, & Coding Blog'
       },
       {
         hid: 'og:description',
@@ -89,7 +88,7 @@ module.exports = {
 
   /** PWA manifest */
   manifest: {
-    name: `Joey G | Portfolio & Blog`,
+    name: 'Joey Gauthier | Portfolio, Video Game Blog, & Coding Blog',
     short_name: `Joey G | P&B`,
     background_color: '#000'
   },
@@ -106,7 +105,7 @@ module.exports = {
 
   /** forcing scroll to top on route change */
   router: {
-    scrollBehavior: function (to, from, savedPosition) {
+    scrollBehavior: function(to, from, savedPosition) {
       return { x: 0, y: 0 };
     }
   },
