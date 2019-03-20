@@ -6,7 +6,7 @@
     </v-card>
     <div class="blog-slug__related" v-if="post && post.related && post.related.length">
       <h3>Related Posts</h3>
-      <div class="blog-slug__related--inner">
+      <div class="blog-slug__related--inner" :class="{'small': $vuetify.breakpoint.xs}">
         <nuxt-link v-for="rel in related" :key="rel.id" :to="`/blog/${which}/${rel.slug}`">
           <v-card class="related-post">
             <v-card-title>{{rel.title}}</v-card-title>
@@ -81,6 +81,14 @@ export default {
       display: flex;
       padding-top: 1rem;
       justify-content: space-around;
+      flex-wrap: wrap;
+      &.small {
+        flex-direction: column;
+        align-items: center;
+        .related-post {
+          margin-top: 1rem;
+        }
+      }
       .related-post {
         width: 20rem;
         height: 15rem;
