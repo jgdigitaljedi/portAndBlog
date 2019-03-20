@@ -46,7 +46,8 @@
     "vue-markdown": "^2.2.4",
     "vuetify": "^1.5.0",
     "vuetify-loader": "^1.2.0",
-    "webpack": "^4.29.5"
+    "webpack": "^4.29.5",
+    "xml-js": "^1.6.11"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^0.0.1",
