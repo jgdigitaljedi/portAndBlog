@@ -20,14 +20,11 @@ const smUrls = sitemapJson.urlset.url;
 
 function writeSitemap(xml) {
   const sitemapJsonShell = sitemapJson;
+  sitemapJsonShell.urlset._attributes = { xmlns: 'http://www.sitemaps.org/schemas/sitemap/0.9' };
   sitemapJsonShell.urlset.url = xml;
   fs.writeFileSync(
     path.join(__dirname, 'sitemapTest.xml'),
     convert.js2xml(sitemapJsonShell, { compact: true, spaces: 2 })
-  );
-  fs.writeFileSync(
-    path.join(__dirname, 'sitemapTest.json'),
-    JSON.stringify(sitemapJsonShell, null, 4)
   );
 }
 
