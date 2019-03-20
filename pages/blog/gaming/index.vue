@@ -14,12 +14,6 @@
         class="blog-category__summary hidden-md-and-down"
       >The documented gaming journey of an old school gamer and newbie retro game collector learning the ways of the Jedi</div>
     </div>
-    <!-- <div class="blog-category">
-      <div
-        class="blog-category__title"
-        :class="{'md': isMounted && $vuetify.breakpoint.md, 'sm': isMounted && $vuetify.breakpoint.sm, 'xs': isMounted && $vuetify.breakpoint.xs}"
-      >Joey's Gaming Blog</div>
-    </div>-->
     <blogListMaster :posts="posts" which="gaming"></blogListMaster>
   </section>
 </template>
@@ -117,9 +111,6 @@ export default {
     background-position: center;
     display: flex;
     justify-content: space-between;
-    // border-bottom: 4px solid $pacman-purple;
-    // justify-content: center;
-    // align-items: center;
     height: 9rem;
     .blog-category__summary {
       height: 9rem;
@@ -129,6 +120,7 @@ export default {
       justify-content: center;
       font-style: italic;
       padding-right: 2rem;
+      text-align: right;
     }
     .blog-category__title {
       padding: 1rem 2rem;
@@ -137,9 +129,6 @@ export default {
         div {
           font-family: $game-font;
           font-size: 2.5rem;
-          // -webkit-text-fill-color: $pacman-purple; /* Will override color (regardless of order) */
-          // -webkit-text-stroke-width: 1px;
-          // -webkit-text-stroke-color: $light;
           &.jedi {
             font-size: 2rem;
           }

@@ -33,6 +33,13 @@ export default {
           content: post.intro
         },
         {
+          hid: 'twitter:image',
+          name: 'twitter:image',
+          content: post.image
+            ? post.image
+            : 'https://res.cloudinary.com/https-joeyg-me/image/upload/v1552518203/me_8bit_scanlines.jpg'
+        },
+        {
           hid: 'og:title',
           name: 'og:title',
           content: post.title
