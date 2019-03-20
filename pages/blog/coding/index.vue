@@ -108,6 +108,7 @@ export default {
       justify-content: center;
       font-style: italic;
       padding-right: 2rem;
+      text-align: right;
     }
     .blog-category__title {
       padding: 1rem 2rem;

@@ -33,6 +33,13 @@ export default {
           content: post.intro
         },
         {
+          hid: 'twitter:image',
+          name: 'twitter:image',
+          content: post.image
+            ? post.image
+            : 'https://res.cloudinary.com/https-joeyg-me/image/upload/v1552515487/gaming/march_2019_collection.jpg'
+        },
+        {
           hid: 'og:title',
           name: 'og:title',
           content: post.title

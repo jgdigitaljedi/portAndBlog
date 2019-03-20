@@ -5,7 +5,7 @@
       class="post"
       :class="{'medium': $vuetify.breakpoint.md && isMounted, 'small': $vuetify.breakpoint.smAndDown && isMounted, 'gaming': which === 'gaming', 'coding': which === 'coding'}"
     >
-      <blogContent :post="post" :postContent="postContent"></blogContent>
+      <blogContent :post="post" :postContent="postContent" :which="which"></blogContent>
       <v-divider style="width: 100%; max-width: 1400px; margin-top: 2rem;" dark></v-divider>
       <blogComments :post="post" :which="which" class="comments"></blogComments>
     </div>

@@ -32,7 +32,8 @@ export default () => [
       keywords:
         'gaming,nes,retro games,genesis,dreamcast,retro game collecting,vintage video games,upscaler,RGB,HD TV,4k',
       description: `Hooking up retro game consoles to a HD or 4K TV using switchers & upscalers.`
-    }
+    },
+    related: [7, 8]
   },
   {
     id: 7,
@@ -49,7 +50,8 @@ export default () => [
       keywords:
         'gaming,nes,retro games,retro games near me,retro collecting,Game Stop,Goodwill,Game Over Video Games,retro game stores,pricecharting',
       description: `Getting new retro games from retro game stores, eBay, garage sales, flea markets, & more.`
-    }
+    },
+    related: [6, 8]
   },
   {
     id: 8,
@@ -66,7 +68,8 @@ export default () => [
       keywords:
         'gaming,nes,retro games,retro games near me,retro collecting,universal game cases,ds cases,game storage,cover project,umd cases,dvd cases,cd cases',
       description: `How to store retro games, use universal game cases, print retro game covers, & more.`
-    }
+    },
+    related: [6, 7]
   },
   {
     id: 9,

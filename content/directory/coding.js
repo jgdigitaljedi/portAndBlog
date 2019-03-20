@@ -10,7 +10,8 @@ export default () => [
     meta: {
       keywords: 'Joey Gauthier, blog, portfolio, Nuxt, Netlify, Vue, markdown, UI, javascript',
       description: `How & why Joey Gauthier, the DigitalJedi, decided to build this portfolio, coding blog, and retro games blog.`
-    }
+    },
+    related: [7]
   },
   {
     id: 7,
@@ -28,6 +29,7 @@ export default () => [
       keywords:
         'Joey Gauthier, Paul Gauthier, portfolio, blog, design, retro games, pacman, mario, atari, nintendo, UI, javascript',
       description: `How Joey Gauthier made UX & UI decisions for his retro game inspired blog and portfolio.`
-    }
+    },
+    related: [6]
   }
 ];
