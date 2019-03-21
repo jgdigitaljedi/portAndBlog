@@ -36,13 +36,14 @@ Right now things look a little on the rough side because this is still in active
 
 ## OVERALL TODO
 
-- micro data seo stuff
+- maybe I need a logo? If I decide to do this, I should see about one of those site where you pay a small fee and people take a crack at it?
+- make it look nicer
 - all the alt tags I can cram into this
 - research other useful seo tags
-- accessibility
-- make it look nicer
-- konami code easter egg trigger works, now think of something fun for it to do
-- make remaining views
 - add more Google Analytics functionality
 - add accessibility
-- add num of results dropdown to blog lists to allow user to select (not huge priority ATM because of lack of blogs)
+- GDPR? I'm not paying ICO a dime, so maybe I pop up a cookie banner and block the EU from searching my site on Google and Bing?
+- the blog sections are eventually going to need pagination, archives, or something because a million posts on the page isn't acceptable
+- micro data seo stuff
+- konami code easter egg trigger works, now think of something fun for it to do
+- make remaining views (My VG library view and what else, if anything?)
