@@ -1,6 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://joeyg.me/index.html</loc>
+    <image:image>
+      <image:loc>https:/_nuxt/img/cd753b4.png</image:loc>
+      <image:title>cherries from the Pacman game</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https:/_nuxt/img/2a067b3.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https:/_nuxt/img/96d9a96.jpg</image:loc>
+      <image:title>image of Joey Gauthier made to look 8 bit with scanlines</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://joeyg.me/about/index.html</loc>
+    <image:image>
+      <image:loc>https:/_nuxt/img/cd753b4.png</image:loc>
+      <image:title>cherries from the Pacman game</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https:/_nuxt/img/2a067b3.png</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://joeyg.me/blog/index.html</loc>
+    <image:image>
+      <image:loc>https:/_nuxt/img/cd753b4.png</image:loc>
+      <image:title>cherries from the Pacman game</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https:/_nuxt/img/2a067b3.png</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://joeyg.me/blog/coding/the-start-of-building-this-site</loc>
     <image:image>
       <image:loc>https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;MarketPlace=US&amp;ASIN=B00V2ULHBS&amp;ServiceVersion=20070822&amp;ID=AsinImage&amp;WS=1&amp;Format=_SL250_&amp;tag=joeyg0e-20</image:loc>
