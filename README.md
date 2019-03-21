@@ -25,18 +25,21 @@ For detailed explanation on how things work, checkout [Nuxt.js docs](https://nux
 
 ## Notes
 
-I'm in experimental territory considering my experience with Nuxt. I've never used Nuxt and I'm trying some new things here. The idea is to eventually have a really basic portfolio (in the past mine have been WAY to complicated for a site that is rarely visited) and add a blog section. The goal for the blog section is to have it setup where I write markdown files, push to master, Netlify's webhook picks it up and auto builds, and the new blog is posted.
-
 Right now things look a little on the rough side because this is still in active development and, quite frankly, I'm still trying to find design inspiration for some of the views.
 
 ## CURRENT FOCUS TODO
 
-- build about section
-- see if I can add a scroll to top button that appears once you scroll down in a blog post. Nuxt doesn't have normal window access so it might be a no-no.
-- style blog posts; my repeating background and gradient is terrible, but is a placeholder until I think of something
+- STYLE! It's kind of chaotic and all over the place. Looks like a toddler designed it. Time to make myself sit down and plan out margins, refine colors, tweak style, etc.
+  - I feel like the blog landing, blog section pages, and home screen are ok...for now.
+  - The nav is still ugly. The theme switching is neat, but it needs work. Also I want to make it shrink when you scroll down while reading a blog post.
+  - The blog posts themselves are plain. I need inspiration here as I've played with some ideas and hated them all.
 
 ## OVERALL TODO
 
+- micro data seo stuff
+- all the alt tags I can cram into this
+- research other useful seo tags
+- accessibility
 - make it look nicer
 - konami code easter egg trigger works, now think of something fun for it to do
 - make remaining views

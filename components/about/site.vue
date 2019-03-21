@@ -3,10 +3,10 @@
     <div class="site-overview">
       <h3>Details of and Inspiration for This Site</h3>
       <p>
-        This is my personal site so I didn't feel the need to use tranditional/trendy styling, layouts, typography, color theory, etc.
+        This is my personal site so I didn’t feel the need to use traditional/trendy styling, layouts, typography, color theory, etc.
         It is supposed to be fun and most pages are inspired by a classic or famous video game screen. Since retro game collecting is
         such a big part of my life and there is even a gaming blog as a part of this site, I felt like I could escape the feeling that
-        I needed to read up on the trndiest front end design and run with this idea of theming everything with classic video assets and styles.
+        I needed to read up on the trendiest front end design and run with this idea of theming everything with classic video assets and styles.
       </p>
       <p>
         If you are interested in seeing the code, you can find the repo
@@ -27,11 +27,11 @@
             class="site-inspiration__section--about__image"
           ></v-img>
           <p>
-            The colors were taken directly from a screenshot of Pac-man. The primary colors you'll see used a lot on this site
-            are the purple and black. The navigation links are always accompanied by Pac-man ghost (or in the case of the "Home" link,
-            Pac-man himself). Power pellects fill the empty space between the links in desktop resolutions and a retro game style, trianglular
-            shaped cursor appears beside the active link and will flash when hovered. The 'JG' logo is done is Sega blue using the Sega font which
-            doesn't exactly fit the Pac-man theme here but serves as a general logo for the whole site.
+            The colors were taken directly from a screenshot of Pac-man. The primary colors you’ll see used a lot on this site
+            are purple and black. The navigation links are always accompanied by Pac-man ghost (or in the case of the “Home” link,
+            Pac-man himself). Power pellets fill the empty space between the links in desktop resolutions and a retro game style, triangular
+            shaped cursor appears beside the active link and will flash when hovered. The ‘JG’ logo is done is Sega blue using the Sega font which
+            doesn’t exactly fit the Pac-man theme here but serves as a general logo for the whole site.
           </p>
         </div>
       </div>
@@ -45,10 +45,10 @@
             class="site-inspiration__section--about__image"
           ></v-img>
           <p>
-            The home page is inspired by so many space shooter games. Think of Galaga as a good example here. The CSS "stars" animated
-            in the background are intended to replicate that feeling. The way that the styled picture of me animated into the center of
+            The home page is inspired by so many space shooter games. Think of Galaga as a good example here. The CSS “stars” animated
+            in the background are intended to replicate that feeling. How the styled picture of me animated into the center of
             the screen, flashes once, then reappears with the text box below it is inspired by the title screen of many NES games. Think
-            of the game 'Contra' as a good example here. The image of me is done in an 8-bit style with scanlines to further enforce that
+            of the game ‘Contra’ as a good example here. The image of me is done in an 8-bit style with scan lines to further enforce that
             retro game feeling.
           </p>
         </div>
@@ -65,7 +65,7 @@
           <p>
             This page is built to closely resemble the title screen of Super Mario Bros for the NES. Some of the assets used come
             directly from screenshots I found of the title screen and the same colors were used as well. I found a font that closely
-            resembles the font used for the actual title block on this screen to be used for the text "Joey's Super Blog". You'll notice
+            resembles the font used for the actual title block on this screen to be used for the text “Joey’s Super Blog”. You’ll notice
             that the small mushroom blinks when you hover on the blog section links just like it blinks in the game itself. Because this
             page is built to be responsive, you really have to view it on a desktop to see the full effect as the mobile version is stripped
             of some of the assets and styling.
@@ -82,8 +82,8 @@
             class="site-inspiration__section--about__image"
           ></v-img>
           <p>
-            The "About" page is styled after what I call the "Options" screen in 007 GoldenEye fomr the N64. Mainly, it resembles
-            a tabbed-folder stlye dossier from the game with similar colors, layout, and navigation. The red crosshair cursor used is
+            The “About” page is styled after what I call the “Options” screen in 007 GoldenEye for the N64. Mainly, it resembles
+            a tabbed-folder style dossier from the game with similar colors, layout, and navigation. The red crosshair cursor used is
             supposed to closely resemble the crosshair used in the menus of the game as well. I thought about even adding music from
             the game but decided that might be too much!
           </p>
