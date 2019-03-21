@@ -10,11 +10,7 @@
     >
       <v-toolbar-title color="#000" class="nav__brand">
         <nuxt-link to="/">
-          <img
-            class="nav__brand--image"
-            src="~/assets/images/navbar/JG.png"
-            alt="JG for Joey Gauthier in the Sega font"
-          >
+          <img class="nav__brand--image" :src="jgLogo" alt="JG for Joey Gauthier in the Sega font">
         </nuxt-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
@@ -27,10 +23,16 @@
       <v-toolbar-items class="nav__items hidden-sm-and-down" v-if="isMounted">
         <div v-for="(link, index) in links" :key="link.title" class="nav-items__link-wrapper">
           <nuxt-link :to="link.to" class="nav-link">
-            <img :src="fullPath === '/blog' ? link.mario : link.icon">
+            <img
+              :src="fullPath === '/blog' ? link.mario : (fullPath === '/about' ? link.bond : link.icon)"
+            >
             <label class="nav-link__tile">
               <div class="nav-link__tile--text-wrapper">
-                <div class="nav-link__tile--selected" v-if="currentSelectedRoute === link.to"></div>
+                <div
+                  class="nav-link__tile--selected"
+                  v-if="currentSelectedRoute === link.to"
+                  :class="{'mario-selected': fullPath === '/blog', 'bond-selected': fullPath === '/about'}"
+                ></div>
                 <div
                   class="nav-link__tile--text"
                   :class="{'current': currentSelectedRoute === link.to, 'mario-text': fullPath === '/blog', 'bond-text': fullPath === '/about'}"
@@ -39,8 +41,13 @@
             </label>
           </nuxt-link>
           <div class="nav__power-pellet" v-if="index < links.length - 1">
-            <img :src="((fullPath === '/blog') ? pellets.mario : pellets.pacman)">
-            <img :src="((fullPath === '/blog') ? pellets.mario : pellets.pacman)">
+            <img
+              :src="((fullPath === '/blog') ? pellets.mario : (fullPath === '/about' ? pellets.bond : pellets.pacman))"
+            >
+            <img
+              :src="((fullPath === '/blog') ? pellets.mario : (fullPath === '/about' ? pellets.bond : pellets.pacman))"
+            >
+            <!-- <img :src="((fullPath === '/blog') ? pellets.mario : pellets.pacman)"> -->
             <!-- <img src="~/assets/images/navbar/power-pellet.png" alt="Pacman power pellet"> -->
           </div>
         </div>
@@ -48,11 +55,7 @@
     </v-toolbar>
     <v-navigation-drawer v-model="drawer" absolute temporary class="mobile-nav">
       <div class="mobile-nav__title">
-        <img
-          class="nav__brand--image"
-          src="~/assets/images/navbar/JG.png"
-          alt="JG for Joey Gauthier in the Sega font"
-        >
+        <img class="nav__brand--image" :src="jgLogo" alt="JG for Joey Gauthier in the Sega font">
       </div>
       <v-list>
         <v-list-tile v-for="link in links" :key="link.title" class="mobile-nav__link-wrapper">
@@ -83,31 +86,41 @@ export default {
       drawer: false,
       isMounted: false,
       fullPath: null,
+      jgLogo: require('~/assets/images/navbar/JG.png'),
       pellets: {
         pacman: require('~/assets/images/navbar/power-pellet.png'),
-        mario: require('~/assets/images/mario/mario_coin.png')
+        mario: require('~/assets/images/mario/mario_coin.png'),
+        bond: require('~/assets/images/navbar/bullet_hole.png')
       },
       links: [
         {
           title: 'Home',
           to: '/',
           icon: require('~/assets/images/navbar/pacman.png'),
-          mario: require('~/assets/images/mario/small-mario.png')
+          mario: require('~/assets/images/mario/small-mario.png'),
+          bond: require('~/assets/images/navbar/golden_gun.png')
         },
         {
           title: 'Blog',
           to: '/blog',
           icon: require('~/assets/images/navbar/ghost_red.png'),
-          mario: require('~/assets/images/mario/mario_shroom.png')
+          mario: require('~/assets/images/mario/mario_shroom.png'),
+          bond: require('~/assets/images/navbar/goldeneye_watch.png')
         },
         {
           title: 'About',
           to: '/about',
           icon: require('~/assets/images/navbar/ghost_blue.png'),
-          mario: require('~/assets/images/mario/mario_shroom.png')
+          mario: require('~/assets/images/mario/mario_pipe.png'),
+          bond: require('~/assets/images/navbar/n64.png')
         }
         // { title: 'VG', to: '/videogames' }
-      ]
+      ],
+      jgLogos: {
+        pacman: require('~/assets/images/navbar/JG.png'),
+        mario: require('~/assets/images/navbar/JG_mario.png'),
+        bond: require('~/assets/images/navbar/JG_bond.png')
+      }
     };
   },
   created() {
@@ -119,7 +132,13 @@ export default {
   methods: {
     handleRouteChange(path) {
       this.fullPath = path;
-      console.log('path', path);
+      if (path === '/blog') {
+        this.jgLogo = this.jgLogos.mario;
+      } else if (path === '/about') {
+        this.jgLogo = this.jgLogos.bond;
+      } else {
+        this.jgLogo = this.jgLogos.pacman;
+      }
       this.currentSelectedRoute = path;
       if (path.indexOf('/blog') >= 0) {
         this.currentSelectedRoute = '/blog';
@@ -271,6 +290,10 @@ $bond-dossier: rgb(209, 210, 165);
                 position: absolute;
                 left: -1rem;
                 top: 0.2rem;
+                &.mario-selected,
+                &.bond-selected {
+                  border-left: 0.75rem solid #fff;
+                }
               }
               .nav-link__tile--text {
                 font-family: $game-font;
@@ -281,7 +304,7 @@ $bond-dossier: rgb(209, 210, 165);
                   color: $mario-letters;
                 }
                 &.mario-text.current {
-                  color: $mario-sky;
+                  color: #fff;
                 }
                 &.bond-text {
                   color: lighten($black, 15%);
