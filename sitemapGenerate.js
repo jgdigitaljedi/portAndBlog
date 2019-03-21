@@ -145,7 +145,7 @@ function makeSitemapForPages() {
         .filter(img => !img.attribs.src.startsWith('data'))
         .map(img => {
           const src = img.attribs.src.startsWith('/')
-            ? `https:${img.attribs.src}`
+            ? `https:/${img.attribs.src}`
             : img.attribs.src;
           const imageTag = { 'image:loc': { _text: src } };
           if (img.attribs.alt) {
