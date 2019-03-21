@@ -5,7 +5,8 @@ const cheerio = require('cheerio');
 const path = require('path');
 const fs = require('fs');
 const marked = require('marked');
-var convert = require('xml-js');
+const convert = require('xml-js');
+const util = require('util');
 
 const codingArr = Coding.default().map(item => {
   return { url: `/blog/coding/${item.slug}`, item };
@@ -29,6 +30,7 @@ function writeSitemap(xmlObj) {
     path.join(__dirname, 'sitemapTest.xml'),
     convert.js2xml(sitemapJsonShell, { compact: true, spaces: 2 })
   );
+  process.exit();
 }
 
 function makeSitemapForBlogs() {
@@ -68,18 +70,75 @@ function makeSitemapForBlogs() {
   });
 }
 
-function makeSitemapForPages(blogXml) {
+function makeSitemapForPages() {
   return new Promise(resolve => {
     const xml = [
-      'index.html',
-      'about/index.html',
-      'blog/index.html',
-      'blog/coding/index.html',
-      'blog/gaming/index.html'
+      {
+        built: 'index.html',
+        raw: ['pages/index.vue', 'components/NavBar.vue', 'components/Social.vue']
+      },
+      {
+        built: 'about/index.html',
+        raw: [
+          'pages/about.vue',
+          'components/about/contact.vue',
+          'components/about/general.vue',
+          'components/about/site.vue',
+          'components/about/tech.vue',
+          'components/about/work.vue'
+        ]
+      },
+      { built: 'blog/index.html', raw: ['pages/blog/index.vue'] },
+      {
+        built: 'blog/coding/index.html',
+        raw: [
+          'pages/blog/coding/index.vue',
+          'components/blog/blogComments.vue',
+          'components/blog/blogContent.vue',
+          'components/blog/blogHeader.vue',
+          'components/blog/blogListContainer.vue',
+          'components/blog/blogListItem.vue',
+          'components/blog/blogListMaster.vue',
+          'components/blog/blogPostSlug.vue'
+        ]
+      },
+      {
+        built: 'blog/gaming/index.html',
+        raw: [
+          'pages/blog/gaming/index.vue',
+          'components/blog/blogComments.vue',
+          'components/blog/blogContent.vue',
+          'components/blog/blogHeader.vue',
+          'components/blog/blogListContainer.vue',
+          'components/blog/blogListItem.vue',
+          'components/blog/blogListMaster.vue',
+          'components/blog/blogPostSlug.vue'
+        ]
+      }
     ].map(page => {
-      const file = fs.readFileSync(path.resolve(__dirname, 'dist/', page));
+      // read the file
+      const file = fs.readFileSync(path.resolve(__dirname, 'dist/', page.built));
+
+      // parse html with cheerio
       const $ = cheerio.load(file);
-      const route = `https://joeyg.me/${page}`;
+
+      // build the loc tag
+      const route = `https://joeyg.me/${page.built}`;
+      const routeSplit = route.split('/');
+      routeSplit.pop();
+      const routeCleaned = routeSplit.join('/');
+
+      // build the lastmod tag
+      const lastmodDate = page.raw
+        .map(file => {
+          const stats = fs.statSync(path.resolve(__dirname, file));
+          return new Date(util.inspect(stats.mtime));
+        })
+        .sort((a, b) => {
+          return a < b ? 1 : a > b ? -1 : 0;
+        })[0];
+
+      // build the images tags
       const images = Array.from($('img'))
         .filter(img => !img.attribs.src.startsWith('data'))
         .map(img => {
@@ -92,7 +151,11 @@ function makeSitemapForPages(blogXml) {
           }
           return imageTag;
         });
-      return { loc: { _text: route }, 'image:image': images };
+      return {
+        loc: { _text: routeCleaned },
+        lastmod: { _text: lastmodDate.toISOString() },
+        'image:image': images
+      };
     });
     resolve(xml);
   });

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://joeyg.me/index.html</loc>
+    <loc>https://joeyg.me</loc>
+    <lastmod>2019-03-19T11:53:01.215Z</lastmod>
     <image:image>
       <image:loc>https:/_nuxt/img/cd753b4.png</image:loc>
       <image:title>cherries from the Pacman game</image:title>
@@ -15,7 +16,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://joeyg.me/about/index.html</loc>
+    <loc>https://joeyg.me/about</loc>
+    <lastmod>2019-03-19T11:53:01.219Z</lastmod>
     <image:image>
       <image:loc>https:/_nuxt/img/cd753b4.png</image:loc>
       <image:title>cherries from the Pacman game</image:title>
@@ -25,7 +27,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://joeyg.me/blog/index.html</loc>
+    <loc>https://joeyg.me/blog</loc>
+    <lastmod>2019-03-19T11:53:01.223Z</lastmod>
     <image:image>
       <image:loc>https:/_nuxt/img/cd753b4.png</image:loc>
       <image:title>cherries from the Pacman game</image:title>
@@ -35,7 +38,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://joeyg.me/blog/coding/index.html</loc>
+    <loc>https://joeyg.me/blog/coding</loc>
+    <lastmod>2019-03-20T22:26:54.779Z</lastmod>
     <image:image>
       <image:loc>https:/_nuxt/img/cd753b4.png</image:loc>
       <image:title>cherries from the Pacman game</image:title>
@@ -45,7 +49,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://joeyg.me/blog/gaming/index.html</loc>
+    <loc>https://joeyg.me/blog/gaming</loc>
+    <lastmod>2019-03-20T22:26:54.783Z</lastmod>
     <image:image>
       <image:loc>https:/_nuxt/img/cd753b4.png</image:loc>
       <image:title>cherries from the Pacman game</image:title>
