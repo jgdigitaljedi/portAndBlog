@@ -8,25 +8,29 @@ const marked = require('marked');
 const convert = require('xml-js');
 const util = require('util');
 
+// array of coding blogs from content/directory/coding.js
 const codingArr = Coding.default().map(item => {
   return { url: `/blog/coding/${item.slug}`, item };
 });
+// array of gaming blogs from content/directory/gaming.js
 const gamingArr = Gaming.default().map(item => {
   return { url: `/blog/gaming/${item.slug}`, item };
 });
 const posts = [...codingArr, ...gamingArr];
-// const sitemapXml = fs.readFileSync(path.resolve(__dirname, 'dist/sitemap.xml'), 'utf8');
-// const sitemapJson = convert.xml2js(sitemapXml, { compact: true, spaces: 2 });
-// const smUrls = sitemapJson.urlset.url;
+// declare here & hoist later because requiring now would try to load sitemap.xml before it exists
 let sitemapXml, sitemapJson, smUrls;
 
+// function that writes the sitemap.xml file
 function writeSitemap(xmlObj) {
   const sitemapJsonShell = sitemapJson;
+  // set urlset attributes
   sitemapJsonShell.urlset._attributes = {
     xmlns: 'http://www.sitemaps.org/schemas/sitemap/0.9',
     'xmlns:image': 'http://www.google.com/schemas/sitemap-image/1.1'
   };
+  // add newly formatted urls with lastmod and images
   sitemapJsonShell.urlset.url = [...xmlObj.pages, ...xmlObj.blog];
+  // write the sitemap
   fs.writeFileSync(
     path.join(__dirname, 'dist/sitemap.xml'),
     convert.js2xml(sitemapJsonShell, { compact: true, spaces: 2 })
@@ -35,38 +39,51 @@ function writeSitemap(xmlObj) {
   console.log('Sitemap enhanced with image and lastmod tags');
 }
 
+// logic for generating sitemap data for blog posts
 function makeSitemapForBlogs() {
   return new Promise(resolve => {
     const xml = posts.map(post => {
+      // get the post md file content
       const postMd = fs.readFileSync(
         path.resolve(__dirname, `content/posts/gaming/${post.item.id}.md`),
         'utf8'
       );
+      // parse the md file into html
       const md = marked(postMd, {
         breaks: true,
         gfm: true,
         smartypants: true
       });
+      // load the md html into cheerio for jQuery style selecting of elements
       const $ = cheerio.load(md);
-      return smUrls
-        .filter(item => {
-          return item.loc._text === `https://joeyg.me${post.url}`;
-        })
-        .map(item => {
-          const postDate = new Date(post.item.created_at);
-          item.lastmod = { _text: postDate.toISOString() };
-          item['image:image'] = Array.from($('img')).map(img => {
-            const src = img.attribs.src.startsWith('/')
-              ? `https:${img.attribs.src}`
-              : img.attribs.src;
-            const imageTag = { 'image:loc': { _text: src } };
-            if (img.attribs.alt) {
-              imageTag['image:title'] = img.attribs.alt;
-            }
-            return imageTag;
-          });
-          return item;
-        })[0];
+      return (
+        smUrls
+          // only generate for blog posts
+          .filter(item => {
+            return item.loc._text === `https://joeyg.me${post.url}`;
+          })
+          .map(item => {
+            // convert post created date string to JS date object
+            const postDate = new Date(post.item.created_at);
+            // convert date object to ISO string and assign to lastmod tag for url
+            item.lastmod = { _text: postDate.toISOString() };
+            // set the 'image:image' attribute to an array with the image data
+            item['image:image'] = Array.from($('img')).map(img => {
+              // format image url to have https:// if lacking
+              const src = img.attribs.src.startsWith('/')
+                ? `https:${img.attribs.src}`
+                : img.attribs.src;
+              // assign image:loc
+              const imageTag = { 'image:loc': { _text: src } };
+              if (img.attribs.alt) {
+                // if image has alt text assign it to be image:title
+                imageTag['image:title'] = img.attribs.alt;
+              }
+              return imageTag;
+            });
+            return item;
+          })[0]
+      );
     });
     resolve(xml);
   });
@@ -74,6 +91,7 @@ function makeSitemapForBlogs() {
 
 function makeSitemapForPages() {
   return new Promise(resolve => {
+    // built is path for generated html file; raw is array of component vue files that makeup the generated html
     const xml = [
       {
         built: 'index.html',
@@ -130,7 +148,7 @@ function makeSitemapForPages() {
       routeSplit.pop();
       const routeCleaned = routeSplit.join('/');
 
-      // build the lastmod tag
+      // build the lastmod tag using file stats
       const lastmodDate = page.raw
         .map(file => {
           const stats = fs.statSync(path.resolve(__dirname, file));
@@ -163,13 +181,15 @@ function makeSitemapForPages() {
   });
 }
 
+// self invoking function
 (function() {
-  // module.exports = function() {
+  // hoist here because sitemap.xml doesn't exist on load but will on execute
   sitemapXml = fs.readFileSync(path.resolve(__dirname, 'dist/sitemap.xml'), 'utf8');
   sitemapJson = convert.xml2js(sitemapXml, { compact: true, spaces: 2 });
   smUrls = sitemapJson.urlset.url;
+
+  // once both promises are resolved, call writeSitemap and pass results
   Promise.all([makeSitemapForBlogs(), makeSitemapForPages()]).then(result => {
     writeSitemap({ blog: result[0], pages: result[1] });
   });
-  // };
 })();
