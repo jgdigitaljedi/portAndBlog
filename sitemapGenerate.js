@@ -20,7 +20,10 @@ const smUrls = sitemapJson.urlset.url;
 
 function writeSitemap(xmlObj) {
   const sitemapJsonShell = sitemapJson;
-  sitemapJsonShell.urlset._attributes = { xmlns: 'http://www.sitemaps.org/schemas/sitemap/0.9' };
+  sitemapJsonShell.urlset._attributes = {
+    xmlns: 'http://www.sitemaps.org/schemas/sitemap/0.9',
+    'xmlns:image': 'http://www.google.com/schemas/sitemap-image/1.1'
+  };
   sitemapJsonShell.urlset.url = [...xmlObj.pages, ...xmlObj.blog];
   fs.writeFileSync(
     path.join(__dirname, 'sitemapTest.xml'),
@@ -46,6 +49,8 @@ function makeSitemapForBlogs() {
           return item.loc._text === `https://joeyg.me${post.url}`;
         })
         .map(item => {
+          const postDate = new Date(post.item.created_at);
+          item.lastmod = { _text: postDate.toISOString() };
           item['image:image'] = Array.from($('img')).map(img => {
             const src = img.attribs.src.startsWith('/')
               ? `https:${img.attribs.src}`
@@ -65,7 +70,13 @@ function makeSitemapForBlogs() {
 
 function makeSitemapForPages(blogXml) {
   return new Promise(resolve => {
-    const xml = ['index.html', 'about/index.html', 'blog/index.html'].map(page => {
+    const xml = [
+      'index.html',
+      'about/index.html',
+      'blog/index.html',
+      'blog/coding/index.html',
+      'blog/gaming/index.html'
+    ].map(page => {
       const file = fs.readFileSync(path.resolve(__dirname, 'dist/', page));
       const $ = cheerio.load(file);
       const route = `https://joeyg.me/${page}`;
@@ -91,7 +102,4 @@ function makeSitemapForPages(blogXml) {
   Promise.all([makeSitemapForBlogs(), makeSitemapForPages()]).then(result => {
     writeSitemap({ blog: result[0], pages: result[1] });
   });
-  // makeSitemapForBlogs().then(blogXml => {
-  //   writeSitemap(blogXml);
-  // });
 })();

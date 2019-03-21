@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://joeyg.me/index.html</loc>
     <image:image>
@@ -35,7 +35,48 @@
     </image:image>
   </url>
   <url>
+    <loc>https://joeyg.me/blog/coding/index.html</loc>
+    <image:image>
+      <image:loc>https:/_nuxt/img/cd753b4.png</image:loc>
+      <image:title>cherries from the Pacman game</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https:/_nuxt/img/2a067b3.png</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://joeyg.me/blog/gaming/index.html</loc>
+    <image:image>
+      <image:loc>https:/_nuxt/img/cd753b4.png</image:loc>
+      <image:title>cherries from the Pacman game</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https:/_nuxt/img/2a067b3.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/https-joeyg-me/image/upload/v1553024737/gaming/stadia_logo.png</image:loc>
+      <image:title>logo of Google's Stadia cloud based gaming service</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/https-joeyg-me/image/upload/v1552515484/gaming/custom_cases.jpg</image:loc>
+      <image:title>image of retro games from various retro consoles in custom cases</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/https-joeyg-me/image/upload/v1552515483/gaming/flea-market.jpg</image:loc>
+      <image:title>image of cluttered tables at a flea market</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/https-joeyg-me/image/upload/v1552515483/gaming/cable_mess.jpg</image:loc>
+      <image:title>image of messy cables, power strips, power adapters for retro game consoles</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/https-joeyg-me/image/upload/v1552515487/gaming/early_collection.jpg</image:loc>
+      <image:title>earlier photo of Joey Gauthier's game collection, both retro games and modern games in custom cases</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://joeyg.me/blog/coding/the-start-of-building-this-site</loc>
+    <lastmod>2019-02-20T06:00:00.000Z</lastmod>
     <image:image>
       <image:loc>https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;MarketPlace=US&amp;ASIN=B00V2ULHBS&amp;ServiceVersion=20070822&amp;ID=AsinImage&amp;WS=1&amp;Format=_SL250_&amp;tag=joeyg0e-20</image:loc>
     </image:image>
@@ -62,6 +103,7 @@
   </url>
   <url>
     <loc>https://joeyg.me/blog/coding/design-inspiration-for-this-site</loc>
+    <lastmod>2019-02-23T06:00:00.000Z</lastmod>
     <image:image>
       <image:loc>https://res.cloudinary.com/https-joeyg-me/image/upload/v1552515483/gaming/flea-market.jpg</image:loc>
       <image:title>image of cluttered tables at a flea market in search for retro games</image:title>
@@ -73,6 +115,7 @@
   </url>
   <url>
     <loc>https://joeyg.me/blog/gaming/how-i-got-into-vido-game-collecting</loc>
+    <lastmod>2019-02-25T06:00:00.000Z</lastmod>
     <image:image>
       <image:loc>https://res.cloudinary.com/https-joeyg-me/image/upload/v1552515486/gaming/RGB_deblurred_N64.jpg</image:loc>
       <image:title>Japanese teal N64 region modded and RGB modded retro game console</image:title>
@@ -88,6 +131,7 @@
   </url>
   <url>
     <loc>https://joeyg.me/blog/gaming/the-struggle-of-hookinh-it-all-up</loc>
+    <lastmod>2019-03-02T06:00:00.000Z</lastmod>
     <image:image>
       <image:loc>https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;MarketPlace=US&amp;ASIN=B00V2ULHBS&amp;ServiceVersion=20070822&amp;ID=AsinImage&amp;WS=1&amp;Format=_SL250_&amp;tag=joeyg0e-20</image:loc>
     </image:image>
@@ -114,6 +158,7 @@
   </url>
   <url>
     <loc>https://joeyg.me/blog/gaming/how-i-add-to-my-collection</loc>
+    <lastmod>2019-03-07T06:00:00.000Z</lastmod>
     <image:image>
       <image:loc>https://res.cloudinary.com/https-joeyg-me/image/upload/v1552515483/gaming/flea-market.jpg</image:loc>
       <image:title>image of cluttered tables at a flea market in search for retro games</image:title>
@@ -125,6 +170,7 @@
   </url>
   <url>
     <loc>https://joeyg.me/blog/gaming/how-i-store-my-games</loc>
+    <lastmod>2019-03-13T05:00:00.000Z</lastmod>
     <image:image>
       <image:loc>https://res.cloudinary.com/https-joeyg-me/image/upload/v1552515484/gaming/custom_cases.jpg</image:loc>
       <image:title>retro games in custom cases</image:title>
@@ -165,6 +211,7 @@
   </url>
   <url>
     <loc>https://joeyg.me/blog/gaming/initial-thoughts-on-googles-stadia-cloud-based-gaming-service</loc>
+    <lastmod>2019-03-19T05:00:00.000Z</lastmod>
     <image:image>
       <image:loc>https://res.cloudinary.com/https-joeyg-me/image/upload/v1553024737/gaming/stadia_logo.png</image:loc>
       <image:title>logo for Google's Stadia cloud-based gaming service</image:title>
