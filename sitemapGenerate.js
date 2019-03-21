@@ -1,4 +1,4 @@
-const esmImport = require('esm')(module);
+const esmImport = require('esm')(module); // it was this or a whole babel config
 const Coding = esmImport('./content/directory/coding');
 const Gaming = esmImport('./content/directory/gaming');
 const cheerio = require('cheerio');

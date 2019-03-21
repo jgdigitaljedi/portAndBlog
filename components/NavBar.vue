@@ -1,6 +1,13 @@
 <template>
-  <div class="nav-wrapper">
-    <v-toolbar dark class="nav">
+  <div
+    class="nav-wrapper"
+    :class="{'mario-wrapper': fullPath === '/blog', 'bond-wrapper': fullPath === '/about'}"
+  >
+    <v-toolbar
+      dark
+      class="nav"
+      :class="{'mario-theme': fullPath === '/blog', 'bond-theme': fullPath === '/about'}"
+    >
       <v-toolbar-title color="#000" class="nav__brand">
         <nuxt-link to="/">
           <img
@@ -20,20 +27,21 @@
       <v-toolbar-items class="nav__items hidden-sm-and-down" v-if="isMounted">
         <div v-for="(link, index) in links" :key="link.title" class="nav-items__link-wrapper">
           <nuxt-link :to="link.to" class="nav-link">
-            <img :src="link.icon">
+            <img :src="fullPath === '/blog' ? link.mario : link.icon">
             <label class="nav-link__tile">
               <div class="nav-link__tile--text-wrapper">
                 <div class="nav-link__tile--selected" v-if="currentSelectedRoute === link.to"></div>
                 <div
                   class="nav-link__tile--text"
-                  :class="{'current': currentSelectedRoute === link.to}"
+                  :class="{'current': currentSelectedRoute === link.to, 'mario-text': fullPath === '/blog', 'bond-text': fullPath === '/about'}"
                 >{{link.title}}</div>
               </div>
             </label>
           </nuxt-link>
           <div class="nav__power-pellet" v-if="index < links.length - 1">
-            <img src="~/assets/images/navbar/power-pellet.png" alt="Pacman power pellet">
-            <img src="~/assets/images/navbar/power-pellet.png" alt="Pacman power pellet">
+            <img :src="((fullPath === '/blog') ? pellets.mario : pellets.pacman)">
+            <img :src="((fullPath === '/blog') ? pellets.mario : pellets.pacman)">
+            <!-- <img src="~/assets/images/navbar/power-pellet.png" alt="Pacman power pellet"> -->
           </div>
         </div>
       </v-toolbar-items>
@@ -74,10 +82,30 @@ export default {
       currentSelectedRoute: 'home',
       drawer: false,
       isMounted: false,
+      fullPath: null,
+      pellets: {
+        pacman: require('~/assets/images/navbar/power-pellet.png'),
+        mario: require('~/assets/images/mario/mario_coin.png')
+      },
       links: [
-        { title: 'Home', to: '/', icon: require('~/assets/images/navbar/pacman.png') },
-        { title: 'Blog', to: '/blog', icon: require('~/assets/images/navbar/ghost_red.png') },
-        { title: 'About', to: '/about', icon: require('~/assets/images/navbar/ghost_blue.png') }
+        {
+          title: 'Home',
+          to: '/',
+          icon: require('~/assets/images/navbar/pacman.png'),
+          mario: require('~/assets/images/mario/small-mario.png')
+        },
+        {
+          title: 'Blog',
+          to: '/blog',
+          icon: require('~/assets/images/navbar/ghost_red.png'),
+          mario: require('~/assets/images/mario/mario_shroom.png')
+        },
+        {
+          title: 'About',
+          to: '/about',
+          icon: require('~/assets/images/navbar/ghost_blue.png'),
+          mario: require('~/assets/images/mario/mario_shroom.png')
+        }
         // { title: 'VG', to: '/videogames' }
       ]
     };
@@ -90,6 +118,8 @@ export default {
   },
   methods: {
     handleRouteChange(path) {
+      this.fullPath = path;
+      console.log('path', path);
       this.currentSelectedRoute = path;
       if (path.indexOf('/blog') >= 0) {
         this.currentSelectedRoute = '/blog';
@@ -112,6 +142,10 @@ export default {
 
 <style lang="scss">
 @import '~/assets/style/theme.scss';
+$mario-ground: #b72504;
+$mario-sky: #6185f8;
+$mario-letters: #eeaf36;
+$bond-dossier: rgb(209, 210, 165);
 
 @keyframes blink {
   0% {
@@ -143,6 +177,14 @@ export default {
   align-items: center;
   justify-content: center;
   background-color: #000;
+  &.mario-wrapper {
+    border: none;
+    background-color: $mario-ground;
+  }
+  &.bond-wrapper {
+    border: none;
+    background-color: $bond-dossier;
+  }
   .nav {
     width: calc(100% - 1rem);
     height: 6rem;
@@ -150,6 +192,18 @@ export default {
     border-radius: 4px;
     background-color: #000 !important;
     background: #000;
+    &.mario-theme {
+      border: none;
+      border-radius: 0;
+      background-color: $mario-ground !important;
+      box-shadow: none;
+    }
+    &.bond-theme {
+      border: none;
+      border-radius: 0;
+      background-color: $bond-dossier !important;
+      box-shadow: none;
+    }
     .pacman-cherries {
       max-height: 5rem;
       width: auto;
@@ -222,6 +276,18 @@ export default {
                 font-family: $game-font;
                 &.current {
                   color: $light;
+                }
+                &.mario-text {
+                  color: $mario-letters;
+                }
+                &.mario-text.current {
+                  color: $mario-sky;
+                }
+                &.bond-text {
+                  color: lighten($black, 15%);
+                }
+                &.bond-text.current {
+                  color: #fff;
                 }
               }
               &:hover {
