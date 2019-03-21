@@ -15,9 +15,10 @@ const gamingArr = Gaming.default().map(item => {
   return { url: `/blog/gaming/${item.slug}`, item };
 });
 const posts = [...codingArr, ...gamingArr];
-const sitemapXml = fs.readFileSync(path.resolve(__dirname, 'dist/sitemap.xml'), 'utf8');
-const sitemapJson = convert.xml2js(sitemapXml, { compact: true, spaces: 2 });
-const smUrls = sitemapJson.urlset.url;
+// const sitemapXml = fs.readFileSync(path.resolve(__dirname, 'dist/sitemap.xml'), 'utf8');
+// const sitemapJson = convert.xml2js(sitemapXml, { compact: true, spaces: 2 });
+// const smUrls = sitemapJson.urlset.url;
+let sitemapXml, sitemapJson, smUrls;
 
 function writeSitemap(xmlObj) {
   const sitemapJsonShell = sitemapJson;
@@ -27,10 +28,11 @@ function writeSitemap(xmlObj) {
   };
   sitemapJsonShell.urlset.url = [...xmlObj.pages, ...xmlObj.blog];
   fs.writeFileSync(
-    path.join(__dirname, 'sitemapTest.xml'),
+    path.join(__dirname, 'dist/sitemap.xml'),
     convert.js2xml(sitemapJsonShell, { compact: true, spaces: 2 })
   );
-  process.exit();
+  // process.exit();
+  console.log('Sitemap enhanced with image and lastmod tags');
 }
 
 function makeSitemapForBlogs() {
@@ -162,7 +164,12 @@ function makeSitemapForPages() {
 }
 
 (function() {
+  // module.exports = function() {
+  sitemapXml = fs.readFileSync(path.resolve(__dirname, 'dist/sitemap.xml'), 'utf8');
+  sitemapJson = convert.xml2js(sitemapXml, { compact: true, spaces: 2 });
+  smUrls = sitemapJson.urlset.url;
   Promise.all([makeSitemapForBlogs(), makeSitemapForPages()]).then(result => {
     writeSitemap({ blog: result[0], pages: result[1] });
   });
+  // };
 })();

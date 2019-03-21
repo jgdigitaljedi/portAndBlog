@@ -309,7 +309,6 @@ module.exports = {
         import: ['~assets/style/variables.styl']
       }
     },
-    /** NEW DANGEROUS STUFF PART 1 */
     extractCSS: true,
     optimization: {
       splitChunks: {
@@ -324,7 +323,6 @@ module.exports = {
       }
     },
     postcss: [autoprefixer],
-    /** END NEW DANGEROUS STUFF PART 1 */
 
     /*
     ** You can extend webpack config here
@@ -338,7 +336,6 @@ module.exports = {
           loader: 'eslint-loader',
           exclude: /(node_modules)/
         });
-        /** ALL NEW STUFF THAT CAN POTENTIALLY BREAK THE BUILD PART 2 */
       } else {
         config.plugins.push(
           new PurgeCssPlugin({
@@ -381,10 +378,8 @@ module.exports = {
           })
         );
       }
-      /** END OF DANGEROUS NEW STUFF PART 2 */
-      const vueLoader = config.module.rules.find(rule => rule.loader === 'vue-loader');
-
       // bit if I want lazy load tags to work; experiment I may come back to
+      // const vueLoader = config.module.rules.find(rule => rule.loader === 'vue-loader');
       // vueLoader.options.transformToRequire = {
       //   video: 'src',
       //   source: 'src',
