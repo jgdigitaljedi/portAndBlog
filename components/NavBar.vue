@@ -15,10 +15,9 @@
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <img
-        src="~/assets/images/navbar/pacman_cherries.png"
+        :src="mobileButton"
         @click.stop="drawer = !drawer"
         class="pacman-cherries hidden-md-and-up"
-        alt="cherries from the Pacman game"
       >
       <v-toolbar-items class="nav__items hidden-sm-and-down" v-if="isMounted">
         <div v-for="(link, index) in links" :key="link.title" class="nav-items__link-wrapper">
@@ -55,7 +54,11 @@
     </v-toolbar>
     <v-navigation-drawer v-model="drawer" absolute temporary class="mobile-nav">
       <div class="mobile-nav__title">
-        <img class="nav__brand--image" :src="jgLogo" alt="JG for Joey Gauthier in the Sega font">
+        <img
+          class="nav__brand--image"
+          src="~/assets/images/navbar/JG.png"
+          alt="JG for Joey Gauthier in the Sega font"
+        >
       </div>
       <v-list>
         <v-list-tile v-for="link in links" :key="link.title" class="mobile-nav__link-wrapper">
@@ -87,6 +90,12 @@ export default {
       isMounted: false,
       fullPath: null,
       jgLogo: require('~/assets/images/navbar/JG.png'),
+      mobileButtonObj: {
+        pacman: require('~/assets/images/navbar/pacman_cherries.png'),
+        mario: require('~/assets/images/mario/small-mario.png'),
+        bond: require('~/assets/images/navbar/golden_gun.png')
+      },
+      mobileButton: require('~/assets/images/navbar/pacman_cherries.png'),
       pellets: {
         pacman: require('~/assets/images/navbar/power-pellet.png'),
         mario: require('~/assets/images/mario/mario_coin.png'),
@@ -134,10 +143,13 @@ export default {
       this.fullPath = path;
       if (path === '/blog') {
         this.jgLogo = this.jgLogos.mario;
+        this.mobileButton = this.mobileButtonObj.mario;
       } else if (path === '/about') {
         this.jgLogo = this.jgLogos.bond;
+        this.mobileButton = this.mobileButtonObj.bond;
       } else {
         this.jgLogo = this.jgLogos.pacman;
+        this.mobileButton = this.mobileButtonObj.pacman;
       }
       this.currentSelectedRoute = path;
       if (path.indexOf('/blog') >= 0) {
