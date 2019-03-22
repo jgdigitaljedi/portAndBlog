@@ -6,8 +6,24 @@
         <h4 class="blog-list-master__sidebar--title">
           <v-icon>icon-filter</v-icon>&nbsp;Filters
         </h4>
+        <v-btn
+          dark
+          class="filter-hide-button"
+          v-if="$vuetify.breakpoint.mdAndDown"
+          @click.stop="hideFilters = !hideFilters"
+        >
+          <div class="show-hide" v-if="!hideFilters">
+            <v-icon>icon-eye-blocked</v-icon>&nbsp; HIDE
+          </div>
+          <div class="show-hide" v-if="hideFilters">
+            <v-icon>icon-eye</v-icon>&nbsp; SHOW
+          </div>
+        </v-btn>
       </div>
-      <div class="blog-list-master__sidebar--filters">
+      <div
+        class="blog-list-master__sidebar--filters"
+        :class="{'hidden': hideFilters && !$vuetify.breakpoint.lgAndUp}"
+      >
         <v-autocomplete
           v-model="currentFilters.searchTerm"
           hint="Search Blog Titles & Keywords"
@@ -103,6 +119,7 @@ export default {
       filteredPosts: [],
       months: [],
       cPosts: [],
+      hideFilters: false,
       sortItems: [
         { label: 'Post Date - desc', key: 'dateDesc' },
         { label: 'Post Date - asc', key: 'dateAsc' },
@@ -310,6 +327,16 @@ export default {
     min-width: 20rem;
     .blog-list-master__sidebar--title-container {
       padding: 1rem 1rem 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      button.filter-hide-button {
+        margin: -0.3rem 0.5rem 0 0;
+        div.show-hide {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
     }
     &.md {
       min-height: auto;
@@ -325,6 +352,14 @@ export default {
     }
     .blog-list-master__sidebar--filters {
       padding: 2rem 2rem 0;
+      height: auto;
+      overflow: hidden;
+      max-height: 2000px;
+      transition: 0.8s max-height ease-in-out;
+      &.hidden {
+        transition: 0.8s max-height ease-in-out;
+        max-height: 0;
+      }
       .switch-container {
         padding-top: 0.5rem;
         .blog-list__search--pin .v-label.theme--dark {

@@ -7,7 +7,7 @@
     <div class="item-container__inner">
       <div class="title">
         <div class="link-content">
-          <h4>{{which === 'coding' ? '> ' : ''}}{{post.title}}{{which === 'coding' ? '_' : ''}}</h4>
+          <h3>{{which === 'coding' ? '> ' : ''}}{{post.title}}{{which === 'coding' ? '_' : ''}}</h3>
         </div>
       </div>
       <div class="blog-list-inner__thumb hidden-sm-and-down" v-if="post.image && post.image.length">
@@ -62,7 +62,7 @@ export default {
     .title {
       background-color: $pacman-purple;
       padding: 1rem;
-      h4 {
+      h3 {
         color: black;
       }
     }

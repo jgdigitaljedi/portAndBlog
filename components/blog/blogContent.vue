@@ -5,7 +5,7 @@
       <article v-html="postContent"></article>
     </v-card>
     <div class="blog-slug__related" v-if="post && post.related && post.related.length">
-      <h3>Related Posts</h3>
+      <h2>Related Posts</h2>
       <div class="blog-slug__related--inner" :class="{'small': $vuetify.breakpoint.xs}">
         <nuxt-link v-for="rel in related" :key="rel.id" :to="`/blog/${which}/${rel.slug}`">
           <v-card class="related-post">
@@ -161,7 +161,8 @@ export default {
     h4,
     h5,
     h6 {
-      font-family: $game-font !important;
+      font-family: $secondary-font !important;
+      font-style: bold;
       text-align: center;
       margin: 2rem auto;
       color: $light;

@@ -1,13 +1,13 @@
-$breakpoint-small: 480px;
-$breakpoint-medium: 768px;
-$breakpoint-large: 960px;
-$breakpoint-xlarge: 1220px;
-$breakpoint-mini-max: ($breakpoint-small - 1);
-$breakpoint-small-max: ($breakpoint-medium - 1);
-$breakpoint-medium-max: ($breakpoint-large - 1);
-$breakpoint-large-max: ($breakpoint-xlarge - 1);
+// $breakpoint-small: 480px;
+// $breakpoint-medium: 768px;
+// $breakpoint-large: 960px;
+// $breakpoint-xlarge: 1220px;
+// $breakpoint-mini-max: ($breakpoint-small - 1);
+// $breakpoint-small-max: ($breakpoint-medium - 1);
+// $breakpoint-medium-max: ($breakpoint-large - 1);
+// $breakpoint-large-max: ($breakpoint-xlarge - 1);
 @import './theme';
-$brand-color: $primary;
+$brand-color: $pacman-purple;
 
 html {
   // height: 100%;
@@ -38,7 +38,7 @@ body {
   .title,
   .v-expansion-panel__header > div,
   .v-toolbar__title {
-    font-family: $game-font;
+    font-family: $secondary-font;
   }
 
   a,

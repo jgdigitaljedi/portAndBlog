@@ -19,7 +19,7 @@
     </div>
     <div class="home__about--wrapper">
       <div class="home__about">
-        <p>I'm a software engineer, retro game collector, guitarist, and all around geek. Welcome to my site!</p>
+        <p>I'm a software engineer, retro game collector, guitarist, and all around geek. Check out my blogs & have a look around. Welcome to my site!</p>
       </div>
     </div>
   </section>
@@ -134,6 +134,7 @@ $shadows-big: multiple-box-shadow(100);
     h1 {
       font-size: 2em;
       color: $light;
+      font-family: $game-font;
       &.mobile {
         width: 100%;
         text-align: center;

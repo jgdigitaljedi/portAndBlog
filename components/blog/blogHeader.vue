@@ -12,12 +12,12 @@
     </div>
     <div class="blog-header__title-nav">
       <div class="blog-header__title-social">
-        <h2 v-if="$vuetify.breakpoint.mdAndUp && isMounted">{{post.title}}</h2>
-        <h4 v-if="$vuetify.breakpoint.smAndDown && isMounted">{{post.title}}</h4>
-        <small
+        <h1 v-if="$vuetify.breakpoint.mdAndUp && isMounted">{{post.title}}</h1>
+        <h2 v-if="$vuetify.breakpoint.smAndDown && isMounted">{{post.title}}</h2>
+        <p
           class="blog-header__title-social--tag hidden-sm-and-down"
           v-if="post.tag_line"
-        >{{post.tag_line}}</small>
+        >{{post.tag_line}}</p>
       </div>
       <div class="blog-header__title-nav--nav">
         <nuxt-link class="nav-button" :to="`/blog/${which}`">
@@ -92,13 +92,17 @@ export default {
       justify-content: center;
       align-items: center;
       flex: 1;
-      h4,
+      h1,
       h2 {
         text-align: center;
+      }
+      h1 {
+        font-size: 3rem;
       }
       .blog-header__title-social--tag {
         color: $light;
         font-style: italic;
+        text-align: center;
       }
     }
     .blog-header__title-nav--nav {

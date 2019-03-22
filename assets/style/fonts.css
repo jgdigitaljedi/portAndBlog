@@ -119,3 +119,9 @@
 .icon-lastfm2:before {
   content: '\eacc';
 }
+.icon-eye:before {
+  content: '\e9ce';
+}
+.icon-eye-blocked:before {
+  content: '\e9d1';
+}
