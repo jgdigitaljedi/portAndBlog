@@ -31,6 +31,13 @@ import Social from '~/components/Social';
 export default {
   name: 'Home',
   components: { Social },
+  head() {
+    return {
+      link: [
+        { rel: 'canonical', href: 'https://joeyg.me' }
+      ]
+    };
+  },
   data() {
     return {
       timer: null,

@@ -185,7 +185,7 @@ export default {
           p => p.searchTerms.indexOf(this.currentFilters.searchTerm) >= 0
         );
         if (this.$ga) {
-          this.$ga.event('filter', 'blogListFilters', 'search', this.currentFilters.searchTerm);
+          this.$ga.event('blogListFilters', 'search', this.currentFilters.searchTerm);
         }
       }
     },
@@ -203,7 +203,7 @@ export default {
             'created_at'
           );
           if (this.$ga) {
-            this.$ga.event('filter', 'blogListFilters', 'sort', 'dateAsc');
+            this.$ga.event('blogListFilters', 'sort', 'dateAsc');
           }
           break;
         case 'titleDesc':
@@ -212,13 +212,13 @@ export default {
             'title'
           ).reverse();
           if (this.$ga) {
-            this.$ga.event('filter', 'blogListFilters', 'sort', 'titleDesc');
+            this.$ga.event('blogListFilters', 'sort', 'titleDesc');
           }
           break;
         case 'titleAsc':
           this.filteredPosts = SortsService.sortAlpha(_cloneDeep(this.filteredPosts), 'title');
           if (this.$ga) {
-            this.$ga.event('filter', 'blogListFilters', 'sort', 'titleAsc');
+            this.$ga.event('blogListFilters', 'sort', 'titleAsc');
           }
           break;
       }
@@ -227,7 +227,7 @@ export default {
       if (this.currentFilters.pinned) {
         this.filteredPosts = _cloneDeep(this.filteredPosts).filter(p => p.pinned);
         if (this.$ga) {
-          this.$ga.event('filter', 'blogListFilters', 'pinned', this.currentFilters.pinned);
+          this.$ga.event('blogListFilters', 'pinned', this.currentFilters.pinned);
         }
       }
     },
@@ -242,7 +242,7 @@ export default {
           );
         });
         if (this.$ga) {
-          this.$ga.event('filter', 'blogListFilters', 'month', this.currentFilters.month);
+          this.$ga.event('blogListFilters', 'month', this.currentFilters.month);
         }
       }
     },

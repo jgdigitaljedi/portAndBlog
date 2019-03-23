@@ -23,6 +23,9 @@ export default {
   head() {
     return {
       title: `Coding Blog of the Digital Jedi - Front End, JavaScript, Angular, Vue, & more.`,
+      link: [
+        { rel: 'canonical', href: 'https://joeyg.me/blog/coding' }
+      ],
       meta: [
         {
           hid: 'description',

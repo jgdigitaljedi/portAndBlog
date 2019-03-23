@@ -24,7 +24,7 @@
       <div class="social-wrapper" :class="{'small': $vuetify.breakpoint.xs}">
         <div class="left">
           <div class="twitter social-link">
-            <a href="https://twitter.com/jgdigitaljedi" target="_blank">
+            <a href="https://twitter.com/jgdigitaljedi" target="_blank" @click="socialLinkClick('twitter')">
               <v-icon>icon-twitter</v-icon>Twitter
             </a>
           </div>
@@ -32,24 +32,25 @@
             <a
               href="https://open.spotify.com/user/jdigitaljedi?si=FJ4SnMETTjS4Xd5eTM6JWg"
               target="_blank"
+              @click="socialLinkClick('spotify')"
             >
               <v-icon>icon-spotify</v-icon>Spotify
             </a>
           </div>
           <div class="github social-link">
-            <a href="https://github.com/jgdigitaljedi" target="_blank">
+            <a href="https://github.com/jgdigitaljedi" target="_blank" @click="socialLinkClick('github')">
               <v-icon>icon-github</v-icon>GitHub
             </a>
           </div>
         </div>
         <div class="right">
           <div class="linkedin social-link">
-            <a href="https://www.linkedin.com/in/paulgauthier81" target="_blank">
+            <a href="https://www.linkedin.com/in/paulgauthier81" target="_blank" @click="socialLinkClick('linkedIn')">
               <v-icon>icon-linkedin2</v-icon>LinkedIn
             </a>
           </div>
           <div class="lastfm social-link">
-            <a href="https://www.last.fm/user/joeygstrings" target="_blank">
+            <a href="https://www.last.fm/user/joeygstrings" target="_blank" @click="socialLinkClick('lastFm')">
               <v-icon>icon-lastfm</v-icon>Last.fm
             </a>
           </div>
@@ -58,6 +59,18 @@
     </div>
   </section>
 </template>
+
+<script>
+export default {
+  name: 'AboutContact',
+  methods: {
+    socialLinkClick(which) {
+      console.log('social', which);
+      this.$ga.event('aboutSocialLink', 'click', which)
+    }
+  }
+};
+</script>
 
 <style lang="scss" scoped>
 .contact {

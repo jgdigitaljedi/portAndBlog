@@ -23,6 +23,9 @@ export default {
   head() {
     return {
       title: `Gaming Blog of the Digital Jedi - retro game collecting, modern games, & more`,
+      link: [
+        { rel: 'canonical', href: 'https://joeyg.me/blog/gaming' }
+      ],
       meta: [
         {
           hid: 'description',

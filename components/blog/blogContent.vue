@@ -7,7 +7,7 @@
     <div class="blog-slug__related" v-if="post && post.related && post.related.length">
       <h2>Related Posts</h2>
       <div class="blog-slug__related--inner" :class="{'small': $vuetify.breakpoint.xs}">
-        <nuxt-link v-for="rel in related" :key="rel.id" :to="`/blog/${which}/${rel.slug}`">
+        <nuxt-link v-for="rel in related" :key="rel.id" :to="`/blog/${which}/${rel.slug}`" @click.native="relatedClicked(rel)">
           <v-card class="related-post">
             <v-card-title>{{rel.title}}</v-card-title>
             <v-img
@@ -63,6 +63,9 @@ export default {
     openImage(src) {
       this.imageSrc = src;
       this.imageDialog = true;
+    },
+    relatedClicked(related) {
+      this.$ga.event('related link', 'click', this.related.title, this.post.id);
     }
   }
 };

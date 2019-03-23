@@ -26,6 +26,7 @@
           id="tab_1"
           v-model="selectedTab"
           :value="1"
+          @click="tabClick('general')"
         >
         <label for="tab_1" :class="{'checked': selectedTab === 1}">GENERAL</label>
         <input
@@ -35,6 +36,7 @@
           id="tab_2"
           v-model="selectedTab"
           :value="2"
+          @click="tabClick('tech')"
         >
         <label for="tab_2" :class="{'checked': selectedTab === 2}">TECH</label>
         <input
@@ -44,6 +46,7 @@
           id="tab_3"
           v-model="selectedTab"
           :value="3"
+          @click="tabClick('work')"
         >
         <label for="tab_3" :class="{'checked': selectedTab === 3}">WORK</label>
         <input
@@ -53,6 +56,7 @@
           id="tab_4"
           v-model="selectedTab"
           :value="4"
+          @click="tabClick('contact')"
         >
         <label for="tab_4" :class="{'checked': selectedTab === 4}">CONTACT</label>
         <input
@@ -62,6 +66,7 @@
           id="tab_5"
           v-model="selectedTab"
           :value="5"
+          @click="tabClick('site')"
         >
         <label for="tab_5" :class="{'checked': selectedTab === 5}">SITE</label>
       </div>
@@ -82,6 +87,9 @@ export default {
   head() {
     return {
       title: `Joey Gauthier | About`,
+      link: [
+        { rel: 'canonical', href: 'https://joeyg.me/about' }
+      ],
       meta: [
         {
           hid: 'description',
@@ -130,6 +138,11 @@ export default {
   },
   mounted() {
     this.isMounted = true;
+  },
+  methods: {
+    tabClick(which) {
+      this.$ga.event('aboutTab', 'click', which);
+    }
   }
 };
 </script>

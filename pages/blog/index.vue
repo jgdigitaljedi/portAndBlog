@@ -34,8 +34,8 @@
           <div>.</div>
         </div>
         <div class="mario__box-logo--text-container">
-          <div class="mario__box-logo--top-text logo-text">JOEY'S</div>
-          <div class="mario__box-logo--bottom-text logo-text">SUPER BLOG.</div>
+          <h1 class="mario__box-logo--top-text logo-text">JOEY'S</h1>
+          <h1 class="mario__box-logo--bottom-text logo-text">SUPER BLOG.</h1>
         </div>
         <div class="mario__box-logo--rivets bottom">
           <div>.</div>
@@ -52,7 +52,8 @@
               v-if="active === 'gaming'"
               :alt="'mushroom from a Mario Bros game'"
             >
-            &nbsp; 1 GAMING BLOG
+            &nbsp;
+            <h2>1 GAMING BLOG</h2>
           </nuxt-link>
         </div>
         <div @mouseover="active = 'coding'" class="mario__blog-select--wrapper">
@@ -63,7 +64,8 @@
               v-if="active === 'coding'"
               :alt="'mushroom from Super Mario Bros'"
             >
-            &nbsp; 2 CODING BLOG
+            &nbsp;
+            <h2>2 CODING BLOG</h2>
           </nuxt-link>
         </div>
       </div>
@@ -98,6 +100,9 @@ export default {
   head() {
     return {
       title: `Joey G | Gaming & Coding Blogs`,
+      link: [
+        { rel: 'canonical', href: 'https://joeyg.me/blog' }
+      ],
       meta: [
         {
           hid: 'description',
@@ -258,6 +263,12 @@ $mario-bush-accent: #0c110c;
       margin-top: 3rem;
       z-index: 4;
       .mario__blog-select--wrapper {
+        h2 {
+          display: inline;
+          font-family: $game-font;
+          font-size: 1.5rem;
+          font-weight: normal;
+        }
         &:hover {
           .mario__blog-select--active {
             animation: blink normal 1s infinite;
@@ -327,8 +338,10 @@ $mario-bush-accent: #0c110c;
             font-size: 7rem;
             text-shadow: 7px 7px $mario-bush-accent;
             margin-bottom: -3rem;
+            font-weight: normal;
           }
           &.mario__box-logo--bottom-text {
+            font-weight: normal;
             font-size: 14rem;
             text-shadow: 10px 10px $mario-bush-accent;
           }
@@ -340,10 +353,12 @@ $mario-bush-accent: #0c110c;
           font-size: 6rem;
           text-shadow: 7px 7px $mario-bush-accent;
           margin-bottom: -1rem;
+          font-weight: normal;
         }
         .mario__box-logo--text-container .mario__box-logo--bottom-text {
           font-size: 12rem;
           text-shadow: 10px 10px $mario-bush-accent;
+          font-weight: normal;
         }
         .mario__box-logo--rivets.top {
           margin: -2.75rem -1rem -1rem -1rem;
