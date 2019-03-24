@@ -1,7 +1,7 @@
 <template>
   <v-app dark class="app-wrapper">
-    <NavBar></NavBar>
-    <main id="main" role="main" class="main">
+    <NavBar class="nav"></NavBar>
+    <main id="main" role="main" class="main" :class="{'scrolled': scrolled}">
       <nuxt/>
     </main>
     <audio ref="contra">
@@ -17,9 +17,19 @@ export default {
   components: {
     NavBar
   },
+  data() {
+    return {
+      scrolled: false
+    };
+  },
   computed: {
     player() {
       return this.$refs.contra;
+    }
+  },
+  created() {
+    if (process.browser) {
+      window.addEventListener('scroll', this.handleScroll);
     }
   },
   mounted() {
@@ -58,6 +68,9 @@ export default {
     }
   },
   methods: {
+    handleScroll() {
+      this.scrolled = window.scrollY > 0;
+    },
     codeEntered() {
       // @TODO: write konami code easter egg
       console.log(
@@ -71,7 +84,6 @@ export default {
       if (this.$ga) {
         this.$ga.event('input', 'keyPress', 'konamiCode', true);
       }
-      // sound.play();
     }
   }
 };
@@ -81,7 +93,12 @@ export default {
 @import '~/assets/style/global.scss';
 @import '~/assets/style/theme.scss';
 .app-wrapper {
+  .nav {
+    position: fixed;
+    z-index: 600;
+  }
   .main {
+    padding-top: 7rem;
     background-color: #000;
   }
   // background-color: $primary !important;

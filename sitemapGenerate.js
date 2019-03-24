@@ -7,7 +7,6 @@ const fs = require('fs');
 const marked = require('marked');
 const convert = require('xml-js');
 const util = require('util');
-const _flatten = esmImport('lodash/flatten');
 
 // array of coding blogs from content/directory/coding.js
 const codingArr = Coding.default().map(item => {
