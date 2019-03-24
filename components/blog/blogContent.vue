@@ -156,6 +156,8 @@ export default {
     code {
       background-color: #002e3a;
       font-family: $code-font;
+    }
+    pre {
       padding: 1em;
     }
     h1,
