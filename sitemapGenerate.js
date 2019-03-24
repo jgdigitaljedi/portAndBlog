@@ -7,6 +7,7 @@ const fs = require('fs');
 const marked = require('marked');
 const convert = require('xml-js');
 const util = require('util');
+const _flatten = esmImport('lodash/flatten');
 
 // array of coding blogs from content/directory/coding.js
 const codingArr = Coding.default().map(item => {
@@ -16,7 +17,7 @@ const codingArr = Coding.default().map(item => {
 const gamingArr = Gaming.default().map(item => {
   return { url: `/blog/gaming/${item.slug}`, item };
 });
-const posts = [...codingArr, ...gamingArr];
+const posts = { coding: [...codingArr], gaming: [...gamingArr] };
 // declare here & hoist later because requiring now would try to load sitemap.xml before it exists
 let sitemapXml, sitemapJson, smUrls;
 
@@ -26,7 +27,11 @@ function writeSitemap(xmlObj) {
   // set urlset attributes
   sitemapJsonShell.urlset._attributes = {
     xmlns: 'http://www.sitemaps.org/schemas/sitemap/0.9',
-    'xmlns:image': 'http://www.google.com/schemas/sitemap-image/1.1'
+    'xmlns:image': 'http://www.google.com/schemas/sitemap-image/1.1',
+    'xmlns:news': 'http://www.google.com/schemas/sitemap-news/0.9',
+    'xmlns:xhtml': 'http://www.w3.org/1999/xhtml',
+    'xmlns:mobile': 'http://www.google.com/schemas/sitemap-mobile/1.0',
+    'xmlns:video': 'http://www.google.com/schemas/sitemap-video/1.1'
   };
   // add newly formatted urls with lastmod and images
   sitemapJsonShell.urlset.url = [...xmlObj.pages, ...xmlObj.blog];
@@ -42,49 +47,55 @@ function writeSitemap(xmlObj) {
 // logic for generating sitemap data for blog posts
 function makeSitemapForBlogs() {
   return new Promise(resolve => {
-    const xml = posts.map(post => {
-      // get the post md file content
-      const postMd = fs.readFileSync(
-        path.resolve(__dirname, `content/posts/gaming/${post.item.id}.md`),
-        'utf8'
-      );
-      // parse the md file into html
-      const md = marked(postMd, {
-        breaks: true,
-        gfm: true,
-        smartypants: true
-      });
-      // load the md html into cheerio for jQuery style selecting of elements
-      const $ = cheerio.load(md);
-      return (
-        smUrls
-          // only generate for blog posts
-          .filter(item => {
-            return item.loc._text === `https://joeyg.me${post.url}`;
-          })
-          .map(item => {
-            // convert post created date string to JS date object
-            const postDate = new Date(post.item.created_at);
-            // convert date object to ISO string and assign to lastmod tag for url
-            item.lastmod = { _text: postDate.toISOString() };
-            // set the 'image:image' attribute to an array with the image data
-            item['image:image'] = Array.from($('img')).map(img => {
-              // format image url to have https:// if lacking
-              const src = img.attribs.src.startsWith('/')
-                ? `https:${img.attribs.src}`
-                : img.attribs.src;
-              // assign image:loc
-              const imageTag = { 'image:loc': { _text: src } };
-              if (img.attribs.alt) {
-                // if image has alt text assign it to be image:title
-                imageTag['image:title'] = img.attribs.alt;
-              }
-              return imageTag;
-            });
-            return item;
-          })[0]
-      );
-    });
+    const keys = Object.keys(posts);
+    const xml = [].concat.apply(
+      [],
+      keys.map(key => {
+        return posts[key].map(post => {
+          // get the post md file content
+          const postMd = fs.readFileSync(
+            path.resolve(__dirname, `content/posts/${key}/${post.item.id}.md`),
+            'utf8'
+          );
+          // parse the md file into html
+          const md = marked(postMd, {
+            breaks: true,
+            gfm: true,
+            smartypants: true
+          });
+          // load the md html into cheerio for jQuery style selecting of elements
+          const $ = cheerio.load(md);
+          return (
+            smUrls
+              // only generate for blog posts
+              .filter(item => {
+                return item.loc._text === `https://joeyg.me${post.url}`;
+              })
+              .map(item => {
+                // convert post created date string to JS date object
+                const postDate = new Date(post.item.created_at);
+                // convert date object to ISO string and assign to lastmod tag for url
+                item.lastmod = { _text: postDate.toISOString() };
+                // set the 'image:image' attribute to an array with the image data
+                item['image:image'] = Array.from($('img')).map(img => {
+                  // format image url to have https:// if lacking
+                  const src = img.attribs.src.startsWith('/')
+                    ? `https:${img.attribs.src}`
+                    : img.attribs.src;
+                  // assign image:loc
+                  const imageTag = { 'image:loc': { _text: src } };
+                  if (img.attribs.alt) {
+                    // if image has alt text assign it to be image:title
+                    imageTag['image:title'] = img.attribs.alt;
+                  }
+                  return imageTag;
+                });
+                return item;
+              })[0]
+          );
+        });
+      })
+    );
     resolve(xml);
   });
 }
