@@ -79,7 +79,7 @@ function makeSitemapForBlogs() {
                 item['image:image'] = Array.from($('img')).map(img => {
                   // format image url to have https:// if lacking
                   const src = img.attribs.src.startsWith('/')
-                    ? `https:${img.attribs.src}`
+                    ? (img.attribs.src.startsWith('/_nuxt') ? `https://joeyg.me${img.attribs.src}` : `https:${img.attribs.src}`)
                     : img.attribs.src;
                   // assign image:loc
                   const imageTag = { 'image:loc': { _text: src } };
@@ -173,7 +173,7 @@ function makeSitemapForPages() {
         .filter(img => !img.attribs.src.startsWith('data'))
         .map(img => {
           const src = img.attribs.src.startsWith('/')
-            ? `https:/${img.attribs.src}`
+            ? (img.attribs.src.startsWith('/_nuxt') ? `https://joeyg.me${img.attribs.src}` : `https:${img.attribs.src}`)
             : img.attribs.src;
           const imageTag = { 'image:loc': { _text: src } };
           if (img.attribs.alt) {
@@ -192,7 +192,7 @@ function makeSitemapForPages() {
 }
 
 // self invoking function
-(function() {
+(function () {
   // hoist here because sitemap.xml doesn't exist on load but will on execute
   sitemapXml = fs.readFileSync(path.resolve(__dirname, 'dist/sitemap.xml'), 'utf8');
   sitemapJson = convert.xml2js(sitemapXml, { compact: true, spaces: 2 });
