@@ -4,9 +4,22 @@ import gaming from '~/content/directory/gaming';
 export const state = () => ({
   state: {
     posts: [],
-    post: {}
+    post: {},
+    mobileNav: false
   }
 });
+
+export const getters = {
+  // getNav(state) {
+  //   console.log('this.state', state);
+  //   return state.mobileNav;
+  // }
+  getNav: state => state.mobileNav
+};
+
+export const setters = {
+  resetNav: state => (state.mobileNav = false)
+};
 
 export const mutations = {
   updatePosts(state, { posts }) {
@@ -14,6 +27,10 @@ export const mutations = {
   },
   updatePost(state, { post }) {
     state.post = post;
+  },
+  toggleMobileNav(state) {
+    console.log('toggleNav', state);
+    state.mobileNav = !state.mobileNav;
   }
 };
 

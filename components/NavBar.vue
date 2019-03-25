@@ -21,8 +21,9 @@
       <v-spacer></v-spacer>
       <img
         :src="mobileButton"
-        @click.stop="drawer = !drawer"
+        @click.stop="openMobileNav()"
         class="pacman-cherries hidden-md-and-up"
+        :class="{'scrolled': scrolled}"
       >
       <v-toolbar-items class="nav__items hidden-sm-and-down" v-if="isMounted">
         <div v-for="(link, index) in links" :key="link.title" class="nav-items__link-wrapper">
@@ -54,37 +55,10 @@
               :src="((fullPath === '/blog') ? pellets.mario : (fullPath === '/about' ? pellets.bond : pellets.pacman))"
               :class="{'scrolled': scrolled}"
             >
-            <!-- <img :src="((fullPath === '/blog') ? pellets.mario : pellets.pacman)"> -->
-            <!-- <img src="~/assets/images/navbar/power-pellet.png" alt="Pacman power pellet"> -->
           </div>
         </div>
       </v-toolbar-items>
     </v-toolbar>
-    <v-navigation-drawer v-model="drawer" absolute temporary class="mobile-nav">
-      <div class="mobile-nav__title">
-        <img
-          class="nav__brand--image"
-          src="~/assets/images/navbar/JG.png"
-          alt="JG for Joey Gauthier in the Sega font"
-        >
-      </div>
-      <v-list>
-        <v-list-tile v-for="link in links" :key="link.title" class="mobile-nav__link-wrapper">
-          <img :src="link.icon" alt>
-          <nuxt-link :to="link.to" class="nav-link">
-            <label class="nav-link__tile">
-              <div class="nav-link__tile--text-wrapper">
-                <div class="nav-link__tile--selected" v-if="currentSelectedRoute === link.to"></div>
-                <div
-                  class="nav-link__tile--text"
-                  :class="{'current': currentSelectedRoute === link.to}"
-                >{{link.title}}</div>
-              </div>
-            </label>
-          </nuxt-link>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
   </div>
 </template>
 
@@ -151,10 +125,16 @@ export default {
     this.isMounted = true;
   },
   methods: {
+    openMobileNav() {
+      this.drawer = !this.drawer;
+      this.$store.commit('toggleMobileNav');
+    },
     handleScroll() {
       this.scrolled = window.scrollY > 0;
     },
     handleRouteChange(path) {
+      this.drawer = false;
+      // this.$store.setters.resetNav();
       this.fullPath = path;
       if (path === '/blog') {
         this.jgLogo = this.jgLogos.mario;
@@ -223,11 +203,11 @@ $bond-dossier: rgb(209, 210, 165);
   align-items: center;
   justify-content: center;
   background-color: #000;
-  transition: all 0.4s ease-in-out;
+  transition: height 0.6s ease-out;
+  transition: border 0.4s linear 0.2s;
   &.scrolled {
     height: 3.5rem;
     border: none;
-    border-bottom: 2px solid $pacman-purple;
   }
   &.mario-wrapper {
     border: none;
@@ -244,7 +224,7 @@ $bond-dossier: rgb(209, 210, 165);
     border-radius: 4px;
     background-color: #000 !important;
     background: #000;
-    transition: all 0.4s ease-in-out;
+    transition: all 0.6s ease-out;
     &.scrolled {
       height: 3.5rem !important;
       border: none;
@@ -268,6 +248,9 @@ $bond-dossier: rgb(209, 210, 165);
       max-height: 5rem;
       width: auto;
       z-index: 4;
+      &.scrolled {
+        height: 3.5rem;
+      }
     }
     .v-toolbar__content {
       height: 6rem !important;
@@ -277,7 +260,7 @@ $bond-dossier: rgb(209, 210, 165);
         height: 5rem;
         width: 7rem;
         animation: 0.5s ease-out 0s 1 fade-in;
-        transition: all 0.4s ease-in-out;
+        transition: all 0.6s ease-out;
         &.scrolled {
           height: 2.5rem;
           width: 3.5rem;
@@ -296,7 +279,7 @@ $bond-dossier: rgb(209, 210, 165);
           display: flex;
           align-items: center;
           img {
-            transition: all 0.4s ease-in-out;
+            transition: all 0.6s ease-out;
             width: 1rem;
             height: 1rem;
             margin-right: 1rem;
@@ -325,7 +308,7 @@ $bond-dossier: rgb(209, 210, 165);
           img {
             height: 3rem;
             width: 3rem;
-            transition: all 0.4s ease-in-out;
+            transition: all 0.6s ease-out;
             &.scrolled {
               height: 0;
               width: 0;
@@ -354,7 +337,7 @@ $bond-dossier: rgb(209, 210, 165);
               }
               .nav-link__tile--text {
                 font-family: $game-font;
-                transition: all 0.4s ease-in-out;
+                transition: all 0.6s ease-out;
                 &.current {
                   color: $light;
                 }
@@ -383,98 +366,6 @@ $bond-dossier: rgb(209, 210, 165);
     }
     .mobile-hamburger {
       z-index: 4;
-    }
-  }
-  .mobile-nav {
-    z-index: 50;
-    .v-list.theme--dark {
-      background: transparent;
-      display: flex;
-      align-items: flex-start;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .mobile-nav__link-wrapper {
-      display: flex;
-      align-items: center;
-      margin-bottom: 1rem;
-      img {
-        width: 1.5rem;
-        height: 1.5rem;
-      }
-    }
-    .nav-link {
-      z-index: 3;
-      color: $white;
-      text-decoration: none;
-      margin-right: 1rem;
-      margin-bottom: -0.6rem;
-      .nav-link__tile {
-        margin-bottom: 0;
-      }
-      &:visited {
-        .nav-link__tile .nav-link__tile--icon,
-        .nav-link__tile .nav-link__tile--text {
-          color: $yellow;
-        }
-      }
-      &:active {
-        .nav-link__tile .nav-link__tile--icon,
-        .nav-link__tile .nav-link__tile--text {
-          color: $danger;
-        }
-      }
-      &:hover .nav-link__tile {
-        transform: scale(1.2);
-      }
-      .nav-link__tile {
-        transition: all 0.3s;
-        .nav-link__tile--text-wrapper {
-          display: flex;
-          position: relative;
-          .nav-link__tile--selected {
-            width: 0;
-            height: 0;
-            border-top: 0.65rem solid transparent;
-            border-bottom: 0.65rem solid transparent;
-            border-left: 0.75rem solid $light;
-            margin-right: 2rem;
-            position: absolute;
-            left: 1rem;
-            top: 0.3rem;
-          }
-          .nav-link__tile--text {
-            font-size: 1.5rem;
-            font-family: $game-font;
-            margin-left: 2rem;
-            &.current {
-              color: $light;
-            }
-          }
-          &:hover {
-            .nav-link__tile--selected {
-              animation: blink normal 1s infinite;
-            }
-          }
-        }
-      }
-    }
-  }
-  .mobile-nav {
-    padding: 1em;
-    border-right: 2px solid $pacman-purple;
-    .mobile-nav__title {
-      display: flex;
-      width: 100%;
-      align-items: center;
-      flex-direction: column;
-      padding: 1rem;
-      border: 2px solid $pacman-purple;
-      background-color: black;
-      img {
-        width: 7rem;
-        height: 5rem;
-      }
     }
   }
 }

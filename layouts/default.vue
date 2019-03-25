@@ -1,6 +1,7 @@
 <template>
   <v-app dark class="app-wrapper">
-    <NavBar class="nav"></NavBar>
+    <MobileNav :open="mobileNavOpen"></MobileNav>
+    <NavBar v-on:mobileNavOpen="mobileOpen" class="nav"></NavBar>
     <main id="main" role="main" class="main" :class="{'scrolled': scrolled}">
       <nuxt/>
     </main>
@@ -12,14 +13,17 @@
 
 <script>
 import NavBar from '~/components/NavBar.vue';
+import MobileNav from '~/components/mobileNav.vue';
 
 export default {
   components: {
-    NavBar
+    NavBar,
+    MobileNav
   },
   data() {
     return {
-      scrolled: false
+      scrolled: false,
+      mobileNavOpen: false
     };
   },
   computed: {
@@ -68,6 +72,9 @@ export default {
     }
   },
   methods: {
+    mobileOpen(drawer) {
+      this.mobileNavOpen = drawer;
+    },
     handleScroll() {
       this.scrolled = window.scrollY > 0;
     },

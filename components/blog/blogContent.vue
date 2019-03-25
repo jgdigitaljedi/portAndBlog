@@ -7,7 +7,12 @@
     <div class="blog-slug__related" v-if="post && post.related && post.related.length">
       <h2>Related Posts</h2>
       <div class="blog-slug__related--inner" :class="{'small': $vuetify.breakpoint.xs}">
-        <nuxt-link v-for="rel in related" :key="rel.id" :to="`/blog/${which}/${rel.slug}`" @click.native="relatedClicked(rel)">
+        <nuxt-link
+          v-for="rel in related"
+          :key="rel.id"
+          :to="`/blog/${which}/${rel.slug}`"
+          @click.native="relatedClicked(rel)"
+        >
           <v-card class="related-post">
             <v-card-title>{{rel.title}}</v-card-title>
             <v-img
@@ -140,6 +145,8 @@ export default {
     }
   }
   section {
+    position: relative;
+    width: 100%;
     a {
       color: $light;
       &:hover {
@@ -152,13 +159,23 @@ export default {
         color: $success;
       }
     }
+    code {
+      width: auto;
+      max-width: 100%;
+      white-space: pre-wrap;
+    }
     pre,
     code {
       background-color: #002e3a;
       font-family: $code-font;
+      min-width: auto;
     }
     pre {
-      padding: 1em;
+      padding: 1rem;
+      overflow-x: scroll;
+      width: 100%;
+      max-width: 99%;
+      position: relative;
     }
     h1,
     h2,
