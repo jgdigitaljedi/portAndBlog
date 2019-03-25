@@ -103,7 +103,7 @@ export default {
   .main {
     padding-top: 7rem;
     background-color: #000;
-    transition: padding-top 0.6s ease-out;
+    transition: padding-top 0.4s ease-in 0.4s;
     &.scrolled {
       padding-top: 3.5rem;
     }

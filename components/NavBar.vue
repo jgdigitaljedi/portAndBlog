@@ -204,8 +204,7 @@ $bond-dossier: rgb(209, 210, 165);
   align-items: center;
   justify-content: center;
   background-color: #000;
-  transition: height 0.6s ease-out;
-  transition: border 0.4s linear 0.2s;
+  transition: all 0.4s ease-in 0.4s;
   &.scrolled {
     height: 3.5rem;
     border: none;
@@ -225,7 +224,7 @@ $bond-dossier: rgb(209, 210, 165);
     border-radius: 4px;
     background-color: #000 !important;
     background: #000;
-    transition: all 0.6s ease-out;
+    transition: height 0.4s ease-in 0.4s;
     &.scrolled {
       height: 3.5rem !important;
       border: none;
@@ -249,22 +248,26 @@ $bond-dossier: rgb(209, 210, 165);
       max-height: 5rem;
       width: auto;
       z-index: 4;
+      transition: height 0.4s ease-out;
       &.scrolled {
         height: 3.5rem;
       }
     }
     .v-toolbar__content {
       height: 6rem !important;
+      transition: height 0.4s ease-in 0.4s;
     }
     .nav__brand {
       .nav__brand--image {
         height: 5rem;
         width: 7rem;
         animation: 0.5s ease-out 0s 1 fade-in;
-        transition: all 0.6s ease-out;
+        transition: all 0.4s ease-out 0.8s;
         &.scrolled {
+          transition: all 0.4s ease-out;
           height: 2.5rem;
           width: 3.5rem;
+          margin-top: 0.3rem;
         }
       }
     }
@@ -280,11 +283,12 @@ $bond-dossier: rgb(209, 210, 165);
           display: flex;
           align-items: center;
           img {
-            transition: all 0.6s ease-out;
+            transition: all 0.4s ease-out 0.8s;
             width: 1rem;
             height: 1rem;
             margin-right: 1rem;
             &.scrolled {
+              transition: all 0.4s ease-out;
               height: 0;
               opacity: 0;
             }
@@ -309,8 +313,10 @@ $bond-dossier: rgb(209, 210, 165);
           img {
             height: 3rem;
             width: 3rem;
-            transition: all 0.6s ease-out;
+            opacity: 1;
+            transition: all 0.4s ease-out 0.8s;
             &.scrolled {
+              transition: all 0.4s ease-out;
               height: 0;
               width: 0;
               opacity: 0;
