@@ -162,7 +162,7 @@ export default {
       }
     }
     code {
-      width: 100%;
+      // width: 100%;
       white-space: pre-wrap;
     }
     pre,
