@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer v-model="navOpen" absolute temporary class="mobile-nav">
+  <v-navigation-drawer v-model="open" absolute temporary class="mobile-nav">
     <div class="mobile-nav__title">
       <img
         class="nav__brand--image"
@@ -13,10 +13,10 @@
         <nuxt-link :to="link.to" class="nav-link">
           <label class="nav-link__tile">
             <div class="nav-link__tile--text-wrapper">
-              <div class="nav-link__tile--selected" v-if="open.route === link.to"></div>
+              <div class="nav-link__tile--selected" v-if="currentSelectedRoute === link.to"></div>
               <div
                 class="nav-link__tile--text"
-                :class="{'current': open.route === link.to}"
+                :class="{'current': currentSelectedRoute === link.to}"
               >{{link.title}}</div>
             </div>
           </label>
@@ -31,14 +31,13 @@ export default {
   name: 'MobileNav',
   computed: {
     navOpen() {
-      console.log('this.$store.state.mobileNav', this.$store);
-      // return this.$store.state.mobileNav;
-      return this.$store.getters.getNav;
+      return this.$store.state.mobileNav;
     }
   },
   data() {
     return {
       open: false,
+      currentSelectedRoute: null,
       links: [
         {
           title: 'Home',
@@ -59,10 +58,30 @@ export default {
       ]
     };
   },
+  methods: {
+    handleRouteChange(path) {
+      if (path.indexOf('/blog') >= 0) {
+        this.currentSelectedRoute = '/blog';
+      } else {
+        this.currentSelectedRoute = path;
+      }
+    }
+  },
   watch: {
     navOpen(newState) {
-      console.log('newState', newState);
+      if (this.$route.path.indexOf('/blog') >= 0) {
+        this.currentSelectedRoute = '/blog';
+      } else {
+        this.currentSelectedRoute = this.$route.path;
+      }
       this.open = newState;
+    },
+    '$route.path': {
+      handler(path) {
+        this.handleRouteChange(path);
+      },
+      deep: true,
+      immediate: true
     }
   }
 };

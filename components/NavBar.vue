@@ -120,6 +120,7 @@ export default {
     if (process.browser) {
       window.addEventListener('scroll', this.handleScroll);
     }
+    this.$store.dispatch('resetNav');
   },
   mounted() {
     this.isMounted = true;
@@ -134,7 +135,7 @@ export default {
     },
     handleRouteChange(path) {
       this.drawer = false;
-      // this.$store.setters.resetNav();
+      this.$store.commit('navReset');
       this.fullPath = path;
       if (path === '/blog') {
         this.jgLogo = this.jgLogos.mario;

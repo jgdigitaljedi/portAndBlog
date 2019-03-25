@@ -1,7 +1,7 @@
 <template>
   <v-app dark class="app-wrapper">
-    <MobileNav :open="mobileNavOpen"></MobileNav>
-    <NavBar v-on:mobileNavOpen="mobileOpen" class="nav"></NavBar>
+    <MobileNav></MobileNav>
+    <NavBar class="nav"></NavBar>
     <main id="main" role="main" class="main" :class="{'scrolled': scrolled}">
       <nuxt/>
     </main>
@@ -22,8 +22,7 @@ export default {
   },
   data() {
     return {
-      scrolled: false,
-      mobileNavOpen: false
+      scrolled: false
     };
   },
   computed: {
@@ -72,9 +71,6 @@ export default {
     }
   },
   methods: {
-    mobileOpen(drawer) {
-      this.mobileNavOpen = drawer;
-    },
     handleScroll() {
       this.scrolled = window.scrollY > 0;
     },

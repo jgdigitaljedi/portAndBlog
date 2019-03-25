@@ -81,6 +81,7 @@ export default {
 @import '~/assets/style/shadows.scss';
 .blog-slug {
   max-width: 1440px;
+  width: 100%;
   .blog-slug__related {
     width: 100%;
     padding: 2rem 0 0;
@@ -130,6 +131,7 @@ export default {
   }
   .markdown-content {
     padding: 1rem;
+    position: relative;
     .image-container {
       width: 100%;
       text-align: center;
@@ -160,8 +162,7 @@ export default {
       }
     }
     code {
-      width: auto;
-      max-width: 100%;
+      width: 100%;
       white-space: pre-wrap;
     }
     pre,
@@ -169,12 +170,12 @@ export default {
       background-color: #002e3a;
       font-family: $code-font;
       min-width: auto;
+      box-shadow: none;
     }
     pre {
       padding: 1rem;
       overflow-x: scroll;
       width: 100%;
-      max-width: 99%;
       position: relative;
     }
     h1,
