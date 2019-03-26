@@ -245,11 +245,12 @@ $bond-dossier: rgb(209, 210, 165);
       box-shadow: none;
     }
     .pacman-cherries {
-      max-height: 5rem;
+      height: 5rem;
       width: auto;
       z-index: 4;
-      transition: height 0.4s ease-out;
+      transition: all 0.4s ease-out 0.8s;
       &.scrolled {
+        transition: height 0.4s ease-out;
         height: 3.5rem;
       }
     }
