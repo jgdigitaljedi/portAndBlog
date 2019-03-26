@@ -7,14 +7,17 @@
     <div class="contact__actual">
       <h3>CONTACT INFO</h3>
       <ul>
-        <li>LAST KNOWN ADDRESS:
+        <li>
+          LAST KNOWN ADDRESS:
           <div class="redacted" style="width: 25rem; max-width: 100%;"></div>
         </li>
-        <li>PHONE #:
+        <li>
+          PHONE #:
           <div class="redacted" style="width: 11rem;  max-width: 100%;"></div>
         </li>
         <li>EMAIL: joey@joeyg.me</li>
-        <li>SPOUSE:
+        <li>
+          SPOUSE:
           <div class="redacted" style="width: 15rem;  max-width: 100%;"></div>
         </li>
       </ul>
@@ -24,7 +27,11 @@
       <div class="social-wrapper" :class="{'small': $vuetify.breakpoint.xs}">
         <div class="left">
           <div class="twitter social-link">
-            <a href="https://twitter.com/jgdigitaljedi" target="_blank" @click="socialLinkClick('twitter')">
+            <a
+              href="https://twitter.com/jgdigitaljedi"
+              target="_blank"
+              @click="socialLinkClick('twitter')"
+            >
               <v-icon>icon-twitter</v-icon>Twitter
             </a>
           </div>
@@ -38,19 +45,31 @@
             </a>
           </div>
           <div class="github social-link">
-            <a href="https://github.com/jgdigitaljedi" target="_blank" @click="socialLinkClick('github')">
+            <a
+              href="https://github.com/jgdigitaljedi"
+              target="_blank"
+              @click="socialLinkClick('github')"
+            >
               <v-icon>icon-github</v-icon>GitHub
             </a>
           </div>
         </div>
         <div class="right">
           <div class="linkedin social-link">
-            <a href="https://www.linkedin.com/in/paulgauthier81" target="_blank" @click="socialLinkClick('linkedIn')">
+            <a
+              href="https://www.linkedin.com/in/paulgauthier81"
+              target="_blank"
+              @click="socialLinkClick('linkedIn')"
+            >
               <v-icon>icon-linkedin2</v-icon>LinkedIn
             </a>
           </div>
           <div class="lastfm social-link">
-            <a href="https://www.last.fm/user/joeygstrings" target="_blank" @click="socialLinkClick('lastFm')">
+            <a
+              href="https://www.last.fm/user/joeygstrings"
+              target="_blank"
+              @click="socialLinkClick('lastFm')"
+            >
               <v-icon>icon-lastfm</v-icon>Last.fm
             </a>
           </div>
@@ -66,7 +85,7 @@ export default {
   methods: {
     socialLinkClick(which) {
       console.log('social', which);
-      this.$ga.event('aboutSocialLink', 'click', which)
+      this.$ga.event('aboutSocialLink', 'click', which);
     }
   }
 };

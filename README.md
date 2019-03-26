@@ -31,8 +31,7 @@ Right now things look a little on the rough side because this is still in active
 
 - STYLE! It's kind of chaotic and all over the place. Looks like a toddler designed it. Time to make myself sit down and plan out margins, refine colors, tweak style, etc.
   - I feel like the blog landing, blog section pages, and home screen are ok...for now.
-  - The nav is still ugly. The theme switching is neat, but it needs work (especially the nav icons). Also I want to make it shrink when you scroll down while reading a blog post.
-  - The blog posts themselves are plain. I need inspiration here as I've played with some ideas and hated them all.
+  - The nav is still ugly. The theme switching is neat, but it needs work (especially the nav icons).
   - social buttons
 
 ## OVERALL TODO

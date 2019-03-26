@@ -30,7 +30,13 @@
 <script>
 export default {
   name: 'ShareButtons',
-  props: ['url', 'title', 'desc', 'quote', 'hashtags', 'row']
+  props: ['url', 'title', 'desc', 'quote', 'hashtags', 'row'],
+  methods: {
+    trackSocial(which) {
+      console.log('which', which);
+      this.$ga.event('socialShare', 'click', which);
+    }
+  }
 };
 </script>
 
