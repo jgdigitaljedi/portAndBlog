@@ -125,3 +125,9 @@
 .icon-eye-blocked:before {
   content: '\e9d1';
 }
+.icon-facebook2:before {
+  content: '\ea91';
+}
+.icon-reddit:before {
+  content: '\eac6';
+}

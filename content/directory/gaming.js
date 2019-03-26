@@ -14,6 +14,7 @@ export default () => [
     meta: {
       keywords:
         'gaming,nes,retro games,genesis,dreamcast,retro game collecting,vintage video games,retro games near me,gaming blog',
+      hashtags: 'retrogames,RETROGAMING',
       description: `Story of how Joey Gauthier got into retro games, retro game collecting, and video games in general.`
     }
   },
@@ -31,6 +32,7 @@ export default () => [
     meta: {
       keywords:
         'gaming,nes,retro games,genesis,dreamcast,retro game collecting,vintage video games,upscaler,RGB,HD TV,4k',
+      hashtags: 'retrogames,RETROGAMING',
       description: `Hooking up retro game consoles to a HD or 4K TV using switchers & upscalers.`
     },
     related: [7, 8]
@@ -49,6 +51,7 @@ export default () => [
     meta: {
       keywords:
         'gaming,nes,retro games,retro games near me,retro collecting,Game Stop,Goodwill,Game Over Video Games,retro game stores,pricecharting',
+      hashtags: 'retrogames,RETROGAMING',
       description: `Getting new retro games from retro game stores, eBay, garage sales, flea markets, & more.`
     },
     related: [6, 8]
@@ -67,6 +70,7 @@ export default () => [
     meta: {
       keywords:
         'gaming,nes,retro games,retro games near me,retro collecting,universal game cases,ds cases,game storage,cover project,umd cases,dvd cases,cd cases',
+      hashtags: 'retrogames,RETROGAMING',
       description: `How to store retro games, use universal game cases, print retro game covers, & more.`
     },
     related: [6, 7]
@@ -85,6 +89,7 @@ export default () => [
     meta: {
       keywords:
         'google,stadia,google stadia,cloud-based gaming,game streaming service,stadia controller,mobile gaming,project stream',
+      hashtags: 'Stadia,Google',
       description: `What we now know about Google's Stadia gaming service leaves me with a mix of emotions.`
     }
   }

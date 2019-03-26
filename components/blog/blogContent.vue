@@ -1,6 +1,5 @@
 <template>
   <div class="blog-slug">
-    <div class="blog-image__container"></div>
     <v-card class="markdown-content">
       <article v-html="postContent"></article>
     </v-card>
@@ -36,12 +35,6 @@ export default {
       window.openImage = src => {
         this.openImage(src);
       };
-    }
-    if (this.which) {
-      const whichPosts = this.posts[this.which];
-      if (whichPosts && this.post.related) {
-        this.related = whichPosts.filter(post => this.post.related.indexOf(post.id) >= 0);
-      }
     }
   },
   methods: {

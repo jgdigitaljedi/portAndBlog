@@ -22,6 +22,36 @@
             </div>
           </div>
           <div class="post__wrapper--extras__section">
+            <div class="extra-header">Share Post</div>
+            <div class="extra-content" v-if="hashtags">
+              <social-sharing
+                :url="`https://joeyg.me/blog/${which}/${post.slug}`"
+                :title="post.title"
+                :description="post.intro"
+                :quote="post.tag_line"
+                :hashtags="hashtags"
+                twitter-user="JGDigitalJedi"
+                class="extras-social"
+                inline-template
+              >
+                <div>
+                  <network network="twitter" class="twit">
+                    <i class="icon-twitter"></i>Twitter
+                  </network>
+                  <network network="linkedin" class="linked">
+                    <i class="icon-linkedin2"></i>LinkedIn
+                  </network>
+                  <network network="facebook" class="fb">
+                    <i class="icon-facebook2"></i> Facebook
+                  </network>
+                  <network network="reddit" class="reddit">
+                    <i class="icon-reddit"></i> Reddit
+                  </network>
+                </div>
+              </social-sharing>
+            </div>
+          </div>
+          <div class="post__wrapper--extras__section">
             <div class="extra-header">Related Posts</div>
             <div class="extra-content">
               <nuxt-link
@@ -62,11 +92,13 @@ export default {
       isMounted: false,
       sectionAnchors: [],
       posts: this.$store.state.posts,
-      related: []
+      related: [],
+      hashtags: null
     };
   },
   mounted() {
     this.isMounted = true;
+    this.getHashtags();
     if (this.which && this.posts) {
       const whichPosts = this.posts[this.which];
       if (whichPosts && this.post.related) {
@@ -76,10 +108,15 @@ export default {
     if (process.browser) {
       setTimeout(() => {
         this.getAnchorsFromPost();
-      });
+      }, 500);
     }
   },
   methods: {
+    getHashtags() {
+      if (this.post.meta.hashtags) {
+        this.hashtags = this.post.meta.hashtags;
+      }
+    },
     relatedClicked(related) {
       this.$ga.event('related link', 'click', this.related.title, this.post.id);
     },
@@ -103,7 +140,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import '~/assets/style/theme.scss';
 .post {
   padding: 2rem;
@@ -136,7 +173,7 @@ export default {
     }
     .post__wrapper--extras {
       .post__wrapper--extras__section {
-        margin-top: 2.5rem;
+        margin-bottom: 2.5rem;
         position: relative;
         min-width: 350px;
         max-width: 500px;
@@ -155,6 +192,12 @@ export default {
           background-color: rgba(255, 255, 255, 0.1);
           width: 95%;
           padding: 1rem;
+          div a {
+            color: #fafafa;
+            &:hover {
+              color: $light;
+            }
+          }
           .related-post-not-first {
             margin-top: 2rem;
           }
@@ -165,6 +208,30 @@ export default {
             color: #fafafa;
             white-space: normal;
             width: auto;
+          }
+          .extras-social {
+            display: flex;
+            flex-direction: column;
+            span {
+              margin: 0.5rem 0;
+              cursor: url('/images/cursors/cursor-click.png'), auto !important;
+              i {
+                margin-right: 1rem;
+                font-size: 1.5rem;
+              }
+            }
+            .twit {
+              color: #00aced;
+            }
+            .linked {
+              color: #0077b5;
+            }
+            .fb {
+              color: #3c5a99;
+            }
+            .reddit {
+              color: #ff4500;
+            }
           }
         }
       }
