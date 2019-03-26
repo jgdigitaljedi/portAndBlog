@@ -11,9 +11,7 @@ export default {
     let post = this.post;
     return {
       title: post.title,
-      link: [
-        { rel: 'canonical', href: `https://joeyg.me/blog/gaming/${post.slug}` }
-      ],
+      link: [{ rel: 'canonical', href: `https://joeyg.me/blog/gaming/${post.slug}` }],
       meta: [
         {
           hid: 'description',

@@ -4,26 +4,6 @@
     <v-card class="markdown-content">
       <article v-html="postContent"></article>
     </v-card>
-    <div class="blog-slug__related" v-if="post && post.related && post.related.length">
-      <h2>Related Posts</h2>
-      <div class="blog-slug__related--inner" :class="{'small': $vuetify.breakpoint.xs}">
-        <nuxt-link
-          v-for="rel in related"
-          :key="rel.id"
-          :to="`/blog/${which}/${rel.slug}`"
-          @click.native="relatedClicked(rel)"
-        >
-          <v-card class="related-post">
-            <v-card-title>{{rel.title}}</v-card-title>
-            <v-img
-              class="related-image"
-              :src="rel.image ? rel.image : `https://res.cloudinary.com/https-joeyg-me/image/upload/v1552518203/me_8bit_scanlines.jpg`"
-              :alt="rel.alt ? rel.alt : '8bit style photo of Joey Gauthier with scanlines'"
-            ></v-img>
-          </v-card>
-        </nuxt-link>
-      </div>
-    </div>
     <v-dialog v-model="imageDialog" content-class="image-dialog" style="min-width: 95vw;">
       <div class="image-dialog__container">
         <v-btn flat @click="imageDialog = false" class="dismiss">
@@ -68,9 +48,6 @@ export default {
     openImage(src) {
       this.imageSrc = src;
       this.imageDialog = true;
-    },
-    relatedClicked(related) {
-      this.$ga.event('related link', 'click', this.related.title, this.post.id);
     }
   }
 };
@@ -80,8 +57,10 @@ export default {
 @import '~/assets/style/theme.scss';
 @import '~/assets/style/shadows.scss';
 .blog-slug {
-  max-width: 1440px;
-  width: 100%;
+  // max-width: 1440px;
+  max-width: 100%;
+  width: auto;
+  position: relative;
   .blog-slug__related {
     width: 100%;
     padding: 2rem 0 0;
