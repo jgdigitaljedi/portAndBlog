@@ -5,10 +5,13 @@
       class="post"
       :class="{'medium': $vuetify.breakpoint.md && isMounted, 'small': $vuetify.breakpoint.smAndDown && isMounted, 'gaming': which === 'gaming', 'coding': which === 'coding'}"
     >
-      <div class="post__content-wrapper">
+      <div class="post__content-wrapper" :class="{'small': $vuetify.breakpoint.smAndDown}">
         <blogContent class="post-content" :post="post" :postContent="postContent" :which="which"></blogContent>
         <section class="post__wrapper--extras">
-          <div class="post__wrapper--extras__section">
+          <div
+            class="post__wrapper--extras__section hidden-sm-and-down"
+            v-if="sectionAnchors && sectionAnchors.length"
+          >
             <div class="extra-header">Jump To...</div>
             <div class="extra-content">
               <div
@@ -21,37 +24,23 @@
               </div>
             </div>
           </div>
-          <div class="post__wrapper--extras__section">
+          <div class="post__wrapper--extras__section" v-if="post">
             <div class="extra-header">Share Post</div>
-            <div class="extra-content" v-if="hashtags">
-              <social-sharing
-                :url="`https://joeyg.me/blog/${which}/${post.slug}`"
+            <div class="extra-content">
+              <SocialButtons
+                :url="`blog/${which}/${post.slug}`"
                 :title="post.title"
-                :description="post.intro"
+                :desc="post.intro"
                 :quote="post.tag_line"
                 :hashtags="hashtags"
-                twitter-user="JGDigitalJedi"
-                class="extras-social"
-                inline-template
-              >
-                <div>
-                  <network network="twitter" class="twit">
-                    <i class="icon-twitter"></i>Twitter
-                  </network>
-                  <network network="linkedin" class="linked">
-                    <i class="icon-linkedin2"></i>LinkedIn
-                  </network>
-                  <network network="facebook" class="fb">
-                    <i class="icon-facebook2"></i> Facebook
-                  </network>
-                  <network network="reddit" class="reddit">
-                    <i class="icon-reddit"></i> Reddit
-                  </network>
-                </div>
-              </social-sharing>
+                :row="$vuetify.breakpoint.smAndDown && isMounted"
+              ></SocialButtons>
             </div>
           </div>
-          <div class="post__wrapper--extras__section">
+          <div
+            class="post__wrapper--extras__section related-boxes"
+            v-if="related && related.length"
+          >
             <div class="extra-header">Related Posts</div>
             <div class="extra-content">
               <nuxt-link
@@ -82,10 +71,11 @@
 
 <script>
 import ScrollToTop from '~/components/ScrollToTop.vue';
+import SocialButtons from '~/components/Share.vue';
 
 export default {
   name: 'blogPostSlug',
-  components: { ScrollToTop },
+  components: { ScrollToTop, SocialButtons },
   props: ['post', 'which', 'postContent'],
   data() {
     return {
@@ -93,18 +83,20 @@ export default {
       sectionAnchors: [],
       posts: this.$store.state.posts,
       related: [],
-      hashtags: null
+      hashtags: ''
     };
   },
-  mounted() {
-    this.isMounted = true;
-    this.getHashtags();
+  created() {
     if (this.which && this.posts) {
       const whichPosts = this.posts[this.which];
       if (whichPosts && this.post.related) {
         this.related = whichPosts.filter(post => this.post.related.indexOf(post.id) >= 0);
       }
     }
+  },
+  mounted() {
+    this.isMounted = true;
+    this.getHashtags();
     if (process.browser) {
       setTimeout(() => {
         this.getAnchorsFromPost();
@@ -140,7 +132,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '~/assets/style/theme.scss';
 .post {
   padding: 2rem;
@@ -165,7 +157,7 @@ export default {
   }
   .post__content-wrapper {
     display: flex;
-    // justify-content: space-around;
+    justify-content: space-around;
     width: 100%;
     .post-content {
       max-width: calc(100% - 4rem - 350px);
@@ -184,9 +176,10 @@ export default {
         align-items: flex-end;
         .extra-header {
           padding: 0.5rem 1rem;
-          background-color: #444;
+          background-color: $pacman-purple;
           color: #fff;
           width: 100%;
+          font-weight: bold;
         }
         .extra-content {
           background-color: rgba(255, 255, 255, 0.1);
@@ -196,6 +189,14 @@ export default {
             color: #fafafa;
             &:hover {
               color: $light;
+            }
+          }
+          .related-post {
+            height: 15rem;
+            overflow: hidden;
+            .related-image {
+              height: 100%;
+              width: 100%;
             }
           }
           .related-post-not-first {
@@ -209,28 +210,31 @@ export default {
             white-space: normal;
             width: auto;
           }
-          .extras-social {
+        }
+      }
+    }
+    &.small {
+      flex-direction: column;
+      .post-content {
+        max-width: 100%;
+        width: auto;
+      }
+      .post__wrapper--extras {
+        align-items: center;
+        .post__wrapper--extras__section {
+          margin: 1.5rem 1rem;
+          max-width: 100%;
+          width: calc(100% - 2rem);
+          .extra-content {
+            width: 100%;
             display: flex;
-            flex-direction: column;
-            span {
-              margin: 0.5rem 0;
-              cursor: url('/images/cursors/cursor-click.png'), auto !important;
-              i {
-                margin-right: 1rem;
-                font-size: 1.5rem;
-              }
+            justify-content: space-around;
+            flex-wrap: wrap;
+            .related-post {
+              margin-top: 1rem;
             }
-            .twit {
-              color: #00aced;
-            }
-            .linked {
-              color: #0077b5;
-            }
-            .fb {
-              color: #3c5a99;
-            }
-            .reddit {
-              color: #ff4500;
+            .related-post-not-first {
+              margin-top: 1rem;
             }
           }
         }
@@ -238,7 +242,9 @@ export default {
     }
   }
   .comments {
-    width: 100%;
+    width: calc(100% - 2rem);
+    max-width: 1440px;
+    margin: 0 1rem;
   }
 }
 </style>
