@@ -7,7 +7,9 @@
       :class="{'medium': $vuetify.breakpoint.md && isMounted, 'small': $vuetify.breakpoint.smAndDown && isMounted, 'gaming': which === 'gaming', 'coding': which === 'coding'}"
     >
       <div class="post__content-wrapper" :class="{'small': $vuetify.breakpoint.smAndDown}">
-        <blogContent class="post-content" :post="post" :postContent="postContent" :which="which"></blogContent>
+        <div class="post-content">
+          <blogContent :post="post" :postContent="postContent" :which="which"></blogContent>
+        </div>
         <section class="post__wrapper--extras">
           <div
             class="post__wrapper--extras__section hidden-sm-and-down"
@@ -135,6 +137,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '~/assets/style/theme.scss';
+@import '~/assets/style/animations.scss';
 .post {
   padding: 2rem;
   display: flex;
@@ -160,16 +163,25 @@ export default {
     display: flex;
     justify-content: space-around;
     width: 100%;
+    // flex-grow: 1;
+    transition: flex-grow 1s linear;
     .post-content {
-      max-width: calc(100% - 4rem - 350px);
-      width: auto;
+      align-self: flex-start;
+      animation: 2s ease-in-out 0s 1 hideShow;
+      // width: auto;
+      display: block;
+      // transition: max-width 0.1s ease-out;
+      max-width: calc(100% - 4rem - 350px) !important;
     }
     .post__wrapper--extras {
+      min-width: 350px !important;
+      max-width: 500px;
       .post__wrapper--extras__section {
+        animation: 1s ease-out 0.5s 1 slideInFromRight;
         margin-bottom: 2.5rem;
         position: relative;
-        min-width: 350px;
-        max-width: 500px;
+        // min-width: 350px;
+        // max-width: 500px;
         width: auto;
         margin-left: 4rem;
         display: flex;
@@ -217,7 +229,7 @@ export default {
     &.small {
       flex-direction: column;
       .post-content {
-        max-width: 100%;
+        max-width: 100% !important;
         width: auto;
       }
       .post__wrapper--extras {
@@ -246,6 +258,7 @@ export default {
     width: calc(100% - 2rem);
     max-width: 1440px;
     margin: 0 1rem;
+    // animation: 1s 2s 1 hideShow;
   }
 }
 </style>

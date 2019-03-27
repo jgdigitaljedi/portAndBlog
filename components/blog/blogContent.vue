@@ -51,47 +51,21 @@ export default {
 @import '~/assets/style/shadows.scss';
 .blog-slug {
   // max-width: 1440px;
-  max-width: 100%;
+  // max-width: 100%;
   width: auto;
   position: relative;
-  .blog-slug__related {
-    width: 100%;
-    padding: 2rem 0 0;
-    text-align: center;
-    .blog-slug__related--inner {
-      display: flex;
-      padding-top: 1rem;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      &.small {
-        flex-direction: column;
-        align-items: center;
-        .related-post {
-          margin-top: 1rem;
-        }
-      }
-      .related-post {
-        width: 20rem;
-        height: 15rem;
-        overflow: hidden;
-        background-color: lighten(#000, 15%);
-        border-radius: 1rem;
-        text-align: left;
-      }
-    }
-  }
   .blog-image__carousel {
     box-shadow: none;
   }
   .blog-image__container {
-    width: 100%;
+    // width: 100%;
     display: flex;
     justify-content: center;
     margin-bottom: 2em;
     .blog-image,
     .v-item--active {
       display: block;
-      width: 100%;
+      // width: 100%;
       height: auto;
       max-height: 500px;
       object-fit: scale-down;
@@ -103,9 +77,9 @@ export default {
   }
   .markdown-content {
     padding: 1rem;
-    position: relative;
+    // position: relative;
     .image-container {
-      width: 100%;
+      // width: 100%;
       text-align: center;
       margin: 1rem auto;
       img {
@@ -119,8 +93,8 @@ export default {
     }
   }
   section {
-    position: relative;
-    width: 100%;
+    // position: relative;
+    // width: 100%;
     a {
       color: $light;
       &:hover {
