@@ -15,14 +15,14 @@ export default {
       buttonViz: false
     };
   },
-  created() {
-    if (process.browser) {
-      window.addEventListener('scroll', this.showButton.bind(this));
+  computed: {
+    scrollPos() {
+      return this.$store.getters.getScroll;
     }
   },
   methods: {
     showButton(e) {
-      if (e.srcElement.scrollingElement.scrollTop >= 50) {
+      if (this.scrollPos >= 50) {
         this.show = true;
       } else {
         this.show = false;
@@ -35,6 +35,11 @@ export default {
           behavior: 'smooth'
         });
       }
+    }
+  },
+  watch: {
+    scrollPos(state) {
+      this.showButton();
     }
   }
 };

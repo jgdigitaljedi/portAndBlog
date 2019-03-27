@@ -124,13 +124,15 @@ export default {
   },
   created() {
     this.handleRouteChange(this.$route.path);
-    if (process.browser) {
-      window.addEventListener('scroll', this.handleScroll);
-    }
     this.$store.dispatch('resetNav');
   },
   mounted() {
     this.isMounted = true;
+  },
+  computed: {
+    scrollPos() {
+      return this.$store.getters.getScroll;
+    }
   },
   methods: {
     openMobileNav() {
@@ -138,7 +140,7 @@ export default {
       this.$store.commit('toggleMobileNav');
     },
     handleScroll() {
-      this.scrolled = window.scrollY > 0;
+      this.scrolled = this.scrollPos > 0;
     },
     handleRouteChange(path) {
       this.drawer = false;
@@ -169,6 +171,9 @@ export default {
       },
       deep: true,
       immediate: true
+    },
+    scrollPos(state) {
+      this.handleScroll();
     }
   }
 };
@@ -226,7 +231,7 @@ $bond-dossier: rgb(209, 210, 165);
   }
   .blog-scroll {
     position: absolute;
-    bottom: 0;
+    bottom: -4px;
     left: 0;
     z-index: 800;
   }
