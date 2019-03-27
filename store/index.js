@@ -2,15 +2,18 @@ import coding from '~/content/directory/coding';
 import gaming from '~/content/directory/gaming';
 
 export const state = () => ({
+  scrollPos: 0,
   state: {
     posts: [],
     post: {},
-    mobileNav: false
+    mobileNav: false,
+    scrollPos: 0
   }
 });
 
 export const getters = {
-  getNav: state => state.mobileNav
+  getNav: state => state.mobileNav,
+  getScroll: state => state.scrollPos
 };
 
 export const mutations = {
@@ -25,6 +28,9 @@ export const mutations = {
   },
   navReset(state) {
     state.mobileNav = false;
+  },
+  setScroll(state, scroll) {
+    state.scrollPos = scroll;
   }
 };
 
@@ -41,6 +47,6 @@ export const actions = {
     });
   },
   resetNav: state => {
-    state.state.mobileNav = false
+    state.state.mobileNav = false;
   }
 };

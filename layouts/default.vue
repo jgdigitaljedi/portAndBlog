@@ -73,6 +73,7 @@ export default {
   methods: {
     handleScroll() {
       this.scrolled = window.scrollY > 0;
+      this.$store.commit('setScroll', window.scrollY);
     },
     codeEntered() {
       // @TODO: write konami code easter egg

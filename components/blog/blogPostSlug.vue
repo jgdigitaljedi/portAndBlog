@@ -3,6 +3,7 @@
     <blogHeader :post="post" :which="which" class="post-header"></blogHeader>
     <div
       class="post"
+      v-if="post"
       :class="{'medium': $vuetify.breakpoint.md && isMounted, 'small': $vuetify.breakpoint.smAndDown && isMounted, 'gaming': which === 'gaming', 'coding': which === 'coding'}"
     >
       <div class="post__content-wrapper" :class="{'small': $vuetify.breakpoint.smAndDown}">
@@ -87,6 +88,7 @@ export default {
     };
   },
   created() {
+    this.getHashtags();
     if (this.which && this.posts) {
       const whichPosts = this.posts[this.which];
       if (whichPosts && this.post.related) {
@@ -96,7 +98,6 @@ export default {
   },
   mounted() {
     this.isMounted = true;
-    this.getHashtags();
     if (process.browser) {
       setTimeout(() => {
         this.getAnchorsFromPost();

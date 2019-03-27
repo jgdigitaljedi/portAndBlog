@@ -9,6 +9,7 @@
     class="social-buttons"
     :class="{'row': row}"
     inline-template
+    @open="trackSocial"
   >
     <div>
       <network network="twitter" class="twit">
@@ -32,9 +33,8 @@ export default {
   name: 'ShareButtons',
   props: ['url', 'title', 'desc', 'quote', 'hashtags', 'row'],
   methods: {
-    trackSocial(which) {
-      console.log('which', which);
-      this.$ga.event('socialShare', 'click', which);
+    trackSocial(which, url) {
+      this.$ga.event(`${which}Share`, 'click', url);
     }
   }
 };

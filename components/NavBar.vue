@@ -3,6 +3,10 @@
     class="nav-wrapper"
     :class="{'mario-wrapper': fullPath === '/blog', 'bond-wrapper': fullPath === '/about', 'scrolled': scrolled}"
   >
+    <BlogScrollProgress
+      v-if="currentSelectedRoute === '/blog' && fullPath !== '/blog/coding' && fullPath !== '/blog/gaming'"
+      class="blog-scroll"
+    ></BlogScrollProgress>
     <v-toolbar
       dark
       class="nav"
@@ -63,8 +67,11 @@
 </template>
 
 <script>
+import BlogScrollProgress from '~/components/blogScrollProgress.vue';
+
 export default {
   name: 'NavBar',
+  components: { BlogScrollProgress },
   data() {
     return {
       scrolled: false,
@@ -216,6 +223,12 @@ $bond-dossier: rgb(209, 210, 165);
   &.bond-wrapper {
     border: none;
     background-color: $bond-dossier;
+  }
+  .blog-scroll {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 800;
   }
   .nav {
     width: calc(100% - 1rem);
