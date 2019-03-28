@@ -45,6 +45,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '~/assets/style/theme.scss';
+@import '~/assets/style/animations.scss';
 .blog-header {
   // padding: 2rem 1rem;
   border-bottom: 2px solid $pacman-purple;
@@ -72,6 +73,8 @@ export default {
     font-style: italic;
     color: $light;
     margin: 2rem 1rem;
+    opacity: 0;
+    animation: 1s ease 1s normal forwards 1 hideShow;
     img.headshot {
       max-width: 10rem;
       width: auto;
@@ -87,6 +90,8 @@ export default {
     justify-content: center;
     position: relative;
     .blog-header__title-social {
+      opacity: 0;
+      animation: 1s ease 1s normal forwards 1 hideShow;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -100,12 +105,16 @@ export default {
         font-size: 3rem;
       }
       .blog-header__title-social--tag {
+        opacity: 0;
+        animation: 1s ease 1.5s normal forwards 1 hideShow;
         color: $light;
         font-style: italic;
         text-align: center;
       }
     }
     .blog-header__title-nav--nav {
+      opacity: 0;
+      animation: 1s ease 2s normal forwards 1 hideShow;
       display: flex;
       justify-content: center;
       .nav-button {

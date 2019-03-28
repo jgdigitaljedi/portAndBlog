@@ -50,7 +50,7 @@ export default {
 @import '~/assets/style/theme.scss';
 @import '~/assets/style/shadows.scss';
 .blog-slug {
-  // max-width: 1440px;
+  max-width: 1440px;
   // max-width: 100%;
   width: auto;
   position: relative;

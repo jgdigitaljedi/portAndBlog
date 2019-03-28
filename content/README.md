@@ -51,6 +51,7 @@ The entries are entered in either the 'coding' or 'gaming' js module in /directo
       hashtags: 'retrogames,RETROGAMING', // hashtags for Twitter and FB social sharing buttons
       description: `Hooking up retro game consoles to a HD or 4K TV using switchers & upscalers.` // description meta
     },
-    related: [7, 8] // array of ids corresponding to post ids that this post is related to
+    related: [7, 8], // array of ids corresponding to post ids that this post is related to
+    headers: ['Some header text here'] // array of h2 headers. This is necessary so the "jump To..." widget loads immediately so the layout works and the y positiong can be populated later
   },
 ```

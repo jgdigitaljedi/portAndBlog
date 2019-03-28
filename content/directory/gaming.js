@@ -16,7 +16,8 @@ export default () => [
         'gaming,nes,retro games,genesis,dreamcast,retro game collecting,vintage video games,retro games near me,gaming blog',
       hashtags: 'retrogames,RETROGAMING',
       description: `Story of how Joey Gauthier got into retro games, retro game collecting, and video games in general.`
-    }
+    },
+    headers: ['My Introduction to Video Games', 'From Casual Gamer to Obsessed', 'The “Dark” Period', 'The Rebirth of the Gamer Within', 'Kids Change Everything', 'From “Gamer” to “Collector”']
   },
   {
     id: 6,
@@ -35,7 +36,8 @@ export default () => [
       hashtags: 'retrogames,RETROGAMING',
       description: `Hooking up retro game consoles to a HD or 4K TV using switchers & upscalers.`
     },
-    related: [7, 8]
+    related: [7, 8],
+    headers: ['A Gamer and a Collector', 'Cheap Upscalers are Good for a Start', 'So What is an Upscaler?', 'A Word About Cables', 'Modified Consoles', 'Switchers', 'What Do I Do With All These HDMI Cables?', 'The Details',]
   },
   {
     id: 7,
@@ -54,7 +56,8 @@ export default () => [
       hashtags: 'retrogames,RETROGAMING',
       description: `Getting new retro games from retro game stores, eBay, garage sales, flea markets, & more.`
     },
-    related: [6, 8]
+    related: [6, 8],
+    headers: ['Sometimes You Gotta Get Dirty', 'Craigslist, OfferUp, LetGo, etc.', 'eBay: Not What It Used To Be', 'Goodwill: A Surprising Find', 'Buying From a Store', 'Social Networking', 'Tools', 'Maybe This Helped?']
   },
   {
     id: 8,
@@ -73,7 +76,8 @@ export default () => [
       hashtags: 'retrogames,RETROGAMING',
       description: `How to store retro games, use universal game cases, print retro game covers, & more.`
     },
-    related: [6, 7]
+    related: [6, 7],
+    headers: ['Universal Game Cases to the Rescue!', 'Other, More “Specialized” Cases', 'Disc Based Cases', 'Print Some Covers for Those Cases']
   },
   {
     id: 9,
@@ -91,6 +95,7 @@ export default () => [
         'google,stadia,google stadia,cloud-based gaming,game streaming service,stadia controller,mobile gaming,project stream',
       hashtags: 'Stadia,Google',
       description: `What we now know about Google's Stadia gaming service leaves me with a mix of emotions.`
-    }
+    },
+    headers: ['What is Stadia?', 'So What Do I Think About Stadia?']
   }
 ];

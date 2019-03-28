@@ -1,12 +1,15 @@
 <template>
-  <div class="post-wrapper">
+  <div class="post-wrapper" :class="{'overflow-x': animationsDone}">
     <blogHeader :post="post" :which="which" class="post-header"></blogHeader>
     <div
       class="post"
       v-if="post"
-      :class="{'medium': $vuetify.breakpoint.md && isMounted, 'small': $vuetify.breakpoint.smAndDown && isMounted, 'gaming': which === 'gaming', 'coding': which === 'coding'}"
+      :class="{'medium': $vuetify.breakpoint.md, 'small': $vuetify.breakpoint.smAndDown, 'gaming': which === 'gaming', 'coding': which === 'coding'}"
     >
-      <div class="post__content-wrapper" :class="{'small': $vuetify.breakpoint.smAndDown}">
+      <div
+        class="post__content-wrapper"
+        :class="{'small': $vuetify.breakpoint.smAndDown && isMounted}"
+      >
         <div class="post-content">
           <blogContent :post="post" :postContent="postContent" :which="which"></blogContent>
         </div>
@@ -86,7 +89,8 @@ export default {
       sectionAnchors: [],
       posts: this.$store.state.posts,
       related: [],
-      hashtags: ''
+      hashtags: '',
+      animationsDone: false
     };
   },
   created() {
@@ -97,6 +101,12 @@ export default {
         this.related = whichPosts.filter(post => this.post.related.indexOf(post.id) >= 0);
       }
     }
+    this.sectionAnchors = this.post.headers.map(a => {
+      return { title: a, position: 0 };
+    });
+    setTimeout(() => {
+      this.animationsDone = true;
+    }, 3000);
   },
   mounted() {
     this.isMounted = true;
@@ -118,9 +128,9 @@ export default {
     getAnchorsFromPost() {
       const postContent = document.querySelector('.post-content');
       const anchors = postContent.querySelectorAll('h2');
-      this.sectionAnchors = Array.from(anchors).map((anchor, index) => {
+      Array.from(anchors).forEach((anchor, index) => {
         const pos = anchor.getBoundingClientRect();
-        return { title: anchor.innerText, position: pos.y - index * 2.6 };
+        this.sectionAnchors[index].position = pos.y - index * 2.6;
       });
     },
     scrollToAnchor(pos) {
@@ -138,6 +148,13 @@ export default {
 <style lang="scss" scoped>
 @import '~/assets/style/theme.scss';
 @import '~/assets/style/animations.scss';
+.post-wrapper {
+  overflow-x: hidden;
+  position: relative;
+  &.overflow-x {
+    overflow-x: auto;
+  }
+}
 .post {
   padding: 2rem;
   display: flex;
@@ -146,6 +163,7 @@ export default {
   width: 100%;
   flex-direction: column;
   position: relative;
+  transition: padding 0.5s ease;
   &.coding {
     background-color: #000;
   }
@@ -163,25 +181,21 @@ export default {
     display: flex;
     justify-content: space-around;
     width: 100%;
-    // flex-grow: 1;
     transition: flex-grow 1s linear;
     .post-content {
-      align-self: flex-start;
-      animation: 2s ease-in-out 0s 1 hideShow;
+      opacity: 0;
+      animation: 1s ease 1s normal forwards 1 hideShow;
       // width: auto;
-      display: block;
-      // transition: max-width 0.1s ease-out;
       max-width: calc(100% - 4rem - 350px) !important;
     }
     .post__wrapper--extras {
-      min-width: 350px !important;
+      min-width: 350px;
       max-width: 500px;
       .post__wrapper--extras__section {
-        animation: 1s ease-out 0.5s 1 slideInFromRight;
+        transform: translateX(200%);
+        animation: 1s ease 2s normal forwards 1 slideInFromRight;
         margin-bottom: 2.5rem;
         position: relative;
-        // min-width: 350px;
-        // max-width: 500px;
         width: auto;
         margin-left: 4rem;
         display: flex;
@@ -234,10 +248,14 @@ export default {
       }
       .post__wrapper--extras {
         align-items: center;
+        justify-content: center;
+        max-width: 100%;
+        // width: calc(100% - 2rem);
+        width: 100%;
         .post__wrapper--extras__section {
+          transform: translateX(0%);
+          animation: none;
           margin: 1.5rem 1rem;
-          max-width: 100%;
-          width: calc(100% - 2rem);
           .extra-content {
             width: 100%;
             display: flex;
