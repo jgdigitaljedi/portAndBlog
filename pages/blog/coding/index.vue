@@ -23,9 +23,7 @@ export default {
   head() {
     return {
       title: `Coding Blog of the Digital Jedi - Front End, JavaScript, Angular, Vue, & more.`,
-      link: [
-        { rel: 'canonical', href: 'https://joeyg.me/blog/coding' }
-      ],
+      link: [{ rel: 'canonical', href: 'https://joeyg.me/blog/coding' }],
       meta: [
         {
           hid: 'description',
@@ -37,7 +35,7 @@ export default {
           hid: 'keywords',
           name: 'keywords',
           content:
-            'Joey Gauthier, Paul Gauthier, coding, blog, javascript, typescript, Angular, Vue, Nuxt'
+            'Joey Gauthier,Paul Gauthier,front end frameworks,blog,javascript,typescript tutorial,Angular,vue,vue.js,Nuxt js'
         },
         {
           hid: 'twitter:title',

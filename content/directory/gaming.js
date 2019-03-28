@@ -13,7 +13,7 @@ export default () => [
     alt: `earlier photo of Joey Gauthier's game collection, both retro games and modern games in custom cases`,
     meta: {
       keywords:
-        'gaming,nes,retro games,genesis,dreamcast,retro game collecting,vintage video games,retro games near me,gaming blog',
+        'gaming,nes,retro games,genesis,dreamcast,retro arch,video game collecting,vintage video games,retro games near me,gaming blog',
       hashtags: 'retrogames,RETROGAMING',
       description: `Story of how Joey Gauthier got into retro games, retro game collecting, and video games in general.`
     },
@@ -32,7 +32,7 @@ export default () => [
     alt: `image of messy cables, power strips, power adapters for retro game consoles`,
     meta: {
       keywords:
-        'gaming,nes,retro games,genesis,dreamcast,retro game collecting,vintage video games,upscaler,RGB,HD TV,4k',
+        'gaming,nes nintendo,nes rgb mod,retro games,genesis,retro video game collecting,vintage video games,upscaler,scart cable,4k',
       hashtags: 'retrogames,RETROGAMING',
       description: `Hooking up retro game consoles to a HD or 4K TV using switchers & upscalers.`
     },
@@ -52,7 +52,7 @@ export default () => [
     alt: `image of cluttered tables at a flea market`,
     meta: {
       keywords:
-        'gaming,nes,retro games,retro games near me,retro collecting,Game Stop,Goodwill,Game Over Video Games,retro game stores,pricecharting',
+        'gaming,ebay nes classic,retro games,retro games near me,retro collecting,Game Stop,Goodwill,Game Over Video Games,retro game stores,pricecharting',
       hashtags: 'retrogames,RETROGAMING',
       description: `Getting new retro games from retro game stores, eBay, garage sales, flea markets, & more.`
     },
@@ -72,7 +72,7 @@ export default () => [
     alt: `image of retro games from various retro consoles in custom cases`,
     meta: {
       keywords:
-        'gaming,nes,retro games,retro games near me,retro collecting,universal game cases,ds cases,game storage,cover project,umd cases,dvd cases,cd cases',
+        'gaming,nes,retro games,retro games near me,retro collecting,universal game case,ds cases,game storage,cover project,umd cases,dvd cases,cd cases',
       hashtags: 'retrogames,RETROGAMING',
       description: `How to store retro games, use universal game cases, print retro game covers, & more.`
     },
@@ -92,7 +92,7 @@ export default () => [
     alt: `logo of Google's Stadia cloud based gaming service`,
     meta: {
       keywords:
-        'google,stadia,google stadia,cloud-based gaming,game streaming service,stadia controller,mobile gaming,project stream',
+        'google,stadia,google stadia,google stadia price,google stadia games,google gaming,cloud-based gaming,game streaming service,stadia controller,mobile gaming,stadia cost',
       hashtags: 'Stadia,Google',
       description: `What we now know about Google's Stadia gaming service leaves me with a mix of emotions.`
     },

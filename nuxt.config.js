@@ -32,7 +32,7 @@ module.exports = {
       {
         hid: 'keywords',
         name: 'keywords',
-        content: `Joey Gauthier,Paul Gauthier,JGDigitalJedi,retro games,front end portfolio,Austin developers,JavaScript,Vue,Angular,Nintendo,Sega,Playstation,Xbox,retro collecting`
+        content: `Joey Gauthier,Paul Gauthier,JGDigitalJedi,retro games,web developer portfolio examples,Austin developers,JavaScript,Vue,Angular,Nintendo,Playstation,Xbox,retro collecting`
       },
       {
         hid: 'image',
@@ -105,7 +105,7 @@ module.exports = {
 
   /** forcing scroll to top on route change */
   router: {
-    scrollBehavior: function(to, from, savedPosition) {
+    scrollBehavior: function (to, from, savedPosition) {
       return { x: 0, y: 0 };
     }
   },

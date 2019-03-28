@@ -23,9 +23,7 @@ export default {
   head() {
     return {
       title: `Gaming Blog of the Digital Jedi - retro game collecting, modern games, & more`,
-      link: [
-        { rel: 'canonical', href: 'https://joeyg.me/blog/gaming' }
-      ],
+      link: [{ rel: 'canonical', href: 'https://joeyg.me/blog/gaming' }],
       meta: [
         {
           hid: 'description',
@@ -37,7 +35,7 @@ export default {
           hid: 'keywords',
           name: 'keywords',
           content:
-            'Joey Gauthier, Paul Gauthier, nintendo, gaming, retro games, game collecting, sega, playstation, xbox, mario, gaming blog, collecting'
+            'Joey Gauthier,Paul Gauthier,nintendo,gaming,retro video games,retro arch,video game collecting,sega,playstation,xbox,mario,gaming blog,retro video games austin'
         },
         {
           hid: 'twitter:title',
