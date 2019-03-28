@@ -105,7 +105,7 @@ module.exports = {
 
   /** forcing scroll to top on route change */
   router: {
-    scrollBehavior: function (to, from, savedPosition) {
+    scrollBehavior: function(to, from, savedPosition) {
       return { x: 0, y: 0 };
     }
   },

@@ -10,9 +10,9 @@
           <div class="jedi">of the Digital Jedi</div>
         </div>
       </div>
-      <div
+      <h2
         class="blog-category__summary hidden-md-and-down"
-      >The documented gaming journey of an old school gamer and newbie retro game collector learning the ways of the Jedi</div>
+      >The gaming journey of an old school gamer and new retro game collector learning the ways of the Jedi</h2>
     </div>
     <blogListMaster :posts="posts" which="gaming"></blogListMaster>
   </section>
@@ -113,7 +113,7 @@ export default {
     display: flex;
     justify-content: space-between;
     height: 9rem;
-    .blog-category__summary {
+    h2.blog-category__summary {
       height: 9rem;
       display: flex;
       width: 42rem;
@@ -122,6 +122,9 @@ export default {
       font-style: italic;
       padding-right: 2rem;
       text-align: right;
+      font-size: 1.285rem;
+      font-family: $primary-font;
+      font-weight: 400;
     }
     .blog-category__title {
       padding: 1rem 2rem;

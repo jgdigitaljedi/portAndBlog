@@ -38,7 +38,6 @@ Right now things look a little on the rough side because this is still in active
 
 - maybe I need a logo? If I decide to do this, I should see about one of those site where you pay a small fee and people take a crack at it?
 - make it look nicer
-- research other useful seo tags
 - add more Google Analytics functionality
 - add accessibility
 - GDPR? I'm not paying ICO a dime, so maybe I pop up a cookie banner and block the EU from searching my site on Google and Bing?

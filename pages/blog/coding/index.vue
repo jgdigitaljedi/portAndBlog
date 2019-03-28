@@ -10,9 +10,9 @@
           <div class="jedi">of the Digital Jedi</div>
         </div>
       </div>
-      <div
+      <h2
         class="blog-category__summary hidden-md-and-down"
-      >Personal programming ramblings of a JavaScript Jedi covering topics ranging from application architecture to his hatred for CSS</div>
+      >Personal programming ramblings of a JavaScript Jedi covering topics ranging from application architecture to his hatred for CSS</h2>
     </div>
     <blogListMaster v-if="isMounted" :posts="posts" which="coding"></blogListMaster>
   </section>
@@ -110,6 +110,9 @@ export default {
       font-style: italic;
       padding-right: 2rem;
       text-align: right;
+      font-size: 1.285rem;
+      font-family: $primary-font;
+      font-weight: 400;
     }
     .blog-category__title {
       padding: 1rem 2rem;
