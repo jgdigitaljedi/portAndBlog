@@ -54,6 +54,7 @@
                 :key="rel.id"
                 :to="`/blog/${which}/${rel.slug}`"
                 @click.native="relatedClicked(rel)"
+                :aria-label="`related post - ${rel.title}`"
               >
                 <v-card class="related-post" :class="{'related-post-not-first': index > 0}">
                   <v-card-title>{{rel.title}}</v-card-title>

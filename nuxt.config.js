@@ -186,7 +186,26 @@ module.exports = {
   ],
 
   workbox: {
-    runtimeCaching: [{ urlPattern: 'https://res.cloudinary.com/https-joeyg-me/*' }]
+    runtimeCaching: [
+      {
+        urlPattern: 'https://res.cloudinary.com/https-joeyg-me/*',
+        handler: 'cacheFirst',
+        method: 'GET',
+        strategyOptions: {
+          cacheName: 'images',
+          cacheableResponse: { statuses: [0, 200] }
+        }
+      },
+      {
+        urlPattern: 'https://fonts.googleapis.com/.*',
+        handler: 'cacheFirst',
+        method: 'GET',
+        strategyOptions: {
+          cacheName: 'fonts',
+          cacheableResponse: { statuses: [0, 200] }
+        }
+      }
+    ]
   },
 
   /** Sitemap generation */

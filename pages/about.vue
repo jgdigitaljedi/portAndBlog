@@ -28,7 +28,7 @@
           :value="1"
           @click="tabClick('general')"
         >
-        <label for="tab_1" :class="{'checked': selectedTab === 1}">GENERAL</label>
+        <label for="tab_1" :class="{'checked': selectedTab === 1}" role="button">GENERAL</label>
         <input
           class="about__tabs--list__item"
           type="radio"
@@ -38,7 +38,7 @@
           :value="2"
           @click="tabClick('tech')"
         >
-        <label for="tab_2" :class="{'checked': selectedTab === 2}">TECH</label>
+        <label for="tab_2" :class="{'checked': selectedTab === 2}" role="button">TECH</label>
         <input
           class="about__tabs--list__item"
           type="radio"
@@ -48,7 +48,7 @@
           :value="3"
           @click="tabClick('work')"
         >
-        <label for="tab_3" :class="{'checked': selectedTab === 3}">WORK</label>
+        <label for="tab_3" :class="{'checked': selectedTab === 3}" role="button">WORK</label>
         <input
           class="about__tabs--list__item"
           type="radio"
@@ -58,7 +58,7 @@
           :value="4"
           @click="tabClick('contact')"
         >
-        <label for="tab_4" :class="{'checked': selectedTab === 4}">CONTACT</label>
+        <label for="tab_4" :class="{'checked': selectedTab === 4}" role="button">CONTACT</label>
         <input
           class="about__tabs--list__item"
           type="radio"
@@ -68,7 +68,7 @@
           :value="5"
           @click="tabClick('site')"
         >
-        <label for="tab_5" :class="{'checked': selectedTab === 5}">SITE</label>
+        <label for="tab_5" :class="{'checked': selectedTab === 5}" role="button">SITE</label>
       </div>
     </div>
   </section>
@@ -87,9 +87,7 @@ export default {
   head() {
     return {
       title: `Joey Gauthier | About`,
-      link: [
-        { rel: 'canonical', href: 'https://joeyg.me/about' }
-      ],
+      link: [{ rel: 'canonical', href: 'https://joeyg.me/about' }],
       meta: [
         {
           hid: 'description',

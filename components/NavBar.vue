@@ -83,7 +83,7 @@ export default {
       mobileButtonObj: {
         pacman: require('~/assets/images/navbar/pacman_cherries.png'),
         mario: require('~/assets/images/mario/small-mario.png'),
-        bond: require('~/assets/images/navbar/golden_gun.png')
+        bond: require('~/assets/images/navbar/8bit_gun.png')
       },
       mobileButton: require('~/assets/images/navbar/pacman_cherries.png'),
       pellets: {
@@ -97,7 +97,7 @@ export default {
           to: '/',
           icon: require('~/assets/images/navbar/pacman.png'),
           mario: require('~/assets/images/mario/small-mario.png'),
-          bond: require('~/assets/images/navbar/golden_gun.png')
+          bond: require('~/assets/images/navbar/8bit_gun.png')
         },
         {
           title: 'Blog',
@@ -242,7 +242,7 @@ $bond-dossier: rgb(209, 210, 165);
     border-radius: 4px;
     background-color: #000 !important;
     background: #000;
-    transition: height 0.4s ease-in 0.4s;
+    transition: all 0.4s ease-in 0.4s;
     &.scrolled {
       height: 3.5rem !important;
       border: none;

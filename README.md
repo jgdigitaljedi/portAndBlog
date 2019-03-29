@@ -29,15 +29,14 @@ Right now things look a little on the rough side because this is still in active
 
 ## CURRENT FOCUS TODO
 
-- STYLE! It's kind of chaotic and all over the place. Looks like a toddler designed it. Time to make myself sit down and plan out margins, refine colors, tweak style, etc.
+- STYLE! It's kind of chaotic and all over the place. Time to make myself sit down and plan out margins, refine colors, tweak style, etc.
   - I feel like the blog landing, blog section pages, and home screen are ok...for now.
-  - The nav is still ugly. The theme switching is neat, but it needs work (especially the nav icons).
+  - The nav is still ugly. The theme switching is neat, but it needs work (especially the nav icons on the about page).
   - social buttons
 
 ## OVERALL TODO
 
 - maybe I need a logo? If I decide to do this, I should see about one of those site where you pay a small fee and people take a crack at it?
-- make it look nicer
 - add more Google Analytics functionality
 - add accessibility
 - GDPR? I'm not paying ICO a dime, so maybe I pop up a cookie banner and block the EU from searching my site on Google and Bing?

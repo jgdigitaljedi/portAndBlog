@@ -2,13 +2,10 @@
   <section class="blog-list">
     <div class="blog-category">
       <div v-if="isMounted" class="blog-category__title">
-        <div
-          class="blog-category__title--text"
-          :class="{'xs': isMounted && $vuetify.breakpoint.xs}"
-        >
+        <h1 class="blog-category__title--text" :class="{'xs': isMounted && $vuetify.breakpoint.xs}">
           <div>Coding Blog</div>
           <div class="jedi">of the Digital Jedi</div>
-        </div>
+        </h1>
       </div>
       <h2
         class="blog-category__summary hidden-md-and-down"

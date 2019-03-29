@@ -1,6 +1,12 @@
 <template>
   <section class="social" :class="{'column': isMounted && !$vuetify.breakpoint.smAndDown}">
-    <a class="social-link" href="https://twitter.com/jgdigitaljedi" target="__blank" @click="socialButtonClick('twitter')">
+    <a
+      class="social-link"
+      href="https://twitter.com/jgdigitaljedi"
+      target="__blank"
+      @click="socialButtonClick('twitter')"
+      aria-label="Joey's Twitter Page"
+    >
       <img
         class="social-link__image"
         src="~/assets/images/social/twitter_8bit.png"
@@ -8,7 +14,13 @@
         rel="external"
       >
     </a>
-    <a class="social-link" href="https://www.linkedin.com/in/paulgauthier81/" target="__blank" @click="socialButtonClick('linkedIn')">
+    <a
+      class="social-link"
+      href="https://www.linkedin.com/in/paulgauthier81/"
+      target="__blank"
+      @click="socialButtonClick('linkedIn')"
+      aria-label="Joey's LinkedIn Profile"
+    >
       <img
         class="social-link__image"
         src="~/assets/images/social/linkedin_8bit.png"
@@ -16,7 +28,13 @@
         rel="external"
       >
     </a>
-    <a class="social-link" href="https://github.com/jgdigitaljedi" target="__blank" @click="socialButtonClick('github')">
+    <a
+      class="social-link"
+      href="https://github.com/jgdigitaljedi"
+      target="__blank"
+      @click="socialButtonClick('github')"
+      aria-label="Joey's GitHub Profile"
+    >
       <img
         class="social-link__image"
         src="~/assets/images/social/github_8bit.png"
