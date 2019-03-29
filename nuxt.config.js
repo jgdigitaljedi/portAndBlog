@@ -1,16 +1,16 @@
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin');
-import PurgeCssPlugin from 'purgecss-webpack-plugin';
-const pkg = require('./package');
+const PurgeCssPlugin = require('purgecss-webpack-plugin');
 const fs = require('fs');
 const path = require('path');
 const glob = require('glob-all');
 const autoprefixer = require('autoprefixer');
 const marked = require('marked');
-import Coding from './content/directory/coding';
-import Gaming from './content/directory/gaming';
+const esmImport = require('esm')(module);
+const Coding = esmImport('./content/directory/coding');
+const Gaming = esmImport('./content/directory/gaming');
 
-const codingArr = Coding().map(item => `/blog/coding/${item.slug}`);
-const gamingArr = Gaming().map(item => `/blog/gaming/${item.slug}`);
+const codingArr = Coding.default().map(item => `/blog/coding/${item.slug}`);
+const gamingArr = Gaming.default().map(item => `/blog/gaming/${item.slug}`);
 
 module.exports = {
   mode: 'universal',
@@ -105,7 +105,7 @@ module.exports = {
 
   /** forcing scroll to top on route change */
   router: {
-    scrollBehavior: function(to, from, savedPosition) {
+    scrollBehavior: function (to, from, savedPosition) {
       return { x: 0, y: 0 };
     }
   },
@@ -231,8 +231,8 @@ module.exports = {
 
   /** RSS, ATOM, and JSON feed config */
   feed: async () => {
-    const gCopy = Gaming();
-    const cCopy = Coding();
+    const gCopy = Gaming.default();
+    const cCopy = Coding.default();
     return [
       {
         path: '/RSSfeed_gaming.xml',
