@@ -24,3 +24,12 @@
     opacity: 1;
   }
 }
+
+@keyframes growHeight {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

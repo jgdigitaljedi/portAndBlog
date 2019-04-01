@@ -7,13 +7,15 @@ export const state = () => ({
     posts: [],
     post: {},
     mobileNav: false,
-    scrollPos: 0
+    scrollPos: 0,
+    gdprAnswered: null
   }
 });
 
 export const getters = {
   getNav: state => state.mobileNav,
-  getScroll: state => state.scrollPos
+  getScroll: state => state.scrollPos,
+  getGdpr: state => state.gdprAnswered
 };
 
 export const mutations = {
@@ -31,6 +33,9 @@ export const mutations = {
   },
   setScroll(state, scroll) {
     state.scrollPos = scroll;
+  },
+  setGdpr(state, gdpr) {
+    state.gdprAnswered = gdpr;
   }
 };
 

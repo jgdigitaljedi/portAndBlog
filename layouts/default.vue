@@ -8,17 +8,20 @@
     <audio ref="contra">
       <source src="~/assets/sounds/contra_explode.mp3">
     </audio>
+    <GdprPopup></GdprPopup>
   </v-app>
 </template>
 
 <script>
 import NavBar from '~/components/NavBar.vue';
 import MobileNav from '~/components/mobileNav.vue';
+import GdprPopup from '~/components/gdpr.vue';
 
 export default {
   components: {
     NavBar,
-    MobileNav
+    MobileNav,
+    GdprPopup
   },
   data() {
     return {
