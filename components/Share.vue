@@ -32,9 +32,16 @@
 export default {
   name: 'ShareButtons',
   props: ['url', 'title', 'desc', 'quote', 'hashtags', 'row'],
+  computed: {
+    gdprAnswer() {
+      return this.$store.getters.getGdpr;
+    }
+  },
   methods: {
     trackSocial(which, url) {
-      this.$ga.event(`${which}Share`, 'click', url);
+      if (this.gdprAnswer === 'accept') {
+        this.$ga.event(`${which}Share`, 'click', url);
+      }
     }
   }
 };

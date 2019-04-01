@@ -82,10 +82,16 @@
 <script>
 export default {
   name: 'AboutContact',
+  computed: {
+    gdprAnswer() {
+      return this.$store.getters.getGdpr;
+    }
+  },
   methods: {
     socialLinkClick(which) {
-      console.log('social', which);
-      this.$ga.event('aboutSocialLink', 'click', which);
+      if (this.gdprAnswer === 'accept') {
+        this.$ga.event('aboutSocialLink', 'click', which);
+      }
     }
   }
 };

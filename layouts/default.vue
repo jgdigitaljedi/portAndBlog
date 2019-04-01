@@ -8,7 +8,7 @@
     <audio ref="contra">
       <source src="~/assets/sounds/contra_explode.mp3">
     </audio>
-    <GdprPopup></GdprPopup>
+    <GdprPopup v-if="showGdpr"></GdprPopup>
   </v-app>
 </template>
 
@@ -25,12 +25,16 @@ export default {
   },
   data() {
     return {
-      scrolled: false
+      scrolled: false,
+      showGdpr: true
     };
   },
   computed: {
     player() {
       return this.$refs.contra;
+    },
+    gdprAnswer() {
+      return this.$store.getters.getGdpr;
     }
   },
   created() {
@@ -39,6 +43,14 @@ export default {
     }
   },
   mounted() {
+    if (process.browser) {
+      const answered = localStorage.getItem('gdprAnswer');
+      if (answered) {
+        this.showGdpr = false;
+        this.$store.commit('setGdpr', answered);
+        this.toggleGa(answered);
+      }
+    }
     const allowedKeys = {
       37: 'left',
       38: 'up',
@@ -74,6 +86,13 @@ export default {
     }
   },
   methods: {
+    toggleGa(which) {
+      if (which === 'accept') {
+        this.$ga.enable();
+      } else {
+        this.$ga.disable();
+      }
+    },
     handleScroll() {
       this.scrolled = window.scrollY > 0;
       this.$store.commit('setScroll', window.scrollY);
@@ -81,7 +100,7 @@ export default {
     codeEntered() {
       // @TODO: write konami code easter egg
       console.log(
-        "KONAMI CODE ENTERED! Right now you just get a sound. Eventually it'll do something cooler!"
+        "KONAMI CODE ENTERED! Right now you just get a sound. Eventually it'll do something cooler than just playing a sound from Contra!"
       );
       const sound = this.player;
       sound.pause();
@@ -90,6 +109,17 @@ export default {
       sound.cloneNode(true).play();
       if (this.$ga) {
         this.$ga.event('input', 'keyPress', 'konamiCode', true);
+      }
+    }
+  },
+  watch: {
+    gdprAnswer(newVal) {
+      this.toggleGa(newVal);
+      if (newVal) {
+      this.showGdpr = false;
+        localStorage.setItem('gdprAnswer', newVal);
+      } else {
+        this.showGdpr = true;
       }
     }
   }
@@ -112,6 +142,5 @@ export default {
       padding-top: 3.5rem;
     }
   }
-  // background-color: $primary !important;
 }
 </style>

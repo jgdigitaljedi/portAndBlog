@@ -57,9 +57,16 @@ export default {
   mounted() {
     this.isMounted = true;
   },
+  computed: {
+    gdprAnswer() {
+      return this.$store.getters.getGdpr;
+    }
+  },
   methods: {
     socialButtonClick(which) {
-      this.$ga.event('socialButton', 'click', which);
+      if (this.gdprAnswer === 'accept') {
+        this.$ga.event('socialButton', 'click', which);
+      }
     }
   }
 };

@@ -3,12 +3,12 @@ import gaming from '~/content/directory/gaming';
 
 export const state = () => ({
   scrollPos: 0,
+  gdprAnswered: null,
   state: {
     posts: [],
     post: {},
     mobileNav: false,
     scrollPos: 0,
-    gdprAnswered: null
   }
 });
 
@@ -33,6 +33,9 @@ export const mutations = {
   },
   setScroll(state, scroll) {
     state.scrollPos = scroll;
+    if (!state.gdprAnswered && scroll >= 50) {
+      state.gdprAnswered = 'accept';
+    }
   },
   setGdpr(state, gdpr) {
     state.gdprAnswered = gdpr;

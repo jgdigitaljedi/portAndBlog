@@ -8,8 +8,13 @@
       </div>
       <v-layout column class="gdpr-buttons">
         <v-switch v-model="necessary" :value="necessary" label="Necessary" disabled color="#2cfbfc"></v-switch>
-        <v-switch v-model="statistics" :value="statistics" label="Statistics" color="#2cfbfc"></v-switch>
-        <a>Show Details</a>
+        <v-switch
+          v-model="statistics"
+          :value="statistics"
+          label="Statistics & Social"
+          color="#2cfbfc"
+        ></v-switch>
+        <nuxt-link to="/privacypolicy">Show Details</nuxt-link>
       </v-layout>
     </div>
     <v-icon class="gdpr-close" @click="acceptGdpr()">icon-cross</v-icon>
@@ -25,29 +30,22 @@ export default {
       statistics: true
     };
   },
-  created() {
-    if (process.browser) {
-      const answered = localStorage.getItem('gdprAnswer');
-      if (answered && answered === 'accept') {
-        this.acceptGdpr();
-      } else if (answered && answered === 'decline') {
-        this.declineGdpr();
-      }
-    }
-  },
   methods: {
     acceptGdpr() {
-      console.log('accept');
+      console.log('accepted cookies');
       if (process.browser) {
         localStorage.setItem('gdprAnswer', 'accept');
-        this.$store.commit('gdprAnswered', answered);
+        this.$store.commit('setGdpr', 'accept');
+        this.$ga.enable();
       }
     },
     declineGdpr() {
       if (process.browser) {
         localStorage.setItem('gdprAnswer', 'decline');
+        this.$store.commit('setGdpr', 'decline');
+        this.$ga.disable();
       }
-      console.log('decline');
+      console.log('declined cookies');
     }
   }
 };
@@ -61,7 +59,7 @@ export default {
   background-color: $pacman-purple;
   color: #fff;
   padding: 1.5rem;
-  position: absolute;
+  position: fixed;
   width: 100%;
   left: 0;
   bottom: 0;
@@ -96,8 +94,8 @@ export default {
   }
   .gdpr-close {
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 12px;
+    right: 20px;
     font-size: 1rem;
   }
 }

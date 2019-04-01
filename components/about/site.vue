@@ -1,6 +1,12 @@
 <template>
   <section class="site">
     <div class="site-overview">
+      <h3>Privacy Policy</h3>
+      <p>If you would like to review the privacy policy, you can click this link: <nuxt-link to="/privacypolicy">Privacy Policy</nuxt-link></p>
+
+      <p>If you would like to open the toggle to disable Google Analytics tracking & Disqus comments, click the following button to reset your preferences and re-open the prompt</p>
+      <v-btn @click="cookieReset()" style="pointer-events: auto;">Open Cookies Prompt</v-btn>
+
       <h3>Details of and Inspiration for This Site</h3>
       <p>
         This is my personal site so I didn’t feel the need to use traditional/trendy styling, layouts, typography, color theory, etc.
@@ -103,6 +109,18 @@
     </div>
   </section>
 </template>
+
+<script>
+  export default {
+    name: 'AboutSite',
+    methods: {
+      cookieReset() {
+        localStorage.removeItem('gdprAnswer');
+        this.$store.commit('setGdpr', null);
+      }
+    }
+  };
+</script>
 
 <style lang="scss" scoped>
 .site {

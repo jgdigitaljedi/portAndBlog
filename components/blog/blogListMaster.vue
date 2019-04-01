@@ -88,7 +88,8 @@
         <v-dialog v-model="feedDialog" width="380">
           <v-card style="background-color: #000; color: #fff; padding: 1rem;">
             <v-card-title class="headline" primary-title>Add To Your Favorite Feed Reader!</v-card-title>
-            <v-card-text>Simply copy the following URL into your feed reader of choice to keep up with the latest posts!
+            <v-card-text>
+              Simply copy the following URL into your feed reader of choice to keep up with the latest posts!
               <br>
               <br>
               <span style="color: #2cfcfb;">https://joeyg.me/{{feedUrl}}</span>
@@ -133,6 +134,11 @@ export default {
         month: null
       }
     };
+  },
+  computed: {
+    gdprAnswer() {
+      return this.$store.getters.getGdpr;
+    }
   },
   created() {
     this.eatCookies();
@@ -184,7 +190,7 @@ export default {
         this.filteredPosts = fpCopy.filter(
           p => p.searchTerms.indexOf(this.currentFilters.searchTerm) >= 0
         );
-        if (this.$ga) {
+        if (this.$ga && this.gdprAnswer === 'accept') {
           this.$ga.event('blogListFilters', 'search', this.currentFilters.searchTerm);
         }
       }
@@ -202,7 +208,7 @@ export default {
             _cloneDeep(this.filteredPosts),
             'created_at'
           );
-          if (this.$ga) {
+          if (this.$ga && this.gdprAnswer === 'accept') {
             this.$ga.event('blogListFilters', 'sort', 'dateAsc');
           }
           break;
@@ -211,13 +217,13 @@ export default {
             _cloneDeep(this.filteredPosts),
             'title'
           ).reverse();
-          if (this.$ga) {
+          if (this.$ga && this.gdprAnswer === 'accept') {
             this.$ga.event('blogListFilters', 'sort', 'titleDesc');
           }
           break;
         case 'titleAsc':
           this.filteredPosts = SortsService.sortAlpha(_cloneDeep(this.filteredPosts), 'title');
-          if (this.$ga) {
+          if (this.$ga && this.gdprAnswer === 'accept') {
             this.$ga.event('blogListFilters', 'sort', 'titleAsc');
           }
           break;
@@ -226,7 +232,7 @@ export default {
     filterPinned() {
       if (this.currentFilters.pinned) {
         this.filteredPosts = _cloneDeep(this.filteredPosts).filter(p => p.pinned);
-        if (this.$ga) {
+        if (this.$ga && this.gdprAnswer === 'accept') {
           this.$ga.event('blogListFilters', 'pinned', this.currentFilters.pinned);
         }
       }
@@ -241,7 +247,7 @@ export default {
             pMonth === this.currentFilters.month.month && pYear === this.currentFilters.month.year
           );
         });
-        if (this.$ga) {
+        if (this.$ga && this.gdprAnswer === 'accept') {
           this.$ga.event('blogListFilters', 'month', this.currentFilters.month);
         }
       }

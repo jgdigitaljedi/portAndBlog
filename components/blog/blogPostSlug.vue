@@ -70,7 +70,7 @@
         </section>
       </div>
       <v-divider style="width: 100%; max-width: 1400px; margin-top: 2rem;" dark></v-divider>
-      <blogComments :post="post" :which="which" class="comments"></blogComments>
+      <blogComments v-if="gdprAnswer" :post="post" :which="which" class="comments"></blogComments>
     </div>
     <ScrollToTop class="scroll-btn"></ScrollToTop>
   </div>
@@ -117,6 +117,11 @@ export default {
       }, 500);
     }
   },
+  computed: {
+    gdprAnswer() {
+      return this.$store.getters.getGdpr;
+    }
+  },
   methods: {
     getHashtags() {
       if (this.post.meta.hashtags) {
@@ -124,7 +129,9 @@ export default {
       }
     },
     relatedClicked(related) {
-      this.$ga.event('related link', 'click', this.related.title, this.post.id);
+      if (this.gdprAnswer === 'accept') {
+        this.$ga.event('related link', 'click', this.related.title, this.post.id);
+      }
     },
     getAnchorsFromPost() {
       const postContent = document.querySelector('.post-content');
