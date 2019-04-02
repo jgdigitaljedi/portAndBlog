@@ -5,16 +5,18 @@
         I use cookies to personalize content, provide social media features, and analyze traffic. The data collected is anonymous
         and is only used to see how visitors use my site, subscribe to my blog, etc. You can read more about it
         in my privacy policy. By closing this banner, scrolling this page, clicking a link or continuing to browse otherwise, you agree to the use of cookies.
+        <nuxt-link class="privacy-link" to="/privacypolicy">Read Privacy Policy</nuxt-link>
       </div>
       <v-layout column class="gdpr-buttons">
         <v-switch v-model="necessary" :value="necessary" label="Necessary" disabled color="#2cfbfc"></v-switch>
         <v-switch
           v-model="statistics"
           :value="statistics"
-          label="Statistics & Social"
+          label="Other"
           color="#2cfbfc"
+          @change="statsClicked()"
         ></v-switch>
-        <nuxt-link to="/privacypolicy">Show Details</nuxt-link>
+        <v-btn color="#2cfbfc" small @click="acceptGdpr()">Accept</v-btn>
       </v-layout>
     </div>
     <v-icon class="gdpr-close" @click="acceptGdpr()">icon-cross</v-icon>
@@ -31,6 +33,14 @@ export default {
     };
   },
   methods: {
+    statsClicked() {
+      // this.statistics = !this.statistics;
+      if (this.statistics) {
+        this.acceptGdpr();
+      } else {
+        this.declineGdpr();
+      }
+    },
     acceptGdpr() {
       console.log('accepted cookies');
       if (process.browser) {
@@ -70,6 +80,15 @@ export default {
     justify-content: space-between;
     width: 100%;
     .gdpr-message {
+      .privacy-link {
+        color: $light;
+        &:hover {
+          color: $yellow;
+        }
+        &:active {
+          color: $warning;
+        }
+      }
     }
     .gdpr-buttons {
       min-width: 11rem;

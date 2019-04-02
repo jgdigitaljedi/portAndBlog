@@ -9,13 +9,13 @@
         <v-btn
           dark
           class="filter-hide-button"
-          v-if="$vuetify.breakpoint.mdAndDown"
+          v-if="$vuetify.breakpoint.mdAndDown && isMounted"
           @click.stop="hideFilters = !hideFilters"
         >
-          <div class="show-hide" v-if="!hideFilters">
+          <div class="show-hide" v-if="!hideFilters && isMounted">
             <v-icon>icon-eye-blocked</v-icon>&nbsp; HIDE
           </div>
-          <div class="show-hide" v-if="hideFilters">
+          <div class="show-hide" v-if="hideFilters && isMounted">
             <v-icon>icon-eye</v-icon>&nbsp; SHOW
           </div>
         </v-btn>
@@ -79,7 +79,12 @@
         :class="{'broken': $vuetify.breakpoint.md || $vuetify.breakpoint.sm, 'broken-xs': $vuetify.breakpoint.xs}"
       >
         <v-btn color="accent" class="back-btn" to="/blog">&#60;- blog selection</v-btn>
-        <v-btn color="success" class="back-btn" @click.stop="setupMailchimp">
+        <v-btn
+          color="success"
+          class="back-btn"
+          @click.stop="setupMailchimp"
+          v-if="gdprAnswer && gdprAnswer !== 'decline'"
+        >
           <v-icon>icon-envelop</v-icon>&nbsp; Subscribe
         </v-btn>
         <v-btn color="warning" class="back-btn" @click.stop="feedDialog = true">

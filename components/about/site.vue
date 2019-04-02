@@ -2,7 +2,10 @@
   <section class="site">
     <div class="site-overview">
       <h3>Privacy Policy</h3>
-      <p>If you would like to review the privacy policy, you can click this link: <nuxt-link to="/privacypolicy">Privacy Policy</nuxt-link></p>
+      <p>
+        If you would like to review the privacy policy, you can click this link:
+        <nuxt-link to="/privacypolicy">Privacy Policy</nuxt-link>
+      </p>
 
       <p>If you would like to open the toggle to disable Google Analytics tracking & Disqus comments, click the following button to reset your preferences and re-open the prompt</p>
       <v-btn @click="cookieReset()" style="pointer-events: auto;">Open Cookies Prompt</v-btn>
@@ -111,15 +114,16 @@
 </template>
 
 <script>
-  export default {
-    name: 'AboutSite',
-    methods: {
-      cookieReset() {
-        localStorage.removeItem('gdprAnswer');
-        this.$store.commit('setGdpr', null);
-      }
+export default {
+  name: 'AboutSite',
+  methods: {
+    cookieReset() {
+      localStorage.removeItem('gdprAnswer');
+      localStorage.removeItem('dismissedDecline');
+      this.$store.commit('setGdpr', null);
     }
-  };
+  }
+};
 </script>
 
 <style lang="scss" scoped>

@@ -9,6 +9,15 @@
       <source src="~/assets/sounds/contra_explode.mp3">
     </audio>
     <GdprPopup v-if="showGdpr"></GdprPopup>
+    <div class="gdpr-decline-message" v-if="showDeclineMessage && !declineMessageDismissed">
+      You have chosen to disable cookies, analytics, blog comments, and the option to subscribe to my blogs. This site will still use a local storage entry in your browser
+      to remember your choice, but that data will not be sent to any server and is only stored on your machine. This was indicated by the toggle that was labelled
+      "necessary", disabled, and toggled on. By continuing to view my site or mobile app, you consent to the use of this local storage variable being stored. Clearing
+      your browser cache will remove this entry thus prompting you again on your next visit. You can change your selection by going to the "About" page, selecting
+      the "SITE" tab, and clicking the "OPEN COOKIES PROMPT" button then changing your selection.
+      <v-btn @click="dismissDeclineMessage()">Accept</v-btn>
+      <v-icon class="close-button" @click.stop="dismissDeclineMessage()">icon-cross</v-icon>
+    </div>
   </v-app>
 </template>
 
@@ -26,7 +35,9 @@ export default {
   data() {
     return {
       scrolled: false,
-      showGdpr: true
+      showGdpr: true,
+      showDeclineMessage: false,
+      declineMessageDismissed: false
     };
   },
   computed: {
@@ -40,6 +51,9 @@ export default {
   created() {
     if (process.browser) {
       window.addEventListener('scroll', this.handleScroll);
+      if (localStorage.getItem('dismissedDecline')) {
+        this.declineMessageDismissed = true;
+      }
     }
   },
   mounted() {
@@ -86,6 +100,10 @@ export default {
     }
   },
   methods: {
+    dismissDeclineMessage() {
+      this.declineMessageDismissed = true;
+      localStorage.setItem('dismissedDecline', true);
+    },
     toggleGa(which) {
       if (which === 'accept') {
         this.$ga.enable();
@@ -115,9 +133,13 @@ export default {
   watch: {
     gdprAnswer(newVal) {
       this.toggleGa(newVal);
+      this.declineMessageDismissed = localStorage.getItem('dismissedDecline');
       if (newVal) {
-      this.showGdpr = false;
+        this.showGdpr = false;
         localStorage.setItem('gdprAnswer', newVal);
+        if (newVal === 'decline' && !this.declineMessageDismissed) {
+          this.showDeclineMessage = true;
+        }
       } else {
         this.showGdpr = true;
       }
@@ -130,6 +152,20 @@ export default {
 @import '~/assets/style/global.scss';
 @import '~/assets/style/theme.scss';
 .app-wrapper {
+  .gdpr-decline-message {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 1.5rem;
+    background-color: $pacman-purple;
+    z-index: 400;
+    .v-icon.close-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 1.1rem;
+    }
+  }
   .nav {
     position: fixed;
     z-index: 600;

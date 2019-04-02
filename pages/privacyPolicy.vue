@@ -5,7 +5,7 @@
 
       <p>Effective date: April 01, 2019</p>
 
-      <p>Joey G P&B ("us", "we", or "our") operates the https://joeyg.me website and the Joey G P&B mobile application (hereinafter referred to as the "Service").</p>
+      <p>Joey Gauthier ("us", "we", or "our") operates the https://joeyg.me website and the Joey G P&B mobile application (hereinafter referred to as the "Service").</p>
 
       <p>Third-party ad servers or ad networks uses technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on Joey Gauthier | Portfolio, Video Game Blog, &amp; Coding Blog, which are sent directly to users' browser. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on websites that you visit.</p>
 
@@ -172,11 +172,64 @@
       <ul>
         <li>By email: joey@joeyg.me</li>
       </ul>
+
+      <br>
+
+      <h2>Third Party Services Used</h2>
+      <p>The following is a list of third party services used on this site or mobile application:</p>
+      <ul>
+        <li>Google Analytics</li>
+        <ul>
+          <li>Google Analytics is used to see from which parts of the world people are visiting and how they are using the site. This data may include, but is not restricted to, City, State, Country, operating system, browser, IP address, and sometimes more. I only use this data determine if I need to change the site to potentially cater to different types of users.</li>
+          <li>
+            You can read Google Analytics privacy policy at their
+            <a
+              href="https://policies.google.com/privacy?hl=en-US"
+              target="_blank"
+              rel="external noopener"
+            >Privacy & Terms</a> page.
+          </li>
+        </ul>
+        <li>Disqus</li>
+        <ul>
+          <li>Disqus is used to provide a simple comments system for the blog posts.</li>
+          <li>
+            You can read Disqus' privacy policy at their
+            <a
+              href="https://help.disqus.com/terms-and-policies/disqus-privacy-policy"
+              target="_blank"
+              rel="external noopener"
+            >privacy policy page</a>.
+          </li>
+        </ul>
+        <li>Amazon Affiliate Links</li>
+        <ul>
+          <li>In some blogs posts there are external Amazon Affiliate links in the for of clickable images and links.</li>
+          <li>Joey Gauthier is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to amazon.com.</li>
+        </ul>
+        <li>Mailchimp</li>
+        <ul>
+          <li>Mailchimp is used to provide blog subscription functionality for this site/mobile app.</li>
+          <li>
+            You can read Mailchimp's privacy policy at their
+            <a
+              href="https://mailchimp.com/legal/privacy/"
+              target="_blank"
+              rel="external noopener"
+            >privacy policy page</a>.
+          </li>
+        </ul>
+      </ul>
+
+      <br>
+
+      <p>Joey Gauthier does not sell your data. That said, if you do not approve of anything outlined in the above privacy policy then you may navigate away at any time. By choosing to use this site you are consenting to the terms of this privacy policy.</p>
     </div>
   </section>
 </template>
 
 <style lang="scss" scoped>
+@import '~/assets/style/theme.scss';
 .privacy-wrapper {
   width: 100%;
   display: flex;
@@ -184,6 +237,15 @@
   padding: 2rem;
   .privacy {
     max-width: 1200px;
+    a {
+      color: $light;
+    }
+    a:hover {
+      color: $yellow;
+    }
+    a:active {
+      color: $warning;
+    }
   }
 }
 </style>

@@ -70,7 +70,12 @@
         </section>
       </div>
       <v-divider style="width: 100%; max-width: 1400px; margin-top: 2rem;" dark></v-divider>
-      <blogComments v-if="gdprAnswer" :post="post" :which="which" class="comments"></blogComments>
+      <blogComments
+        v-if="gdprAnswer && gdprAnswer !== 'decline'"
+        :post="post"
+        :which="which"
+        class="comments"
+      ></blogComments>
     </div>
     <ScrollToTop class="scroll-btn"></ScrollToTop>
   </div>
