@@ -228,6 +228,25 @@
   </section>
 </template>
 
+<script>
+export default {
+  name: 'PrivacyPolicy',
+  head() {
+    return {
+      title: `Privacy Policy`,
+      link: [{ rel: 'canonical', href: 'https://joeyg.me/privacypolicy' }],
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Privacy policy for joeyg.me'
+        }
+      ]
+    };
+  }
+};
+</script>
+
 <style lang="scss" scoped>
 @import '~/assets/style/theme.scss';
 .privacy-wrapper {
