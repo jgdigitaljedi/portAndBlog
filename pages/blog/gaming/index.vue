@@ -92,6 +92,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '~/assets/style/theme.scss';
+@import '~/assets/style/animations.scss';
 .blog-list {
   min-height: calc(100vh - 7rem);
   .blog-category {
@@ -111,6 +112,8 @@ export default {
     justify-content: space-between;
     height: 9rem;
     h2.blog-category__summary {
+      opacity: 0;
+      animation: 1s ease 2s normal forwards 1 hideShow;
       height: 9rem;
       display: flex;
       width: 42rem;

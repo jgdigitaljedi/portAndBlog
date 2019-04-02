@@ -42,7 +42,6 @@ export default {
       }
     },
     acceptGdpr() {
-      console.log('accepted cookies');
       if (process.browser) {
         localStorage.setItem('gdprAnswer', 'accept');
         this.$store.commit('setGdpr', 'accept');
@@ -55,7 +54,6 @@ export default {
         this.$store.commit('setGdpr', 'decline');
         this.$ga.disable();
       }
-      console.log('declined cookies');
     }
   }
 };

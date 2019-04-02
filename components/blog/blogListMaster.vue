@@ -302,6 +302,7 @@ export default {
 
 <style lang="scss">
 @import '~/assets/style/theme.scss';
+@import '~/assets/style/animations.scss';
 .blog-list-master {
   display: flex;
   justify-content: space-between;
@@ -328,6 +329,8 @@ export default {
     }
   }
   .blog-list-master__sidebar {
+    opacity: 0;
+    animation: 1s ease 2s normal forwards 1 hideShow;
     border-radius: 2rem;
     border: 2px solid $light;
     display: flex;
