@@ -74,6 +74,6 @@ export default () => [
       hashtags: 'Angular,VueJS,React',
       description: `My thoughts on how to choose the right JavaScript framework (React, Angular, Vue, Ember, etc) for the task at hand.`
     },
-    headers: ['The Big 3', 'A Little Preemptive House Cleaning', 'Frameworks Should Speed Development, Not Hinder It', 'At a Glance, One is Not Better Than Another', 'Caution: Opinions About React, Angular, & Vue Ahead!']
+    headers: ['The Big 3', 'A Little Preemptive House Cleaning', 'Frameworks Should Speed Development, Not Hinder It', 'At a Glance, One is Not Better Than Another', 'Caution: Opinions About React, Angular, & Vue Ahead!', 'Are We There Yet?']
   }
 ];
