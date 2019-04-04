@@ -30,6 +30,7 @@
             <a
               href="https://twitter.com/jgdigitaljedi"
               target="_blank"
+              rel="external"
               @click="socialLinkClick('twitter')"
             >
               <v-icon>icon-twitter</v-icon>Twitter
@@ -39,6 +40,7 @@
             <a
               href="https://open.spotify.com/user/jdigitaljedi?si=FJ4SnMETTjS4Xd5eTM6JWg"
               target="_blank"
+              rel="external"
               @click="socialLinkClick('spotify')"
             >
               <v-icon>icon-spotify</v-icon>Spotify
@@ -48,6 +50,7 @@
             <a
               href="https://github.com/jgdigitaljedi"
               target="_blank"
+              rel="external"
               @click="socialLinkClick('github')"
             >
               <v-icon>icon-github</v-icon>GitHub
@@ -59,6 +62,7 @@
             <a
               href="https://www.linkedin.com/in/paulgauthier81"
               target="_blank"
+              rel="external"
               @click="socialLinkClick('linkedIn')"
             >
               <v-icon>icon-linkedin2</v-icon>LinkedIn
@@ -68,6 +72,7 @@
             <a
               href="https://www.last.fm/user/joeygstrings"
               target="_blank"
+              rel="external"
               @click="socialLinkClick('lastFm')"
             >
               <v-icon>icon-lastfm</v-icon>Last.fm

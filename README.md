@@ -39,6 +39,5 @@ Right now things look a little on the rough side because this is still in active
 - add more Google Analytics functionality
 - add accessibility
 - the blog sections are eventually going to need pagination, archives, or something because a million posts on the page isn't acceptable
-- micro data seo stuff
 - konami code easter egg trigger works, now think of something fun for it to do
 - make remaining views (My VG library view, gallery of my game collection, and what else if anything?)

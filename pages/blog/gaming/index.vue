@@ -11,7 +11,7 @@
         class="blog-category__summary hidden-md-and-down"
       >The gaming journey of an old school gamer and new retro game collector learning the ways of the Jedi</h2>
     </div>
-    <blogListMaster :posts="posts" which="gaming"></blogListMaster>
+    <blogListMaster class="blog-list__master" :posts="posts" which="gaming"></blogListMaster>
   </section>
 </template>
 
@@ -95,6 +95,10 @@ export default {
 @import '~/assets/style/animations.scss';
 .blog-list {
   min-height: calc(100vh - 7rem);
+  .blog-list__master {
+    opacity: 0;
+    animation: 1s ease 0.5s normal forwards 1 hideShow;
+  }
   .blog-category {
     height: auto;
     // min-height: 6rem;
@@ -129,6 +133,8 @@ export default {
     .blog-category__title {
       padding: 1rem 2rem;
       width: 100%;
+      opacity: 0;
+      animation: 1s ease 1s normal forwards 1 hideShow;
       .blog-category__title--text {
         div {
           font-family: $game-font;

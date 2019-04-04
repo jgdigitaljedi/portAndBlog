@@ -4,6 +4,7 @@
       class="social-link"
       href="https://twitter.com/jgdigitaljedi"
       target="__blank"
+      rel="external"
       @click="socialButtonClick('twitter')"
       aria-label="Joey's Twitter Page"
     >
@@ -18,6 +19,7 @@
       class="social-link"
       href="https://www.linkedin.com/in/paulgauthier81/"
       target="__blank"
+      rel="external"
       @click="socialButtonClick('linkedIn')"
       aria-label="Joey's LinkedIn Profile"
     >
@@ -32,6 +34,7 @@
       class="social-link"
       href="https://github.com/jgdigitaljedi"
       target="__blank"
+      rel="external"
       @click="socialButtonClick('github')"
       aria-label="Joey's GitHub Profile"
     >

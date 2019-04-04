@@ -9,7 +9,7 @@
     </div>
     <v-list>
       <v-list-tile v-for="link in links" :key="link.title" class="mobile-nav__link-wrapper">
-        <img :src="link.icon" alt>
+        <img :src="link.icon" alt="character from pacman game">
         <nuxt-link :to="link.to" class="nav-link">
           <label class="nav-link__tile">
             <div class="nav-link__tile--text-wrapper">

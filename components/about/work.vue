@@ -15,7 +15,7 @@
             <li>used Angular, Typescript, Highcharts, D3, NodeJS, AG-Grid, Prime-ng, & Angular Material</li>
             <li>
               LINKS:
-              <a href="https://r4.ai/" target="_blank">R4 HOMEPAGE</a>
+              <a href="https://r4.ai/" target="_blank" rel="external noopener">R4 HOMEPAGE</a>
             </li>
           </ul>
           <li>
@@ -36,6 +36,7 @@
               <a
                 href="http://www.fox7austin.com/news/local-news/190282082-story"
                 target="__blank"
+                rel="external noopener"
               >Fox 7 story with video of screens from MOPAC app</a>
             </li>
           </ul>
@@ -47,7 +48,7 @@
         <div class="work__experience--side__container" :class="{'small': $vuetify.breakpoint.xs}">
           <div class="side-work skipg">
             <h4>Skip G Memorial Site</h4>
-            <a href="https://skipg.me" target="_blank">
+            <a href="https://skipg.me" target="_blank" rel="external">
               <v-img
                 src="/images/about/skipg.png"
                 class="side-image"
@@ -58,7 +59,7 @@
           </div>
           <div class="side-work lassos">
             <h4>Texas Lassos Alum Connect</h4>
-            <a href="http://connect.lassoalumni.org/" target="_blank">
+            <a href="http://connect.lassoalumni.org/" target="_blank" rel="external">
               <v-img
                 src="/images/about/lassos.png"
                 class="side-image"
@@ -70,7 +71,7 @@
           <div class="side-work other">
             <h4>Other Work</h4>
             <p>Agent has many repos on GitHub of work that has been done for himself, the sake of learning, satisfying curiosity, and more.</p>
-            <a href="https://github.com/jgdigitaljedi" target="_blank">GitHub Profile</a>
+            <a href="https://github.com/jgdigitaljedi" target="_blank" rel="external">GitHub Profile</a>
           </div>
         </div>
       </div>

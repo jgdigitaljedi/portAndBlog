@@ -21,6 +21,7 @@
         If you are interested in seeing the code, you can find the repo
         <a
           href="https://github.com/jgdigitaljedi/portAndBlog"
+          rel="external"
           target="_blank"
         >HERE</a>
       </p>

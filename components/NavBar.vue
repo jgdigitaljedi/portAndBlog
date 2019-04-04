@@ -28,6 +28,7 @@
         @click.stop="openMobileNav()"
         class="pacman-cherries hidden-md-and-up"
         :class="{'scrolled': scrolled}"
+        alt="cherries from the pacman video game being used as a mobile navigation button"
       >
       <v-toolbar-items class="nav__items hidden-sm-and-down" v-if="isMounted">
         <div v-for="(link, index) in links" :key="link.title" class="nav-items__link-wrapper">
@@ -54,10 +55,12 @@
             <img
               :src="((fullPath === '/blog') ? pellets.mario : (fullPath === '/about' ? pellets.bond : pellets.pacman))"
               :class="{'scrolled': scrolled}"
+              :alt="fullPath === '/blog' ? 'coin from Mario Bros game' : (fullPath === '/about' ? 'bullet hole' : 'power pellet from pacman game')"
             >
             <img
               :src="((fullPath === '/blog') ? pellets.mario : (fullPath === '/about' ? pellets.bond : pellets.pacman))"
               :class="{'scrolled': scrolled}"
+              :alt="fullPath === '/blog' ? 'coin from Mario Bros game' : (fullPath === '/about' ? 'bullet hole' : 'power pellet from pacman game')"
             >
           </div>
         </div>
