@@ -56,7 +56,7 @@ export const first = [
       hashtags: 'retrogames,RETROGAMING',
       description: `Getting new retro games from retro game stores, eBay, garage sales, flea markets, & more.`
     },
-    related: [6, 8],
+    related: [6, 8, 10],
     headers: ['Sometimes You Gotta Get Dirty', 'Craigslist, OfferUp, LetGo, etc.', 'eBay: Not What It Used To Be', 'Goodwill: A Surprising Find', 'Buying From a Store', 'Social Networking', 'Tools', 'Maybe This Helped?']
   },
   {
