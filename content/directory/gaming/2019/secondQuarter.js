@@ -7,8 +7,7 @@ export const second = [
     created_at: '04/06/2019',
     pinned: false,
     intro: 'An overview of my experience as a subscriber to the Retro Games Treasure service.',
-    image:
-      'https://res.cloudinary.com/https-joeyg-me/image/upload/v1554556621/gaming/RGT.png',
+    image: 'https://res.cloudinary.com/https-joeyg-me/image/upload/v1554556621/gaming/RGT.png',
     alt: `Retro Game Treasure logo`,
     meta: {
       keywords:
@@ -23,5 +22,23 @@ export const second = [
       'My Final Thoughts on Retro Game Treasure'
     ],
     related: [7]
+  },
+  {
+    id: 11,
+    slug: 'why-i-consider-publisher-and-dev-studio-before-buying-a-new-game',
+    title: 'Why I Consider Publisher and Dev Studio Before Buying a New Game',
+    tag_line: `Who made that game? Oh, I'll wait a while before I get that one!`,
+    created_at: '04/11/2019',
+    pinned: false,
+    intro: `My thoughts on the state of AAA games in 2019 and why I don't buy into the hype any more.`,
+    image: 'https://res.cloudinary.com/https-joeyg-me/image/upload/v1554556621/gaming/RGT.png',
+    alt: `Retro Game Treasure logo`,
+    meta: {
+      keywords:
+        'EA,Anthem,gaming,nes,retro games,genesis,dreamcast,retro arch,video game collecting,vintage video games,retro games near me,gaming blog',
+      hashtags: 'retrogames,RETROGAMING,RetroGameTreasure',
+      description: `My thoughts on the state of AAA games in 2019 and why I don't buy into the hype any more.`
+    },
+    headers: []
   }
 ];
