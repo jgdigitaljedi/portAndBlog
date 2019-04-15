@@ -34,14 +34,13 @@ export const second = [
     image: 'https://res.cloudinary.com/https-joeyg-me/image/upload/v1554556621/gaming/RGT.png',
     alt: `Retro Game Treasure logo`,
     meta: {
-      keywords:
-        'EA,Anthem,gaming,nes,retro games,genesis,dreamcast,retro arch,video game collecting,vintage video games,retro games near me,gaming blog',
-      hashtags: 'retrogames,RETROGAMING,RetroGameTreasure',
+      keywords: 'EA,Anthem,gaming,nes,,video game collecting,gaming blog',
+      hashtags: '',
       description: `My thoughts on the state of AAA games in 2019 and why I don't buy into the hype any more.`
     },
     headers: [
       `EA Ain‘t What They Used to Be`,
-      `Even the Loved Developers & Publishers Drop the Ball`
+      `Even the Loved Developers & Publishers Sometimes Drop the Ball`
     ]
   }
 ];
