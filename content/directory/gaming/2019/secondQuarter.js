@@ -28,7 +28,7 @@ export const second = [
     slug: 'why-i-consider-publisher-and-dev-studio-before-buying-a-new-game',
     title: 'Why I Consider Publisher and Dev Studio Before Buying a New Game',
     tag_line: `Who made that game? Oh, I'll wait a while before I get that one!`,
-    created_at: '04/11/2019',
+    created_at: '04/13/2019',
     pinned: false,
     intro: `My thoughts on the state of AAA games in 2019 and why I don't buy into the hype any more.`,
     image: 'https://res.cloudinary.com/https-joeyg-me/image/upload/v1554556621/gaming/RGT.png',
@@ -39,6 +39,9 @@ export const second = [
       hashtags: 'retrogames,RETROGAMING,RetroGameTreasure',
       description: `My thoughts on the state of AAA games in 2019 and why I don't buy into the hype any more.`
     },
-    headers: []
+    headers: [
+      `EA Ain‘t What They Used to Be`,
+      `Even the Loved Developers & Publishers Drop the Ball`
+    ]
   }
 ];
