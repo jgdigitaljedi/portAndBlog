@@ -40,7 +40,9 @@ export const second = [
     },
     headers: [
       `EA Ain‘t What They Used to Be`,
-      `Even the Loved Developers & Publishers Sometimes Drop the Ball`
+      `Even the Loved Developers & Publishers Sometimes Drop the Ball`,
+      `Greed Has Taken Over & Companies are Out of Touch`,
+      `Is $60 Still Enough for a AAA Game?`
     ]
   }
 ];
