@@ -28,14 +28,16 @@ export const second = [
     slug: 'why-i-consider-publisher-and-dev-studio-before-buying-a-new-game',
     title: 'Why I Consider Publisher and Dev Studio Before Buying a New Game',
     tag_line: `Who made that game? Oh, I'll wait a while before I get that one!`,
-    created_at: '04/13/2019',
+    created_at: '04/18/2019',
     pinned: false,
     intro: `My thoughts on the state of AAA games in 2019 and why I don't buy into the hype any more.`,
-    image: 'https://res.cloudinary.com/https-joeyg-me/image/upload/v1554556621/gaming/RGT.png',
-    alt: `Retro Game Treasure logo`,
+    image:
+      'https://res.cloudinary.com/https-joeyg-me/image/upload/v1555585855/gaming/gameDevLogos.jpg',
+    alt: `collage of game developer and publisher logos`,
     meta: {
-      keywords: 'EA,Anthem,gaming,nes,,video game collecting,gaming blog',
-      hashtags: '',
+      keywords:
+        'EA,Anthem,games,video games,gaming,video game reviews,video game collecting,gaming blog',
+      hashtags: 'videogames, ea, gamers',
       description: `My thoughts on the state of AAA games in 2019 and why I don't buy into the hype any more.`
     },
     headers: [
@@ -43,7 +45,9 @@ export const second = [
       `Even the Loved Developers & Publishers Sometimes Drop the Ball`,
       `Greed Has Taken Over & Companies are Out of Touch`,
       `Is $60 Still Enough for a AAA Game?`,
-      `Not All Publishers & Developers Suck`
-    ]
+      `Not All Publishers & Developers Suck`,
+      `How All of This Influences My Game Purchasing Habits`
+    ],
+    related: [7]
   }
 ];

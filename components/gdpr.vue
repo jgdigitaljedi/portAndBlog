@@ -1,13 +1,13 @@
 <template>
   <section class="gdpr-wrapper">
-    <div class="gdpr-container">
+    <div class="gdpr-container" :class="{'small': $vuetify.breakpoint.xs}">
       <div class="gdpr-message">
         I use cookies to personalize content, provide social media features, and analyze traffic. The data collected is anonymous
         and is only used to see how visitors use my site, subscribe to my blog, etc. You can read more about it
         in my privacy policy. By closing this banner, scrolling this page, clicking a link or continuing to browse otherwise, you agree to the use of cookies.
         <nuxt-link class="privacy-link" to="/privacypolicy">Read Privacy Policy</nuxt-link>
       </div>
-      <v-layout column class="gdpr-buttons">
+      <v-layout column class="gdpr-buttons" :class="{'small': $vuetify.breakpoint.xs}">
         <v-switch v-model="necessary" :value="necessary" label="Necessary" disabled color="#2cfbfc"></v-switch>
         <v-switch
           v-model="statistics"
@@ -77,6 +77,10 @@ export default {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    &.small {
+      flex-direction: column;
+      font-size: 1rem;
+    }
     .gdpr-message {
       .privacy-link {
         color: $light;
@@ -91,6 +95,10 @@ export default {
     .gdpr-buttons {
       min-width: 11rem;
       justify-content: center;
+      &.small {
+        flex-direction: row;
+        margin-top: 1rem;
+      }
       .v-input--selection-controls {
         margin-top: 0;
         padding-top: 0;
