@@ -45,6 +45,6 @@ function fixTimeStampAndRemoveClicks(file) {
     fixTimeStampAndRemoveClicks(codingXml)
   ]).then(results => {
     writeFile(results[0], 'dist/RSSfeed_gaming.xml');
-    writeFile(results[0], 'dist/RSSfeed_coding.xml');
+    writeFile(results[1], 'dist/RSSfeed_coding.xml');
   });
 })();
