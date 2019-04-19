@@ -8,7 +8,7 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate --no-lock && node sitemapGenerate.js",
+    "generate": "nuxt generate --no-lock && node sitemapGenerate.js && node fixRssFeeds.js",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint",
     "test": "jest"
