@@ -49,5 +49,24 @@ export const second = [
       `How All of This Influences My Game Purchasing Habits`
     ],
     related: [7]
+  },
+  {
+    id: 12,
+    slug: 'my-favorite-game-franchises-of-all-time',
+    title: 'My Favorite Game Franchises of All Time',
+    tag_line: `Everyone has their favorites! These are the games I've spent the most time playing.`,
+    created_at: '04/21/2019',
+    pinned: false,
+    intro: `Everyone has their favorites! These are the games I've spent the most time playing.`,
+    image:
+      'https://res.cloudinary.com/https-joeyg-me/image/upload/v1555585855/gaming/gameDevLogos.jpg',
+    alt: `collage of game developer and publisher logos`,
+    meta: {
+      keywords:
+        'EA,Anthem,games,video games,gaming,video game reviews,video game collecting,gaming blog',
+      hashtags: 'videogames, ea, gamers',
+      description: `A brief overview of my top 10 favorite video game franchises.`
+    },
+    headers: []
   }
 ];
