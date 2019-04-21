@@ -2,106 +2,115 @@
   <section class="blog-list-master" :class="{'smaller': $vuetify.breakpoint.mdAndDown}">
     <blogListContainer :posts="filteredPosts" :which="which" class="blog-list"></blogListContainer>
     <div class="blog-list-master__sidebar" :class="{'md': $vuetify.breakpoint.mdAndDown}">
-      <div class="blog-list-master__sidebar--title-container">
-        <h4 class="blog-list-master__sidebar--title">
-          <v-icon>icon-filter</v-icon>&nbsp;Filters
-        </h4>
-        <v-btn
-          dark
-          class="filter-hide-button"
-          v-if="$vuetify.breakpoint.mdAndDown && isMounted"
-          @click.stop="hideFilters = !hideFilters"
-        >
-          <div class="show-hide" v-if="!hideFilters && isMounted">
-            <v-icon>icon-eye-blocked</v-icon>&nbsp; HIDE
-          </div>
-          <div class="show-hide" v-if="hideFilters && isMounted">
-            <v-icon>icon-eye</v-icon>&nbsp; SHOW
-          </div>
-        </v-btn>
-      </div>
-      <div
-        class="blog-list-master__sidebar--filters"
-        :class="{'hidden': hideFilters && !$vuetify.breakpoint.lgAndUp}"
-      >
-        <v-autocomplete
-          v-model="currentFilters.searchTerm"
-          hint="Search Blog Titles & Keywords"
-          :items="postTerms"
-          label="Search"
-          dark
-          @input="applyFilters"
-          :clearable="true"
-          clear-icon="icon-cross"
-          prepend-icon="icon-search"
-          flat
-          class="blog-list-master__siderbar--filters__search posts-filter"
-          :class="{'small': $vuetify.breakpoint.smAndDown}"
-        ></v-autocomplete>
-        <v-select
-          label="Sort By"
-          :items="sortItems"
-          item-text="label"
-          return-object
-          class="blog-list__search--sort posts-filter"
-          v-model="currentFilters.sortSelected"
-          @change="applyFilters"
-          prepend-icon="icon-sort-amount-desc"
-          :class="{'small': $vuetify.breakpoint.smAndDown}"
-        ></v-select>
-        <v-select
-          v-model="currentFilters.month"
-          :items="months"
-          label="Filter by Month & Year"
-          @change="applyFilters"
-          clearable
-          clear-icon="icon-cross"
-          item-text="display"
-          return-object
-          class="blog-list-master__siderbar--filters__month posts-filter"
-          :class="{'small': $vuetify.breakpoint.smAndDown}"
-          prepend-icon="icon-filter"
-        ></v-select>
-        <div class="switch-container">
-          <v-switch
-            v-model="currentFilters.pinned"
-            label="Pinned"
-            @change="applyFilters"
-            class="blog-list__search--pin posts-filter"
-            :class="{'small': $vuetify.breakpoint.smAndDown}"
-            append-icon="icon-pushpin"
-          ></v-switch>
+      <section class="sidebar-section">
+        <div class="blog-list-master__sidebar--title-container">
+          <h4 class="blog-list-master__sidebar--title">
+            <v-icon>icon-filter</v-icon>&nbsp;Filters
+          </h4>
+          <v-btn
+            dark
+            class="filter-hide-button"
+            v-if="$vuetify.breakpoint.mdAndDown && isMounted"
+            @click.stop="hideFilters = !hideFilters"
+          >
+            <div class="show-hide" v-if="!hideFilters && isMounted">
+              <v-icon>icon-eye-blocked</v-icon>&nbsp; HIDE
+            </div>
+            <div class="show-hide" v-if="hideFilters && isMounted">
+              <v-icon>icon-eye</v-icon>&nbsp; SHOW
+            </div>
+          </v-btn>
         </div>
-      </div>
-      <v-divider dark></v-divider>
-      <div
-        class="blog-list-master__sidebar--links"
-        :class="{'broken': $vuetify.breakpoint.md || $vuetify.breakpoint.sm, 'broken-xs': $vuetify.breakpoint.xs}"
-      >
-        <v-btn color="accent" class="back-btn" to="/blog">&#60;- blog selection</v-btn>
-        <v-btn
-          color="success"
-          class="back-btn"
-          @click.stop="setupMailchimp"
-          v-if="gdprAnswer && gdprAnswer !== 'decline'"
+        <div
+          class="blog-list-master__sidebar--filters sidebar-interactions"
+          :class="{'hidden': hideFilters && !$vuetify.breakpoint.lgAndUp}"
         >
-          <v-icon>icon-envelop</v-icon>&nbsp; Subscribe
-        </v-btn>
-        <v-btn color="warning" class="back-btn" @click.stop="feedDialog = true">
-          <v-icon>icon-rss2</v-icon>&nbsp; RSS Feed
-        </v-btn>
-        <v-dialog v-model="feedDialog" width="380">
-          <v-card style="background-color: #000; color: #fff; padding: 1rem;">
-            <v-card-title class="headline" primary-title>Add To Your Favorite Feed Reader!</v-card-title>
-            <v-card-text>
-              Simply copy the following URL into your feed reader of choice to keep up with the latest posts!
-              <br>
-              <br>
-              <span style="color: #2cfcfb;">https://joeyg.me/{{feedUrl}}</span>
-            </v-card-text>
-          </v-card>
-        </v-dialog>
-      </div>
+          <v-autocomplete
+            v-model="currentFilters.searchTerm"
+            hint="Search Blog Titles & Keywords"
+            :items="postTerms"
+            label="Search"
+            dark
+            @input="applyFilters"
+            :clearable="true"
+            clear-icon="icon-cross"
+            prepend-icon="icon-search"
+            flat
+            class="blog-list-master__siderbar--filters__search posts-filter"
+            :class="{'small': $vuetify.breakpoint.smAndDown}"
+          ></v-autocomplete>
+          <v-select
+            label="Sort By"
+            :items="sortItems"
+            item-text="label"
+            return-object
+            class="blog-list__search--sort posts-filter"
+            v-model="currentFilters.sortSelected"
+            @change="applyFilters"
+            prepend-icon="icon-sort-amount-desc"
+            :class="{'small': $vuetify.breakpoint.smAndDown}"
+          ></v-select>
+          <v-select
+            v-model="currentFilters.month"
+            :items="months"
+            label="Filter by Month & Year"
+            @change="applyFilters"
+            clearable
+            clear-icon="icon-cross"
+            item-text="display"
+            return-object
+            class="blog-list-master__siderbar--filters__month posts-filter"
+            :class="{'small': $vuetify.breakpoint.smAndDown}"
+            prepend-icon="icon-filter"
+          ></v-select>
+          <div class="switch-container">
+            <v-switch
+              v-model="currentFilters.pinned"
+              label="Pinned"
+              @change="applyFilters"
+              class="blog-list__search--pin posts-filter"
+              :class="{'small': $vuetify.breakpoint.smAndDown}"
+              append-icon="icon-pushpin"
+            ></v-switch>
+          </div>
+        </div>
+      </section>
+      <!-- <v-divider dark></v-divider> -->
+      <section class="sidebar-section">
+        <div class="blog-list-master__sidebar--title-container">
+          <h4 class="blog-list-master__sidebar--title">
+            <v-icon>icon-bullhorn</v-icon>&nbsp; Actions
+          </h4>
+        </div>
+        <div
+          class="blog-list-master__sidebar--links sidebar-interactions"
+          :class="{'broken': $vuetify.breakpoint.md || $vuetify.breakpoint.sm, 'broken-xs': $vuetify.breakpoint.xs}"
+        >
+          <v-btn color="accent" class="back-btn" to="/blog">&#60;- blog selection</v-btn>
+          <v-btn
+            color="success"
+            class="back-btn"
+            @click.stop="setupMailchimp"
+            v-if="gdprAnswer && gdprAnswer !== 'decline'"
+          >
+            <v-icon>icon-envelop</v-icon>&nbsp; Subscribe
+          </v-btn>
+          <v-btn color="warning" class="back-btn" @click.stop="feedDialog = true">
+            <v-icon>icon-rss2</v-icon>&nbsp; RSS Feed
+          </v-btn>
+          <v-dialog v-model="feedDialog" width="380">
+            <v-card style="background-color: #000; color: #fff; padding: 1rem;">
+              <v-card-title class="headline" primary-title>Add To Your Favorite Feed Reader!</v-card-title>
+              <v-card-text>
+                Simply copy the following URL into your feed reader of choice to keep up with the latest posts!
+                <br>
+                <br>
+                <span style="color: #2cfcfb;">https://joeyg.me/{{feedUrl}}</span>
+              </v-card-text>
+            </v-card>
+          </v-dialog>
+        </div>
+      </section>
     </div>
   </section>
 </template>
@@ -155,8 +164,8 @@ export default {
     this.postTerms = _uniq(
       _flattenDeep(
         this.cPosts.map(post => {
-          const tArr = post.title.split(' ');
-          const kArr = post.meta.keywords.split(', ');
+          const tArr = post.title.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '').split(' ');
+          const kArr = post.meta.keywords.split(',');
           post.searchTerms = [...tArr.map(t => t.toLowerCase()), ...kArr.map(k => k.toLowerCase())];
           return post.searchTerms;
         })
@@ -331,18 +340,29 @@ export default {
   .blog-list-master__sidebar {
     opacity: 0;
     animation: 1s ease 2s normal forwards 1 hideShow;
-    border-radius: 2rem;
-    border: 2px solid $light;
+    // border-radius: 2rem;
+    // border: 2px solid $light;
     display: flex;
     flex-direction: column;
     margin: 1rem 1rem 0 1rem;
     min-height: calc(100vh - 9rem - 9rem);
     height: 100%;
     min-width: 20rem;
+    .sidebar-section {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
     .blog-list-master__sidebar--title-container {
-      padding: 1rem 1rem 1rem 2rem;
+      padding: 0.5rem 1rem;
+      background-color: $pacman-purple;
+      color: #fff;
+      width: 100%;
+      font-weight: bold;
+      // padding: 1rem 1rem 1rem 2rem;
       display: flex;
       justify-content: space-between;
+
       button.filter-hide-button {
         margin: -0.3rem 0.5rem 0 0;
         div.show-hide {
@@ -362,7 +382,12 @@ export default {
     }
     .blog-list-master__sidebar--title,
     .blog-list-master__sidebar--title .v-icon {
-      color: $light;
+      color: #fff;
+    }
+    .sidebar-interactions {
+      background-color: rgba(255, 255, 255, 0.1);
+      width: 95%;
+      padding: 1rem;
     }
     .blog-list-master__sidebar--filters {
       padding: 2rem 2rem 0;
