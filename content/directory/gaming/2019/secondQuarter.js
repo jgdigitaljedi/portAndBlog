@@ -56,17 +56,29 @@ export const second = [
     title: 'My Favorite Game Franchises of All Time',
     tag_line: `Everyone has their favorites! These are the games I've spent the most time playing.`,
     created_at: '04/21/2019',
-    pinned: false,
+    pinned: true,
     intro: `Everyone has their favorites! These are the games I've spent the most time playing.`,
     image:
       'https://res.cloudinary.com/https-joeyg-me/image/upload/v1555585855/gaming/gameDevLogos.jpg',
     alt: `collage of game developer and publisher logos`,
     meta: {
       keywords:
-        'EA,Anthem,games,video games,gaming,video game reviews,video game collecting,gaming blog',
-      hashtags: 'videogames, ea, gamers',
+        'legend of zelda,super mario bros,sonic the hedgehog,tony hawk pro skater,god of war,call of duty,mario kart,halo,mortal kombat,grand theft auto,video games',
+      hashtags: 'videogames',
       description: `A brief overview of my top 10 favorite video game franchises.`
     },
-    headers: []
+    headers: [
+      `10) Grand Theft Auto`,
+      `9) Mortal Kombat`,
+      `8) Halo`,
+      `7) Mario Kart`,
+      `6) Call of Duty`,
+      `5) God of War`,
+      `4) Tony Hawk Pro Skater`,
+      `3) Sonic the Hedgehog`,
+      `2) Super Mario Bros`,
+      `1) The Legend of Zelda`,
+      `That's All, Folks!`
+    ]
   }
 ];
