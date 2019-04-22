@@ -55,16 +55,16 @@ export const second = [
     slug: 'my-favorite-game-franchises-of-all-time',
     title: 'My Favorite Game Franchises of All Time',
     tag_line: `Everyone has their favorites! These are the games I've spent the most time playing.`,
-    created_at: '04/21/2019',
+    created_at: '04/22/2019',
     pinned: true,
     intro: `Everyone has their favorites! These are the games I've spent the most time playing.`,
     image:
-      'https://res.cloudinary.com/https-joeyg-me/image/upload/v1555585855/gaming/gameDevLogos.jpg',
-    alt: `collage of game developer and publisher logos`,
+      'https://res.cloudinary.com/https-joeyg-me/image/upload/v1555937314/gaming/zeldaShelf.jpg',
+    alt: `picture of my Legend of Zelda games and collectibles shelf`,
     meta: {
       keywords:
         'legend of zelda,super mario bros,sonic the hedgehog,tony hawk pro skater,god of war,call of duty,mario kart,halo,mortal kombat,grand theft auto,video games',
-      hashtags: 'videogames',
+      hashtags: 'retroGames, retroGaming, zelda, mario',
       description: `A brief overview of my top 10 favorite video game franchises.`
     },
     headers: [
