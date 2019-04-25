@@ -80,5 +80,25 @@ export const second = [
       `1) The Legend of Zelda`,
       `That's All, Folks!`
     ]
+  },
+  {
+    id: 13,
+    slug: 'local-4-player-games-for-your-friends-and-family',
+    title: 'Local 4 Player Games for Your Friends and Family',
+    tag_line: `Local multiplayer games are a dying breed, but there are still some good choices out there!`,
+    created_at: '04/25/2019',
+    pinned: false,
+    intro: `Local multiplayer games are a dying breed, but there are still some good choices out there!`,
+    image:
+      'https://res.cloudinary.com/https-joeyg-me/image/upload/v1555937314/gaming/zeldaShelf.jpg',
+    alt: `picture of my Legend of Zelda games and collectibles shelf`,
+    meta: {
+      keywords:
+        'legend of zelda,super mario bros,sonic the hedgehog,tony hawk pro skater,god of war,call of duty,mario kart,halo,mortal kombat,grand theft auto,video games',
+      hashtags: 'retroGames, retroGaming, zelda, mario',
+      description: `A curated list of some local 4 player games for various platforms.`
+    },
+    headers: [
+    ]
   }
 ];
