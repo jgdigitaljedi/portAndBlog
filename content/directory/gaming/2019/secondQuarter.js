@@ -99,6 +99,9 @@ export const second = [
       description: `A curated list of some local 4 player games for various platforms.`
     },
     headers: [
+      `Older Consoles With Multi-Player Adapters`,
+      `Series That Always Have 4 Player Modes`,
+      `Hack 'n Slash / Top Down Action`
     ]
   }
 ];

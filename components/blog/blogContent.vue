@@ -78,6 +78,27 @@ export default {
   .markdown-content {
     padding: 1rem;
     // position: relative;
+    .blog-table {
+      border: 1px solid $light;
+      width: 100%;
+      border-collapse: collapse;
+      th,
+      td {
+        border: 1px solid $light;
+        padding: 0.5rem;
+      }
+      th {
+        background-color: $pacman-purple;
+        font-style: italic;
+      }
+      .bold-yellow {
+        color: $yellow;
+        font-weight: bold;
+      }
+      .center {
+        text-align: center;
+      }
+    }
     .image-container {
       // width: 100%;
       text-align: center;
