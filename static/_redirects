@@ -1,2 +1,12 @@
 # Redirect default Netlify subdomain to primary domain
 http://joeyg.netlify.com/* http://joeyg.me/:splat 301!
+
+# Redirects for links from old portfolio website that are still showing in GSC
+/home   /   301
+/resume   /about   301
+/contact   /about   301
+/fun   /   301
+
+# Redirects for non-canonical routes
+/index  /   301!
+/index.html   /   301!
