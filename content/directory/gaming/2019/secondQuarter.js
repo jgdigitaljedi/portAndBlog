@@ -101,7 +101,11 @@ export const second = [
     headers: [
       `Older Consoles With Multi-Player Adapters`,
       `Series That Always Have 4 Player Modes`,
-      `Hack 'n Slash / Top Down Action`
+      `Action RPG`,
+      `Rhythm Games`,
+      `First Person Shooter (FPS)`,
+      `Platformers`,
+      `Racing`
     ]
   }
 ];
