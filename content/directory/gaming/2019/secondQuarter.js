@@ -94,7 +94,7 @@ export const second = [
     alt: `picture of my Legend of Zelda games and collectibles shelf`,
     meta: {
       keywords:
-        'legend of zelda,super mario bros,sonic the hedgehog,tony hawk pro skater,god of war,call of duty,mario kart,halo,mortal kombat,grand theft auto,video games',
+        'video games,party games,mario party,super smash bros',
       hashtags: 'retroGames, retroGaming, zelda, mario',
       description: `A curated list of some local 4 player games for various platforms.`
     },
@@ -105,7 +105,9 @@ export const second = [
       `Rhythm Games`,
       `First Person Shooter (FPS)`,
       `Platformers`,
-      `Racing`
+      `Racing`,
+      `Fighting`,
+      `Party Games / Mini Games`
     ]
   }
 ];
