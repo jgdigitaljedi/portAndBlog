@@ -86,17 +86,17 @@ export const second = [
     slug: 'local-4-player-games-for-your-friends-and-family',
     title: 'Local 4 Player Games for Your Friends and Family',
     tag_line: `Local multiplayer games are a dying breed, but there are still some good choices out there!`,
-    created_at: '04/25/2019',
-    pinned: false,
+    created_at: '04/27/2019',
+    pinned: true,
     intro: `Local multiplayer games are a dying breed, but there are still some good choices out there!`,
     image:
-      'https://res.cloudinary.com/https-joeyg-me/image/upload/v1555937314/gaming/zeldaShelf.jpg',
-    alt: `picture of my Legend of Zelda games and collectibles shelf`,
+      'https://res.cloudinary.com/https-joeyg-me/image/upload/v1556365960/gaming/videoGameParty.jpg',
+    alt: `picture of several people gathered playing video games`,
     meta: {
       keywords:
-        'video games,party games,mario party,super smash bros',
-      hashtags: 'retroGames, retroGaming, zelda, mario',
-      description: `A curated list of some local 4 player games for various platforms.`
+        'video games,party games,mario party,super smash bros,couch co-op,multiplayer video games for couples,local multiplayer',
+      hashtags: 'gaming, localmultiplayer, videogames',
+      description: `A curated list of some local 4 player video games for various platforms.`
     },
     headers: [
       `Older Consoles With Multi-Player Adapters`,
@@ -107,7 +107,10 @@ export const second = [
       `Platformers`,
       `Racing`,
       `Fighting`,
-      `Party Games / Mini Games`
+      `Party Games / Mini Games`,
+      `Sports`,
+      `Shooter / Run n Gun`,
+      `Other / Unclassified`
     ]
   }
 ];
