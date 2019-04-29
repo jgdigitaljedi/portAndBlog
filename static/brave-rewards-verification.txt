@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: joeyg.me 
+Token: d3fe682b90461f706e3c9352dfdaca9ba7bc143135eb9fe357e7a69a94d5152c
