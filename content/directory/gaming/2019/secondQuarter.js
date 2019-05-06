@@ -134,7 +134,12 @@ export const second = [
       `Nintendo Entertainment System (NES)`,
       `Sega Master System`,
       `Sega Genesis`,
-      `Super Nintendo Entertainment System (SNES)`
+      `Super Nintendo Entertainment System (SNES)`,
+      `Sega Saturn`,
+      `Sony PlayStation`,
+      `Nintendo 64 (N64)`,
+      `Sega Dreamcast`,
+      `Sony PlayStation 2 (PS2)`
     ]
   }
 ];
