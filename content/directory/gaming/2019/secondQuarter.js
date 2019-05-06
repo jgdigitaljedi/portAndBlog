@@ -131,6 +131,10 @@ export const second = [
       description: `A deep dive into different console versions and revisions to help you decide which to get.`
     },
     headers: [
+      `Nintendo Entertainment System (NES)`,
+      `Sega Master System`,
+      `Sega Genesis`,
+      `Super Nintendo Entertainment System (SNES)`
     ]
   }
 ];
