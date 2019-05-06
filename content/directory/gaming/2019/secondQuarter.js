@@ -112,5 +112,25 @@ export const second = [
       `Shooter / Run n Gun`,
       `Other / Unclassified`
     ]
+  },
+  {
+    id: 14,
+    slug: 'which-version-of-a-console-should-you-get',
+    title: 'Which Version of a Console Should You Get?',
+    tag_line: `A deep dive into different console versions and revisions to help you decide which to get.`,
+    created_at: '05/06/2019',
+    pinned: true,
+    intro: `A deep dive into different console versions and revisions to help you decide which to get.`,
+    image:
+      'https://res.cloudinary.com/https-joeyg-me/image/upload/v1556365960/gaming/videoGameParty.jpg',
+    alt: `picture of several people gathered playing video games`,
+    meta: {
+      keywords:
+        'video games,party games,mario party,super smash bros,couch co-op,multiplayer video games for couples,local multiplayer',
+      hashtags: 'gaming, localmultiplayer, videogames',
+      description: `A deep dive into different console versions and revisions to help you decide which to get.`
+    },
+    headers: [
+    ]
   }
 ];
