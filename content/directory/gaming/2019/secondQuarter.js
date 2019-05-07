@@ -139,7 +139,10 @@ export const second = [
       `Sony PlayStation`,
       `Nintendo 64 (N64)`,
       `Sega Dreamcast`,
-      `Sony PlayStation 2 (PS2)`
+      `Sony PlayStation 2 (PS2)`,
+      `Nintendo GameCube`,
+      `Microsoft Xbox`,
+      `Microsoft Xbox 360`
     ]
   }
 ];
