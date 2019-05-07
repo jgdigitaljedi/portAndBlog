@@ -142,7 +142,12 @@ export const second = [
       `Sony PlayStation 2 (PS2)`,
       `Nintendo GameCube`,
       `Microsoft Xbox`,
-      `Microsoft Xbox 360`
+      `Microsoft Xbox 360`,
+      `Sony PlayStation 3 (PS3)`,
+      `Nintendo Wii`,
+      `Nintendo Wii U`,
+      `Sony PlayStation 4 (PS4)`,
+      `Microsoft Xbox One`
     ]
   }
 ];
