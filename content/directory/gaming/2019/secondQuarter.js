@@ -147,7 +147,14 @@ export const second = [
       `Nintendo Wii`,
       `Nintendo Wii U`,
       `Sony PlayStation 4 (PS4)`,
-      `Microsoft Xbox One`
+      `Microsoft Xbox One`,
+      `Nintendo Switch`,
+      `Nintendo Game Boy`,
+      `Nintendo Game Boy Color`,
+      `Nintendo Game Boy Advance`,
+      `Sony PlayStation Portable (PSP)`,
+      `Nintendo DS`,
+      `Nintendo 3DS`
     ]
   }
 ];
