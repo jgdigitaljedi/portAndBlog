@@ -6,7 +6,7 @@ http://joeyg.netlify.com/* http://joeyg.me/:splat 301!
 /resume   /about   301
 /contact   /about   301
 /fun   /   301
-/work  /   301
+/work  /about   301
 
 # Redirects for non-canonical routes
 /index  /   301!
