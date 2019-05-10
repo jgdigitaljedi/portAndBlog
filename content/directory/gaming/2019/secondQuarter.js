@@ -11,7 +11,7 @@ export const second = [
     alt: `Retro Game Treasure logo`,
     meta: {
       keywords:
-        'retro game treasure,gaming,nes,retro games,genesis,dreamcast,retro arch,video game collecting,vintage video games,retro games near me,gaming blog',
+        'games,video games,retro game treasure,gaming,nes,retro games,genesis,dreamcast,retro arch,video game collecting,vintage video games,retro games near me,gaming blog',
       hashtags: 'retrogames,RETROGAMING,RetroGameTreasure',
       description: `An overview of my experience as a subscriber to the Retro Games Treasure service.`
     },
@@ -36,7 +36,7 @@ export const second = [
     alt: `collage of game developer and publisher logos`,
     meta: {
       keywords:
-        'EA,Anthem,games,video games,gaming,video game reviews,video game collecting,gaming blog',
+        'EA,Anthem,games,video games,games,gaming,video game reviews,video game collecting,gaming blog',
       hashtags: 'videogames, ea, gamers',
       description: `My thoughts on the state of AAA games in 2019 and why I don't buy into the hype any more.`
     },
@@ -63,7 +63,7 @@ export const second = [
     alt: `picture of my Legend of Zelda games and collectibles shelf`,
     meta: {
       keywords:
-        'legend of zelda,super mario bros,sonic the hedgehog,tony hawk pro skater,god of war,call of duty,mario kart,halo,mortal kombat,grand theft auto,video games',
+        'video games,games,legend of zelda,super mario bros,sonic the hedgehog,tony hawk pro skater,god of war,call of duty,mario kart,halo,mortal kombat,grand theft auto,video games',
       hashtags: 'retroGames, retroGaming, zelda, mario',
       description: `A brief overview of my top 10 favorite video game franchises.`
     },
@@ -94,7 +94,7 @@ export const second = [
     alt: `picture of several people gathered playing video games`,
     meta: {
       keywords:
-        'video games,party games,mario party,super smash bros,couch co-op,multiplayer video games for couples,local multiplayer',
+        'video games,games,nintendo,xbox,party games,mario party,super smash bros,co op games,ps4 multiplayer games,local multiplayer',
       hashtags: 'gaming, localmultiplayer, videogames',
       description: `A curated list of some local 4 player video games for various platforms.`
     },
@@ -126,8 +126,8 @@ export const second = [
     alt: `image of a Nintendo Game Boy, Game Boy Pocket, and Game Boy Light`,
     meta: {
       keywords:
-        'video games,retro games,game boy,gba,playstation,xbox,xbox one,psp,nes,snes,sega genesis,master system,sega saturn,sega dreamcast,ps4,ps3,ps2',
-      hashtags: 'retroGaming, retroGames, videogames',
+        'video games,retro,game boy,nintendo,playstation,xbox,xbox one,psp,nes,sega,dreamcast,nintendo ds,games,game consoles',
+      hashtags: 'retroGaming, retroGames, videogames, xbox, playstation, nintendo, sega',
       description: `A deep dive into different console versions and revisions to help you decide which to get.`
     },
     headers: [
