@@ -17,7 +17,9 @@ export const second = [
     },
     headers: [
       `A Little Backstory`,
-      `So Why Do I Prefer Linux?`
+      `Why Do I Prefer Linux: The Things Not Directly Related to Development.`,
+      `Why Do I Prefer Linux: The Things Directly Related to Development.`,
+      `The Selection of Software on Linux`
     ]
   }
 ];
