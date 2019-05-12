@@ -106,6 +106,10 @@ export default {
       // width: 100%;
       text-align: center;
       margin: 1rem auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       img {
         height: 100%;
         max-height: 350px;
