@@ -11,8 +11,8 @@ export const second = [
     alt: `screenshot from my Ubuntu desktop taken from my laptop`,
     meta: {
       keywords:
-        'games,video games,retro game treasure,gaming,nes,retro games,genesis,dreamcast,retro arch,video game collecting,vintage video games,retro games near me,gaming blog',
-      hashtags: 'retrogames,RETROGAMING,RetroGameTreasure',
+        'linux,ubuntu,ubuntu download,canonical,linux apps,visual studio code,joey gauthier',
+      hashtags: 'linux, ubuntu, coding, webdeveloper',
       description: `Why I chose Linux as my OS of choice and how I am so productive using it.`
     },
     headers: [
