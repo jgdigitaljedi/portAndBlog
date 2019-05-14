@@ -109,7 +109,7 @@ export const second = [
       `Fighting`,
       `Party Games / Mini Games`,
       `Sports`,
-      `Shooter / Run n Gun`,
+      `Shooter / Run n Gun / SHMUP`,
       `Other / Unclassified`
     ]
   },
