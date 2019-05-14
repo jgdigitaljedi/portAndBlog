@@ -103,7 +103,7 @@ export const second = [
       `Series That Always Have 4 Player Modes`,
       `Action RPG`,
       `Rhythm Games`,
-      `First Person Shooter (FPS)`,
+      `First Person Shooter (FPS) / Third Person Shooter`,
       `Platformers`,
       `Racing`,
       `Fighting`,
