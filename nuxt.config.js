@@ -30,6 +30,11 @@ module.exports = {
       },
       { hid: 'author', name: 'author', content: `Joey Gauthier` },
       {
+        hid: 'specificfeeds-verification-code',
+        name: 'specificfeeds-verification-code',
+        content: 'lqGEYC5ApcNA8h0gkbZM'
+      },
+      {
         hid: 'keywords',
         name: 'keywords',
         content: `Joey Gauthier,Paul Gauthier,JGDigitalJedi,retro games,web developer portfolio examples,Austin developers,JavaScript,Vue,Angular,Nintendo,Playstation,Xbox,retro collecting`
@@ -105,7 +110,7 @@ module.exports = {
 
   /** forcing scroll to top on route change */
   router: {
-    scrollBehavior: function(to, from, savedPosition) {
+    scrollBehavior: function (to, from, savedPosition) {
       return { x: 0, y: 0 };
     }
   },
