@@ -157,5 +157,25 @@ export const second = [
       `Nintendo DS`,
       `Nintendo 3DS`
     ]
+  },
+  {
+    id: 15,
+    slug: 'a-handful-of-video-game-youtube-channels-to-checkout',
+    title: 'A Handful of Video Game YouTube Channels to Checkout',
+    tag_line: `If you like video games and watch YouTube regularly then you have to checkout these YouTube channels!`,
+    created_at: '05/20/2019',
+    pinned: false,
+    intro: `If you like video games and watch YouTube regularly then you have to checkout these YouTube channels!`,
+    image:
+      'https://res.cloudinary.com/https-joeyg-me/image/upload/v1557318786/gaming/Game_Boy_models.jpg',
+    alt: `image of a Nintendo Game Boy, Game Boy Pocket, and Game Boy Light`,
+    meta: {
+      keywords:
+        'video games,retro,Joey Gauthier,YouTube,Metal Jesus,Gameranx,RGT 85',
+      hashtags: 'retroGaming, retroGames, videogames, xbox, playstation, nintendo, sega',
+      description: `A list and brief summary of some great video game oriented YouTube channels.`
+    },
+    headers: [
+    ]
   }
 ];
