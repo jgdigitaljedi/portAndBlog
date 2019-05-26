@@ -163,7 +163,7 @@ export const second = [
     slug: 'a-handful-of-video-game-youtube-channels-to-checkout',
     title: 'A Handful of Video Game YouTube Channels to Checkout',
     tag_line: `If you like video games and watch YouTube regularly then you have to checkout these YouTube channels!`,
-    created_at: '05/20/2019',
+    created_at: '05/26/2019',
     pinned: false,
     intro: `If you like video games and watch YouTube regularly then you have to checkout these YouTube channels!`,
     image:
@@ -176,6 +176,28 @@ export const second = [
       description: `A list and brief summary of some great video game oriented YouTube channels.`
     },
     headers: [
+      `MetalJesusRocks`,
+      `RGT 85`,
+      `Spawn Wave`,
+      `DidYouKnowGaming?`,
+      `The 8-bit Guy`,
+      `Scott the Woz`,
+      `Girlfriend Reviews`,
+      `Game Sack`,
+      `Pixel Game Squad`,
+      `Digital Foundry`,
+      `The Game Theorists`,
+      `Gamehut`,
+      `LGR`,
+      `Kelsey Lewin`,
+      `HappyConsoleGamer`,
+      `Gaming Historian`,
+      `BeatEmUps`,
+      `Gamester81`,
+      `Cinemassacre`,
+      `My Life in Gaming`,
+      `The Immortal John Hancock`,
+      `JohnRiggs`
     ]
   }
 ];
