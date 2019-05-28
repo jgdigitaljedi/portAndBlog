@@ -163,7 +163,7 @@ export const second = [
     slug: 'a-handful-of-video-game-youtube-channels-to-checkout',
     title: 'A Handful of Video Game YouTube Channels to Checkout',
     tag_line: `If you like video games and watch YouTube regularly then you have to checkout these YouTube channels!`,
-    created_at: '05/26/2019',
+    created_at: '05/28/2019',
     pinned: false,
     intro: `If you like video games and watch YouTube regularly then you have to checkout these YouTube channels!`,
     image:
@@ -172,7 +172,7 @@ export const second = [
     meta: {
       keywords:
         'video games,retro,Joey Gauthier,YouTube,Metal Jesus,Gameranx,RGT 85,Metal Jesus Rocks,Kelsey Lewin,My Life in Gaming',
-      hashtags: 'retroGaming, retroGames, MetalJesusRocks, SpawnWave, YouTube',
+      hashtags: 'retroGaming, retroGames, YouTube',
       description: `A list and brief summary of some great video game oriented YouTube channels.`
     },
     headers: [
@@ -196,7 +196,7 @@ export const second = [
       `Gamester81`,
       `Cinemassacre`,
       `My Life in Gaming`,
-      `The Immortal John Hancock`,
+      `John Hancock`,
       `JohnRiggs`
     ]
   }
