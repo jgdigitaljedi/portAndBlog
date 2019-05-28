@@ -197,7 +197,10 @@ export const second = [
       `Cinemassacre`,
       `My Life in Gaming`,
       `John Hancock`,
-      `JohnRiggs`
+      `JohnRiggs`,
+      `Modern Vintage Gamer`,
+      `Gameranx`,
+      `Mystic`
     ]
   }
 ];
