@@ -167,12 +167,12 @@ export const second = [
     pinned: false,
     intro: `If you like video games and watch YouTube regularly then you have to checkout these YouTube channels!`,
     image:
-      'https://res.cloudinary.com/https-joeyg-me/image/upload/v1557318786/gaming/Game_Boy_models.jpg',
-    alt: `image of a Nintendo Game Boy, Game Boy Pocket, and Game Boy Light`,
+      'https://res.cloudinary.com/https-joeyg-me/image/upload/v1559045644/gaming/YouTube-Logo_1.png',
+    alt: `the YouTube logo`,
     meta: {
       keywords:
-        'video games,retro,Joey Gauthier,YouTube,Metal Jesus,Gameranx,RGT 85',
-      hashtags: 'retroGaming, retroGames, videogames, xbox, playstation, nintendo, sega',
+        'video games,retro,Joey Gauthier,YouTube,Metal Jesus,Gameranx,RGT 85,Metal Jesus Rocks,Kelsey Lewin,My Life in Gaming',
+      hashtags: 'retroGaming, retroGames, MetalJesusRocks, SpawnWave, YouTube',
       description: `A list and brief summary of some great video game oriented YouTube channels.`
     },
     headers: [
