@@ -115,8 +115,14 @@ export default {
           icon: require('~/assets/images/navbar/ghost_blue.png'),
           mario: require('~/assets/images/mario/mario_pipe.png'),
           bond: require('~/assets/images/navbar/n64.png')
+        },
+        {
+          title: 'Stuff',
+          to: '/stuff',
+          icon: require('~/assets/images/navbar/ghost_orange.png'),
+          mario: require('~/assets/images/mario/mario_block.png'),
+          bond: require('~/assets/images/navbar/barrel.png')
         }
-        // { title: 'VG', to: '/videogames' }
       ],
       jgLogos: {
         pacman: require('~/assets/images/navbar/JG.png'),
