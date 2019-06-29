@@ -11,7 +11,7 @@ const Gaming = esmImport('./content/directory/gaming');
 
 const codingArr = Coding.default().map(item => `/blog/coding/${item.slug}`);
 const gamingArr = Gaming.default().map(item => `/blog/gaming/${item.slug}`);
-
+console.log('NODE_ENV', process.env.NODE_ENV);
 module.exports = {
   mode: 'universal',
   server: {
@@ -238,7 +238,7 @@ module.exports = {
     clientConfigs: {
       default: {
         // required  
-        httpEndpoint: 'http://localhost:4000',
+        httpEndpoint: 'http://localhost:3000',
         // optional
         // See https://www.apollographql.com/docs/link/links/http.html#options
         httpLinkOptions: {
