@@ -14,7 +14,9 @@ const gamingArr = Gaming.default().map(item => `/blog/gaming/${item.slug}`);
 
 module.exports = {
   mode: 'universal',
-
+  server: {
+    port: 3000
+  },
   /*
    ** Headers of the page
    */

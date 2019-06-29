@@ -1,7 +1,7 @@
 <template>
   <div class="blog-slug">
     <v-card class="markdown-content">
-      <article v-html="postContent"></article>
+      <article v-html="postContent.default"></article>
     </v-card>
     <v-dialog v-model="imageDialog" content-class="image-dialog" style="min-width: 95vw;">
       <div class="image-dialog__container">
@@ -36,6 +36,7 @@ export default {
         this.openImage(src);
       };
     }
+    console.log('postContent', this.postContent);
   },
   methods: {
     openImage(src) {
