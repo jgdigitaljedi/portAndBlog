@@ -36,7 +36,6 @@ export default {
         this.openImage(src);
       };
     }
-    console.log('postContent', this.postContent);
   },
   methods: {
     openImage(src) {
@@ -102,6 +101,17 @@ export default {
       .center {
         text-align: center;
       }
+    }
+    .writer-snippet {
+      font-size: 1.6rem;
+      color: $light;
+      text-align: center;
+      width: 90%;
+    }
+    .border-section {
+      margin-bottom: 2rem;
+      border: 1px solid $yellow;
+      padding: 2rem;
     }
     .image-container {
       // width: 100%;
