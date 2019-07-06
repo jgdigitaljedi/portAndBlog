@@ -29,7 +29,6 @@ Right now things look a little on the rough side because this is still in active
 
 ## CURRENT FOCUS TODO
 
-- The nav theme switching is neat, but it needs work (especially the nav icons on the about page).
 - add more Google Analytics functionality
 - dev the game library backend in a different repo, stand it up on a DO server, then build a no-ssr view to display my games library in tables with visualizations
 
@@ -40,3 +39,6 @@ Right now things look a little on the rough side because this is still in active
 - the blog sections are eventually going to need pagination, archives, or something because a million posts on the page isn't acceptable - mayeb infinite scroll?
 - konami code easter egg trigger works, now think of something fun for it to do
 - make remaining views (My VG library view, gallery of my game collection, and what else if anything?)
+- work on PWA caching - don't cache images but have nice placeholders and fallbacks if they don't load
+- I'm warming up to the idea of getting rid of the retro game look but need to figure out exactly what I would want instead
+
