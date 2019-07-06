@@ -4,7 +4,7 @@ export const third = [
     slug: 'dear-video-game-jounalists-keep-your-politics-away-from-my-video-games',
     title: 'Dear Video Game Jounalists: Keep Your Politics Away From My Video Games',
     tag_line: `I've had enough of hack "jounalists" attacking video games. It needs to stop! NOW!`,
-    created_at: '07/03/2019',
+    created_at: '07/06/2019',
     pinned: false,
     intro: `The issues I have with modern video game "journalists" injecting their beliefs and politics into their work.`,
     image:
