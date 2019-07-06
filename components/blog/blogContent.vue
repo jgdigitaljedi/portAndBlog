@@ -1,7 +1,7 @@
 <template>
   <div class="blog-slug">
     <v-card class="markdown-content">
-      <article v-html="postContent"></article>
+      <article v-html="postContent.default"></article>
     </v-card>
     <v-dialog v-model="imageDialog" content-class="image-dialog" style="min-width: 95vw;">
       <div class="image-dialog__container">
@@ -101,6 +101,17 @@ export default {
       .center {
         text-align: center;
       }
+    }
+    .writer-snippet {
+      font-size: 1.6rem;
+      color: $light;
+      text-align: center;
+      width: 90%;
+    }
+    .border-section {
+      margin-bottom: 2rem;
+      border: 1px solid $yellow;
+      padding: 2rem;
     }
     .image-container {
       // width: 100%;
