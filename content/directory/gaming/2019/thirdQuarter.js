@@ -2,7 +2,7 @@ export const third = [
   {
     id: 16,
     slug: 'dear-video-game-jounalists-keep-your-politics-away-from-my-video-games',
-    title: 'Dear Video Game Jounalists: Keep Your Politics Away From My Video Games',
+    title: 'Dear Video Game Journalists: Keep Your Politics Away From My Video Games',
     tag_line: `I've had enough of hack "jounalists" attacking video games. It needs to stop! NOW!`,
     created_at: '07/06/2019',
     pinned: false,
