@@ -22,5 +22,26 @@ export const third = [
       `Recent Examples of Terrible Video Game "Journalism"`,
       `What Can We Do About These Politically Charged Reviews?`
     ]
+  },
+  {
+    id: 17,
+    slug: 'attack-of-the-mini-consoles',
+    title: 'Attack of the Mini Consoles',
+    tag_line: `Small, fun, & nostalgic. Gotta collect 'em all!`,
+    created_at: '07/07/2019',
+    pinned: false,
+    intro: `Want to play some retro games but don't want to spend a ton and deal with hooking it all up? Mini consoles might be the best solution!`,
+    image:
+      'https://res.cloudinary.com/https-joeyg-me/image/upload/v1562579702/gaming/miniConsoles.jpg',
+    alt: `image of an angry person with the word tiggered under it`,
+    meta: {
+      keywords:
+        'video games,retro,Joey Gauthier,NES Classic,SNES Classic,PlayStation Classic,emulators',
+      hashtags: 'NESClassic, PlayStation',
+      description: `An overview of released and future mini consoles.`
+    },
+    headers: [
+      `NES Classic Edition`
+    ]
   }
 ];
