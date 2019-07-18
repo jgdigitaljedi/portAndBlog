@@ -40,8 +40,6 @@ export const third = [
       hashtags: 'NESClassic, PlayStation',
       description: `An overview of released and future mini consoles.`
     },
-    headers: [
-      `NES Classic Edition`
-    ]
+    headers: [`NES Classic Edition`, `SNES Classic Edition`]
   }
 ];
