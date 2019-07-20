@@ -36,10 +36,10 @@ export const third = [
     alt: `image of an angry person with the word tiggered under it`,
     meta: {
       keywords:
-        'video games,retro,Joey Gauthier,NES Classic,SNES Classic,PlayStation Classic,emulators',
+        'video games,retro,Joey Gauthier,NES Classic,SNES Classic,PlayStation Classic,emulators,Nintendo,8bitdo',
       hashtags: 'NESClassic, PlayStation',
       description: `An overview of released and future mini consoles.`
     },
-    headers: [`NES Classic Edition`, `SNES Classic Edition`]
+    headers: [`NES Classic Edition`, `SNES Classic Edition`, `PlayStation Classic`]
   }
 ];
