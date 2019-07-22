@@ -40,6 +40,13 @@ export const third = [
       hashtags: 'NESClassic, PlayStation',
       description: `An overview of released and future mini consoles.`
     },
-    headers: [`NES Classic Edition`, `SNES Classic Edition`, `PlayStation Classic`]
+    headers: [
+      `NES Classic Edition`,
+      `SNES Classic Edition`,
+      `PlayStation Classic`,
+      `C64 Mini`,
+      `SNK NEO GEO Mini`,
+      `Future Mini Consoles That Have Been Announced`
+    ]
   }
 ];
