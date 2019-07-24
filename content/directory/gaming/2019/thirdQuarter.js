@@ -28,7 +28,7 @@ export const third = [
     slug: 'attack-of-the-mini-consoles',
     title: 'Attack of the Mini Consoles',
     tag_line: `Small, fun, & nostalgic. Gotta collect 'em all!`,
-    created_at: '07/07/2019',
+    created_at: '07/24/2019',
     pinned: false,
     intro: `Want to play some retro games but don't want to spend a ton and deal with hooking it all up? Mini consoles might be the best solution!`,
     image:
@@ -36,8 +36,8 @@ export const third = [
     alt: `image of an angry person with the word tiggered under it`,
     meta: {
       keywords:
-        'video games,retro,Joey Gauthier,NES Classic,SNES Classic,PlayStation Classic,emulators,Nintendo,8bitdo',
-      hashtags: 'NESClassic, PlayStation',
+        'video games,retro,Joey Gauthier,NES Classic,SNES Classic,PlayStation Classic,emulators,Nintendo,8bitdo,Genesis Mini,C64 Mini,TurboGrafx-16 Mini',
+      hashtags: 'RetroGames, RetroGaming',
       description: `An overview of released and future mini consoles.`
     },
     headers: [
@@ -46,7 +46,9 @@ export const third = [
       `PlayStation Classic`,
       `C64 Mini`,
       `SNK NEO GEO Mini`,
-      `Future Mini Consoles That Have Been Announced`
-    ]
+      `Future Mini Consoles That Have Been Announced`,
+      `Gotta Collect Them All!`
+    ],
+    related: [6, 14]
   }
 ];
