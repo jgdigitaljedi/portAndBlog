@@ -11,7 +11,7 @@
         </div>
       </div>
       <div class="blog-list-inner__thumb hidden-sm-and-down" v-if="post.image && post.image.length">
-        <img class="blog-list-inner__thumb--image" :src="post.image" :alt="post.alt">
+        <img class="blog-list-inner__thumb--image" :src="post.image" :alt="post.alt" />
       </div>
       <div class="intro-and-date">
         <div>
@@ -63,7 +63,7 @@ export default {
       background-color: $pacman-purple;
       padding: 1rem;
       h3 {
-        color: black;
+        color: $white;
       }
     }
     .intro-and-date {
@@ -89,13 +89,13 @@ export default {
     }
     .blog-link-wrapper {
       background-color: rgba(77, 0, 185, 0.35);
-      color: $white;
+      color: $yellow;
       width: 100%;
       flex: 1;
       text-align: center;
       min-height: 1.2rem;
       .blog-link {
-        color: $white;
+        color: $yellow;
         height: 100%;
         font-family: $game-font;
         font-size: 0.9rem;

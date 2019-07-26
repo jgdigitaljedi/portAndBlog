@@ -14,7 +14,7 @@
       <img
         src="~/assets/images/me/me_8bit_scanlines.jpg"
         alt="image of Joey Gauthier made to look 8 bit with scanlines"
-      >
+      />
       <h1 :class="{'mobile': $vuetify.breakpoint.smAndDown}">Joey Gauthier</h1>
     </div>
     <div class="home__about--wrapper">
@@ -33,9 +33,7 @@ export default {
   components: { Social },
   head() {
     return {
-      link: [
-        { rel: 'canonical', href: 'https://joeyg.me' }
-      ]
+      link: [{ rel: 'canonical', href: 'https://joeyg.me' }]
     };
   },
   data() {
@@ -160,7 +158,8 @@ $shadows-big: multiple-box-shadow(100);
       text-align: center;
       padding: 1.5rem 2rem;
       p {
-        font-family: $game-font;
+        font-family: $secondary-font;
+        font-size: 1.8rem;
       }
       &:before {
         background-color: $black;
