@@ -50,5 +50,24 @@ export const third = [
       `Gotta Collect Them All!`
     ],
     related: [6, 14]
+  },
+  {
+    id: 18,
+    slug: 'classic-game-fest-was-a-blast',
+    title: 'Classic Game Fest Was a Blast!',
+    tag_line: `If you can get to Austin, TX in July, you have to go to Classic Game Fest!`,
+    created_at: '08/15/2019',
+    pinned: false,
+    intro: `Classic Game Fest is a retro game collector's dream and I plan on going every year!`,
+    image:
+      'https://res.cloudinary.com/https-joeyg-me/image/upload/v1562579702/gaming/miniConsoles.jpg',
+    alt: `image of an angry person with the word tiggered under it`,
+    meta: {
+      keywords:
+        'video games,retro,Joey Gauthier,NES Classic,SNES Classic,PlayStation Classic,emulators,Nintendo,8bitdo,Genesis Mini,C64 Mini,TurboGrafx-16 Mini',
+      hashtags: 'ClassicGameFest, RetroGames, RetroGaming',
+      description: `My experience at Classic Game Fest 2019 in Austin, TX.`
+    },
+    headers: []
   }
 ];

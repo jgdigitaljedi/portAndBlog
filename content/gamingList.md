@@ -13,3 +13,4 @@
 - 15. A Handful of Video Game YouTube Channels to Checkout
 - 16. Dear Video Game Jounalists: Keep Your Politics Away From My Video Games
 - 17. Attack of the Mini Consoles
+- 18. Classic Game Fest Was a Blast!

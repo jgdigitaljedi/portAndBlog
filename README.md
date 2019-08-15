@@ -27,6 +27,20 @@ For detailed explanation on how things work, checkout [Nuxt.js docs](https://nux
 
 Right now things look a little on the rough side because this is still in active development and, quite frankly, I'm still trying to find design inspiration for some of the views.
 
+## Branches
+
+#### master
+
+As soon as things or pushed to this branch, Netlify pulls, builds, and deploys. This is my true master branch with CICD.
+
+#### dev
+
+This is where I make my changes and workout the kinks. Also, I wrote blog posts in this branch. Once everything looks good, I merge into master.
+
+#### redesign
+
+This is my visual redesign branch. I'm not 100% happy with how things look and have some regrets about my initial retro-game inspired decisions. This is my playground for redesigning the site.
+
 ## CURRENT FOCUS TODO
 
 - The nav theme switching is neat, but it needs work (especially the nav icons on the about page).
