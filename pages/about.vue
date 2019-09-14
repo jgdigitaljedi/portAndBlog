@@ -1,89 +1,100 @@
 <template>
   <section class="about" v-if="isMounted">
-    <div class="about__dossier">
-      <section class="about__dossier--general dossier" v-if="selectedTab === 1">
-        <GeneralTab></GeneralTab>
-      </section>
-      <section class="about__dossier--tech dossier" v-if="selectedTab === 2">
-        <TechTab></TechTab>
-      </section>
-      <section class="about__dossier--work dossier" v-if="selectedTab === 3">
-        <WorkTab></WorkTab>
-      </section>
-      <section class="about__dossier--contact dossier" v-if="selectedTab === 4">
-        <ContactTab></ContactTab>
-      </section>
-      <section class="about__dossier--random dossier" v-if="selectedTab === 5">
-        <SiteTab></SiteTab>
-      </section>
-    </div>
-    <div class="about__tabs">
-      <div class="about__tabs--list">
-        <input
-          class="about__tabs--list__item"
-          type="radio"
-          name="tabs"
-          id="tab_1"
-          v-model="selectedTab"
-          :value="1"
-          @click="tabClick('general')"
-        >
-        <label for="tab_1" :class="{'checked': selectedTab === 1}" role="button">GENERAL</label>
-        <input
-          class="about__tabs--list__item"
-          type="radio"
-          name="tabs"
-          id="tab_2"
-          v-model="selectedTab"
-          :value="2"
-          @click="tabClick('tech')"
-        >
-        <label for="tab_2" :class="{'checked': selectedTab === 2}" role="button">TECH</label>
-        <input
-          class="about__tabs--list__item"
-          type="radio"
-          name="tabs"
-          id="tab_3"
-          v-model="selectedTab"
-          :value="3"
-          @click="tabClick('work')"
-        >
-        <label for="tab_3" :class="{'checked': selectedTab === 3}" role="button">WORK</label>
-        <input
-          class="about__tabs--list__item"
-          type="radio"
-          name="tabs"
-          id="tab_4"
-          v-model="selectedTab"
-          :value="4"
-          @click="tabClick('contact')"
-        >
-        <label for="tab_4" :class="{'checked': selectedTab === 4}" role="button">CONTACT</label>
-        <input
-          class="about__tabs--list__item"
-          type="radio"
-          name="tabs"
-          id="tab_5"
-          v-model="selectedTab"
-          :value="5"
-          @click="tabClick('site')"
-        >
-        <label for="tab_5" :class="{'checked': selectedTab === 5}" role="button">SITE</label>
+    <div class="summary about--subsection">
+      <h3 class="bottom-margin">I'm Joey Gauthier, a software engineer and retro game collector!</h3>
+      <div class="bottom-margin">
+        As far as being a developer/engineer is concerned, I'm a very functionality and performance focused developer as opposed to a design
+        oriented developer. I view development as a complex logic problem and I thrive on the opportunity to take on solving the most complex problems
+        that arise. In other words, if there is a 1-point layout ticket and a 10-point ticket for writing a complex service or visualiztion, I'll be grabbing
+        the second ticket!
+      </div>
+      <div>
+        As a retro game collector, I'm a life-long video gamer that appreciates the technology and history of video games and collects anything I can get
+        my hands on! I'm less interested in sealed copies of games and more interested in playing them. I also am the guy that has everything hooked up
+        to upscalers and takes apart my old consoles to solder in new capacitors so they last a lot longer.
       </div>
     </div>
+    <div class="skills about--subsection">
+      <h3 class="bottom-margin">What I do</h3>
+      <div class="bottom-margin skill">
+        <h4 class="skill-title">Front-end Frameworks</h4>
+        <div>Angular, Vue, Nuxt</div>
+      </div>
+      <div class="bottom-margin skill">
+        <h4 class="skill-title">Visualizations</h4>
+        <div>HighCharts, D3, Chart.js, Kendo UI, raw JavaScript</div>
+      </div>
+      <div class="bottom-margin skill">
+        <h4 class="skill-title">Backend</h4>
+        <div>NodeJS, ExpressJS, MongoDB, Maria DB</div>
+      </div>
+      <div class="bottom-margin skill">
+        <h4 class="skill-title">Deployments/Tools</h4>
+        <div>AWS, Jenkins, Netlify, Apigee</div>
+      </div>
+    </div>
+    <div class="web about--subsection">
+      <div class="twitter social-link">
+        <a
+          href="https://twitter.com/jgdigitaljedi"
+          target="_blank"
+          rel="external"
+          @click="socialLinkClick('twitter')"
+        >
+          <v-icon>icon-twitter</v-icon>Twitter
+        </a>
+      </div>
+      <div class="spotify social-link">
+        <a
+          href="https://open.spotify.com/user/jdigitaljedi?si=FJ4SnMETTjS4Xd5eTM6JWg"
+          target="_blank"
+          rel="external"
+          @click="socialLinkClick('spotify')"
+        >
+          <v-icon>icon-spotify</v-icon>Spotify
+        </a>
+      </div>
+      <div class="github social-link">
+        <a
+          href="https://github.com/jgdigitaljedi"
+          target="_blank"
+          rel="external"
+          @click="socialLinkClick('github')"
+        >
+          <v-icon>icon-github</v-icon>GitHub
+        </a>
+      </div>
+      <div class="linkedin social-link">
+        <a
+          href="https://www.linkedin.com/in/paulgauthier81"
+          target="_blank"
+          rel="external"
+          @click="socialLinkClick('linkedIn')"
+        >
+          <v-icon>icon-linkedin2</v-icon>LinkedIn
+        </a>
+      </div>
+      <div class="lastfm social-link">
+        <a
+          href="https://www.last.fm/user/joeygstrings"
+          target="_blank"
+          rel="external"
+          @click="socialLinkClick('lastFm')"
+        >
+          <v-icon>icon-lastfm</v-icon>Last.fm
+        </a>
+      </div>
+    </div>
+    <div class="hobbies about--subsection">hobbies</div>
+    <div class="facts about--subsection">facts</div>
+    <div class="work about--subsection">work</div>
   </section>
 </template>
 
 <script>
-import GeneralTab from '~/components/about/general.vue';
-import TechTab from '~/components/about/tech.vue';
-import WorkTab from '~/components/about/work.vue';
-import ContactTab from '~/components/about/contact.vue';
-import SiteTab from '~/components/about/site.vue';
-// style after N64 GoldenEye dossier/settings/mission screen with folders and tabs on right
 export default {
   name: 'AboutPage',
-  components: { GeneralTab, TechTab, WorkTab, ContactTab, SiteTab },
+  components: {},
   head() {
     return {
       title: `Joey Gauthier | About`,
@@ -143,9 +154,9 @@ export default {
     }
   },
   methods: {
-    tabClick(which) {
+    socialLinkClick(which) {
       if (this.gdprAnswer === 'accept') {
-        this.$ga.event('aboutTab', 'click', which);
+        this.$ga.event('aboutSocialLink', 'click', which);
       }
     }
   }
@@ -156,93 +167,91 @@ export default {
 @import '~/assets/style/theme.scss';
 @import '~/assets/style/shadows.scss';
 .about {
-  cursor: url('/images/cursors/red_crosshair.png'), auto !important;
-  min-height: calc(100vh - 7rem);
-  overflow-y: auto;
-  // background-color: $ge-background;
-  background: -webkit-linear-gradient(to left, rgba(17, 23, 0, 0.7), rgba(17, 23, 0, 0.7)),
-    url('../assets/images/patterns/background_paper.png') repeat;
-  background: linear-gradient(to left, rgba(17, 23, 0, 0.7), rgba(17, 23, 0, 0.7)),
-    url('../assets/images/patterns/background_paper.png') repeat;
-  display: flex;
-  justify-content: center;
-  padding: 4rem 0 2rem;
-  .fixed-transparent-text {
-    font-size: 7rem;
-    color: rgba(191, 63, 65, 0.3);
-    position: absolute;
-    transform: rotate(-37deg);
-    // top: 22rem;
-    // right: 16rem;
-    z-index: -1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 4px;
+  grid-row-gap: 4px;
+  justify-items: center;
+  padding: 3rem;
+  background-color: #303030;
+  .bottom-margin {
+    margin-bottom: 1rem;
   }
-  .about__dossier {
-    @include box_shadow(3);
-    pointer-events: none;
-    z-index: 10;
-    max-width: 1000px;
-    min-width: 300px;
-    width: 95%;
-    min-height: 400px;
-    height: auto;
-    background: -webkit-linear-gradient(to left, rgba(209, 210, 165, 0.7), rgba(209, 210, 165, 0.7)),
-      url('../assets/images/patterns/tabs_paper.png') repeat;
-    background: linear-gradient(to left, rgba(209, 210, 165, 0.7), rgba(209, 210, 165, 0.7)),
-      url('../assets/images/patterns/tabs_paper.png') repeat;
-    .dossier {
-      color: lighten($black, 15%);
-      position: relative;
-      ol > li,
-      ul > li,
-      h3 {
-        font-family: my_underwoodregular;
-      }
+  .summary {
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .skills {
+    grid-column: 2;
+    grid-row: 1;
+    .skill .skill-title {
+      font-weight: bold;
     }
   }
-  .about__tabs {
-    font-family: my_underwoodregular;
-    width: 2rem;
-    pointer-events: auto;
-    .about__tabs--list {
-      position: relative;
-      input[type='radio'] {
-        display: none;
-        transform: rotate(90deg);
-      }
-      label {
-        font-family: my_underwoodregular;
-        cursor: url('/images/cursors/cursor-click.png'), auto !important;
-        background: -webkit-linear-gradient(
-            to left,
-            rgba(119, 110, 65, 0.7),
-            rgba(119, 110, 65, 0.7)
-          ),
-          url('../assets/images/patterns/tabs_paper.png') repeat;
-        background: linear-gradient(to left, rgba(119, 110, 65, 0.7), rgba(119, 110, 65, 0.7)),
-          url('../assets/images/patterns/tabs_paper.png') repeat;
-        transform: rotate(90deg);
-        text-align: center;
-        display: block;
-        color: lighten($black, 15%);
-        height: 2.5rem;
-        width: 9rem;
-        margin: 7rem 0 6.5rem -4rem;
-        border-top-left-radius: 1.5rem;
-        border-top-right-radius: 1.5rem;
-        position: relative;
-        &.checked {
-          background: -webkit-linear-gradient(
-              to left,
-              rgba(209, 210, 165, 0.7),
-              rgba(209, 210, 165, 0.7)
-            ),
-            url('../assets/images/patterns/tabs_paper.png') repeat;
-          background: linear-gradient(to left, rgba(209, 210, 165, 0.7), rgba(209, 210, 165, 0.7)),
-            url('../assets/images/patterns/tabs_paper.png') repeat;
-          z-index: 15;
+  .hobbies {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .web {
+    grid-column: 3;
+    grid-row: 1;
+    .social-link {
+      // font-family: my_underwoodregular;
+      font-size: 2rem;
+      margin-top: 2rem;
+      &.twitter {
+        a,
+        .v-icon {
+          color: #00aced;
         }
       }
+      &.linkedin {
+        a,
+        .v-icon {
+          color: #0077b5;
+        }
+      }
+      &.spotify {
+        a,
+        .v-icon {
+          color: #1db954;
+        }
+      }
+      &.lastfm {
+        a,
+        .v-icon {
+          color: #d51007;
+        }
+      }
+      &.github {
+        a,
+        .v-icon {
+          color: #fff;
+        }
+      }
+      a {
+        text-decoration: none;
+        display: flex;
+        align-items: baseline;
+      }
+      .v-icon {
+        font-size: 2.3rem;
+        margin-right: 1rem;
+      }
     }
+  }
+  .facts {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .work {
+    grid-column: 3;
+    grid-row: 2;
   }
 }
 </style>

@@ -19,7 +19,7 @@
             :src="jgLogo"
             alt="JG for Joey Gauthier in the Sega font"
             :class="{'scrolled': scrolled}"
-          >
+          />
         </nuxt-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
@@ -29,14 +29,14 @@
         class="pacman-cherries hidden-md-and-up"
         :class="{'scrolled': scrolled}"
         alt="cherries from the pacman video game being used as a mobile navigation button"
-      >
+      />
       <v-toolbar-items class="nav__items hidden-sm-and-down" v-if="isMounted">
         <div v-for="(link, index) in links" :key="link.title" class="nav-items__link-wrapper">
           <nuxt-link :to="link.to" class="nav-link">
             <img
               :src="fullPath === '/blog' ? link.mario : (fullPath === '/about' ? link.bond : link.icon)"
               :class="{'scrolled': scrolled}"
-            >
+            />
             <label class="nav-link__tile">
               <div class="nav-link__tile--text-wrapper">
                 <div
@@ -56,12 +56,12 @@
               :src="((fullPath === '/blog') ? pellets.mario : (fullPath === '/about' ? pellets.bond : pellets.pacman))"
               :class="{'scrolled': scrolled}"
               :alt="fullPath === '/blog' ? 'coin from Mario Bros game' : (fullPath === '/about' ? 'bullet hole' : 'power pellet from pacman game')"
-            >
+            />
             <img
               :src="((fullPath === '/blog') ? pellets.mario : (fullPath === '/about' ? pellets.bond : pellets.pacman))"
               :class="{'scrolled': scrolled}"
               :alt="fullPath === '/blog' ? 'coin from Mario Bros game' : (fullPath === '/about' ? 'bullet hole' : 'power pellet from pacman game')"
-            >
+            />
           </div>
         </div>
       </v-toolbar-items>
@@ -92,7 +92,7 @@ export default {
       pellets: {
         pacman: require('~/assets/images/navbar/power-pellet.png'),
         mario: require('~/assets/images/mario/mario_coin.png'),
-        bond: require('~/assets/images/navbar/bullet_hole.png')
+        bond: require('~/assets/images/navbar/heart.png')
       },
       links: [
         {
@@ -100,21 +100,21 @@ export default {
           to: '/',
           icon: require('~/assets/images/navbar/pacman.png'),
           mario: require('~/assets/images/mario/small-mario.png'),
-          bond: require('~/assets/images/navbar/8bit_gun.png')
+          bond: require('~/assets/images/navbar/link.png')
         },
         {
           title: 'Blog',
           to: '/blog',
           icon: require('~/assets/images/navbar/ghost_red.png'),
           mario: require('~/assets/images/mario/mario_shroom.png'),
-          bond: require('~/assets/images/navbar/goldeneye_watch.png')
+          bond: require('~/assets/images/navbar/zelda_enemy.png')
         },
         {
           title: 'About',
           to: '/about',
           icon: require('~/assets/images/navbar/ghost_blue.png'),
           mario: require('~/assets/images/mario/mario_pipe.png'),
-          bond: require('~/assets/images/navbar/n64.png')
+          bond: require('~/assets/images/navbar/triforce.png')
         }
         // { title: 'VG', to: '/videogames' }
       ],
@@ -188,6 +188,7 @@ $mario-ground: #b72504;
 $mario-sky: #6185f8;
 $mario-letters: #eeaf36;
 $bond-dossier: rgb(209, 210, 165);
+$zelda-green: #508372;
 
 @keyframes blink {
   0% {
@@ -230,7 +231,7 @@ $bond-dossier: rgb(209, 210, 165);
   }
   &.bond-wrapper {
     border: none;
-    background-color: $bond-dossier;
+    background-color: $zelda-green;
   }
   .blog-scroll {
     position: absolute;
@@ -262,7 +263,7 @@ $bond-dossier: rgb(209, 210, 165);
     &.bond-theme {
       border: none;
       border-radius: 0;
-      background-color: $bond-dossier !important;
+      background-color: $zelda-green !important;
       box-shadow: none;
     }
     .pacman-cherries {
