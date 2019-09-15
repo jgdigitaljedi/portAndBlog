@@ -1,14 +1,14 @@
 <template>
   <section class="about" v-if="isMounted">
+    <div class="photo about--subsection"></div>
     <div class="summary about--subsection">
       <h3 class="bottom-margin">I'm Joey Gauthier, a software engineer and retro game collector!</h3>
-      <div class="bottom-margin">
-        As far as being a developer/engineer is concerned, I'm a very functionality and performance focused developer as opposed to a design
-        oriented developer. I view development as a complex logic problem and I thrive on the opportunity to take on solving the most complex problems
-        that arise. In other words, if there is a 1-point layout ticket and a 10-point ticket for writing a complex service or visualiztion, I'll be grabbing
-        the second ticket!
+      <div class="bottom-margin summary">
+        As a developer, I'm very functionality and performance oriented as opposed to design
+        oriented. I like to solve the most difficult problems and act as the right-hand-man to the architect. In other words, if there is a 1-point layout
+        ticket and a 10-point ticket for writing a complex service or visualiztion, I'll be grabbing the second ticket!
       </div>
-      <div>
+      <div class="summary">
         As a retro game collector, I'm a life-long video gamer that appreciates the technology and history of video games and collects anything I can get
         my hands on! I'm less interested in sealed copies of games and more interested in playing them. I also am the guy that has everything hooked up
         to upscalers and takes apart my old consoles to solder in new capacitors so they last a lot longer.
@@ -21,8 +21,12 @@
         <div>Angular, Vue, Nuxt</div>
       </div>
       <div class="bottom-margin skill">
+        <h4 class="skill-title">Component Libraries/CSS Frameworks</h4>
+        <div>Prime-ng, Angular Material, Vuetify, Bootstrap, Bulma</div>
+      </div>
+      <div class="bottom-margin skill">
         <h4 class="skill-title">Visualizations</h4>
-        <div>HighCharts, D3, Chart.js, Kendo UI, raw JavaScript</div>
+        <div>HighCharts, D3, Chart.js, Kendo UI, AG-Grid, raw JavaScript</div>
       </div>
       <div class="bottom-margin skill">
         <h4 class="skill-title">Backend</h4>
@@ -34,6 +38,7 @@
       </div>
     </div>
     <div class="web about--subsection">
+      <h3 class="bottom-margin">On the Web</h3>
       <div class="twitter social-link">
         <a
           href="https://twitter.com/jgdigitaljedi"
@@ -85,9 +90,36 @@
         </a>
       </div>
     </div>
-    <div class="hobbies about--subsection">hobbies</div>
-    <div class="facts about--subsection">facts</div>
-    <div class="work about--subsection">work</div>
+    <div class="work about--subsection">
+      <h3 class="bottom-margin">My Work</h3>
+      <div class="jobs">
+        <h4>Recent Work History</h4>
+        <div class="work-sub">
+          <div>
+            <b>R4 Technologies</b>
+            <em>(11/2016 - present)</em> - Senior Front-end Engineer
+          </div>
+          <div>
+            <b>Kapsch TrafficCom</b>
+            <em>(11/2014 - 11/2016)</em> - Mid-level Front-end Engineer
+          </div>
+          <div>
+            <b>IBM</b>
+            <em>(11/2008 - 7/2014)</em> - IT Professional
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="facts about--subsection">
+      <h3 class="bottom-margin">Random Facts About Me</h3>
+      <p>I have survived cancer twice.</p>
+      <p>I started coding at age 9 writing BASIC on an Apple IIC.</p>
+      <p>I strongly dislike social networking, but I try to maintain a Twitter presence so I don't lose touch with society.</p>
+      <p>I once got a hole in 1 playing disc golf at Mary Moore Searight!</p>
+      <p>I lift weights 3-4 times a week.</p>
+      <p>I've had over 650 stiches and broken over 25 bones.</p>
+      <p>Linux has been my preferred OS for over 10 years now.</p>
+    </div>
   </section>
 </template>
 
@@ -166,44 +198,50 @@ export default {
 <style lang="scss" scoped>
 @import '~/assets/style/theme.scss';
 @import '~/assets/style/shadows.scss';
+
+$triforce-yellow: #d4ce46;
 .about {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 4px;
-  grid-row-gap: 4px;
-  justify-items: center;
-  padding: 3rem;
+  grid-column-gap: 1rem;
+  grid-row-gap: 2rem;
+  // justify-items: center;
+  padding: 2rem 2rem 0;
   background-color: #303030;
+  font-size: 1.2rem;
+  h3 {
+    color: $triforce-yellow;
+  }
   .bottom-margin {
     margin-bottom: 1rem;
   }
-  .summary {
+  .photo {
     grid-column: 1;
+    grid-row: 1;
+  }
+  .summary {
+    grid-column: 2;
     grid-row: 1;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    // align-items: center;
+    // justify-content: center;
   }
   .skills {
-    grid-column: 2;
+    grid-column: 3;
     grid-row: 1;
     .skill .skill-title {
       font-weight: bold;
     }
   }
-  .hobbies {
+  .web {
     grid-column: 1;
     grid-row: 2;
-  }
-  .web {
-    grid-column: 3;
-    grid-row: 1;
     .social-link {
       // font-family: my_underwoodregular;
-      font-size: 2rem;
-      margin-top: 2rem;
+      font-size: 1.5rem;
+      margin-top: 1.5rem;
       &.twitter {
         a,
         .v-icon {
@@ -245,11 +283,11 @@ export default {
       }
     }
   }
-  .facts {
+  .work {
     grid-column: 2;
     grid-row: 2;
   }
-  .work {
+  .facts {
     grid-column: 3;
     grid-row: 2;
   }
